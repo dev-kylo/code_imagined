@@ -59,5 +59,6 @@ grid-template-areas:
 export const GridArea = styled.div`
     grid-area: ${props => props.name};
     display: flex;
+    position: relative;
      background-color: ${props => props.color};
 `

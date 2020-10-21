@@ -8,7 +8,8 @@ import {LandingGrid, GridArea} from '../styled/grids';
 import ExecutionStack from '../animations/execution_stack';
 import Prototype from '../animations/prototype';
 import Orb from '../animations/orb';
-import Island from '../animations/string';
+import StringIsland from '../animations/string';
+import ObjectIsland from '../animations/object_island';
 import Intro from '../sections/intro';
 import Learn from '../sections/learn';
 import Difficult from '../sections/difficult';
@@ -40,12 +41,14 @@ export default function Home() {
             <Difficult />
           </GridArea>
           <GridArea  name="svg4" color="#01140F">
-            <Island />
+            <StringIsland />
           </GridArea>
           <GridArea  name="svg4_copy" color="#0E34A0">
             <Model />
           </GridArea>
-          <GridArea  name="svg5" color="#5F5980"/>
+          <GridArea  name="svg5" color="#5F5980">
+            <ObjectIsland />
+          </GridArea>
           <GridArea  name="svg5_copy" color="#008578">
             <Knowledge />
           </GridArea>
