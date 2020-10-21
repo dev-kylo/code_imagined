@@ -4,7 +4,7 @@
     <img alt="Code Imagined" src="https://res.cloudinary.com/kclsu/image/upload/v1603266407/logo_tjuyrk.png" width="200" />
   </a>
 </p>
-<h1 align="center">
+<h1 align="left">
   Code Imagined
 </h1>
 
