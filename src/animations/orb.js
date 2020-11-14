@@ -1,5 +1,5 @@
 import React from 'react';
-import prototype_svg from '../images/orb.svg';
+import prototype_svg from '../images/Orb.svg';
 import styled from 'styled-components';
 
 const StyledSVG = styled(prototype_svg)`
