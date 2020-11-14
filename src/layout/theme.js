@@ -1,11 +1,13 @@
 export const theme = {
     colors: {
         background: '#01140F',
-        black: '#000000',
-        green: '#008578',
-        blue: '#577399',
+        blue: '#0E34A0',
         grey: '#495867',
-        white: '#bdd5ea'
+        white: '#bdd5ea',
+        red: '#AB3428',
+        green: '#008578',
+        purple: '#5F5980',
+        pink: 'pink'
     },
     fonts: {
         heading1: "'Playfair Display', serif",

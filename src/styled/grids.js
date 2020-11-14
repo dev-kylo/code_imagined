@@ -31,8 +31,60 @@ export const GridCol2 = styled.div `
 
 export const LandingGrid = styled.section `
 display: grid;
-grid-template-columns: 50% 50%;
+grid-template-columns: 1fr;
 grid-template-rows:
+    100vh
+    45vh
+    30vh
+    45vh
+    30vh
+    55vh
+    40vh
+    55vh
+    35vh
+    35vh;
+grid-template-areas:
+    "svg1"
+    "svg1_copy"
+    "svg2"
+    "svg2_copy"
+    "svg3"
+    "svg3_copy"
+    "svg4"
+    "svg4_copy"
+    "svg5"
+    "svg5_copy";
+
+
+@media (min-width: 600px){
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    "svg1 svg1_copy"
+    "svg1 svg2"
+    "svg2_copy svg2"
+    "svg2_copy svg2"
+    "svg3	svg2"
+    "svg3 svg3_copy"
+    "svg3 svg4"
+    "svg4_copy svg4"
+    "svg5 svg4"
+    "svg5 svg5_copy";
+
+    grid-template-rows:
+    70vh
+    10vh 
+    35vh
+    15vh
+    5vh
+    45vh
+    5vh
+    45vh
+    5vh
+    45vh;  
+}
+
+@media (min-width: 780px){
+    grid-template-rows:
     85vh
     20vh 
     35vh
@@ -43,17 +95,22 @@ grid-template-rows:
     45vh
     15vh
     45vh;
-grid-template-areas:
-    "svg1 svg1_copy"
-    "svg1 svg2"
-    "svg2_copy	svg2"
-    "svg2_copy	svg2"
-    "svg3	svg2"
-    "svg3 svg3_copy"
-    "svg3 svg4"
-    "svg4_copy svg4"
-    "svg5 svg4"
-    "svg5 svg5_copy"
+}
+
+
+@media (min-width: 700px) and (orientation: portrait) and (min-height: 1050px){
+    grid-template-rows:
+    45vh
+    15vh 
+    15vh
+    15vh
+    15vh
+    25vh
+    10vh
+    30vh
+    10vh
+    20vh;
+}
 `;
 
 export const GridArea = styled.div`
@@ -61,4 +118,5 @@ export const GridArea = styled.div`
     display: flex;
     position: relative;
      background-color: ${props => props.color};
+
 `

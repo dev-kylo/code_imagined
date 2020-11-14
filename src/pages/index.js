@@ -24,6 +24,7 @@ export default function Home() {
         <LandingGrid>
           <GridArea name="svg1" color="#01140F">
             <ExecutionStack />
+            <Intro mobile />
           </GridArea>
           <GridArea  name="svg1_copy" color="#0E34A0">
             <Intro />

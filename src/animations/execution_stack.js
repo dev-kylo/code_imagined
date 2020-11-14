@@ -26,6 +26,13 @@ const StyledSVG = styled(ECstack)`
         max-height: auto;
     }
 
+    @media (max-width: 600px){
+        top:350px;
+        left: 20px;
+        width: 75%;
+        max-height: auto;
+    }
+
 
 `
 

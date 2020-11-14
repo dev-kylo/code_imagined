@@ -3,7 +3,7 @@ import prototype_svg from '../images/prototype_c.svg';
 import styled from 'styled-components';
 
 const StyledSVG = styled(prototype_svg)`
-    width: 110%;
+    width: 105%;
   
     position: absolute;
     z-index: 10;
@@ -19,10 +19,16 @@ const StyledSVG = styled(prototype_svg)`
     }
 
     @media (max-width: 1000px){
-        width: 160%;
+        width: 150%;
     }
-    @media (max-width: 800px){
-        width: 200%;
+
+
+    @media (max-width: 700px){
+        width: 140%;
+    }
+
+    @media (max-width: 600px){
+        width: 80%;
     }
 
 
