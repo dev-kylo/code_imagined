@@ -42,7 +42,7 @@ export const Button = props => {
     const clickHandler = (e) => {
         e.preventDefault();
         console.log('I was clicked');
-        // props.clicked()
+        props.clicked();
     }
 
     return <StyledButton onClick={e => clickHandler(e)}>{props.children}</StyledButton>
