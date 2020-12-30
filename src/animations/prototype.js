@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import prototype_svg from '../images/prototype_c.svg';
 import styled from 'styled-components';
+import gsap from "gsap";
 
 const StyledSVG = styled(prototype_svg)`
     width: 105%;
@@ -47,8 +48,25 @@ const StyledSVG = styled(prototype_svg)`
     .hair{}
 `
 
-const prototype = () => (
-    <StyledSVG />
-)
+const Prototype = () => {
 
-export default prototype;
+    let refo = useRef(null);
+
+    useEffect(() => {
+        console.log('Lets log the ref element');
+        console.log(refo);
+        gsap.set('#beam', {transformOrigin: '95% 3%'})
+        const tl = gsap.timeline();
+        tl.to('#beam', {delay: 2, rotate: 90, ease: 'power3'})
+		// tl.to('#beam', {transformOrigin: '0% 0%', rotate: -15, ease: 'power3'})
+		// tl.to('#beam', {transformOrigin: '0% 0%', rotate: 0, ease: 'power3'})
+    }, [])  
+
+    return (
+        <div ref={(el) => (refo = el)}>
+            <StyledSVG  />
+        </div>
+    )
+};
+
+export default Prototype;
