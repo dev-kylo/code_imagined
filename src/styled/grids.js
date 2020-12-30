@@ -42,7 +42,7 @@ grid-template-rows:
     40vh
     55vh
     35vh
-    35vh;
+    50vh;
 grid-template-areas:
     "svg1"
     "svg1_copy"

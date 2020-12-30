@@ -20,4 +20,13 @@ export const P  = styled.p`
         font-size: 18px;
         line-height: 26px;
     }
+
+    @media (max-width: 500px){
+        line-height: 24px;
+    }
+
+    @media (max-width: 350px){
+        font-size: 16px;
+        line-height: 24px;
+    }
 `

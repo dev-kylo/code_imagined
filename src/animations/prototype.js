@@ -31,6 +31,14 @@ const StyledSVG = styled(prototype_svg)`
         width: 80%;
     }
 
+    @media (max-width: 600px) and (min-height: 700px){
+        width: 60%;
+    } 
+
+    @media (max-width: 480px) and (min-height: 700px){
+        width: 80%;
+    }
+
 
     .genie {}
     .beam{}

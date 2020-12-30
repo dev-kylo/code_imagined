@@ -15,6 +15,7 @@ import Learn from '../sections/learn';
 import Difficult from '../sections/difficult';
 import Model from '../sections/model';
 import Knowledge from '../sections/knowledge';
+// import Popup from '../styled/popup';
 
 export default function Home() {
   return (
@@ -23,10 +24,11 @@ export default function Home() {
       <Layout >
         <LandingGrid>
           <GridArea name="svg1" color="#01140F">
+            {/* <Popup></Popup> */}
             <ExecutionStack />
             <Intro mobile />
           </GridArea>
-          <GridArea  name="svg1_copy" color="#0E34A0">
+          <GridArea  name="svg1_copy" color="#041440">
             <Intro />
           </GridArea>
           <GridArea  name="svg2" color="#008578">

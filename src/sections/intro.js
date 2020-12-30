@@ -51,7 +51,7 @@ const Container = styled.section`
 const Intro = props => {
     const data = useStaticQuery(graphql`
         query MyQuery {
-            file(relativePath: { eq: "logo.png" }) {
+            file(relativePath: { eq: "small_logo.png" }) {
             childImageSharp {
                 # Specify the image processing specifications right in the query.
                 fluid {

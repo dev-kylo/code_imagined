@@ -19,6 +19,15 @@ const StyledSVG = styled(object_svg)`
         transform: translate(50%, 50%);
     };
 
+    @media (max-width: 480px){
+        width: 80%;
+        top: -50%;
+    };
+
+    @media (max-width: 480px) and (min-height: 700px){
+        width: 90%;
+    }
+
     .captain {}
     .captain .telescope{}
     .loo{}

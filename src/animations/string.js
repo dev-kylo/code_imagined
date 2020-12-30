@@ -26,6 +26,14 @@ const StyledSVG = styled(island_svg)`
         right: 1px;
     }
 
+    @media(max-width: 480px){
+        width: 92%;
+        right: 10px;
+    }
+    @media(max-width: 350px){
+        width: 90%;
+    }
+
     .rain {}
     .shrubs{}
     .toilet_shrubs{}
