@@ -1,6 +1,12 @@
-import React from 'react';
 import object_svg from '../images/object_island.svg';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import gsap from "gsap";
+// import { ScrollTrigger } from 'gsap/ScrollTrigger'
+// if (typeof window !== "undefined") {
+//     gsap.registerPlugin(ScrollTrigger); 
+//   }
+
 
 const StyledSVG = styled(object_svg)`
     width: 100%;
@@ -34,8 +40,26 @@ const StyledSVG = styled(object_svg)`
     .rock{}
 `
 
-const objectIsland = () => (
-    <StyledSVG />
-)
+const ObjectIsland = () => {
 
-export default objectIsland;
+    let refo = useRef(null);
+
+    useEffect(() => {
+		gsap.to('#objectIsland svg', {
+            y: -10,
+            ease: 'power2.easeInOut',
+            repeat: -1,
+            duration: 3.5,
+            yoyo: true
+        })
+
+    }, [])  
+
+    return (
+        <div id="objectIsland" ref={(el) => (refo = el)}>
+            <StyledSVG  />
+        </div>
+    )
+}
+
+export default ObjectIsland;

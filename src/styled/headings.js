@@ -15,7 +15,6 @@ export const H1 = styled.h1`
 
     @media (min-width: 600px){
         font-size: 50px;
-        padding: 0.5em 0;
         text-align: left;
     }
     @media (min-width: 900px){
