@@ -46,10 +46,10 @@ const ObjectIsland = () => {
 
     useEffect(() => {
 		gsap.to('#objectIsland svg', {
-            y: -10,
+            y: -5,
             ease: 'power2.easeInOut',
             repeat: -1,
-            duration: 3.5,
+            duration: 2.5,
             yoyo: true
         })
 
