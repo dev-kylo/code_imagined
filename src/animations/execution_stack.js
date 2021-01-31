@@ -10,6 +10,12 @@ const StyledSVG = styled(ECstack)`
     position: absolute;
     z-index: 100;
 
+    .white {}
+    .drop{}
+    .rock{}
+    .waterfall{}
+
+
     @media (max-width: 1200px){
         top:50px;
         width: 110%;

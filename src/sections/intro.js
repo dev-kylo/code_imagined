@@ -49,6 +49,7 @@ const Container = styled.section`
 
 
 const Intro = props => {
+    console.log(props.mobile)
     const data = useStaticQuery(graphql`
         query MyQuery {
             file(relativePath: { eq: "small_logo.png" }) {
@@ -60,8 +61,9 @@ const Intro = props => {
             }
             }
         }
-    `)
+    `);
     if (props.mobile){
+        console.log('in mobile land')
         return (
         <MobileDisplay>
             <Container>
@@ -79,6 +81,7 @@ const Intro = props => {
         )
     }
     else {
+        console.log("in desktop land")
         return (
             <Container>
                 <DesktopDisplay>
