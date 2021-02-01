@@ -18,7 +18,7 @@ const Explainer = () => {
         fetch('https://wizardly-einstein-c1d2c9.netlify.app/.netlify/functions/signup')
         .then(res => res.json())
         .then((res) => {
-            console.log(res)
+            console.log(res.message)
             return res;
         })
     }
