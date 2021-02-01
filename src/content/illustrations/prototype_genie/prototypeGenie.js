@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import prototype_svg from '../images/prototype_c.svg';
+import prototype_svg from '../../../images/prototype_c.svg';
 import styled from 'styled-components';
 import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -52,7 +52,7 @@ const StyledSVG = styled(prototype_svg)`
     .hair{}
 `
 
-const Prototype = () => {
+const PrototypeGenie = () => {
 
     let refo = useRef(null);
 
@@ -88,4 +88,4 @@ const Prototype = () => {
     )
 };
 
-export default Prototype;
+export default PrototypeGenie;

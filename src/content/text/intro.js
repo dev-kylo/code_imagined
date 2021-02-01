@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql, useStaticQuery } from "gatsby";
-import { H1, H2 } from '../styled/headings';
-import { P } from '../styled/text';
+import { H1, H2 } from '../../components/UI/headings.styled';
+import { P } from '../../components/UI/text.styled';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import { DesktopDisplay, MobileDisplay} from '../styled/containers';
+import { DesktopDisplay, MobileDisplay} from '../../components/UI/containers.styled';
 
 
 const Logo = styled.div`

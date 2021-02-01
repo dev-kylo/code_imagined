@@ -45,30 +45,30 @@ grid-template-rows:
     50vh;
 grid-template-areas:
     "svg1"
-    "svg1_copy"
+    "svg1_text"
     "svg2"
-    "svg2_copy"
+    "svg2_text"
     "svg3"
-    "svg3_copy"
+    "svg3_text"
     "svg4"
-    "svg4_copy"
+    "svg4_text"
     "svg5"
-    "svg5_copy";
+    "svg5_text";
 
 
 @media (min-width: 600px){
     grid-template-columns: 50% 50%;
     grid-template-areas:
-    "svg1 svg1_copy"
+    "svg1 svg1_text"
     "svg1 svg2"
-    "svg2_copy svg2"
-    "svg2_copy svg2"
+    "svg2_text svg2"
+    "svg2_text svg2"
     "svg3	svg2"
-    "svg3 svg3_copy"
+    "svg3 svg3_text"
     "svg3 svg4"
-    "svg4_copy svg4"
+    "svg4_text svg4"
     "svg5 svg4"
-    "svg5 svg5_copy";
+    "svg5 svg5_text";
 
     grid-template-rows:
     70vh

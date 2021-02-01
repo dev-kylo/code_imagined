@@ -1,7 +1,7 @@
 import React from 'react';
-import { H2 } from '../styled/headings';
-import { P } from '../styled/text';
-import {Copy} from '../styled/containers'
+import { H2 } from '../../components/UI/headings.styled';
+import { P } from '../../components/UI/text.styled';
+import {Copy} from '../../components/UI/containers.styled'
 
 const difficult = () => (
     <Copy>

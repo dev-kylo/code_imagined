@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import gsap from "gsap";
-import island_svg from '../images/rain_island_10.svg';
+import island_svg from '../../../images/rain_island_10.svg';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 
@@ -57,7 +57,7 @@ const StyledSVG = styled(island_svg)`
     }
 `   
 
-const Island = () => {
+const RainIsland = () => {
 
     let refo = useRef(null);
 
@@ -128,4 +128,4 @@ const Island = () => {
     )
 }
 
-export default Island;
+export default RainIsland;

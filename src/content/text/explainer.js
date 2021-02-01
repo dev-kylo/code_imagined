@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {P} from '../styled/text';
-import {Button} from '../styled/button';
+import {P} from '../../components/UI/text.styled';
+import {Button} from '../../components/UI/button.styled';
 
 const TextContainer = styled.section `
     width: 70%;

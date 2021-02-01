@@ -1,4 +1,4 @@
-import object_svg from '../images/object_island.svg';
+import object_svg from '../../../images/object_island.svg';
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import gsap from "gsap";
@@ -40,7 +40,7 @@ const StyledSVG = styled(object_svg)`
     .rock{}
 `
 
-const ObjectIsland = () => {
+const RockIsland = () => {
 
     let refo = useRef(null);
 
@@ -62,4 +62,4 @@ const ObjectIsland = () => {
     )
 }
 
-export default ObjectIsland;
+export default RockIsland;

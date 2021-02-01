@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
-import {H2} from '../styled/headings';
-import {P} from '../styled/text';
+import {H2} from './headings.styled';
+import {P} from './text.styled';
 
 const BackDrop = styled.div`
     position: fixed;

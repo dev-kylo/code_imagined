@@ -1,67 +1,10 @@
 
-import ECstack from '../images/ec_stack.svg';
-import styled from 'styled-components';
 import React, { useEffect, useRef } from 'react';
 import gsap from "gsap";
-
-const StyledSVG = styled(ECstack)`
-    width: 100%;
-    max-height: 118%;
-    position: absolute;
-    z-index: 100;
-
-    .white {}
-    .drop{}
-    .rock{}
-    .waterfall{}
+import { StyledSVG } from './SVG.styled';
 
 
-    @media (max-width: 1200px){
-        top:50px;
-        width: 110%;
-        max-height: auto;
-    }
-
-    @media (max-width: 1100px){
-        top:120px;
-        width: 110%;
-        max-height: auto;
-    }
-
-    @media (max-width: 1000px){
-        top:140px;
-        width: 115%;
-    }
-
-    @media (max-width: 600px){
-        top:350px;
-        left: 20px;
-        width: 75%;
-    }
-
-    @media (max-width: 550px){
-        top:270px;
-        left: 30px;
-        width: 75%;
-    }
-
-
-    @media (max-width: 480px) and (min-height: 700px){
-        top:380px;
-    }
-
-
-    @media (max-width: 380px){
-        top:320px;
-    }
-
-    @media (max-width: 340px){
-        top:280px;
-    }
-
-`
-
-const ExecutionStack = () => {
+const ExecutionIsles = () => {
 
     let refo = useRef(null);
 
@@ -109,9 +52,6 @@ const ExecutionStack = () => {
         });
         tl.yoyo(true)
 
-        
-
-
        
 		// tl.to('#beam', {transformOrigin: '0% 0%', rotate: -15, ease: 'power3'})
 		// tl.to('#beam', {transformOrigin: '0% 0%', rotate: 0, ease: 'power3'})
@@ -124,4 +64,4 @@ const ExecutionStack = () => {
     )
 }
 
-export default ExecutionStack;
+export default ExecutionIsles;
