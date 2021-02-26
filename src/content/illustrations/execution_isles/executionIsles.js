@@ -2,64 +2,66 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from "gsap";
 import { StyledSVG } from './SVG.styled';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger); 
+  }
 
 
 const ExecutionIsles = () => {
 
     let refo = useRef(null);
 
+
     useEffect(() => {
-		gsap.to('#executionStack svg', {
-            y: -12,
-            ease: 'power2.easeInOut',
-            repeat: -1,
-            duration: 3.5,
-            yoyo: true
-        });
         const tl = gsap.timeline({ repeat: -1});
-        tl.to('.rock', {
-            y: -40,
-            x: -10,
-            ease: "Power1.easeOut",
-            duration: 3,
+        tl.to('g[id*="rock"]', {
+            y: -35,
+            x: 70,
+            duration: 15,
             stagger: { // wrap advanced options in an object
-                each: 1,
-                from: "end",
-                ease: "power2.inOut",
-              }
+                each: 0.5,
+                from: "center",
+                ease: "Power1.easeInOut",
+                repeat: -1,
+                yoyo: true
+              },
         });
-        tl.to('.rock', {
-            y: 30,
-            x: 20,
+        gsap.to('#white', {
+            y: -40,
+            scaleY: 1.4,
             ease: "Power1.easeInOut",
             duration: 4,
-            stagger: { // wrap advanced options in an object
-                each: 1,
-                from: "random",
-                ease: "power2.inOut",
-              }
-        });
-        tl.to('.rock', { 
-            y: 0,
-            x: 0,
+            repeat: -1,
+            yoyo: true
+            
+        })
+        gsap.to('g[id*="drop"]', {
+            duration: 0.3,
+            y: -5,
+            opacity: 0.3,
+            repeat: -1,
             ease: "Power1.easeIn",
-            duration: 3,
-            stagger: { // wrap advanced options in an object
-                each: .1,
-                from: "random",
-                ease: "power2.inOut",
-              }
-        });
-        tl.yoyo(true)
-
-       
-		// tl.to('#beam', {transformOrigin: '0% 0%', rotate: -15, ease: 'power3'})
-		// tl.to('#beam', {transformOrigin: '0% 0%', rotate: 0, ease: 'power3'})
+            stagger: 0.1
+        })
+        gsap.from('g[id*="root"]', {
+            scrollTrigger: {
+                trigger: '#shipbottom',   // pin the trigger element while active
+                start: "center center",
+            },
+            duration: 4,
+            stagger: 1,
+            scaleY: 0.1,
+            ease: "Power1.easeOut"
+        })
     }, [])  
     
     return (
         <div id="executionStack" ref={(el) => (refo = el)}>
-            <StyledSVG />
+            <React.Suspense>
+                <StyledSVG/>
+            </React.Suspense>
         </div>
     )
 }
