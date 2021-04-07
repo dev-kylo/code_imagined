@@ -1,6 +1,6 @@
 import React from "react";
 import {LandingGrid, GridArea} from '../../components/grid/grids.styled';
-import ExecutionIsles from '../illustrations/execution_isles/executionIsles';
+import ExecutionStack from '../illustrations/execution_stack/executionStack';
 import GeniePrototype from '../illustrations/prototype_genie/prototypeGenie';
 import Invocation from '../illustrations/invocation/Invocation';
 import RainIsland from '../illustrations/rain_island/rainIsland';
@@ -17,7 +17,7 @@ const SvgTextGrid = () => {
         <LandingGrid>
           <GridArea name="svg1" color="#01140F">
             {/* <Popup></Popup> */}
-            <ExecutionIsles />
+            <ExecutionStack />
             <Intro mobile />
           </GridArea>
           <GridArea  name="svg1_text" color="#041440">

@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import gsap from "gsap";
-import { StyledSVG } from './SVG.styled';
+import LayeredSVG from './layeredSVG/layeredSVG.styled';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 if (typeof window !== "undefined") {
@@ -9,7 +9,7 @@ if (typeof window !== "undefined") {
   }
 
 
-const ExecutionIsles = () => {
+const ExecutionStack = () => {
 
     let refo = useRef(null);
 
@@ -60,10 +60,10 @@ const ExecutionIsles = () => {
     return (
         <div id="executionStack" ref={(el) => (refo = el)}>
             <React.Suspense>
-                <StyledSVG/>
+                <LayeredSVG/>
             </React.Suspense>
         </div>
     )
 }
 
-export default ExecutionIsles;
+export default ExecutionStack;

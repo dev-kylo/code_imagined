@@ -1,10 +1,11 @@
 
 import styled from 'styled-components';
-import ECstack from '../../../images/ECI_base.svg';
+import ECstack from '../../../../images/ECI_base.svg';
 import React from 'react';
-import AnemoneIsland from './anemone';
-import ObjectIsland from './ObjectIsland.styled';
-import Ship from './Ship.styled';
+import AnemoneIsland from './layers/anemone.styled';
+import ObjectIsland from './layers/objectIsland.styled';
+import Ship from './layers/ship.styled';
+import Submarine from './layers/submarine.styled';
 
 
 export const SVGContainer = styled.div`
@@ -91,12 +92,17 @@ const ExecutionContextIsle = styled(ECstack)`
     height: auto;
 `
 
-export const StyledSVG = () => (
+const LayeredSVG = () => (
     <SVGContainer>
         <ExecutionContextIsle/>
         <AnemoneIsland />
         <ObjectIsland />
         <Ship islandBottom/>
         <Ship islandTop />
+        <Submarine subtop/>
+        <Submarine submiddle/>
+        <Submarine subbottom/>
     </SVGContainer>
-)
+);
+
+export default LayeredSVG;
