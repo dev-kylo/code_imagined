@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import gsap from "gsap";
 import island_svg from '../../../images/rain_island_10.svg';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import withScrollToggle from '../../../hoc/withScrollToggle';
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger); 

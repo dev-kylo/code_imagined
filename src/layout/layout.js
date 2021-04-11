@@ -3,12 +3,6 @@ import { createGlobalStyle } from "styled-components"
 
 
 const GlobalLayout = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Jockey+One&family=Playfair+Display:wght@900&family=Ubuntu+Mono&display=swap');    
-    @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@900&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Ceviche+One&family=Faster+One&display=swap');
     
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,

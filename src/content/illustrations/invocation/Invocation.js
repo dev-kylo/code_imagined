@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { StyledSVG } from './SVG.styled';
 import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import withSuspense from '../../../hoc/withSuspense';
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger); 
   }

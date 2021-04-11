@@ -1,23 +1,35 @@
 import React from "react";
 import SEO from '../layout/seo';
 import Layout from '../layout/layout';
-import { theme } from '../layout/theme';
+import { theme } from '../theme';
 import { ThemeProvider } from 'styled-components';
 import Explainer from '../content/text/explainer';
 import SvgTextGrid from '../content/svg_text_grid/svgTextGrid';
-
+import Nav from '../components/UI/nav.styled';
+import SignUp from "../components/UI/signup.styled";
+import { LayersManager } from 'react-layers-manager'
 // import Popup from '../styled/popup';
+import ModalContext from '../context/toggle';
+import '../utils/fontawesome';
 
-export default function Home() {
+
+const Home = () => {
+
   return (
     <ThemeProvider theme={theme}>
-      <SEO />
-      <Layout >
-        
-        <SvgTextGrid />
-        <Explainer />
-        
-      </Layout>
+      <LayersManager>
+        <SEO />
+        <Layout >
+          <ModalContext>
+            <Nav />
+            <SvgTextGrid />
+            <Explainer />
+            <SignUp />
+          </ModalContext>
+        </Layout>
+      </LayersManager>
     </ThemeProvider>
   )
 }
+
+export default Home;

@@ -30,7 +30,7 @@ export const H1 = styled.h1`
 
 export const H2 = styled.h2`
     font-family: ${props => props.theme.fonts.heading1};
-    color: ${props => props.theme.colors.white};
+    color: ${props => props.dark? props.theme.colors.navy : props.theme.colors.white};
     font-size: 28px;
     padding: 0.5em 0;
 

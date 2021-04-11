@@ -5,8 +5,8 @@ import {Copy} from '../../components/UI/containers.styled'
 
 const model = () => (
     <Copy>
-        <H2> A useful mental model </H2>
-        <P>Thing is, we don't need to memorise javascript - thanks Google. But we do need a model we can apply in any setting we find ourselves in: tutorials, documentation, personal projects, chats with senior devs.</P>
+        <H2> Terminology matters!</H2>
+        <P>The words we use matter - whether writing about personal projects, or asking a senior dev a question.</P>
     </Copy>
 );
 

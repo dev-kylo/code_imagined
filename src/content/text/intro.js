@@ -63,7 +63,6 @@ const Intro = props => {
         }
     `);
     if (props.mobile){
-        console.log('in mobile land')
         return (
         <MobileDisplay>
             <Container>
@@ -73,7 +72,7 @@ const Intro = props => {
                     <Title>
                         <H1>A visual javascript mental model</H1>
                         <DesktopDisplay>
-                            <P>Using the power of your imagination to build a strong, memorable foundation in javascript, using story, characters and the wonders of new worlds.</P>
+                        <P>Using the power of your imagination to build a visual and memorable understanding of javascript, to help you read, comprehend and ultimately build programs.</P>
                         </DesktopDisplay>
                     </Title>
             </Container>
@@ -81,7 +80,6 @@ const Intro = props => {
         )
     }
     else {
-        console.log("in desktop land")
         return (
             <Container>
                 <DesktopDisplay>
@@ -96,7 +94,7 @@ const Intro = props => {
                     <MobileDisplay>
                         <H2> Build a foundation</H2>
                     </MobileDisplay>
-                    <P>Using the power of your imagination to build a strong, memorable foundation in javascript, using story, characters and the wonders of new worlds.</P>
+                    <P>Using the power of your imagination to build a visual and memorable understanding of javascript, to help you read, comprehend and ultimately build programs.</P>
                 </Title>
             </Container>
         )
