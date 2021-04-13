@@ -2,23 +2,25 @@ import React, { useState } from 'react';
 import ScrollTrigger from 'react-scroll-trigger';
 
 
-const withScrollToggle = (Cmp) => {
+const withScrollToggle = (Cmp, restartWhenVisibile = false) => {
 
     return (props) => {
 
         const [visible, setVisibility] = useState(false);
 
         const onEnterViewport = () => {
-            setVisibility(true)
+            console.log('entered');
+            setVisibility(true);
           }
          
         const onExitViewport = () => {
-            setVisibility(false)
+            console.log('exited');
+            setVisibility(false);
           }
     
         return (
             <ScrollTrigger onEnter={onEnterViewport} onExit={onExitViewport}>
-                <Cmp { ...props } animate={visible}></Cmp>
+                <Cmp { ...props } restart={restartWhenVisibile} beginAnimation={visible}></Cmp>
             </ScrollTrigger>
         )
     }

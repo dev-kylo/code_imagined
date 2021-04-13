@@ -3,6 +3,8 @@ import { graphql, useStaticQuery } from "gatsby";
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import gsap from "gsap";
+import withAnimationContext from '../../../../../hoc/withAnimationContext';
+import withAnimateOnScroll from '../../../../../hoc/withAnimateOnScroll';
 
 
 const Island1Container = styled.div`
@@ -24,6 +26,7 @@ const Island2Container = styled.div`
 `
 
 const Ship = (props) => {
+    
     const shipImage = useStaticQuery(graphql`
     query shipfloat{
         file(relativePath: { eq: "Ship_vsmall.png" }) {
@@ -37,22 +40,27 @@ const Ship = (props) => {
     }
     `);
 
-    useEffect(() => {
-     
-        gsap.to('#shipbottom', {
+    const flyShip = () => {
+        const tl = gsap.timeline();
+        tl.to('#shipbottom', {
             duration: 20,
             delay: 1,
             x: 150,
             ease: "Power1.easeOut"
         });
-        gsap.to('#shiptop', {
+        tl.to('#shiptop', {
             duration: 30,
             delay: 0,
             x: 170,
             ease: "Power1.easeIn"
         })
+        return tl;
+    }
+
+    useEffect(() => {
+        props.tl.add(flyShip());
     })
-    
+
     if (props.islandTop){
         return (
             <Island1Container>
@@ -71,4 +79,6 @@ const Ship = (props) => {
     )
 }
 
-export default Ship;
+export default withAnimateOnScroll(withAnimationContext(Ship), true);
+
+

@@ -30,3 +30,20 @@ export const P  = styled.p`
         line-height: 24px;
     }
 `
+export const Hl = styled.mark`
+    background-color: ${props => props.blue? props.theme.colors.navy : props.red? props.theme.colors.red : props.theme.colors.green};
+    padding: ${props => props.large? '1em' : '0.1em 0.3em'};
+    line-height: 30px;
+    color: white;
+`;
+
+export const CallOut = styled.div`
+    background-color: ${props => props.theme.colors.pink};
+    margin: 2em;
+    padding: 2em;
+    color:${props => props.theme.colors.navy};
+     & p {
+        color:${props => props.theme.colors.navy};
+     }
+`;
+

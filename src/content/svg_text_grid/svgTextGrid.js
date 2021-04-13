@@ -25,13 +25,13 @@ const SvgTextGrid = () => {
           <GridArea  name="svg1_text" color="#041440">
             <Intro />
           </GridArea>
+          <React.Suspense fallback={<div>Loading...</div>}>
             <GridArea  name="svg2" color="#008578">
               <GeniePrototype />
             </GridArea>
             <GridArea  name="svg2_text" color="#5F5980">
               <Learn />
             </GridArea>
-            <React.Suspense fallback={<div>Loading...</div>}>
             <GridArea  name="svg3" color="pink">
               <Invocation />
             </GridArea>

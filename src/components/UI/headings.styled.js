@@ -32,8 +32,9 @@ export const H2 = styled.h2`
     font-family: ${props => props.theme.fonts.heading1};
     color: ${props => props.dark? props.theme.colors.navy : props.theme.colors.white};
     font-size: 28px;
+    text-align: ${props => props.center? 'center' : 'left'};
     padding: 0.5em 0;
-
+    margin: ${props => props.large? '2em auto' : 'auto'};
     @media (min-width: 600px){
         font-size: 35px;
     }

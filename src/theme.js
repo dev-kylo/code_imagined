@@ -66,7 +66,6 @@ export const theme = {
         input: {
           color: 'red',
           border: '2px solid navy',
-          fontSize: '1.2rem',
           padding: '0.7rem',
           fontSize: '1.5rem',
         },
@@ -78,6 +77,12 @@ export const theme = {
           color: '#041440', 
           fontSize: '1.2rem',
           fontWeight: 'bold'
+        },
+        switch: {
+            backgroundColor: 'white',
+            color: 'red',
+            
+
         },
         radio: {},
         checkbox: {},

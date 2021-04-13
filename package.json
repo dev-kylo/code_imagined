@@ -32,6 +32,7 @@
     "gatsby-transformer-sharp": "^2.5.19",
     "gsap": "^3.6.1",
     "react": "^16.14.0",
+    "react-burger-menu": "^3.0.6",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "react-layers-manager": "^0.1.2",

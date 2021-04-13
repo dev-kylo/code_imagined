@@ -2,12 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import gsap from "gsap";
 import island_svg from '../../../images/rain_island_10.svg';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import withScrollToggle from '../../../hoc/withScrollToggle';
-
-if (typeof window !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger); 
-  }
+import withAnimationContext from '../../../hoc/withAnimationContext';
+import withAnimateOnScroll from '../../../hoc/withAnimateOnScroll';
 
 
 const StyledSVG = styled(island_svg)`
@@ -56,69 +52,43 @@ const StyledSVG = styled(island_svg)`
     }
 `   
 
-const RainIsland = () => {
+const RainIsland = (props) => {
 
     let refo = useRef(null);
 
-    useEffect(() => {
-        gsap.set('.puddle', {transformOrigin: '50% 10%'})
-        const tl = gsap.timeline({
-            // yes, we can add it to an entire timeline!
-            scrollTrigger: {
-              trigger: "#rain_island",   // pin the trigger element while active
-              start: "top center",
-            // when the top of the trigger hits the top of the viewport
-             // end after scrolling 500px beyond the start// smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-            onLeave: ({progress, direction, isActive}) => {
-                console.log('I am on Leave')
-                tl.seek('rain').pause();
-               },
-            // onLeaveBack: ({progress, direction, isActive}) => {
-            //     console.log('I am on Leave Back')
-            //     tl.seek('start').play();
-            // },
-            //  onEnter: ({progress, direction, isActive}) => {
-            //     console.log('I am on Enter')
-            //     tl.play()
-            //  },
-            onEnterBack: ({progress, direction, isActive}) => {
-                console.log('I am on Enter Back')
-                    tl.seek('start').play()
-                }
-
-            }
-          });
-        tl.addLabel("start")
-        tl.from('#cloud', {
+    const rainAnimation = (cloud, rain, puddle) => {
+        const tl = gsap.timeline();
+        tl.set(puddle, {transformOrigin: '50% 10%'});
+      
+        tl.from(cloud, {
             x: 500,
             duration: 3,
             ease: 'power2.easeOut'
         });
-        tl.addLabel("rain")
-        tl.from("#rain path", {
+   
+        tl.from(rain, {
             duration:0.01,
             opacity: 0,
             stagger: 0.01,
             repeat: -1,
-            y: -100});
-        tl.addLabel("puddles")
-        tl.from('.puddle', {
+            y: -100
+        });
+    
+        tl.from(puddle, {
             scale: 0, 
             zIndex: -500,
             duration: 3,
             ease: 'power2.easeOut'
         });
-        // tl.addLabel("shrubs")
-        // tl.from('#toilet_shrubs', {
-        //     scale: 0, 
-        //     duration: 3,
-        //     ease: 'power2.easeOut',
-        //     delay: -1
-        // });
+        return tl;
+    }
 
-
-
-    }, [])  
+    useEffect(() => {
+        const puddle = refo.querySelectorAll('.puddle');
+        const cloud = refo.querySelector('#cloud');
+        const rain = refo.querySelectorAll('#rain path');
+        props.tl.add(rainAnimation(cloud, rain, puddle));
+    });  
 
     return (
         <div ref={(el) => (refo = el)}>
@@ -127,4 +97,4 @@ const RainIsland = () => {
     )
 }
 
-export default RainIsland;
+export default withAnimateOnScroll(withAnimationContext(RainIsland, true), true);
