@@ -52,7 +52,7 @@ const MageFunk = () => {
     )
 }
 
-const SignUp = (props) => {
+const SignUp = () => {
 
 const visible = useContext(SignupContext).visible;
 const exit = useContext(SignupContext).exit;

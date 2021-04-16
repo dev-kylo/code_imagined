@@ -17,8 +17,6 @@ const Nav = props => {
 
 return (
     <>
-    {/* <Drawer></Drawer> */}
-    {/* <Box height="3.5em"></Box> */}
         <Box height="3.5em" sx={{
                 position: 'fixed',
                 top: '0',

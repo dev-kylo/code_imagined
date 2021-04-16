@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import ScrollTrigger from 'react-scroll-trigger';
 
-
-
 const FadeOnScroll = (props) => {
 
         const [progress, setProgress] = useState(0);
 
-        const onProgress = (scroll, ref) => {
+        const onProgress = (scroll) => {
             //Scrolling Down
             if(scroll.progress > progress){
                 props.setScrollDown(true)
