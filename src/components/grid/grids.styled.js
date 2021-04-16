@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const Grid2 = styled.div`
     display: grid;
     grid-template-columns: ${props => props.col1size} ${props => props.col2size};
