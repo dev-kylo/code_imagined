@@ -47,9 +47,6 @@ const StyledSVG = styled(island_svg)`
     .puddle{}
     .frontright{}
     .frontleft{}
-    #microphone{
-        z-index: 500;
-    }
 `   
 
 const RainIsland = (props) => {
