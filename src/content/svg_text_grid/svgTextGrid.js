@@ -14,18 +14,21 @@ const  Model = lazy(() => import('../text/model'));
 const  Knowledge = lazy(() => import('../text/knowledge'));
 
 const SvgTextGrid = () => {
+  const isSSR = typeof window === "undefined"
   return (
         <LandingGrid>
           <GridArea name="svg1" color="#01140F">
-            <React.Suspense fallback={<div>Loading...</div>}>
+            {!isSSR && 
+            (<React.Suspense fallback={<div>Loading...</div>}>
               <ExecutionStack />
-            </React.Suspense>
+            </React.Suspense>)} 
             <Intro mobile />
           </GridArea>
           <GridArea  name="svg1_text" color="#041440">
             <Intro />
           </GridArea>
-          <React.Suspense fallback={<div>Loading...</div>}>
+          {!isSSR && (
+             <React.Suspense fallback={<div>Loading...</div>}>
             <GridArea  name="svg2" color="#008578">
               <GeniePrototype />
             </GridArea>
@@ -51,6 +54,7 @@ const SvgTextGrid = () => {
               <Knowledge />
             </GridArea>
           </React.Suspense>
+          )}
         </LandingGrid>
   )
 }
