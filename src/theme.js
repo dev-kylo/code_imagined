@@ -3,9 +3,9 @@ import "@fontsource/raleway";
 
 
 export const theme = {
-    breakpoints: ['350px', '500px', '800px', '1100px', '1250px'],
+    breakpoints: ['350px', '500px', '800px', '1100px'],
     fontSizes: [
-        12, 14, 16, 20, 24, 32, 48, 64
+        12, 14, 16, 18, 20, 24, 32, 48, 64
     ],
     colors: {
         background: '#01140F',
@@ -41,11 +41,12 @@ export const theme = {
               color: 'white'
           },
           signup: {
-              fontSize: [16, 16, 16, 18, 18],
+              fontSize: [18, 18, 18, 18],
+              fontFamily: "'Raleway', sans-serif"
           }
     },
     text: {
-      
+      fontFamily: "'Raleway', sans-serif"
     },
     buttons: {
         primary: {
@@ -67,7 +68,7 @@ export const theme = {
           color: 'red',
           border: '2px solid navy',
           padding: '0.7rem',
-          fontSize: '1.5rem',
+          fontSize: [18],
         },
         select: {
         },
@@ -81,8 +82,6 @@ export const theme = {
         switch: {
             backgroundColor: 'white',
             color: 'red',
-            
-
         },
         radio: {},
         checkbox: {},

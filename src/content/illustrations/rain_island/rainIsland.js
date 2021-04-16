@@ -56,11 +56,17 @@ const RainIsland = (props) => {
 
     let refo = useRef(null);
 
-    const rainAnimation = (cloud, rain, puddle) => {
+    const rainAnimation = (cloud, rain, puddle, toppuddle) => {
         const tl = gsap.timeline();
         tl.set(puddle, {transformOrigin: '50% 10%'});
-      
+        tl.set(toppuddle, {
+            transformOrigin: '50% 10%',
+            x: 10,
+            y: 20,
+        });
+
         tl.from(cloud, {
+            delay: 1.5,
             x: 500,
             duration: 3,
             ease: 'power2.easeOut'
@@ -73,7 +79,13 @@ const RainIsland = (props) => {
             repeat: -1,
             y: -100
         });
-    
+        tl.to(toppuddle, {
+            transformOrigin: '50% 50%',
+            x: 130,
+            y: 60,
+            rotate: 30,
+            opacity: 0.9
+        });
         tl.from(puddle, {
             scale: 0, 
             zIndex: -500,
@@ -87,7 +99,18 @@ const RainIsland = (props) => {
         const puddle = refo.querySelectorAll('.puddle');
         const cloud = refo.querySelector('#cloud');
         const rain = refo.querySelectorAll('#rain path');
-        props.tl.add(rainAnimation(cloud, rain, puddle));
+        const toppuddle = refo.querySelector('#toppuddle'); 
+        console.log('top puddle')
+        console.log(toppuddle)
+        props.tl.add(rainAnimation(cloud, rain, puddle, toppuddle));
+
+    //    const timer = setTimeout(() => {
+    //         props.tl.pause();
+    //         clearTimeout(timer);
+    //     }, 11000)
+
+        // return clearTimeout(timer);
+        
     });  
 
     return (

@@ -1,8 +1,8 @@
 
 import React, { useContext } from 'react';
 import { H2 } from './headings.styled';
-import { Flex, Box, Button, Text } from 'rebass/styled-components';
-
+import { P } from './text.styled';
+import { Flex, Box, Button} from 'rebass/styled-components';
 import { graphql, useStaticQuery } from "gatsby";
 import Img from 'gatsby-image';
 import {
@@ -11,6 +11,25 @@ import {
   } from '@rebass/forms/styled-components'
 import Modal from './modal.styled';
 import { SignupContext } from '../../context/toggle';
+import styled from 'styled-components';
+
+
+const MageContainer = styled.div`
+    position: absolute;
+    bottom: 50%;
+    transform: translate(20%, 50%) scale(1.2);
+    objectFit: cover;
+    z-index: 1000;
+    width: 100%;
+
+    @media (max-width: 500px){
+        // position: initial;
+        // left: 50%;
+        // transform: translate(-50%,50%) scale(0.8);
+        display: none;
+    }
+
+`
 
 
 const MageFunk = () => {
@@ -27,7 +46,9 @@ const MageFunk = () => {
         }
     `)
     return (
-        <Img fluid={mageFunk.file.childImageSharp.fluid} alt="Mage Funk character with an invocation orb" />
+        <MageContainer>
+            <Img fluid={mageFunk.file.childImageSharp.fluid} alt="Mage Funk character with an invocation orb" />
+        </MageContainer>
     )
 }
 
@@ -39,42 +60,42 @@ const exit = useContext(SignupContext).exit;
     return (
         <Modal show={visible} exit={() => exit()}>
             <Flex flexWrap="wrap">
-                <Box bg="black" height="100%" width={[1, 1/3]}  sx={{ position: 'absolute', bottom: '0', left: '0'}}>
-                    <Box width="100%"  sx={{
-                        position: 'absolute',
-                        bottom: '50%',
-                        transform: 'translate(20%, 50%) scale(1.2)',
-                        objectFit: "cover"
-                    }}>
-                        <MageFunk />
-                    </Box>
+                <Box bg="black" height={['0%', '0%', '100%','100%']} width={[1,1,1/3, 1/3]}  sx={{ position: 'absolute', bottom: '0', left: '0'}}>
+                    <MageFunk />
                 </Box>
-                <Box width={[1, 1/3]}></Box>
-                <Box p="1rem" pl="2rem" width={[1, 2/3]} >
-                    <H2 dark>Take this journey with me</H2>
-                    <Text color="navy" variant="signup">Explore javascript in a whole new way. Get to know it DEEPLY.</Text>
-                    <Text color="navy" variant="signup">Be able to look at any Js code you write or read, and break it down piece by piece.</Text>
-
-
+                <Box width={[1,1, 1/3, 1/3]}></Box>
+                <Box p="1rem" pl={['0', '0', '0.5rem', '2rem']} width={[1, 1, 2/3, 2/3]} >
+                    <H2 dark>The Great Sync is waiting</H2>
+                    <P small dark>Enter this world with me and explore Javascript.</P>
+                    <P small dark>Sign up for an introduction to The Great Sync.</P>
                     <Box
                         as='form'
                         onSubmit={e => e.preventDefault()}
                         py={3}>
                         <Flex flexDirection="column" mx={-2} mb={3}>
-                            <Box m="1rem 0" width={1} px={2}>
-                                <Label m="0.4rem 0" htmlFor='name'>Name</Label>
+                            <Box width={1} px={2}>
+                                <Label mb="0.4rem" htmlFor='name'>First Name</Label>
                                 <Input
-                                    id='name'
-                                    name='name'
-                                    defaultValue='Jane Doe'
+                                    id='fname'
+                                    name='fname'
+                                    required
+                                />
+                            </Box>
+                            <Box m="1rem 0" width={1} px={2}>
+                                <Label mb="0.4rem " htmlFor='name'>Last Name</Label>
+                                <Input
+                                    id='sname'
+                                    name='sname'
+                                    required
                                 />
                             </Box>
                             <Box width={1} px={2}>
-                            <Label m="0.4rem 0" htmlFor='email'>Email</Label>
+                            <Label mb="0.4rem" htmlFor='email'>Email</Label>
                             <Input
                                 id='email'
                                 name='email'
-                                defaultValue='email'
+                                type='email'
+                                required
                             />
                             </Box>
                             <Box px={2} ml='auto'>

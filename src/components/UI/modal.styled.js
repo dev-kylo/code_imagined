@@ -34,6 +34,11 @@ const ModalContent = styled.div`
     max-height: 85%;
     overflow-y: scroll;
     z-index: 100000;
+
+    @media (max-width: 800px){
+        padding: 15px;
+        min-width: 70%;
+    }
 `
 
 const ExitButton = styled.button`

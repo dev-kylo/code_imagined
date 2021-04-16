@@ -1,26 +1,42 @@
 import styled from 'styled-components';
-import prototype_svg from '../../../images/Orb.svg';
+import Orb from '../../../images/ArgsExiting_Orb.svg';
+import Argonauts from './argonauts';
+import React from 'react';
 
-export const StyledSVG = styled(prototype_svg)`
-    width: 105%;
+const StyledSVG = styled(Orb)`
+    width: 100%;
+    height: auto;
+`
+
+const SVGContainer = styled.div`
+    width: 100%;
+    right: -5%;
+    top: 20%;
     position: absolute;
-    top: 60px;
-    z-index: 100;
+    z-index: 200;
 
-    @media (max-width: 1400px){
-        top: 150px;
+    @media (max-width: 1100px){
+        right: 0%;
     }
 
     @media (max-width: 600px){
         width: 95%;
-        top: -50%;
-        right: 50%;
-        transform: translate(50%, 50%);
+        right: 0;
+        left: 1%;
     }
 
-    .orange {}
-    .black{}
-    .light{}
-    .outer{}
-
+    @media (max-width: 350px){
+        width: 95%;
+    }
 `
+
+const LayeredOrb = () => {
+    return (
+        <SVGContainer>
+            <StyledSVG />
+            <Argonauts />
+        </SVGContainer>
+        );
+} 
+
+export default LayeredOrb;

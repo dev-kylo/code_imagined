@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SEO from '../layout/seo';
 import Layout from '../layout/layout';
 import { theme } from '../theme';
@@ -11,23 +11,28 @@ import { LayersManager } from 'react-layers-manager'
 // import Popup from '../styled/popup';
 import ModalContext from '../context/toggle';
 import '../utils/fontawesome';
+import FadeOnScroll from "../hoc/FadeOnScroll";
 
 
 const Home = () => {
 
+  const [scrollingDown, setScrollingDown] = useState(false);
+
   return (
     <ThemeProvider theme={theme}>
-      <LayersManager>
-        <SEO />
-        <Layout >
-          <ModalContext>
-            <Nav />
-            <SvgTextGrid />
-            <Explainer />
-            <SignUp />
-          </ModalContext>
-        </Layout>
-      </LayersManager>
+      <SEO />
+      <FadeOnScroll setScrollDown={ setScrollingDown }>
+        <LayersManager>
+          <Layout >
+            <ModalContext>
+              <Nav scrollingDown={scrollingDown} />
+              <SvgTextGrid />
+              <Explainer />
+              <SignUp />
+            </ModalContext>
+          </Layout>
+        </LayersManager>
+      </FadeOnScroll>
     </ThemeProvider>
   )
 }

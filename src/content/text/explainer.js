@@ -4,11 +4,11 @@ import {Hl, P, CallOut } from '../../components/UI/text.styled';
 import {Button} from '../../components/UI/button.styled';
 import { SignupContext } from '../../context/toggle';
 import { H2 } from '../../components/UI/headings.styled';
+import { Flex } from 'rebass/styled-components';
 
 const TextContainer = styled.section `
     width: 70%;
     margin: auto;
-    margin-top: 2.5em;
     padding: 2em;
     margin-bottom: 1em;
     background-color:${props => props.theme.colors.navy};
@@ -48,10 +48,13 @@ const Explainer = () => {
                 <P>I would love for you to make it your own, to build it brick by brick, 
                     function invocation by function invocation, and create something in your mind that lasts forever.</P>
                 <P> </P>
-                <Button clicked={showSignUp}>Take me there!</Button>
+                <Flex justifyContent="center">
+                    <Button center clicked={showSignUp}>Show me The Great Sync!</Button>
+                </Flex>
         </TextContainer>
     )
 }
+
 
 export default Explainer
 
