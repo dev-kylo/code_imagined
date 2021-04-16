@@ -6,9 +6,9 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Code Imagined`,
-    description: `Building a visual mental model for learning javascript`,
-    author: `Kyle Robinson - @kylorobs`,
+    title: `The Great Sync`,
+    description: `Building a visual mental model for learning javascript. Javascript is difficult and these resources can help build confidence and knowledge of the language.`,
+    author: `Kylo Robinson - @kylorobs`,
   },
   /* Your site config here */
   plugins: [
