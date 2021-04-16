@@ -6,7 +6,7 @@ const FadeOnScroll = (props) => {
         const [progress, setProgress] = useState(0);
 
         const onProgress = (scroll) => {
-            //Scrolling Down
+          
             if(scroll.progress > progress){
                 props.setScrollDown(true)
             }

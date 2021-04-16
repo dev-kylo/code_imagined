@@ -11,7 +11,7 @@ import { LayersManager } from 'react-layers-manager'
 // import Popup from '../styled/popup';
 import ModalContext from '../context/toggle';
 import '../utils/fontawesome';
-import FadeOnScroll from "../hoc/FadeOnScroll";
+import FadeOnScroll from "../hoc/fadeOnScroll";
 
 
 const Home = () => {
