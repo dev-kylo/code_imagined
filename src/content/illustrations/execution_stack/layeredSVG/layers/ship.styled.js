@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
-import { graphql, useStaticQuery } from "gatsby";
-import Img from 'gatsby-image';
+import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
 import gsap from "gsap";
 import withAnimationContext from '../../../../../hoc/withAnimationContext';
 import withAnimateOnScroll from '../../../../../hoc/withAnimateOnScroll';
-
 
 const Island1Container = styled.div`
     position: absolute;
@@ -26,19 +24,6 @@ const Island2Container = styled.div`
 `
 
 const Ship = (props) => {
-    
-    const shipImage = useStaticQuery(graphql`
-    query shipfloat{
-        file(relativePath: { eq: "Ship_vsmall.png" }) {
-        childImageSharp {
-            # Specify the image processing specifications right in the query.
-            fluid {
-            ...GatsbyImageSharpFluid
-            }
-        }
-        }
-    }
-    `);
 
     const flyShip = () => {
         const tl = gsap.timeline();
@@ -65,7 +50,12 @@ const Ship = (props) => {
         return (
             <Island1Container>
                 <div id="shipbottom">
-                    <Img fluid={shipImage.file.childImageSharp.fluid} alt="Code Imagined" />
+                <StaticImage
+                    src="../../../../../images/Ship_vsmall.png"
+                    alt="The Execution Stack - a stack of isles with waterfalls"
+                    placeholder="tracedSVG"
+                    fullWidth
+                />
                 </div>
             </Island1Container>
         )
@@ -73,7 +63,12 @@ const Ship = (props) => {
     else return (
         <Island2Container>
             <div id="shiptop">
-                <Img fluid={shipImage.file.childImageSharp.fluid} alt="Code Imagined" />
+                <StaticImage
+                    src="../../../../../images/Ship_vsmall.png"
+                    alt="The Execution Stack - a stack of isles with waterfalls"
+                    placeholder="tracedSVG"
+                    fullWidth
+                />
             </div>
         </Island2Container>
     )

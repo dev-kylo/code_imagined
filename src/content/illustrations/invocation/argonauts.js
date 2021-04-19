@@ -1,7 +1,8 @@
-import { graphql, useStaticQuery } from 'gatsby';
+
 import React from 'react';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+
+import { StaticImage } from "gatsby-plugin-image"
 
 const Container = styled.div`
     width: 420px;
@@ -29,22 +30,14 @@ const Container = styled.div`
 
 const Argonauts = () => {
 
-    const arg = useStaticQuery(graphql`
-    query argo{
-        file(relativePath: { eq: "Argonauts.png" }) {
-        childImageSharp {
-            # Specify the image processing specifications right in the query.
-            fluid {
-            ...GatsbyImageSharpFluid
-            }
-        }
-        }
-    }
-    `);
-
     return (
         <Container>
-            <Img fluid={arg.file.childImageSharp.fluid} alt="Argonauts flying on a ship" />
+            <StaticImage
+                src="../../../images/Argonauts.png"
+                alt="The Execution Stack - a stack of isles with waterfalls"
+                placeholder="tracedSVG"
+                fullWidth
+        />
         </Container>
     )
 }

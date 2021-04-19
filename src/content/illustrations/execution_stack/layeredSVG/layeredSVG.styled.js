@@ -1,12 +1,12 @@
 
 import styled from 'styled-components';
-import ECstack from '../../../../images/ECI_base.svg';
+// import ECstack from '../../../../images/ECI_base.svg';
 import React from 'react';
 import AnemoneIsland from './layers/anemone.styled';
 import ObjectIsland from './layers/objectIsland.styled';
 import Ship from './layers/ship.styled';
 import Submarine from './layers/submarine.styled';
-
+import { StaticImage } from "gatsby-plugin-image"
 
 export const SVGContainer = styled.div`
     width: 85%;
@@ -87,14 +87,15 @@ export const SVGContainer = styled.div`
     }
 `;
 
-const ExecutionContextIsle = styled(ECstack)`
-    width: 100%;
-    height: auto;
-`
 
 const LayeredSVG = () => (
     <SVGContainer>
-        <ExecutionContextIsle/>
+        <StaticImage
+            src="../../../../images/Isles.png"
+            alt="The Execution Stack - a stack of isles with waterfalls"
+            placeholder="tracedSVG"
+            fullWidth
+        />
         <AnemoneIsland />
         <ObjectIsland />
         <Ship islandBottom/>

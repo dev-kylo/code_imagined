@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { graphql, useStaticQuery } from "gatsby";
-import Img from 'gatsby-image';
+import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
 import gsap from "gsap";
 
@@ -42,18 +41,6 @@ const SubBottom = styled.div`
 `
 
 const Submarine = (props) => {
-    const submarineImage = useStaticQuery(graphql`
-    query sub{
-        file(relativePath: { eq: "submarine.png" }) {
-        childImageSharp {
-            # Specify the image processing specifications right in the query.
-            fluid {
-            ...GatsbyImageSharpFluid
-            }
-        }
-        }
-    }
-    `);
 
     useEffect(() => {
      
@@ -83,7 +70,12 @@ const Submarine = (props) => {
         return (
             <SubTop>
                 <div id="subtop">
-                    <Img fluid={submarineImage.file.childImageSharp.fluid} alt="Code Imagined" />
+                <StaticImage
+                    src="../../../../../images/submarine.png"
+                    alt="The Execution Stack - a stack of isles with waterfalls"
+                    placeholder="tracedSVG"
+                    fullWidth
+                />
                 </div>
             </SubTop>
         )
@@ -92,7 +84,12 @@ const Submarine = (props) => {
         return (
             <SubMiddle>
                 <div id="submiddle">
-                    <Img fluid={submarineImage.file.childImageSharp.fluid} alt="Code Imagined" />
+                    <StaticImage
+                        src="../../../../../images/submarine.png"
+                        alt="The Execution Stack - a stack of isles with waterfalls"
+                        placeholder="tracedSVG"
+                        fullWidth
+                    />
                 </div>
             </SubMiddle>
         )
@@ -100,7 +97,12 @@ const Submarine = (props) => {
     else return (
         <SubBottom>
             <div id="subbottom">
-                <Img fluid={submarineImage.file.childImageSharp.fluid} alt="Code Imagined" />
+                <StaticImage
+                        src="../../../../../images/submarine.png"
+                        alt="The Execution Stack - a stack of isles with waterfalls"
+                        placeholder="tracedSVG"
+                        fullWidth
+                />
             </div>
         </SubBottom>
     )

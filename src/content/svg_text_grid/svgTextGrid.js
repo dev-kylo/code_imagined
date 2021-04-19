@@ -1,16 +1,15 @@
 import React, { lazy } from "react";
 
 import { LandingGrid, GridArea } from '../../components/grid/grids.styled';
-import { P } from "../../components/UI/text.styled";
 import Intro from '../text/intro';
 import Learn from '../text/learn';
 import Difficult from '../text/difficult';
 import Model from '../text/model';
 import Knowledge from '../text/knowledge';
-import Fallback from '../../components/fallback';
+// import Fallback from '../../components/fallback';
+import ExecutionStack from '../illustrations/execution_stack/executionStack';
 
-const ExecutionStack =  lazy(() => import('../illustrations/execution_stack/executionStack'));
-const GeniePrototype = lazy(() => import('../illustrations/prototype_genie/prototypeGenie'));
+import GeniePrototype from '../illustrations/prototype_genie/prototypeGenie';
 const Invocation = lazy(() => import( '../illustrations/invocation/Invocation'));
 const RainIsland = lazy(() => import( '../illustrations/rain_island/rainIsland'));
 const RockIsland = lazy(() => import('../illustrations/rock_island/rockIsland'));
@@ -20,21 +19,14 @@ const SvgTextGrid = () => {
   return (
         <LandingGrid>
           <GridArea name="svg1" color="#01140F">
-            {!isSSR && 
-              (<React.Suspense fallback={<Fallback />}>
-                <ExecutionStack />
-              </React.Suspense>)} 
+              <ExecutionStack />
               <Intro mobile />
           </GridArea>
           <GridArea  name="svg1_text" color="#041440">
             <Intro />
           </GridArea>
             <GridArea  name="svg2" color="#008578">
-          {!isSSR && (
-            <React.Suspense fallback={<div>Loading...</div>}>
               <GeniePrototype />
-            </React.Suspense>
-          )}
             </GridArea>
             <GridArea  name="svg2_text" color="#5F5980">
               <Learn />

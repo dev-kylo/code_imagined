@@ -1,6 +1,5 @@
 import React from 'react';
-import { graphql, useStaticQuery } from "gatsby";
-import Img from 'gatsby-image';
+import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
 
 
@@ -13,24 +12,16 @@ const ObjectI = styled.div`
     width: 25%;
 `
 
-const ObjectIsland = () => {
-const obj = useStaticQuery(graphql`
-query objectIsland {
-    file(relativePath: { eq: "Object_island.png" }) {
-    childImageSharp {
-        # Specify the image processing specifications right in the query.
-        fluid {
-        ...GatsbyImageSharpFluid
-        }
-    }
-    }
-}
-`);
-return (
+const ObjectIsland = () => (
     <ObjectI>
-        <Img fluid={obj.file.childImageSharp.fluid} alt="Code Imagined" />
+        <StaticImage
+            src="../../../../../images/Object_island.png"
+            alt="The Execution Stack - a stack of isles with waterfalls"
+            placeholder="tracedSVG"
+            fullWidth
+        />
     </ObjectI>
 )
-}
+
 
 export default ObjectIsland;
