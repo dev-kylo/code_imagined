@@ -6,16 +6,13 @@ import gsap from "gsap";
 
 const SubTop = styled.div`
     position: absolute;
-    top: 0%;
+    top: 4%;
     left: 20%;
     transform: scaleX(-1) rotate(30deg);
     z-index: 2000;
     width: 5%;
 
-    @media (max-width: 700px){
-        top: -15%;
-        left: 65%;
-    }
+
 `
 
 const SubMiddle = styled.div`
@@ -27,13 +24,13 @@ const SubMiddle = styled.div`
     width: 8%;
     @media (max-width: 700px){
         top: 22%;
-        right: 65%;
+        right: 10%;
     }
 `
 
 const SubBottom = styled.div`
     position: absolute;
-    bottom: 70%;
+    top: 25%;
     left: 18%;
     z-index: 2000;
     width: 11%;
@@ -53,16 +50,16 @@ const Submarine = (props) => {
         });
         gsap.to('#submiddle', {
             duration: 20,
-            delay: 5,
-            x: -40,
-            y: 80,
+            x: '-40%',
+            y: '90%',
             ease: "Power1.easeInOut"
         })
         gsap.to('#subbottom', {
-            duration: 40,
+            duration: 30,
             delay: 0,
-            x: 170,
-            ease: "Power1.easeIn"
+            x: '-150%',
+            y: '150%',
+            ease: "Power1.easeInOut"
         })
     })
     

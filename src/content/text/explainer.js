@@ -12,6 +12,10 @@ const TextContainer = styled.section `
     padding: 2em;
     margin-bottom: 1em;
     background-color:${props => props.theme.colors.navy};
+    @media(max-width: 800px){
+        padding: 1em;
+        width: 80%;
+    }
 `
 
 const Explainer = () => {

@@ -94,7 +94,7 @@ const LayeredSVG = () => (
             src="../../../../images/Isles.png"
             alt="The Execution Stack - a stack of isles with waterfalls"
             placeholder="tracedSVG"
-            fullWidth
+            layout="fullWidth"
         />
         <AnemoneIsland />
         <ObjectIsland />
@@ -122,7 +122,7 @@ const LayeredSVG = () => (
              }}
             animation={{
                 duration: 20,
-                x: -50,
+                x: 50,
                 ease: "Power1.easeInOut"
             }}
         />

@@ -45,5 +45,9 @@ export const CallOut = styled.div`
      & p {
         color:${props => props.theme.colors.navy};
      }
+
+     @media(max-width: 800px){
+         margin: 0.5em;
+     }
 `;
 

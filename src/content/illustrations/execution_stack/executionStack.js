@@ -75,7 +75,7 @@ const ExecutionStack = (props) => {
         // props.tl.add(foaming(foam));
         // props.tl.add(dropletSpray(drops));
         // props.tl.add(rootGrow(roots));
-    })
+    }, [])
      
     
     return (
