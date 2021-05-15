@@ -6,10 +6,9 @@ import Learn from '../text/learn';
 import Difficult from '../text/difficult';
 import Model from '../text/model';
 import Knowledge from '../text/knowledge';
-// import Fallback from '../../components/fallback';
 import ExecutionStack from '../illustrations/execution_stack/executionStack';
-
 import GeniePrototype from '../illustrations/prototype_genie/prototypeGenie';
+
 const Invocation = lazy(() => import( '../illustrations/invocation/Invocation'));
 const RainIsland = lazy(() => import( '../illustrations/rain_island/rainIsland'));
 const RockIsland = lazy(() => import('../illustrations/rock_island/rockIsland'));

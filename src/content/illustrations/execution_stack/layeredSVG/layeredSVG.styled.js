@@ -98,8 +98,34 @@ const LayeredSVG = () => (
         />
         <AnemoneIsland />
         <ObjectIsland />
-        <Ship islandBottom/>
-        <Ship islandTop />
+        <Ship 
+            position={{
+                left:"45%", 
+                bottom:"47%",
+                transform:"rotate(5deg)",
+                size:"medium", 
+                id:"shipbottom"
+            }}
+            animation={{
+                duration: 50,
+                x: 100,
+                ease: "Power1.easeOut"
+            }}
+        />
+        <Ship 
+            position={{
+                left:"45%",
+                bottom:"80%", 
+                transform:"scaleX(-1)" ,
+                size:"small",
+                id:"shiptop",
+             }}
+            animation={{
+                duration: 20,
+                x: -50,
+                ease: "Power1.easeInOut"
+            }}
+        />
         <Submarine subtop/>
         <Submarine submiddle/>
         <Submarine subbottom/>

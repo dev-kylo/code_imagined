@@ -12,8 +12,7 @@ const withAnimationContext = (Cmp, withScrollTrigger = false) => {
         useEffect(() => {
             if (withScrollTrigger){
                 if ( animationsTurnedOn && props.beginAnimation){
-                    if (props.restart){
-                        console.log('restarting')
+                    if (props.restart && !mainTl.isActive()){
                         mainTl.restart();
                     }
                     else mainTl.play();
@@ -22,7 +21,7 @@ const withAnimationContext = (Cmp, withScrollTrigger = false) => {
                     mainTl.pause();
                 }
             }
-            else {
+            else {  
                 if ( animationsTurnedOn ){
                     mainTl.play();
                 }

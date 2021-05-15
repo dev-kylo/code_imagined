@@ -1,11 +1,9 @@
 import React from 'react';
-import { graphql, useStaticQuery } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image"
 import { H1, H2 } from '../../components/UI/headings.styled';
 import { P } from '../../components/UI/text.styled';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { DesktopDisplay, MobileDisplay} from '../../components/UI/containers.styled';
-
 
 const Logo = styled.div`
     width: 200px;
@@ -49,25 +47,17 @@ const Container = styled.section`
 
 
 const Intro = props => {
-    console.log(props.mobile)
-    const data = useStaticQuery(graphql`
-        query MyQuery {
-            file(relativePath: { eq: "small_logo.png" }) {
-            childImageSharp {
-                # Specify the image processing specifications right in the query.
-                fluid {
-                ...GatsbyImageSharpFluid
-                }
-            }
-            }
-        }
-    `);
     if (props.mobile){
         return (
         <MobileDisplay>
             <Container>
                     <Logo>
-                        <Img fluid={data.file.childImageSharp.fluid} alt="Code Imagined" />
+                        <StaticImage
+                            src="../../images/small_logo.png"
+                            alt="The Execution Stack - a stack of isles with waterfalls"
+                            placeholder="blurred"
+                            fullWidth
+                        />
                     </Logo>
                     <Title>
                         <H1>A visual javascript mental model</H1>
@@ -84,7 +74,12 @@ const Intro = props => {
             <Container>
                 <DesktopDisplay>
                     <Logo>
-                        <Img fluid={data.file.childImageSharp.fluid} alt="Code Imagined" />
+                        <StaticImage
+                            src="../../images/small_logo.png"
+                            alt="The Execution Stack - a stack of isles with waterfalls"
+                            placeholder="blurred"
+                            fullWidth
+                        />
                     </Logo>
                 </DesktopDisplay>
                 <Title>

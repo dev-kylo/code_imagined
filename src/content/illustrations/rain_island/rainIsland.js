@@ -97,8 +97,6 @@ const RainIsland = (props) => {
         const cloud = refo.querySelector('#cloud');
         const rain = refo.querySelectorAll('#rain path');
         const toppuddle = refo.querySelector('#toppuddle'); 
-        console.log('top puddle')
-        console.log(toppuddle)
         props.tl.add(rainAnimation(cloud, rain, puddle, toppuddle));
 
     //    const timer = setTimeout(() => {
@@ -108,7 +106,7 @@ const RainIsland = (props) => {
 
         // return clearTimeout(timer);
         
-    });  
+    }, [props.tl]);  
 
     return (
         <div ref={(el) => (refo = el)}>

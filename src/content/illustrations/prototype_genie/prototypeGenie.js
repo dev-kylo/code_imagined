@@ -1,17 +1,21 @@
-import React from 'react';
-// import React, { useEffect, useRef } from 'react';
-// import prototype_svg from '../../../images/prototype_c.svg';
-// import styled from 'styled-components';
-// import gsap from "gsap";
-import withAnimationContext from '../../../hoc/withAnimationContext';
-import withAnimateOnScroll from '../../../hoc/withAnimateOnScroll';
+import React, { useEffect } from 'react';
+import gsap from "gsap";
 import styled from 'styled-components';
 import Prototype from './prototype';
+import LightBeam from '../lightbeam/lightbeam';
+import withAnimationContext from '../../../hoc/withAnimationContext';
+import withAnimateOnScroll from '../../../hoc/withAnimateOnScroll';
 
+const BeamContainer = styled.div`
+    position: absolute;
+    top: 38%;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    right: 60%;
+`
 
-const PrototypeGenie = (props) => {
-
-    const Container = styled.div`
+const Container = styled.div`
     width: 55%;
     position: absolute;
     z-index: 10;
@@ -48,30 +52,35 @@ const PrototypeGenie = (props) => {
     }
 `
 
-    // const moveBeam = (beam) => {
-    //     gsap.set(beam, {transformOrigin: '95% 3%'})
-    //     const tl = gsap.timeline();
-    //     tl.addLabel("start")
-    //     tl.to(beam, {
-    //         rotate: 70, 
-    //         duration: 4,
-    //         ease: 'power2.easeOut'
-    //     });
-    //     tl.to(beam, {
-    //         rotate: 40, 
-    //         duration: 6,
-    //         ease: 'power2.easeOut'
-    //     });
-    //     return tl;
-    // }
+const PrototypeGenie = (props) => {
 
-    // useEffect(() => {
-    //     const beam = refo.querySelector('#beam');
-    //     props.tl.add(moveBeam(beam));
-    // });
+    let beam;
+
+    const moveBeam = () => {
+        gsap.set(beam, {transformOrigin: '95% 3%'})
+        const tl = gsap.timeline();
+        tl.to(beam, {
+            rotate: 30, 
+            duration: 2,
+            ease: 'power2.easeOut'
+        });
+        tl.to(beam, {
+            rotate: 40, 
+            duration: 4,
+            ease: 'power2.easeOut'
+        });
+        return tl;
+    }
+
+    useEffect(() => {
+        props.tl.add(moveBeam(beam));
+    });
 
     return (
         <Container>
+            <BeamContainer ref={(el) => (beam = el)}>
+                <LightBeam />
+            </BeamContainer>
             <Prototype />
         </Container>
     )
