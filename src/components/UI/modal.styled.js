@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Layer } from 'react-layers-manager';
 import styled from 'styled-components';
 import FocusTrap from 'focus-trap-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' ;
+import { SignupContext } from '../../context/toggle';
 
 
 const Backdrop = styled.div`
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 100;
+    z-index: 1000000000000;
     left: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
@@ -34,7 +35,7 @@ const ModalContent = styled.div`
     max-height: 85%;
     overflow-y: scroll;
     z-index: 100000;
-
+    transition: max-height 4s ease-in;
     @media (max-width: 800px){
         padding: 15px;
         min-width: 70%;
@@ -58,25 +59,36 @@ const ExitButton = styled.button`
 
 
 const Modal = props => {
+
+    const visible = useContext(SignupContext).visible;
+    const exit = useContext(SignupContext).exit;
     
     const clickHandler = (e) => {
         e.preventDefault();
+        console.log(e.target)
         console.log(props.exit);
-        props.exit()
+        if (props.exitCb) props.exitCb()
+        exit();
     }
 
+    
 
-    if (!props.show) return null;
 
+    const exitBtn = (
+        <ExitButton onClick={(e) => clickHandler(e)}>
+            <FontAwesomeIcon icon='times' size="3x"/>
+        </ExitButton>
+    )
+
+
+    if (!visible) return null;
     else return (
         <Layer>
             <Backdrop role="dialog" aria-modal="true">
                 <FocusTrap>
-                    <ModalContent show={true} >
+                    <ModalContent show={true} smallwindow={!!props.smallwindow} >
                         
-                            <ExitButton onClick={(e) => clickHandler(e)}>
-                                <FontAwesomeIcon icon='times' size="3x"/>
-                            </ExitButton>
+                            {props.hideExitBtn ? null : exitBtn}
                             {props.children}
                         
                     </ModalContent>

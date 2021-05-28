@@ -47,6 +47,12 @@ const GlobalLayout = createGlobalStyle`
     table {
         border-collapse: collapse;
         border-spacing: 0;
+    } 
+    p, a {
+        font-family: ${props => props.theme.fonts.par}
+    }
+    a {
+        font-weight: 900
     }
 `
 

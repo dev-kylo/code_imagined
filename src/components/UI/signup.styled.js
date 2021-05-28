@@ -1,17 +1,13 @@
 
-import React, { useContext } from 'react';
-import { H2 } from './headings.styled';
-import { P } from './text.styled';
-import { Flex, Box, Button} from 'rebass/styled-components';
+import React, { useContext, useState } from 'react';
+import { Flex, Box } from 'rebass/styled-components';
 import { graphql, useStaticQuery } from "gatsby";
 import Img from 'gatsby-image';
-import {
-    Label,
-    Input,
-  } from '@rebass/forms/styled-components'
 import Modal from './modal.styled';
-import { SignupContext } from '../../context/toggle';
 import styled from 'styled-components';
+import addToMailchimp from 'gatsby-plugin-mailchimp';
+import FormResult from './signup-result';
+import Form from './signup-form';
 
 
 const MageContainer = styled.div`
@@ -54,59 +50,74 @@ const MageFunk = () => {
 
 const SignUp = () => {
 
-const visible = useContext(SignupContext).visible;
-const exit = useContext(SignupContext).exit;
+const [formStatus, setFormStatus] = useState({ 
+    formSubmitted: false,
+    loading: false,
+    submitHeading: '',
+    submitMessage: ''
+})
+
+
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus({ 
+        ...formStatus,
+        loading: true,
+        formSubmitted: true,
+        submitHeading: '',
+        submitMessage: 'Performing some functional magic...'
+    })
     
+    const first = e.target.elements['fname'].value;
+    const sur = e.target.elements['sname'].value;
+    const email = e.target.elements['email'].value;
+    const response = await addToMailchimp(email, {  FNAME: first, LNAME: sur});
+    
+    setFormStatus({ 
+        submitHeading: response.result === 'success' ? 'Woohoo!' : 'Oh no!',
+        loading: false,
+        formSubmitted: true,
+        submitMessage: response.result === 'success' ? 'Check your email. Make sure to look in your Promotions and Spam folders.' : createErrorMessage(response.msg)
+    })
+
+
+    //    let result;
+//    const timer = await setTimeout(() => {
+//     setFormStatus({ 
+//         submitHeading: result === 'success' ? '' : 'Woohoo!',
+//         loading: false,
+//         formSubmitted: true,
+//         submitMessage: 'Check your email.',  
+//     })
+//    }, 5000)
+    
+  }
+
+const createErrorMessage = (str) => {
+    if (str.includes('already subscribed'))
+        return 'Looks like you are already subscribed!'
+    else return str;
+}
+
+const exitSignup = () => {
+    setFormStatus({ 
+        submitHeading: '',
+        loading: false,
+        formSubmitted: false,
+        submitMessage: '',  
+    })
+}
+
     return (
-        <Modal show={visible} exit={() => exit()}>
+        <Modal hideExitBtn={formStatus.loading} smallwindow={formStatus.formSubmitted} exitCb={() => exitSignup()}>
             <Flex flexWrap="wrap">
                 <Box bg="black" height={['0%', '0%', '100%','100%']} width={[1,1,1/3, 1/3]}  sx={{ position: 'absolute', bottom: '0', left: '0'}}>
-                    <MageFunk />
+                    {formStatus.formSubmitted ? null : <MageFunk />} 
                 </Box>
                 <Box width={[1,1, 1/3, 1/3]}></Box>
                 <Box p="1rem" pl={['0', '0', '0.5rem', '2rem']} width={[1, 1, 2/3, 2/3]} >
-                    <H2 dark>The Great Sync is waiting</H2>
-                    <P small dark>Enter this world with me and explore Javascript.</P>
-                    <P small dark>Sign up for an introduction to The Great Sync.</P>
-                    <Box
-                        as='form'
-                        onSubmit={e => e.preventDefault()}
-                        py={3}>
-                        <Flex flexDirection="column" mx={-2} mb={3}>
-                            <Box width={1} px={2}>
-                                <Label mb="0.4rem" htmlFor='name'>First Name</Label>
-                                <Input
-                                    id='fname'
-                                    name='fname'
-                                    required
-                                />
-                            </Box>
-                            <Box m="1rem 0" width={1} px={2}>
-                                <Label mb="0.4rem " htmlFor='name'>Last Name</Label>
-                                <Input
-                                    id='sname'
-                                    name='sname'
-                                    required
-                                />
-                            </Box>
-                            <Box width={1} px={2}>
-                            <Label mb="0.4rem" htmlFor='email'>Email</Label>
-                            <Input
-                                id='email'
-                                name='email'
-                                type='email'
-                                required
-                            />
-                            </Box>
-                            <Box px={2} ml='auto'>
-                                <Flex width="100%" justifyContent='center'>
-                                    <Button variant='signup'>
-                                        Let's do it
-                                    </Button>
-                                </Flex>
-                            </Box>
-                        </Flex>
-                        </Box>
+                    {formStatus.formSubmitted ? <FormResult heading={formStatus.submitHeading} text={formStatus.submitMessage}/> : <Form submit={handleSubmit}/>}
                 </Box>
             </Flex>
         </Modal>
@@ -114,3 +125,4 @@ const exit = useContext(SignupContext).exit;
                 };
 
 export default SignUp;
+

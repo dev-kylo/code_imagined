@@ -19,7 +19,7 @@ export const theme = {
         navy: '#041440'
     },
     fonts: {
-        heading1    : "'Playfair Display', serif",
+        heading1: "'Playfair Display', serif",
         heading2: "font-family: 'Jockey One', sans-serif",
         par: "'Raleway', sans-serif"
     },

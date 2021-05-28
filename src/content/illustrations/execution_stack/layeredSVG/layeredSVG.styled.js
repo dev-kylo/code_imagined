@@ -121,9 +121,9 @@ const LayeredSVG = () => (
                 id:"shiptop",
              }}
             animation={{
-                duration: 20,
-                x: 50,
-                ease: "Power1.easeInOut"
+                duration: 40,
+                x:150,
+                ease: "Power1.easeOut"
             }}
         />
         <Submarine subtop/>

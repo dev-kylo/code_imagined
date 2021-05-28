@@ -63,7 +63,7 @@ const RainIsland = (props) => {
         });
 
         tl.from(cloud, {
-            delay: 1.5,
+            delay: 0.5,
             x: 500,
             duration: 3,
             ease: 'power2.easeOut'
@@ -98,13 +98,6 @@ const RainIsland = (props) => {
         const rain = refo.querySelectorAll('#rain path');
         const toppuddle = refo.querySelector('#toppuddle'); 
         props.tl.add(rainAnimation(cloud, rain, puddle, toppuddle));
-
-    //    const timer = setTimeout(() => {
-    //         props.tl.pause();
-    //         clearTimeout(timer);
-    //     }, 11000)
-
-        // return clearTimeout(timer);
         
     }, [props.tl]);  
 

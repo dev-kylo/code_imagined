@@ -12,6 +12,7 @@ import { LayersManager } from 'react-layers-manager'
 import ModalContext from '../context/toggle';
 import '../utils/fontawesome';
 import FadeOnScroll from "../hoc/fadeOnScroll";
+import Footer from "../components/UI/footer.styled";
 
 
 const Home = () => {
@@ -33,6 +34,7 @@ const Home = () => {
           </Layout>
         </LayersManager>
       </FadeOnScroll>
+      <Footer />
     </ThemeProvider>
   )
 }
