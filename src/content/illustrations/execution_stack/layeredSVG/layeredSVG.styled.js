@@ -7,6 +7,7 @@ import ObjectIsland from './layers/objectIsland.styled';
 import Ship from './layers/ship.styled';
 import Submarine from './layers/submarine.styled';
 import { StaticImage } from "gatsby-plugin-image"
+import LightHouseBeams from './layers/lighthouses.styled';
 
 export const SVGContainer = styled.div`
     width: 85%;
@@ -129,6 +130,7 @@ const LayeredSVG = () => (
         <Submarine subtop/>
         <Submarine submiddle/>
         <Submarine subbottom/>
+        <LightHouseBeams />
     </SVGContainer>
 );
 
