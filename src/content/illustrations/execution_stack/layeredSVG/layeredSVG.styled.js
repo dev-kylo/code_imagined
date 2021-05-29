@@ -139,4 +139,4 @@ const LayeredSVG = () => (
     </SVGContainer>
 );
 
-export default LayeredSVG;
+export default React.memo(LayeredSVG);

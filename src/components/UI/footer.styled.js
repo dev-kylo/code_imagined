@@ -44,6 +44,7 @@ const FooterContainer = styled.footer`
             margin: 0;
             padding: 0;
             font-size: 18px; 
+            text-decoration: none;
             color: ${props => props.theme.colors.pink};
         }
 
