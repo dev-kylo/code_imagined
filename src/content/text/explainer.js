@@ -18,23 +18,33 @@ const TextContainer = styled.section `
     }
 `
 
+const Heading = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+
+    div {
+        padding: 2em;
+        background-color: ${props => props.theme.colors.green};
+
+         h2 {
+            margin: 0;
+        }
+    }
+`
+
 const Explainer = () => {
 
     const showSignUp = useContext(SignupContext).show;
 
-    // const signUp = () => {
-    //     fetch('https://wizardly-einstein-c1d2c9.netlify.app/.netlify/functions/signup')
-    //     .then(res => res.json())
-    //     .then((res) => {
-    //         console.log(res.message)
-    //         return res;
-    //     })
-    // }
-
     return (
         <TextContainer>
             
-            <H2 center large><Hl large green>The Great Sync</Hl></H2>
+            <Heading>
+                <div>
+                    <H2 center large>The Great Sync</H2>
+                </div>
+            </Heading>
             <P>Hi!</P>
                 <P>I'm Kylo. I am a Javascript developer, and have been for many years. 
                     That said, I am not a guru. I have not worked for Google. 

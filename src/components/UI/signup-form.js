@@ -1,5 +1,5 @@
 import React from 'react';
-import { H2 } from './headings.styled';
+import { H3 } from './headings.styled';
 import { P } from './text.styled';
 import { Flex, Box, Button} from 'rebass/styled-components';
 import {
@@ -9,9 +9,8 @@ import {
 
 const Form = (props) => (
     <>
-    <H2 dark>The Great Sync is waiting</H2>
-    <P small dark>Let's get to know Javascript reeealllly well.</P>
-    <P small dark>Sign up for an introduction.</P>
+    <H3 dark>The Great Sync is waiting</H3>
+    <P small dark style={{'margin-bottom': '1em'}}>Sign up to take your first steps into this world.</P>
     <Box
         as='form'
         onSubmit={e => props.submit(e)}

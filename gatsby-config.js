@@ -10,7 +10,6 @@ module.exports = {
     description: `Building a visual mental model for learning javascript. Javascript is difficult and these resources can help build confidence and knowledge of the language.`,
     author: `Kylo Robinson - @kylorobs`,
   },
-  /* Your site config here */
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
@@ -23,18 +22,6 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       }
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `TheGreatSync`,
-        short_name: `GreatSync`,
-        start_url: `/`,
-        background_color: `#041440`,
-        icon: `src/images/favicon.png`,
-        theme_color: `#a2466c`,
-        display: `standalone`,
-      },
     },
     {
       resolve: "gatsby-plugin-react-svg",

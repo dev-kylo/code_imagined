@@ -116,7 +116,7 @@ const exitSignup = () => {
                     {formStatus.formSubmitted ? null : <MageFunk />} 
                 </Box>
                 <Box width={[1,1, 1/3, 1/3]}></Box>
-                <Box p="1rem" pl={['0', '0', '0.5rem', '2rem']} width={[1, 1, 2/3, 2/3]} >
+                <Box p="1rem 0" pl={['0', '0', '0.5rem', '2rem']} width={[1, 1, 2/3, 2/3]} >
                     {formStatus.formSubmitted ? <FormResult heading={formStatus.submitHeading} text={formStatus.submitMessage}/> : <Form submit={handleSubmit}/>}
                 </Box>
             </Flex>

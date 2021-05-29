@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { DesktopDisplay, MobileDisplay} from '../../components/UI/containers.styled';
 
 const Logo = styled.div`
-    width: 200px;
+    width: 160px;
     height: auto;
     display: block;
     margin: 2em auto;
@@ -23,13 +23,14 @@ const Title = styled.div`
     display: inline-block;
     padding: 2em;
     padding-top: 0;
-
+    z-index: 100;
     & h1 {
         margin-top: 0;
     }
 
     @media (max-width: 600px){
         padding: 1em;
+        padding-top: 0;
     }
 `
 
@@ -60,9 +61,9 @@ const Intro = props => {
                         />
                     </Logo>
                     <Title>
-                        <H1>A visual javascript mental model</H1>
+                        <H1>The Great Sync for Javascript</H1>
                         <DesktopDisplay>
-                        <P>Using the power of your imagination to build a visual and memorable understanding of javascript, to help you read, comprehend and ultimately build programs.</P>
+                        <P>Using the power of your imagination to build a visual and memorable mental model of javascript, to help you read, comprehend and ultimately build programs.</P>
                         </DesktopDisplay>
                     </Title>
             </Container>
@@ -84,12 +85,12 @@ const Intro = props => {
                 </DesktopDisplay>
                 <Title>
                     <DesktopDisplay>
-                        <H1>A visual javascript mental model</H1>
+                        <H1>The Great Sync for Javascript</H1>
                     </DesktopDisplay>
                     <MobileDisplay>
                         <H2> Build a foundation</H2>
                     </MobileDisplay>
-                    <P>Using the power of your imagination to build a visual and memorable understanding of javascript, to help you read, comprehend and ultimately build programs.</P>
+                    <P>Using the power of your imagination to build a visual and memorable mental model of javascript, to help you read, comprehend and ultimately build programs.</P>
                 </Title>
             </Container>
         )
