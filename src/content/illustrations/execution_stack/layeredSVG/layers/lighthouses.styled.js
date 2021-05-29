@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import LightBeam from '../../../lightbeam/lightbeam';
-
+import gsap from "gsap";
+import withAnimationContext from '../../../../../hoc/withAnimationContext';
+import withAnimateOnScroll from '../../../../../hoc/withAnimateOnScroll';
 
 const LightBeam1 = styled.div`
     position: absolute;
@@ -38,22 +40,47 @@ const LightBeam4 = styled.div`
     width: 8%;
 `
 
-const LightHouseBeams = () => (
-    <>
-        <LightBeam4>
-            <LightBeam />
-        </LightBeam4>
-        <LightBeam3>
-            <LightBeam />
-        </LightBeam3>
-        <LightBeam2>
-            <LightBeam />
-        </LightBeam2>
-        <LightBeam1>
-            <LightBeam />
-        </LightBeam1>
-    </>
-)
+const LightHouseBeams = (props) => {
+    let lightEls = useRef(null);
+
+    const alternateBeams = (beams) => {
+        const tl = gsap.timeline();
+        tl.from(beams, {
+            opacity: 0,
+            delay: 1,
+            duration: 1,
+            stagger: -1,
+            each: 0.1,
+            repeat: -1
+        });
+        return tl;
+    }
+
+    useEffect(() => {
+        const beams = lightEls.querySelectorAll('div[class*="lighthousesstyled"]');
+        props.tl.add(alternateBeams(beams));
+    }, [])
+
+    return (
+        <div ref={(el) => (lightEls = el)}>
+            <LightBeam4>
+                <LightBeam />
+            </LightBeam4>
+            <LightBeam3>
+                <LightBeam />
+            </LightBeam3>
+            <LightBeam2>
+                <LightBeam />
+            </LightBeam2>
+            <LightBeam1>
+                <LightBeam />
+            </LightBeam1>
+        </div>
+    )
+}
 
 
-export default LightHouseBeams;
+
+
+
+export default withAnimateOnScroll(withAnimationContext(LightHouseBeams, true), true, true);;
