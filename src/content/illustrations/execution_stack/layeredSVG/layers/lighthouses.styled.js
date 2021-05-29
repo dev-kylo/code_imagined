@@ -58,7 +58,6 @@ const LightHouseBeams = (props) => {
                 opacity: 1,
                 duration: 2,
                 stagger: -1,
-                each: 0.3,
                 repeat: -1 
             });
             return tl;

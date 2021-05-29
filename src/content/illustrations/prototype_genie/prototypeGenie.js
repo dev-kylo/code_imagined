@@ -56,25 +56,24 @@ const PrototypeGenie = (props) => {
 
     let beam;
 
-    const moveBeam = () => {
-        gsap.set(beam, {transformOrigin: '95% 3%'})
-        const tl = gsap.timeline();
-        tl.to(beam, {
-            rotate: 30, 
-            duration: 2,
-            ease: 'power2.easeOut'
-        });
-        tl.to(beam, {
-            rotate: 40, 
-            duration: 4,
-            ease: 'power2.easeOut'
-        });
-        return tl;
-    }
-
     useEffect(() => {
+        const moveBeam = () => {
+            gsap.set(beam, {transformOrigin: '95% 3%'})
+            const tl = gsap.timeline();
+            tl.to(beam, {
+                rotate: 30, 
+                duration: 2,
+                ease: 'power2.easeOut'
+            });
+            tl.to(beam, {
+                rotate: 40, 
+                duration: 4,
+                ease: 'power2.easeOut'
+            });
+            return tl;
+        }
         props.tl.add(moveBeam(beam));
-    });
+    }, [props]);
 
     return (
         <Container>

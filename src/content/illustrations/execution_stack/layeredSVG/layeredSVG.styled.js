@@ -1,6 +1,5 @@
 
 import styled from 'styled-components';
-// import ECstack from '../../../../images/ECI_base.svg';
 import React from 'react';
 import AnemoneIsland from './layers/anemone.styled';
 import ObjectIsland from './layers/objectIsland.styled';

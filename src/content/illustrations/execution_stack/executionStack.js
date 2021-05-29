@@ -3,10 +3,11 @@ import React from 'react';
 import LayeredSVG from './layeredSVG/layeredSVG.styled';
 
 const ExecutionStack = () => {
+    console.log('Rendering Exwecution Stack')
     return <LayeredSVG/>
 }
 
-export default ExecutionStack;
+export default React.memo(ExecutionStack);
 
 
 
