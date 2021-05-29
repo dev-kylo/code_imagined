@@ -8,6 +8,7 @@ import Ship from './layers/ship.styled';
 import Submarine from './layers/submarine.styled';
 import { StaticImage } from "gatsby-plugin-image"
 import LightHouseBeams from './layers/lighthouses.styled';
+import VolcanoIsland from './layers/volacono.styled';
 
 export const SVGContainer = styled.div`
     width: 85%;
@@ -98,6 +99,7 @@ const LayeredSVG = () => (
             layout="fullWidth"
         />
         <AnemoneIsland />
+        <VolcanoIsland />
         <ObjectIsland />
         <Ship 
             position={{

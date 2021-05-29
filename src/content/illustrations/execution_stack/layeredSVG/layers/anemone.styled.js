@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 const Anemone = styled.div`
     position: absolute;
-    bottom: 57%;
+    bottom: 55%;
     left: 21%;
     z-index: 2000;
-    width: 7%;
+    width: 9%;
 `
 
 export const AnemoneIsland = () =>  (

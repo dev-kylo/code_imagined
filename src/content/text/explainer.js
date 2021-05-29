@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components';
-import {Hl, P, CallOut } from '../../components/UI/text.styled';
+import {P, CallOut } from '../../components/UI/text.styled';
 import {Button} from '../../components/UI/button.styled';
 import { SignupContext } from '../../context/toggle';
 import { H2 } from '../../components/UI/headings.styled';

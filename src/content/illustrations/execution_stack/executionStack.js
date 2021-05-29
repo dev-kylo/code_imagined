@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 // import gsap from "gsap";
 import LayeredSVG from './layeredSVG/layeredSVG.styled';
 import withAnimateOnScroll from '../../../hoc/withAnimateOnScroll';
@@ -64,9 +64,9 @@ import withAnimationContext from '../../../hoc/withAnimationContext';
 // }
 
 const ExecutionStack = (props) => {
-    let refo = useRef(null);
+    // let refo = useRef(null);
 
-    useEffect(() => {
+    // useEffect(() => {
         // const rocks = refo.querySelectorAll('g[id*="rock"]');
         // const roots = refo.querySelectorAll('g[id*="root"]');
         // const drops = refo.querySelectorAll('g[id*="drop"]');
@@ -75,12 +75,12 @@ const ExecutionStack = (props) => {
         // props.tl.add(foaming(foam));
         // props.tl.add(dropletSpray(drops));
         // props.tl.add(rootGrow(roots));
-    }, [])
+    // }, [])
      
     
     return (
-        <div id="executionStack" ref={(el) => (refo = el)}>
-                <LayeredSVG/>
+        <div id="executionStack">
+            <LayeredSVG/>
         </div>
     )
 }

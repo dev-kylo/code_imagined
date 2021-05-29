@@ -8,10 +8,10 @@ import Model from '../text/model';
 import Knowledge from '../text/knowledge';
 import ExecutionStack from '../illustrations/execution_stack/executionStack';
 import GeniePrototype from '../illustrations/prototype_genie/prototypeGenie';
+import { Sphere } from "../illustrations/sphere/sphere";
 
 const Invocation = lazy(() => import( '../illustrations/invocation/Invocation'));
 const RainIsland = lazy(() => import( '../illustrations/rain_island/rainIsland'));
-const RockIsland = lazy(() => import('../illustrations/rock_island/rockIsland'));
 
 const SvgTextGrid = () => {
   const isSSR = typeof window === "undefined"
@@ -51,11 +51,7 @@ const SvgTextGrid = () => {
               <Model />
             </GridArea>
             <GridArea  name="svg5" color="#5F5980">
-            {!isSSR && (
-             <React.Suspense fallback={<div>Loading...</div>}>
-                <RockIsland />
-             </React.Suspense>
-            )}
+                <Sphere />
             </GridArea>
             <GridArea  name="svg5_text" color="#008578">
               <Knowledge />
