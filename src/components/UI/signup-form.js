@@ -10,7 +10,7 @@ import {
 const Form = (props) => (
     <>
     <H3 dark>The Great Sync is waiting</H3>
-    <P small dark style={{'margin-bottom': '1em'}}>Be brave and sign up to take your first steps.</P>
+    <P small dark style={{'margin-bottom': '1em'}}>Be brave and sign up to take your first steps into a world of javascript.</P>
     <Box
         as='form'
         onSubmit={e => props.submit(e)}

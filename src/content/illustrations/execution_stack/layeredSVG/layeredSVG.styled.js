@@ -9,6 +9,8 @@ import Submarine from './layers/submarine.styled';
 import { StaticImage } from "gatsby-plugin-image"
 import LightHouseBeams from './layers/lighthouses.styled';
 import VolcanoIsland from './layers/volacono.styled';
+import RootGrowth from './layers/rootgrowth.styled';
+import Rocks from './layers/rocks';
 
 export const SVGContainer = styled.div`
     width: 85%;
@@ -98,9 +100,11 @@ const LayeredSVG = () => (
             placeholder="tracedSVG"
             layout="fullWidth"
         />
+        <RootGrowth />
         <AnemoneIsland />
         <VolcanoIsland />
         <ObjectIsland />
+        <Rocks />
         <Ship 
             position={{
                 left:"45%", 

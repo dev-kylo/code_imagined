@@ -51,12 +51,12 @@ const LightHouseBeams = (props) => {
             tl.fromTo(beams, {
                 opacity: 0,
                 delay: 3,
-                duration: 1
+                duration: 2
             }, {
         
-                delay: 2,
+                delay: 4,
                 opacity: 1,
-                duration: 1,
+                duration: 2,
                 stagger: -1,
                 each: 0.3,
                 repeat: -1 
