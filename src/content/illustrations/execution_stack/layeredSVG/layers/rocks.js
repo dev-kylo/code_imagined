@@ -15,7 +15,6 @@ const Rocks = ( props ) => {
             // gsap.set(RockElement, {transform: props.transform})
             tl.to(rocks, {
                 duration: 5,
-                delay: 1,
                 x: 10,
                 y: -10,
                 ease: "Power1.easeInOut",

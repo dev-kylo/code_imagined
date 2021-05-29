@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const RootContainer = styled.div`
     position: absolute;
     bottom: 13.5%;
-    right: 12%;
+    right: 20%;
     z-index: 2000;
     width: 8%;
 `
