@@ -62,7 +62,7 @@ const Footer = () => {
     <FooterContainer>
         <hr></hr>
         <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap">
-            <small> made by Kylo Robinson </small>
+            <small> © 2021 The Great Sync - All Rights Reserved</small>
             <small><a href="mailto:kylo@thegreatsync.com">kylo@thegreatsync.com</a></small>
         </Flex>
     </FooterContainer>

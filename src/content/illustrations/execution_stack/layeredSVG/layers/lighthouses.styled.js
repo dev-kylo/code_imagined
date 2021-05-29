@@ -45,13 +45,18 @@ const LightHouseBeams = (props) => {
 
     const alternateBeams = (beams) => {
         const tl = gsap.timeline();
-        tl.from(beams, {
+        tl.fromTo(beams, {
             opacity: 0,
-            delay: 1,
+            delay: 2,
+            duration: 1
+        }, {
+    
+            delay: 2,
+            opacity: 1,
             duration: 1,
             stagger: -1,
-            each: 0.1,
-            repeat: -1
+            each: 0.3,
+            repeat: -1 
         });
         return tl;
     }
