@@ -12,7 +12,7 @@ const Logo = styled.div`
     margin: 2em auto;
 
     @media (min-width: 600px){
-        width: 200px;
+        width: 180px;
         height: auto;
         float: right;
         display: block;

@@ -43,28 +43,29 @@ const LightBeam4 = styled.div`
 const LightHouseBeams = (props) => {
     let lightEls = useRef(null);
 
-    const alternateBeams = (beams) => {
-        const tl = gsap.timeline();
-        tl.fromTo(beams, {
-            opacity: 0,
-            delay: 2,
-            duration: 1
-        }, {
-    
-            delay: 2,
-            opacity: 1,
-            duration: 1,
-            stagger: -1,
-            each: 0.3,
-            repeat: -1 
-        });
-        return tl;
-    }
-
     useEffect(() => {
         const beams = lightEls.querySelectorAll('div[class*="lighthousesstyled"]');
+        
+    const alternateBeams = (beams) => {
+            const tl = gsap.timeline();
+            tl.fromTo(beams, {
+                opacity: 0,
+                delay: 3,
+                duration: 1
+            }, {
+        
+                delay: 2,
+                opacity: 1,
+                duration: 1,
+                stagger: -1,
+                each: 0.3,
+                repeat: -1 
+            });
+            return tl;
+        }
         props.tl.add(alternateBeams(beams));
-    }, [])
+
+    }, [props])
 
     return (
         <div ref={(el) => (lightEls = el)}>

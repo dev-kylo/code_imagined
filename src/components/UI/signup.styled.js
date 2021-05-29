@@ -1,52 +1,11 @@
 
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Flex, Box } from 'rebass/styled-components';
-import { graphql, useStaticQuery } from "gatsby";
-import Img from 'gatsby-image';
 import Modal from './modal.styled';
-import styled from 'styled-components';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import FormResult from './signup-result';
 import Form from './signup-form';
-
-
-const MageContainer = styled.div`
-    position: absolute;
-    bottom: 50%;
-    transform: translate(20%, 50%) scale(1.2);
-    objectFit: cover;
-    z-index: 1000;
-    width: 100%;
-
-    @media (max-width: 500px){
-        // position: initial;
-        // left: 50%;
-        // transform: translate(-50%,50%) scale(0.8);
-        display: none;
-    }
-
-`
-
-
-const MageFunk = () => {
-    const mageFunk = useStaticQuery(graphql`
-        query mage {
-            file(relativePath: { eq: "mage.png" }) {
-            childImageSharp {
-                # Specify the image processing specifications right in the query.
-                fluid {
-                ...GatsbyImageSharpFluid
-                }
-            }
-            }
-        }
-    `)
-    return (
-        <MageContainer>
-            <Img fluid={mageFunk.file.childImageSharp.fluid} alt="Mage Funk character with an invocation orb" />
-        </MageContainer>
-    )
-}
+import MageFunk from '../../content/illustrations/mage/mage';
 
 const SignUp = () => {
 
@@ -56,7 +15,6 @@ const [formStatus, setFormStatus] = useState({
     submitHeading: '',
     submitMessage: ''
 })
-
 
 
 const handleSubmit = async (e) => {

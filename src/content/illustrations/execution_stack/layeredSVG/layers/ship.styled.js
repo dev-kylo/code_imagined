@@ -18,22 +18,23 @@ const Ship = (props) => {
 
     let shipElement = useRef(null);
 
-    const flyShip = () => {
-        const tl = gsap.timeline();
-        gsap.set(shipElement, {transform: props.transform})
-        tl.to(shipElement, {
-            duration: props.animation.duration,
-            delay: props.animation.delay,
-            x: props.animation.x,
-            ease: props.animation.ease
-        });
-
-        return tl;
-    }
 
     useEffect(() => {
+        const flyShip = () => {
+            const tl = gsap.timeline();
+            gsap.set(shipElement, {transform: props.transform})
+            tl.to(shipElement, {
+                duration: props.animation.duration,
+                delay: props.animation.delay,
+                x: props.animation.x,
+                ease: props.animation.ease,
+                yoyo: true
+            });
+    
+            return tl;
+        }
         props.tl.add(flyShip());
-    }, [])
+    }, [props])
 
     return (
         <ShipContainer animation={{...props.animation}} position={{...props.position}}>
