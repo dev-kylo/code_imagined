@@ -6,9 +6,9 @@
 
 module.exports = {
   siteMetadata: {
-    title: `The Great Sync`,
+    title: `The Great Sync Javascript Mental Model`,
     description: `Building a visual mental model for learning javascript. Javascript is difficult and these resources can help build confidence and knowledge of the language.`,
-    author: `Kyle Robinson - @kylorobs`,
+    author: `Kyle Robinson`,
     siteUrl: 'https://thegreatsync.com'
   },
   plugins: [
