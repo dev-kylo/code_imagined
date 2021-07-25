@@ -61,9 +61,9 @@ const Intro = props => {
                         />
                     </Logo>
                     <Title>
-                        <H1>The Great Sync for Javascript</H1>
+                        <H1>The Great Sync Javascript Mental Model</H1>
                         <DesktopDisplay>
-                        <P>Using the power of your imagination to build a visual and memorable mental model of javascript, to help you read, comprehend and ultimately build programs.</P>
+                        <P>Can you build a React app but still find javascript hard? Use your imagination to build a mental model of javascript fundamentals.</P>
                         </DesktopDisplay>
                     </Title>
             </Container>
@@ -85,12 +85,12 @@ const Intro = props => {
                 </DesktopDisplay>
                 <Title>
                     <DesktopDisplay>
-                        <H1>The Great Sync for Javascript</H1>
+                        <H1>The Great Sync Javascript Mental Model</H1>
                     </DesktopDisplay>
                     <MobileDisplay>
                         <H2> Build a foundation</H2>
                     </MobileDisplay>
-                    <P>Using the power of your imagination to build a visual and memorable mental model of javascript, to help you read, comprehend and ultimately build programs.</P>
+                    <P>Can you build a React app but still find javascript hard? Use your imagination to build a mental model of javascript fundamentals.</P>
                 </Title>
             </Container>
         )

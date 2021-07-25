@@ -24,7 +24,7 @@ export const H1 = styled.h1`
         font-size: 75px;
     }
     @media (min-width: 1400px){
-        font-size: 95px;
+        font-size: 85px;
     }
 `
 

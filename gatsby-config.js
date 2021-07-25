@@ -8,7 +8,8 @@ module.exports = {
   siteMetadata: {
     title: `The Great Sync`,
     description: `Building a visual mental model for learning javascript. Javascript is difficult and these resources can help build confidence and knowledge of the language.`,
-    author: `Kylo Robinson - @kylorobs`,
+    author: `Kyle Robinson - @kylorobs`,
+    siteUrl: 'https://thegreatsync.com'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -16,6 +17,7 @@ module.exports = {
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

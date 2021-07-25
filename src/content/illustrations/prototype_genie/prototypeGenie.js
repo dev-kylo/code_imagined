@@ -73,7 +73,7 @@ const PrototypeGenie = (props) => {
             return tl;
         }
         props.tl.add(moveBeam(beam));
-    }, [props]);
+    }, [props, beam]);
 
     return (
         <Container>
