@@ -32,9 +32,9 @@ const SvgTextGrid = () => {
             </GridArea>
             <GridArea  name="svg3" color="pink">
             {!isSSR && (
-             <React.Suspense fallback={<div>Loading...</div>}>
-              <Invocation />
-            </React.Suspense>
+              <React.Suspense fallback={<div>Loading...</div>}>
+                <Invocation />
+              </React.Suspense>
             )}
             </GridArea>
             <GridArea  name="svg3_text" color="#AB3428">
