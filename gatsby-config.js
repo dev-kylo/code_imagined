@@ -17,8 +17,14 @@ module.exports = {
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-open-graph-images`,
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+        exclude: [`/__generated/*`],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

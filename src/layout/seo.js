@@ -8,7 +8,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby";
-import ogImage from '../images/magePreview.jpg';
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -53,7 +52,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `https://thegreatsync.com/${ogImage}`,
+          content: `https://thegreatsync.com/og-image/index.png`,
         },
         {
           name: `twitter:card`,
