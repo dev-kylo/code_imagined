@@ -7,7 +7,8 @@
 
 import React from "react"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
+import ogImage from '../images/magePreview.jpg';
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -25,15 +26,14 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description;
-  console.log(metaDescription)
-
+  const mainTitle = site.siteMetadata.title;
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
       
-      title={site.siteMetadata.title}
+      title={mainTitle}
       meta={[
         {
           name: `description`,
@@ -41,7 +41,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: mainTitle,
         },
         {
           property: `og:description`,
@@ -52,16 +52,20 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `https://thegreatsync.com/${ogImage}`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: `@kylorobs`,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: mainTitle,
         },
         {
           name: `twitter:description`,
