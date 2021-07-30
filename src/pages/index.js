@@ -17,7 +17,7 @@ import Footer from "../components/UI/footer.styled";
 
 const Home = () => {
 
-  const [scrollingDown, setScrollingDown] = useState(false);
+  const [isScrollingDown, setScrollingDown] = useState(false);
 
   return (
     <ThemeProvider theme={theme}>
@@ -26,7 +26,7 @@ const Home = () => {
         <LayersManager>
           <Layout >
             <ModalContext>
-              <Nav scrollingDown={scrollingDown} />
+              <Nav scrollingDown={isScrollingDown} />
               <SvgTextGrid />
               <Explainer />
               <SignUp />

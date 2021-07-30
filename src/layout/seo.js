@@ -24,7 +24,8 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
+  console.log(metaDescription)
 
   return (
     <Helmet
@@ -33,7 +34,6 @@ function SEO({ description, lang, meta, title }) {
       }}
       
       title={site.siteMetadata.title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,

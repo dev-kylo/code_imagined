@@ -7,7 +7,7 @@
 module.exports = {
   siteMetadata: {
     title: `The Great Sync Javascript Mental Model`,
-    description: `Building a visual mental model for learning javascript. Javascript is difficult and these resources can help build confidence and knowledge of the language.`,
+    description: `Building a visual mental model for learning javascript. The Great Sync Javascript mental model will help you break down the fundamental concepts.`,
     author: `Kyle Robinson`,
     siteUrl: 'https://thegreatsync.com'
   },
@@ -17,6 +17,7 @@ module.exports = {
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-manifest`,
