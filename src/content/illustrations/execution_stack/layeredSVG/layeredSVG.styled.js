@@ -18,8 +18,8 @@ function calcWidth(){
 
         let ratio = (+window.innerWidth / +window.innerHeight);
         if (ratio > 1.3){
-            if (ratio > 2) multiplier = 1;
             let multiplier = 5;
+            if (ratio > 2) multiplier = 1;
             let diff = (ratio - 1.3) / 0.1;
             let reduction = diff * multiplier;
     
