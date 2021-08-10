@@ -14,12 +14,11 @@ import Rocks from './layers/rocks';
 function calcWidth(){
     let ratio = (+window.innerWidth / +window.innerHeight);
     if (ratio > 1.3){
-        let multiplier = 5;
         if (ratio > 2) multiplier = 1;
+        let multiplier = 5;
         let diff = (ratio - 1.3) / 0.1;
         let reduction = diff * multiplier;
-        console.log('Ratio: ' + ratio);
-        console.log('Diff: ' + diff.toFixed(0));
+
         return `${Math.max((100 - reduction), 55)}%`;
     }
     // console.log('Reduction: ' + reduction);
