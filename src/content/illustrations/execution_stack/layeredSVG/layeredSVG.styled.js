@@ -11,6 +11,22 @@ import VolcanoIsland from './layers/volacono.styled';
 import RootGrowth from './layers/rootgrowth.styled';
 import Rocks from './layers/rocks';
 
+function calcWidth(){
+    let ratio = (+window.innerWidth / +window.innerHeight);
+    if (ratio > 1.3){
+        let multiplier = 5;
+        if (ratio > 2) multiplier = 1;
+        let diff = (ratio - 1.3) / 0.1;
+        let reduction = diff * multiplier;
+        console.log('Ratio: ' + ratio);
+        console.log('Diff: ' + diff.toFixed(0));
+        return `${Math.max((100 - reduction), 55)}%`;
+    }
+    // console.log('Reduction: ' + reduction);
+    return `${100}%`;
+}
+
+
 export const SVGContainer = styled.div`
     width: 85%;
     left: 8%;
@@ -87,6 +103,10 @@ export const SVGContainer = styled.div`
         top:60%;
         left: 50px;
         width: 55%;
+    }
+
+    @media (orientation: landscape) {
+        width: ${calcWidth()}
     }
 `;
 

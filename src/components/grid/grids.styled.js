@@ -34,16 +34,16 @@ export const LandingGrid = styled.section `
 display: grid;
 grid-template-columns: 1fr;
 grid-template-rows:
-    100vh
-    45vh
-    30vh
-    45vh
-    30vh
-    55vh
-    40vh
-    55vh
-    35vh
-    50vh;
+    minmax(100vh, auto)
+    minmax(45vh, auto)
+    minmax(30vh, auto)
+    minmax(45vh, auto)
+    minmax(30vh, auto)
+    minmax(55vh, auto)
+    minmax(40vh, auto)
+    minmax(55vh, auto)
+    minmax(35vh, auto)
+    minmax(50vh, auto);
 grid-template-areas:
     "svg1"
     "svg1_text"
@@ -55,7 +55,7 @@ grid-template-areas:
     "svg4_text"
     "svg5"
     "svg5_text";
-
+    
 
 @media (min-width: 600px){
     grid-template-columns: 50% 50%;
@@ -72,47 +72,22 @@ grid-template-areas:
     "svg5 svg5_text";
 
     grid-template-rows:
-    70vh
-    10vh 
-    35vh
-    15vh
-    5vh
-    45vh
-    5vh
-    45vh
-    5vh
-    45vh;  
+    minmax(80vh, auto)
+    minmax(10vh, auto) 
+    minmax(35vh, auto) 
+    minmax(15vh, auto) 
+    minmax(5vh, auto) 
+    minmax(45vh, auto) 
+    minmax(5vh, auto) 
+    minmax(45vh, auto) 
+    minmax(5vh, auto) 
+    minmax(45vh, auto);   
 }
 
-@media (min-width: 780px){
-    grid-template-rows:
-    85vh
-    20vh 
-    35vh
-    15vh
-    15vh
-    45vh
-    15vh
-    45vh
-    15vh
-    45vh;
-}
+`
 
 
-@media (min-width: 700px) and (orientation: portrait) and (min-height: 1050px){
-    grid-template-rows:
-    45vh
-    15vh 
-    15vh
-    15vh
-    15vh
-    25vh
-    10vh
-    30vh
-    10vh
-    20vh;
-}
-`;
+;
 
 export const GridArea = styled.div`
     grid-area: ${props => props.name};

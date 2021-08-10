@@ -4,7 +4,8 @@ import styled from 'styled-components';
 export const H1 = styled.h1`
     font-family: ${props => props.theme.fonts.heading1};
     color: ${props => props.theme.colors.white};
-    font-size: 40px;
+    font-size: 35px;
+    padding: 1rem;
     padding-top: 0;
     text-align: center;
     margin-top: 0.5em;
