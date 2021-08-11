@@ -115,7 +115,7 @@ export const SVGContainer = styled.div`
 const LayeredSVG = () => {
     
     const [screenWidth, screenHeight] = useScreenSize();
-
+    if (!screenWidth) return null;
     return (
         <SVGContainer screenWidth={screenWidth} screenHeight={screenHeight}>
                 <StaticImage
