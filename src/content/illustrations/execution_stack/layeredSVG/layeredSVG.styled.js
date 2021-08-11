@@ -18,13 +18,13 @@ function calcWidth(w, h){
     let ratio = (+w / +h);
     if (ratio > 1.3){
         let multiplier = 5;
-        if (ratio > 2) multiplier = 1;
+        if (ratio > 2 && ratio < 2.6) multiplier = 1;
         let diff = (ratio - 1.3) / 0.1;
         let reduction = diff * multiplier;
         return `${Math.max((100 - reduction), 55)}%`;
     }
 
-    return `${100}%`;
+    return `${85}%`;
 }
 
 
@@ -115,7 +115,7 @@ export const SVGContainer = styled.div`
 const LayeredSVG = () => {
     
     const [screenWidth, screenHeight] = useScreenSize();
-    if (!screenWidth) return null;
+    
     return (
         <SVGContainer screenWidth={screenWidth} screenHeight={screenHeight}>
                 <StaticImage
