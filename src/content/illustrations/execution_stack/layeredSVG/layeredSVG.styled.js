@@ -11,10 +11,14 @@ import VolcanoIsland from './layers/volacono.styled';
 import RootGrowth from './layers/rootgrowth.styled';
 import Rocks from './layers/rocks';
 
+function isBrowser(){
+    return typeof window !== "undefined";
+}
+
 
 function calcWidth(){
-    const isBrowser = typeof window !== "undefined";
-    if (isBrowser){
+    
+    if (isBrowser()){
 
         let ratio = (+window.innerWidth / +window.innerHeight);
         if (ratio > 1.3){
