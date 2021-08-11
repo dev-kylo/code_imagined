@@ -10,27 +10,20 @@ import LightHouseBeams from './layers/lighthouses.styled';
 import VolcanoIsland from './layers/volacono.styled';
 import RootGrowth from './layers/rootgrowth.styled';
 import Rocks from './layers/rocks';
-
-function isBrowser(){
-    return typeof window !== "undefined";
-}
+import useScreenSize from '../../../../hooks/useScreenSize';
 
 
-function calcWidth(){
+function calcWidth(w, h){
     
-    if (isBrowser()){
-
-        let ratio = (+window.innerWidth / +window.innerHeight);
-        if (ratio > 1.3){
-            let multiplier = 5;
-            if (ratio > 2) multiplier = 1;
-            let diff = (ratio - 1.3) / 0.1;
-            let reduction = diff * multiplier;
-    
-            return `${Math.max((100 - reduction), 55)}%`;
-        }
+    let ratio = (+w / +h);
+    if (ratio > 1.3){
+        let multiplier = 5;
+        if (ratio > 2) multiplier = 1;
+        let diff = (ratio - 1.3) / 0.1;
+        let reduction = diff * multiplier;
+        return `${Math.max((100 - reduction), 55)}%`;
     }
-    // console.log('Reduction: ' + reduction);
+
     return `${100}%`;
 }
 
@@ -114,57 +107,62 @@ export const SVGContainer = styled.div`
     }
 
     @media (orientation: landscape) {
-        width: ${calcWidth()}
+        width: ${props => calcWidth(props.screenWidth, props.screenHeight)}
     }
 `;
 
 
-const LayeredSVG = () => (
-    <SVGContainer>
-        <StaticImage
-            src="../../../../images/Isles.png"
-            alt="The Execution Stack - a stack of isles with waterfalls"
-            placeholder="tracedSVG"
-            layout="fullWidth"
-        />
-        <RootGrowth />
-        <AnemoneIsland />
-        <VolcanoIsland />
-        <ObjectIsland />
-        <Rocks />
-        <Ship 
-            position={{
-                left:"45%", 
-                bottom:"47%",
-                transform:"rotate(5deg)",
-                size:"medium", 
-                id:"shipbottom"
-            }}
-            animation={{
-                duration: 50,
-                x: 100,
-                ease: "Power1.easeOut"
-            }}
-        />
-        <Ship 
-            position={{
-                left:"45%",
-                bottom:"80%", 
-                transform:"scaleX(-1)" ,
-                size:"small",
-                id:"shiptop",
-             }}
-            animation={{
-                duration: 40,
-                x:150,
-                ease: "Power1.easeOut"
-            }}
-        />
-        <Submarine subtop/>
-        <Submarine submiddle/>
-        <Submarine subbottom/>
-        <LightHouseBeams />
-    </SVGContainer>
-);
+const LayeredSVG = () => {
+    
+    const [screenWidth, screenHeight] = useScreenSize();
+
+    return (
+        <SVGContainer screenWidth={screenWidth} screenHeight={screenHeight}>
+                <StaticImage
+                    src="../../../../images/Isles.png"
+                    alt="The Execution Stack - a stack of isles with waterfalls"
+                    placeholder="tracedSVG"
+                    layout="fullWidth"
+                />
+                <RootGrowth />
+                <AnemoneIsland />
+                <VolcanoIsland />
+                <ObjectIsland />
+                <Rocks />
+                <Ship 
+                    position={{
+                        left:"45%", 
+                        bottom:"47%",
+                        transform:"rotate(5deg)",
+                        size:"medium", 
+                        id:"shipbottom"
+                    }}
+                    animation={{
+                        duration: 50,
+                        x: 100,
+                        ease: "Power1.easeOut"
+                    }}
+                />
+                <Ship 
+                    position={{
+                        left:"45%",
+                        bottom:"80%", 
+                        transform:"scaleX(-1)" ,
+                        size:"small",
+                        id:"shiptop",
+                    }}
+                    animation={{
+                        duration: 40,
+                        x:150,
+                        ease: "Power1.easeOut"
+                    }}
+                />
+                <Submarine subtop/>
+                <Submarine submiddle/>
+                <Submarine subbottom/>
+                <LightHouseBeams />
+            </SVGContainer>
+    )
+};
 
 export default React.memo(LayeredSVG);
