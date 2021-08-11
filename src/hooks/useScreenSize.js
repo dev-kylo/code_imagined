@@ -12,7 +12,8 @@ const useScreenSize = () => {
             console.log('Setting screen size')
             setScreenHeight(window.innerHeight);
             setScreenWidth(window.innerWidth);
-        }
+        };
+        
         if(isBrowser()){
             setScreenSize();
             window.addEventListener('resize', setScreenSize)
