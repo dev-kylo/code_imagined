@@ -27,6 +27,21 @@ export const H1 = styled.h1`
     @media (min-width: 1400px){
         font-size: 85px;
     }
+
+    @media (orientation: landscape) and (max-width: 1200px) {
+        font-size:3.5em;
+    }
+
+
+    @media (orientation: landscape) and (max-width: 800px) {
+        padding-top: 1rem;
+        font-size:2.2em;
+    }
+
+    @media (orientation: landscape) and (max-width: 600px) {
+        font-size: 1.8em;
+    }
+
 `
 
 export const H2 = styled.h2`

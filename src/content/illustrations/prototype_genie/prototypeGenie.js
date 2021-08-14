@@ -50,6 +50,10 @@ const Container = styled.div`
     @media (max-width: 480px) and (min-height: 700px){
         width: 37%;
     }
+
+    @media (orientation: landscape) and (max-width: 600px){
+        width: 25%;
+    }
 `
 
 const PrototypeGenie = (props) => {

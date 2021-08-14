@@ -26,6 +26,10 @@ const Container = styled.div`
     @media (max-width: 350px){
         width: 150px;
     }
+
+    @media (orientation: landscape) and (max-width: 600px){
+        width: 150px;
+    }
 `
 
 const Argonauts = () => {

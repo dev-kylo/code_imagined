@@ -38,6 +38,12 @@ const StyledSVG = styled(island_svg)`
         width: 90%;
     }
 
+    @media (orientation: landscape) and (max-width: 600px){
+        width: 45%;
+        right: 25%;
+        
+    }
+
     .rain {
         z-index:-10;
         stroke-width: 10px;

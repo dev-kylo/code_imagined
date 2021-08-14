@@ -28,6 +28,11 @@ const SVGContainer = styled.div`
     @media (max-width: 350px){
         width: 95%;
     }
+
+    @media (orientation: landscape) and (max-width: 600px){
+        width: 65%;
+        left: 20%;
+    }
 `
 
 const LayeredOrb = () => {

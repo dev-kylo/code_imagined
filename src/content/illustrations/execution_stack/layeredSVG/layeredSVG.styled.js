@@ -18,7 +18,7 @@ function calcWidth(w, h){
     let ratio = (+w / +h);
     if (ratio > 1.3){
         let multiplier = 5;
-        if (ratio > 2 && ratio < 2.6) multiplier = 1;
+        if (ratio > 2.3) multiplier = 1;
         let diff = (ratio - 1.3) / 0.1;
         let reduction = diff * multiplier;
         return `${Math.max((100 - reduction), 55)}%`;
@@ -108,6 +108,12 @@ export const SVGContainer = styled.div`
 
     @media (orientation: landscape) {
         width: ${props => calcWidth(props.screenWidth, props.screenHeight)}
+    }
+
+    @media (orientation: landscape) and (max-width: 600px){
+        width: 35%;
+        left: 30%;
+        top: 50%;
     }
 `;
 

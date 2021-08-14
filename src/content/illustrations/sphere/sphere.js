@@ -8,6 +8,11 @@ const SphereContainer = styled.div`
     left: 21%;
     z-index: 2000;
     width: 65%;
+
+    @media (orientation: landscape) and (max-width: 600px){
+        width: 35%;
+        left: 35%;
+    }
 `
 
 export const Sphere = () =>  (
