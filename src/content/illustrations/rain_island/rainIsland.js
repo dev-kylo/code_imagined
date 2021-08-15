@@ -7,22 +7,23 @@ import withAnimateOnScroll from '../../../hoc/withAnimateOnScroll';
 
 
 const StyledSVG = styled(island_svg)`
-    width: 100%;
+    width: 80%;
     position: absolute;
     z-index: 100;
     right: 50px;
 
     @media (max-width: 1400px){
-        width: 105%;
-        top: 80px;
+        width: 85%;
+        top: 20px;
         right: 1px;
     }
 
     @media (max-width: 1100px){
-        width: 110%;
-        top: 80px;
+        width: 100%;
+        top: 90px;
         right: 1px;
     }
+
 
     @media(max-width: 600px){
         width: 95%;

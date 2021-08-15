@@ -16,22 +16,19 @@ const BeamContainer = styled.div`
 `
 
 const Container = styled.div`
-    width: 55%;
+    width: 40%;
     position: absolute;
     z-index: 10;
     bottom: 0px;
     right: 0;
 
     @media (max-width: 1400px){
-        width: 58%;
+        width: 48%;
     }
 
-    @media (max-width: 1200px){
-        width: 63%;
-    }
 
     @media (max-width: 1000px){
-        width: 65%;
+        width: 53%;
     }
 
 

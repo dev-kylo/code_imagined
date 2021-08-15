@@ -9,6 +9,7 @@ export const H1 = styled.h1`
     padding-top: 0;
     text-align: center;
     margin-top: 0.5em;
+    z-index: 150;
 
     @media (min-width: 400px){
         font-size: 45px;
@@ -25,7 +26,7 @@ export const H1 = styled.h1`
         font-size: 75px;
     }
     @media (min-width: 1400px){
-        font-size: 85px;
+        font-size: 4.5rem;
     }
 
     @media (orientation: landscape) and (max-width: 1200px) {
@@ -50,6 +51,7 @@ export const H2 = styled.h2`
     font-size: 28px;
     text-align: center;
     padding: 0.5em 0;
+    z-index: 150;
     margin: ${props => props.large? '2em auto' : '1em auto'};
     @media (min-width: 600px){
         font-size: 35px;

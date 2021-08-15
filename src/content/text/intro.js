@@ -21,16 +21,25 @@ const Logo = styled.div`
 `
 const Title = styled.div`
     display: inline-block;
-    padding: 2em;
+    padding: 1em;
     padding-top: 0;
     z-index: 100;
     & h1 {
         margin-top: 0;
     }
 
-    @media (max-width: 600px){
-        padding: 1em;
-        padding-top: 0;
+    @media(min-width: 600px){
+        padding: 2em;
+        // padding-top: 1em;
+    }
+
+    @media (min-width: 1500px){
+        padding: 4em;
+    }
+
+
+    @media (min-width: 1800px){
+        padding: 6em;
     }
 `
 

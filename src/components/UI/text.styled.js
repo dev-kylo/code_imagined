@@ -6,7 +6,8 @@ export const P  = styled.p`
     font-size: ${props => props.small? '18px': '24px'};
     padding: 0.5em 0;
     line-height: ${props => props.small? '26px': '33px'};
-
+    z-index: 150;
+    
     @media (max-width: 1100px){
         line-height: 28px;
     }
