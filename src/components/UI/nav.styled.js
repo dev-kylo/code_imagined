@@ -37,7 +37,7 @@ return (
                 height="100%">
             
                 {/* <Box></Box> */}
-                <Button bg="red" sx={{marginLeft: '1em'}} onClick={() => showSignUp()}> Learn Now</Button>
+                <Button bg="red" sx={{marginLeft: '1em'}} onClick={() => showSignUp()}> Step into The Great Sync</Button>
                 <Flex>
                     <Label sx={{display: 'flex', alignItems: 'center'}}> 
                         <Text fontSize={[14, 14, 18, 18]}><Hl blue={animate? false: true}>Animations {animate? 'ON' : 'OFF'}</Hl></Text>
