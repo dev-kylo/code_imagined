@@ -1,41 +1,21 @@
-import React, { useState } from "react";
-import SEO from '../layout/seo';
-import Layout from '../layout/layout';
-import { theme } from '../theme';
-import { ThemeProvider } from 'styled-components';
+import React from "react";
 import Explainer from '../content/text/explainer';
 import SvgTextGrid from '../content/svg_text_grid/svgTextGrid';
-import Nav from '../components/UI/nav.styled';
 import SignUp from "../components/UI/signup.styled";
-import { LayersManager } from 'react-layers-manager'
-// import Popup from '../styled/popup';
-import ModalContext from '../context/toggle';
 import '../utils/fontawesome';
-import FadeOnScroll from "../hoc/fadeOnScroll";
-import Footer from "../components/UI/footer.styled";
+import Providers from "../providers/Providers";
 
 
 const Home = () => {
 
-  const [isScrollingDown, setScrollingDown] = useState(false);
 
   return (
-    <ThemeProvider theme={theme}>
-      <SEO />
-      <FadeOnScroll setScrollDown={ setScrollingDown }>
-        <LayersManager>
-          <Layout >
-            <ModalContext>
-              <Nav scrollingDown={isScrollingDown} />
-              <SvgTextGrid />
-              <Explainer />
-              <SignUp />
-            </ModalContext>
-          </Layout>
-        </LayersManager>
-      </FadeOnScroll>
-      <Footer />
-    </ThemeProvider>
+      <Providers>
+        <SvgTextGrid />
+        <Explainer />
+        <SignUp />
+      </Providers>
+
   )
 }
 

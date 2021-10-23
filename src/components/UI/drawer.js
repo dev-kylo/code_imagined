@@ -1,5 +1,5 @@
 import React from 'react';
-import { fallDown as Menu } from 'react-burger-menu';
+import { slide as Menu } from 'react-burger-menu';
 import styled from 'styled-components';
 import { theme} from '../../theme';
 
@@ -7,6 +7,7 @@ const MenuContainer = styled.div`
   width: auto;
   position: relative;
   max-width: 400px;
+
 `
 
 const styles = {
@@ -64,7 +65,9 @@ const Drawer = () => {
       <MenuContainer>
           <Menu pageWrapId={ "page-wrap" } styles={styles}>
             <main id="page-wrap">
-              
+              <p>Everything you need to know about Primitive Values</p>
+              <p>Reference Values explained in detail</p>
+              <p>Scope - If you don't get it, you will now</p>
             </main>
           </Menu>
       </MenuContainer>

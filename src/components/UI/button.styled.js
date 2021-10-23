@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
+import {Link} from 'gatsby'
 
 const StyledButton = styled.button`
     background: ${props => props.theme.colors.red};
@@ -44,6 +45,8 @@ export const Button = props => {
         console.log('I was clicked');
         props.clicked();
     }
+
+    if (props.link) return <Link to={props.link}><StyledButton>{props.children}</StyledButton></Link>
 
     return <StyledButton onClick={e => clickHandler(e)}>{props.children}</StyledButton>
 }

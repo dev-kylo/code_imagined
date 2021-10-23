@@ -18,7 +18,7 @@ const TextContainer = styled.section `
     }
 `
 
-const Heading = styled.div`
+export const Heading = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 3em;

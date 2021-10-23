@@ -2,10 +2,9 @@
 import React, { useContext } from 'react';
 import {SignupContext} from '../../context/toggle';
 import { Flex, Button, Text, Box} from 'rebass/styled-components/';
-// import Drawer from './drawer';
 import { Label, Switch } from '@rebass/forms/styled-components';
 import { Hl } from './text.styled';
-
+import {Link} from 'gatsby';
 
 
 const Nav = props => {
@@ -38,6 +37,7 @@ return (
             
                 {/* <Box></Box> */}
                 <Button bg="red" sx={{marginLeft: '1em'}} onClick={() => showSignUp()}> Step into The Great Sync</Button>
+                <Link to="/resources"><Button bg="blue" sx={{marginLeft: '1em'}}> Visual Blogs & Resources</Button></Link>
                 <Flex>
                     <Label sx={{display: 'flex', alignItems: 'center'}}> 
                         <Text fontSize={[14, 14, 18, 18]}><Hl blue={animate? false: true}>Animations {animate? 'ON' : 'OFF'}</Hl></Text>

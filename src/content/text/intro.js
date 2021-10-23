@@ -19,7 +19,7 @@ const Logo = styled.div`
         margin: 3em 3em 0 0;
     }
 `
-const Title = styled.div`
+export  const Title = styled.div`
     display: inline-block;
     padding: 1em;
     padding-top: 0;
