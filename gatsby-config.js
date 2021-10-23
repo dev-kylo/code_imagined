@@ -18,6 +18,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-open-graph-images`,
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
