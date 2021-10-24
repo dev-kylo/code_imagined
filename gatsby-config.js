@@ -20,6 +20,7 @@ module.exports = {
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-open-graph-images`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
@@ -54,6 +55,13 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/posts`,
+        name: 'markdown-pages',
+      },
     },
     {
       resolve: "gatsby-plugin-react-svg",
