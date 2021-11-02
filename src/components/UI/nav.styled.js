@@ -24,8 +24,8 @@ return (
                 zIndex: '10000000',
                 width: '100%',
                 transformOrigin: 'top',
-                opacity: `${props.scrollingDown? 0: 1}`,
-                transform: `${props.scrollingDown? 'scaleY(0)': 'scaleY(1)'}`,
+                // opacity: `${props.scrollingDown? 0: 1}`,
+                // transform: `${props.scrollingDown? 'scaleY(0)': 'scaleY(1)'}`,
                 transition: 'opacity 1s,  transform 1s',
         }}>
             <Flex

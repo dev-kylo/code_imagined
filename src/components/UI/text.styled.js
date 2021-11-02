@@ -15,7 +15,7 @@ export const P  = styled.p`
     }
     
     @media (max-width: 1100px){
-        line-height: 28px;
+        line-height: 28px;  
     }
 
     @media (max-width: 900px){
