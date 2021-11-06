@@ -27,7 +27,6 @@ const Providers = (props) => {
           <Layout postTheme={props.postTheme}>
             <ModalContext>
               <Nav scrollingDown={isScrollingDown} />
-              <Drawer />
                 {props.children}
             </ModalContext>
           </Layout>

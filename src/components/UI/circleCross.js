@@ -46,7 +46,7 @@ const Container = styled.div`
 const CircleCrossIcon = (props) => {
 
     if (props.hide) return null;
-
+    
 return (
         <button onClick={props.onClick}>
             <Container>

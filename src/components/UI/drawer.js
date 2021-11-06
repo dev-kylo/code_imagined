@@ -1,13 +1,24 @@
+import { graphql } from 'gatsby';
 import React, {useState} from 'react';
 import { bubble as Menu } from 'react-burger-menu';
 import styled from 'styled-components';
 import { theme} from '../../theme';
 import CircleCrossIcon from './circleCross';
 
+
+
 const MenuContainer = styled.div`
   width: auto;
   position: relative;
   max-width: 400px;
+
+  @media (min-width: 800px){
+    .bm-menu-wrap {
+      min-width: 500px
+    }
+  }
+
+
 
 `
 
@@ -15,7 +26,7 @@ const ButtonWrapper = styled.div`
   position: fixed;
   right: 2rem;
   bottom: 2rem;
-  z-index: 100000000000;
+  z-index: 10000;
   width: 56px!important;
   height: auto!important;
 
@@ -23,16 +34,6 @@ const ButtonWrapper = styled.div`
 
 
 const styles = {
-  bmBurgerButton: {
-
-  },  
-  bmBurgerBars: {
-    background: theme.colors.red
-
-  },
-  bmBurgerBarsHover: {
-    background: theme.colors.navy
-  },
   bmCrossButton: {
     height: '24px',
     width: '24px'
@@ -43,12 +44,12 @@ const styles = {
   },
   bmMenuWrap: {
     position: 'fixed',
-    maxWidth: '550px'
+    maxWidth: '550px',
   },
   bmMenu: {
     background: theme.colors.black,
-    padding: '2.5em 1.5em 0',
-    fontSize: '1.15em'
+    padding: '1.5em 1em 0',
+    fontSize: '1.15em',
   },
   bmMorphShape: {
     fill: '#373a47'
@@ -65,13 +66,13 @@ const styles = {
   }
 }
 
-const Drawer = () => {
+const Drawer = ({posts}) => {
 
   const [isOpen, setOpen] = useState(false);
 
     const openHandler = (e) => {
       e.preventDefault();
-      setOpen(!isOpen)
+      setOpen(!isOpen);
     };
 
     const closeHandler = () => {
@@ -84,10 +85,12 @@ const Drawer = () => {
       <MenuContainer>
           <Menu onClose={closeHandler} isOpen={isOpen} right pageWrapId={ "page-wrap" } styles={styles} customBurgerIcon={<ButtonWrapper><CircleCrossIcon hide={isOpen}  onClick={openHandler} /></ButtonWrapper>}>
             <main id="page-wrap">
-              
-              <p>Everything you need to know about Primitive Values</p>
-              <p>Reference Values explained in detail</p>
-              <p>Scope - If you don't get it, you will now</p>
+              <h3>The Great Sync</h3>
+              <p> A bit about me</p>
+              <h3>HOME</h3>
+              <h3>RESOURCES</h3>
+              <h4> Most Recent Posts</h4>
+              {posts.map(edge => <a key={edge.node.id}> {edge.node.frontmatter.title}</a>)}
             </main>
           </Menu>
       </MenuContainer>
@@ -95,4 +98,6 @@ const Drawer = () => {
 
 }
 
+
 export default Drawer;
+
