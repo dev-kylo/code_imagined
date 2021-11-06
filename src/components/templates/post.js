@@ -1,27 +1,80 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import Providers from '../../providers/Providers';
+import PageTitle from '../UI/pageTitle.styled';
+
+
+const TextContainer = styled.section `
+    width: 70%;
+    margin: auto;
+    padding: 2em;
+    max-width: 800px;
+    margin-bottom: 1em;
+    background-color: #e8e8e8;
+    @media(max-width: 800px){
+        padding: 1em;
+        width: 80%;
+    }
+
+    p {
+      font-family: ${props => props.theme.fonts.par};
+      color: ${props => props.theme.colors.navy};
+      font-size: ${props => props.small? '18px': '22px'};
+      padding: 0.5em 0;
+      line-height: ${props => props.small? '26px': '33px'};
+      z-index: 150;
+      
+      @media (max-width: 1100px){
+          line-height: 28px;
+      }
+
+      @media (max-width: 900px){
+          font-size: ${props => props.small? '18px': '20px'};
+          line-height: ${props => props.small? '26px': '28px'};;
+      }
+
+      @media (max-width: 800px){
+          font-size: 18px;
+          line-height: 26px;
+      }
+
+      @media (max-width: 500px){
+          line-height: 24px;
+      }
+
+      @media (max-width: 350px){
+          font-size: 16px;
+          line-height: 24px;
+      }
+    }
+`
 
 export default function Post({
-  data,
+  data
 }) {
+
   const { markdownRemark } = data;
-  const { frontmatter, html } = markdownRemark;
+  const {  html, frontmatter: post } = markdownRemark;
+  console.log(markdownRemark);
+
   return (
-    <div className="blog-post-container">
-      <div className="blog-post">
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </div>
-    </div>
+    <Providers>
+      <PageTitle>{post.title}</PageTitle>
+      <TextContainer>
+          <div
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+      </TextContainer>
+    </Providers>
   );
 }
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
+      id
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
