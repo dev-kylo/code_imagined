@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Providers from '../../providers/Providers';
 import PageTitle from '../UI/pageTitle.styled';
+import Drawer from '../UI/drawer';
 
 
 const TextContainer = styled.section `

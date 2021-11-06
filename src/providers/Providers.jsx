@@ -9,6 +9,7 @@ import ModalContext from '../context/toggle';
 import '../utils/fontawesome';
 import FadeOnScroll from "../hoc/fadeOnScroll";
 import Footer from "../components/UI/footer.styled";
+import Drawer from "../components/UI/drawer";
 
 
 const Providers = (props) => {
@@ -26,6 +27,7 @@ const Providers = (props) => {
           <Layout postTheme={props.postTheme}>
             <ModalContext>
               <Nav scrollingDown={isScrollingDown} />
+              <Drawer />
                 {props.children}
             </ModalContext>
           </Layout>

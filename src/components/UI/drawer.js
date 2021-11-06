@@ -1,7 +1,8 @@
-import React from 'react';
-import { slide as Menu } from 'react-burger-menu';
+import React, {useState} from 'react';
+import { bubble as Menu } from 'react-burger-menu';
 import styled from 'styled-components';
 import { theme} from '../../theme';
+import CircleCrossIcon from './circleCross';
 
 const MenuContainer = styled.div`
   width: auto;
@@ -10,16 +11,24 @@ const MenuContainer = styled.div`
 
 `
 
+const ButtonWrapper = styled.div`
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 100000000000;
+  width: 56px!important;
+  height: auto!important;
+
+`
+
+
 const styles = {
   bmBurgerButton: {
-    position: 'fixed',
-    width: '36px',
-    height: '30px',
-    left: '1em',
-    top: '0.9em'
-  },
+
+  },  
   bmBurgerBars: {
-    background: theme.colors.white
+    background: theme.colors.red
+
   },
   bmBurgerBarsHover: {
     background: theme.colors.navy
@@ -34,12 +43,10 @@ const styles = {
   },
   bmMenuWrap: {
     position: 'fixed',
-    height: '100%',
-    width: '100%',
     maxWidth: '550px'
   },
   bmMenu: {
-    background: theme.colors.navy,
+    background: theme.colors.black,
     padding: '2.5em 1.5em 0',
     fontSize: '1.15em'
   },
@@ -60,11 +67,24 @@ const styles = {
 
 const Drawer = () => {
 
+  const [isOpen, setOpen] = useState(false);
+
+    const openHandler = (e) => {
+      e.preventDefault();
+      setOpen(!isOpen)
+    };
+
+    const closeHandler = () => {
+      setOpen(false);
+    }
+
+
     // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
     return (
       <MenuContainer>
-          <Menu pageWrapId={ "page-wrap" } styles={styles}>
+          <Menu onClose={closeHandler} isOpen={isOpen} right pageWrapId={ "page-wrap" } styles={styles} customBurgerIcon={<ButtonWrapper><CircleCrossIcon hide={isOpen}  onClick={openHandler} /></ButtonWrapper>}>
             <main id="page-wrap">
+              
               <p>Everything you need to know about Primitive Values</p>
               <p>Reference Values explained in detail</p>
               <p>Scope - If you don't get it, you will now</p>
