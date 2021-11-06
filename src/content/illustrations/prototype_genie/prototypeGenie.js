@@ -22,6 +22,10 @@ const Container = styled.div`
     bottom: 0px;
     right: 0;
 
+    @media (max-width: 2000px){
+        width: 34%;
+    }
+
     @media (max-width: 1400px){
         width: 48%;
     }

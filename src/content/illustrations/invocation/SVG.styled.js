@@ -15,6 +15,11 @@ const SVGContainer = styled.div`
     position: absolute;
     z-index: 200;
 
+    @media (max-width: 2000px){
+        right: 0%;
+        width: 75%;
+    }
+
     @media (max-width: 1100px){
         right: 0%;
     }

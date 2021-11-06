@@ -8,6 +8,7 @@ import { Flex } from 'rebass/styled-components';
 
 const TextContainer = styled.section `
     width: 70%;
+    max-width: 1000px;
     margin: auto;
     padding: 2em;
     margin-bottom: 1em;

@@ -10,7 +10,10 @@ export const Copy = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 2em;
+    max-width: 600px;
 `
 
 export const MobileDisplay = styled.div`

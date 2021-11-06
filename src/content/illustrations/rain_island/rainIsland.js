@@ -12,6 +12,12 @@ const StyledSVG = styled(island_svg)`
     z-index: 100;
     right: 50px;
 
+    @media (max-width: 2000px){
+        width: 65%;
+        top: 20px;
+        right: 35px;
+    }
+
     @media (max-width: 1400px){
         width: 85%;
         top: 20px;

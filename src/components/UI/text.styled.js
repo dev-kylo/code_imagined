@@ -7,9 +7,15 @@ export const P  = styled.p`
     padding: 0.5em 0;
     line-height: ${props => props.small? '26px': '33px'};
     z-index: 150;
+
+        
+    @media (max-width: 2000px){
+        line-height: 28px;
+        font-size: 20px;
+    }
     
     @media (max-width: 1100px){
-        line-height: 28px;
+        line-height: 28px;  
     }
 
     @media (max-width: 900px){
