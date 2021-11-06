@@ -31,7 +31,7 @@ const GlobalLayout = createGlobalStyle`
     }
     body {
         line-height: 1;
-        background-color: ${props => props.theme.colors.background}
+        background-color: ${props => props.postTheme? '#e8e8e8' : props.theme.colors.background}
     }
     ol, ul {
         list-style: none;
@@ -56,10 +56,10 @@ const GlobalLayout = createGlobalStyle`
     }
 `
 
-function Layout({ children }) {
+function Layout({ children, postTheme }) {
     return (
       <React.Fragment>
-            <GlobalLayout/>
+            <GlobalLayout postTheme={postTheme}/>
             {children}
       </React.Fragment>
     )

@@ -9,9 +9,10 @@ const TextContainer = styled.section `
     width: 70%;
     margin: auto;
     padding: 2em;
-    max-width: 800px;
+    max-width: 850px;
     margin-bottom: 1em;
-    background-color: #e8e8e8;
+    background-color: white;
+    min-height: 80vh;
     @media(max-width: 800px){
         padding: 1em;
         width: 80%;
@@ -59,8 +60,8 @@ export default function Post({
   console.log(markdownRemark);
 
   return (
-    <Providers>
-      <PageTitle>{post.title}</PageTitle>
+    <Providers postTheme={true}>
+      <PageTitle postTitle>{post.title}</PageTitle>
       <TextContainer>
           <div
             className="blog-post-content"

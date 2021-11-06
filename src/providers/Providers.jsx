@@ -13,6 +13,9 @@ import Footer from "../components/UI/footer.styled";
 
 const Providers = (props) => {
 
+  console.log('provider props');
+  console.log(props)
+
   const [isScrollingDown, setScrollingDown] = useState(false);
 
   return (
@@ -20,7 +23,7 @@ const Providers = (props) => {
       <SEO />
       <FadeOnScroll setScrollDown={ setScrollingDown }>
         <LayersManager>
-          <Layout >
+          <Layout postTheme={props.postTheme}>
             <ModalContext>
               <Nav scrollingDown={isScrollingDown} />
                 {props.children}

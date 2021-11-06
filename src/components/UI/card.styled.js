@@ -44,7 +44,6 @@ const StyledCard = styled(Card)`
         margin: auto;
     }
 
-
 `
 
 

@@ -4,7 +4,7 @@ import React from "react";
 
 
 const TitleContainer = styled.div`
-    background-color: ${({theme}) => theme.colors.red};
+    background-color: ${({theme, postTitle}) => postTitle? theme.colors.navy : theme.colors.red};
     margin: auto;
     text-align: center;
     height: 20rem;
@@ -19,7 +19,7 @@ const TitleContainer = styled.div`
 `
 
 const PageTitle = props => (
-    <TitleContainer>
+    <TitleContainer postTitle={props.postTitle}>
 
             <H1>{props.children}</H1>
      
