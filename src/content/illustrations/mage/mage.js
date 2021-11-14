@@ -9,9 +9,10 @@ const MageContainer = styled.div`
     position: absolute;
     bottom: 50%;
     transform: translate(20%, 50%) scale(1.2);
-    objectFit: cover;
     z-index: 1000;
-    width: 100%;
+    width: ${(props) => props.invoking? '70%' : '100%'};
+    filter: ${(props) => props.invoking? 'saturate(0.3)' : 'saturate(1.1)'};
+    transition: all 1s ease-out;
 
     @media (max-width: 500px){
         display: none;
@@ -39,10 +40,10 @@ const MageFunk = ( props ) => {
         }
         props.tl.add(flyMage());
 
-    }, [props])
+    }, [props.tl, props.transform])
 
     return (
-        <MageContainer>
+        <MageContainer invoking={props.invoking}>
             <div ref={(el) => (mageElement = el)}>
                 <StaticImage
                     src="../../../images/mage.png"
@@ -51,7 +52,7 @@ const MageFunk = ( props ) => {
                     fullWidth
                 />
             </div>
-            </MageContainer>
+        </MageContainer>
     )
 }
 

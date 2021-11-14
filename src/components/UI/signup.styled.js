@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import { Flex, Box } from 'rebass/styled-components';
 import Modal from './modal.styled';
-import addToMailchimp from 'gatsby-plugin-mailchimp';
 import FormResult from './signup-result';
 import Form from './signup-form';
 import MageFunk from '../../content/illustrations/mage/mage';
+
 
 const SignUp = () => {
 
@@ -28,35 +28,34 @@ const handleSubmit = async (e) => {
     })
     
     const first = e.target.elements['fname'].value;
-    const sur = e.target.elements['sname'].value;
-    const email = e.target.elements['email'].value;
-    const response = await addToMailchimp(email, {  FNAME: first, LNAME: sur});
-    
+    const surname = e.target.elements['sname'].value;
+    const emailF = e.target.elements['email'].value;
+    const honey = e.target.elements['email'].honey;
+    console.log('honey' + '' + honey);
+    if (honey) return;
+    const formB = { 'Name': `${first} ${surname}`, 'Email': emailF, 'CustomFields': [
+        `FName=${first}`,
+        `LName=${surname}`
+      ]};
+    const pkg ={
+        method: 'POST',
+        contentType: 'application/json',
+        accept: 'application/json',
+        body: JSON.stringify(formB)
+    };
+    const response = await fetch(`${process.env.GATSBY__MOOSEND_ENDPOINT}${process.env.GATSBY__MOOSEND_INTRO_MAILLIST}/subscribe.json?apikey=${process.env.GATSBY__MOOSEND_API_KEY}`, pkg);
+    const result = await response.json();
+
     setFormStatus({ 
-        submitHeading: response.result === 'success' ? 'Woohoo!' : 'Oh no!',
+        submitHeading: !result.Error? `You're almost done, ${first}!` : 'Oh no!',
         loading: false,
         formSubmitted: true,
-        submitMessage: response.result === 'success' ? 'Check your email. Make sure to look in your Promotions and Spam folders.' : createErrorMessage(response.msg)
+        submitMessage: !result.Error ? "Only humans can understand The Great Sync. Please check your emails and confirm." : response.Error
     })
-
-
-    //    let result;
-//    const timer = await setTimeout(() => {
-//     setFormStatus({ 
-//         submitHeading: result === 'success' ? '' : 'Woohoo!',
-//         loading: false,
-//         formSubmitted: true,
-//         submitMessage: 'Check your email.',  
-//     })
-//    }, 5000)
     
   }
 
-const createErrorMessage = (str) => {
-    if (str.includes('already subscribed'))
-        return 'Looks like you are already subscribed!'
-    else return str;
-}
+
 
 const exitSignup = () => {
     setFormStatus({ 
@@ -68,10 +67,10 @@ const exitSignup = () => {
 }
 
     return (
-        <Modal hideExitBtn={formStatus.loading} smallwindow={formStatus.formSubmitted} exitCb={() => exitSignup()}>
+        <Modal hideExitBtn={formStatus.loading}  exitCb={() => exitSignup()}>
             <Flex flexWrap="wrap">
                 <Box bg="black" height={['0%', '0%', '100%','100%']} width={[1,1,1/3, 1/3]}  sx={{ position: 'absolute', bottom: '0', left: '0'}}>
-                    {formStatus.formSubmitted ? null : <MageFunk />} 
+                    <MageFunk invoking={formStatus.loading} /> 
                 </Box>
                 <Box width={[1,1, 1/3, 1/3]}></Box>
                 <Box p="1rem 0" pl={['0', '0', '0.5rem', '2rem']} width={[1, 1, 2/3, 2/3]} >
@@ -80,7 +79,7 @@ const exitSignup = () => {
             </Flex>
         </Modal>
 )
-                };
+};
 
 export default SignUp;
 

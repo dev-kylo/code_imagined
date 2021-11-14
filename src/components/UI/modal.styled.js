@@ -26,19 +26,20 @@ const ModalContent = styled.div`
     z-index: 500;
     background-color: white;
     width: auto;
-    min-width: 40%;
+    min-width: 50%;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px black;
     padding: 30px;
     box-sizing: border-box;
     transition: all 0.3s ease-out;
     max-height: 85%;
+    min-height: 400px;
     overflow-y: scroll;
     z-index: 100000;
-    transition: max-height 4s ease-in;
+    transition: all 0.2s ease-in;
     @media (max-width: 800px){
         padding: 15px;
-        min-width: 70%;
+        min-width: 80%;
     }
 `
 

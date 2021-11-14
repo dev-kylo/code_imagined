@@ -6,11 +6,19 @@ import {
     Label,
     Input,
   } from '@rebass/forms/styled-components'
+import styled from 'styled-components';
+
+  
+
+ const HoneyInput = styled.div`
+    opacity: 0;
+    visibility: hidden;
+ ` 
 
 const Form = (props) => (
     <>
     <H3 dark>Free email course</H3>
-    <P small dark style={{'margin-bottom': '1em'}}>Sign up for a free 5 part intro to building a javascript visual mental model.</P>
+    <P small dark style={{'margin-bottom': '1em'}}>Sign up for a free introduction to building a javascript visual mental model.</P>
     <Box
         as='form'
         onSubmit={e => props.submit(e)}
@@ -41,10 +49,18 @@ const Form = (props) => (
                 required
             />
             </Box>
+            <HoneyInput>
+                <Input
+                    id='honey'
+                    name='honey'
+                    type='honey'
+                />
+            </HoneyInput>
+
             <Box px={2} ml='auto'>
                 <Flex width="100%" justifyContent='center'>
                     <Button variant='signup'>
-                        Sign up
+                        Sign me up
                     </Button>
                 </Flex>
             </Box>
