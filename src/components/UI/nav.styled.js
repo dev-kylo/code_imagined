@@ -36,11 +36,10 @@ return (
                 height="100%">
             
                 {/* <Box></Box> */}
-                <Button bg="red" sx={{marginLeft: '1em'}} onClick={() => showSignUp()}> Step into The Great Sync</Button>
-                <Link to="/resources"><Button bg="blue" sx={{marginLeft: '1em'}}> Visual Blogs & Resources</Button></Link>
+                <Button bg="red" sx={{marginLeft: '1em'}} onClick={() => showSignUp()}> Start Building Your Model</Button>
                 <Flex>
                     <Label sx={{display: 'flex', alignItems: 'center'}}> 
-                        <Text fontSize={[14, 14, 18, 18]}><Hl blue={animate? false: true}>Animations {animate? 'ON' : 'OFF'}</Hl></Text>
+                        <Text fontSize={[14, 14, 18, 18]}><Hl blue={!animate}>Animations {animate? 'ON' : 'OFF'}</Hl></Text>
                         <Switch
                             color={animate? 'green' : 'red'}
                             checked={animate}

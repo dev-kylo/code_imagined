@@ -31,7 +31,7 @@ const handleSubmit = async (e) => {
     const surname = e.target.elements['sname'].value;
     const emailF = e.target.elements['email'].value;
     const honey = e.target.elements['email'].honey;
-    console.log('honey' + '' + honey);
+
     if (honey) return;
     const formB = { 'Name': `${first} ${surname}`, 'Email': emailF, 'CustomFields': [
         `FName=${first}`,
@@ -43,6 +43,8 @@ const handleSubmit = async (e) => {
         accept: 'application/json',
         body: JSON.stringify(formB)
     };
+
+
     const response = await fetch(`${process.env.GATSBY__MOOSEND_ENDPOINT}${process.env.GATSBY__MOOSEND_INTRO_MAILLIST}/subscribe.json?apikey=${process.env.GATSBY__MOOSEND_API_KEY}`, pkg);
     const result = await response.json();
 
@@ -50,11 +52,10 @@ const handleSubmit = async (e) => {
         submitHeading: !result.Error? `You're almost done, ${first}!` : 'Oh no!',
         loading: false,
         formSubmitted: true,
-        submitMessage: !result.Error ? "Only humans can understand The Great Sync. Please check your emails and confirm." : response.Error
+        submitMessage: !result.Error ? "Almost there! Please check your emails and confirm." : response.Error
     })
     
   }
-
 
 
 const exitSignup = () => {

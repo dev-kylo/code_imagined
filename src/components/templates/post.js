@@ -6,7 +6,7 @@ import PageTitle from '../UI/pageTitle.styled';
 import Drawer from '../UI/drawer';
 
 
-const TextContainer = styled.section `
+export const TextContainer = styled.section `
     width: 70%;
     margin: auto;
     padding: 2em;
@@ -19,7 +19,7 @@ const TextContainer = styled.section `
         width: 80%;
     }
 
-    p {
+    p, li {
       font-family: ${props => props.theme.fonts.par};
       color: ${props => props.theme.colors.navy};
       font-size: ${props => props.small? '18px': '22px'};
@@ -48,6 +48,26 @@ const TextContainer = styled.section `
       @media (max-width: 350px){
           font-size: 16px;
           line-height: 24px;
+      }
+    }
+
+    h2 {
+        font-family: ${props => props.theme.fonts.heading1};
+        color: ${props => props.theme.colors.navy};
+        font-size: 28px;
+        text-align: left;
+        padding: 0.5em 0;
+        margin: 1em 0;
+        @media (min-width: 600px){
+            font-size: 30px;
+        }
+      }
+
+    ul {
+      li {
+        margin-left: 1rem;
+        padding:0.2rem;
+       list-style: initial;
       }
     }
 `
