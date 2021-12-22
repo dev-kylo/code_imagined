@@ -34,7 +34,7 @@ const handleSubmit = async (e) => {
 
     if (honey) return;
 
-    const formB = { Email: emailF, Name: `${first} ${surname}`, 'CustomFields': [
+    const formB = { "Email": emailF, "Name": `${first} ${surname}`, "HasExternalDoubleOptIn": false, "CustomFields": [
         `FName=${first}`,
         `LName=${surname}`,
         `CEmail=${emailF}`
