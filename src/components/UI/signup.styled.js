@@ -34,34 +34,50 @@ const handleSubmit = async (e) => {
 
     if (honey) return;
 
-    const formB = { "Email": emailF, "Name": (first + " " + surname), "HasExternalDoubleOptIn": false, "CustomFields": [
-        "FName=Kyle",
-        "LName=Surb",
-        "CEmail=something@email.com"
+    const formB = { Email: emailF, Name: `${first} ${surname}`, HasExternalDoubleOptIn: false, CustomFields: [
+        `FName=${first}`,
+        `LName=${surname}`,
+        `CEmail=${emailF}`
       ]};
 
     console.log('Form Submission')
     console.log(formB)
     const pkg ={
         method: 'POST',
-        contentType: 'application/json',
-        accept: 'application/json',
+        headers: {
+            contentType: 'application/json',
+            accept: 'application/json',
+        },
         body: JSON.stringify(formB)
     };
 
+    console.log(pkg)
 
-    const response = await fetch(`${process.env.GATSBY__MOOSEND_ENDPOINT}${process.env.GATSBY__MOOSEND_INTRO_MAILLIST}/subscribe.json?apikey=${process.env.GATSBY__MOOSEND_API_KEY}`, pkg);
-    const result = await response.json();
+    let result;
 
-    console.log('Form Result')
-    console.log(result);
+    try{
+        const response = await fetch(`${process.env.GATSBY__MOOSEND_ENDPOINT}${process.env.GATSBY__MOOSEND_INTRO_MAILLIST}/subscribe.json?apikey=${process.env.GATSBY__MOOSEND_API_KEY}`, pkg);
+        result = await response.json();
 
-    setFormStatus({ 
-        submitHeading: !result.Error? `You're almost done, ${first}!` : 'Oh no! 😧',
-        loading: false,
-        formSubmitted: true,
-        submitMessage: !result.Error ? "One last step to go! Please check your emails and confirm. 🔥🔥🔥" : result.Error
-    })
+            console.log('Form Result')
+            console.log(result);
+        setFormStatus({ 
+            submitHeading: !result.Error? `You're almost done, ${first}!` : 'Oh no! 😧',
+            loading: false,
+            formSubmitted: true,
+            submitMessage: !result.Error ? "One last step to go! Please check your emails and confirm. 🔥🔥🔥" : result.Error
+        })
+
+    } catch(e) {
+        console.log(e)
+        setFormStatus({ 
+            submitHeading: 'Oh no! 😧',
+            loading: false,
+            formSubmitted: true,
+            submitMessage: "Unfortunately that did not work"
+        })
+    }
+
     
   }
 
