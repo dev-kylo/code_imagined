@@ -45,19 +45,17 @@ const handleSubmit = async (e) => {
     const pkg ={
         method: 'POST',
         headers: {
-            contentType: 'application/json',
-            accept: 'application/json',
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
         },
         body: JSON.stringify(formB)
     };
 
     console.log(pkg)
 
-    let result;
-
-    try{
+    try {
         const response = await fetch(`${process.env.GATSBY__MOOSEND_ENDPOINT}${process.env.GATSBY__MOOSEND_INTRO_MAILLIST}/subscribe.json?apikey=${process.env.GATSBY__MOOSEND_API_KEY}`, pkg);
-        result = await response.json();
+        const result = await response.json();
 
             console.log('Form Result')
             console.log(result);
