@@ -52,7 +52,7 @@ const handleSubmit = async (e) => {
         submitHeading: !result.Error? `You're almost done, ${first}!` : 'Oh no!',
         loading: false,
         formSubmitted: true,
-        submitMessage: !result.Error ? "Almost there! Please check your emails and confirm." : response.Error
+        submitMessage: !result.Error ? "One last step to go! Please check your emails and confirm." : response.Error
     })
     
   }

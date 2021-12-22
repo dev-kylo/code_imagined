@@ -1,13 +1,17 @@
-import React, { useEffect } from "react"
+import React from "react"
 import '../utils/fontawesome';
 import Providers from "../providers/Providers";
 import PageTitle from "../components/UI/pageTitle.styled";
-import PageSubtitle from "../components/UI/pageSubtitle.styled";
 import styled from 'styled-components';
 import { TextContainer } from "../components/templates/post";
-import { H2 } from "../components/UI/headings.styled";
-import SignUp from "../components/UI/signup.styled";
 import Drawer from "../components/UI/drawer";
+import CalendlyPopupButton from "../components/UI/calendlyPopup";
+import SignUp from "../components/UI/signup.styled";
+
+const Calendly = styled.div`
+    display: flex;
+    justify-content: center;
+`
 
 
 const Workshops = () => {
@@ -32,7 +36,10 @@ const Workshops = () => {
                 <li>Closures</li>
             </ul>
             <p> The workshops are designed to be fun and relaxed. It's not meant to be an intimidating environment, and you will NEVER be asked to provide an answer to an exercise in front of the rest of the group (unless you want to). Learning to code can be so focussed on **making** and adding lines to your CV. That's not what The Great Sync is about. We are mastering our craft, and to do that we need to be child-like, use our imaginations and have fun! </p>
-            <h2>Upcoming Workshops</h2>
+            <h2 style={{textAlign: 'center'}}>Upcoming Workshops</h2>
+            <Calendly>
+                <CalendlyPopupButton />
+            </Calendly>
         </TextContainer>
         
         </Providers>
