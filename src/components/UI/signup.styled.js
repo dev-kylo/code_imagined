@@ -24,7 +24,7 @@ const handleSubmit = async (e) => {
         loading: true,
         formSubmitted: true,
         submitHeading: '',
-        submitMessage: 'Performing some functional magic...'
+        submitMessage: 'Performing some functional javascript magic🧙...'
     })
     
     const first = e.target.elements['fname'].value;
@@ -32,13 +32,10 @@ const handleSubmit = async (e) => {
     const emailF = e.target.elements['email'].value;
     const honey = e.target.elements['email'].honey;
 
-    console.log(first);
-    console.log(surname);
-    console.log(emailF);
     if (honey) return;
     const formB = { 'Name': `${first} ${surname}`, 'Email': emailF, 'CustomFields': [
         `FName=${first}`,
-        `LName=${surname}`
+        `LName=${surname}`,
         `Email=${emailF}`
       ]};
     const pkg ={
@@ -53,10 +50,10 @@ const handleSubmit = async (e) => {
     const result = await response.json();
 
     setFormStatus({ 
-        submitHeading: !result.Error? `You're almost done, ${first}!` : 'Oh no!',
+        submitHeading: !result.Error? `You're almost done, ${first}!` : 'Oh no! 😧',
         loading: false,
         formSubmitted: true,
-        submitMessage: !result.Error ? "One last step to go! Please check your emails and confirm." : result.Error
+        submitMessage: !result.Error ? "One last step to go! Please check your emails and confirm. 🔥🔥🔥" : result.Error
     })
     
   }
