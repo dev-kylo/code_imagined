@@ -1,8 +1,12 @@
 backend:
   name: github
   repo: kylorobs/code_imagined
-  branch: main
-media_folder: static/images/uploads
+  branch: moo
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: the-great-sync
+    api_key: 296358997549996
 public_folder: /images/uploads
 site_url: https://thegreatsync.com/
 collections:
@@ -17,3 +21,15 @@ collections:
       - { name: tag, label: Tag }
       # - { label: "Banner", name: "banner", widget: "image" }
       - { name: body, label: Body, widget: markdown }
+      - label: 'Body Image'
+        name: 'image'
+        widget: 'image'
+        required: false
+        tagname: ''
+        media_library:
+          config:
+            default_transformations:
+              - fetch_format: auto
+                width: 800    
+                quality: auto
+                crop: fill
