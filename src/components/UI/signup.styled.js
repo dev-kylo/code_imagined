@@ -34,7 +34,7 @@ const handleSubmit = async (e) => {
 
     if (honey) return;
 
-    const formB = { "Email": emailF, "Name": (first + " " + last), "HasExternalDoubleOptIn": false, "CustomFields": [
+    const formB = { "Email": emailF, "Name": (first + " " + surname), "HasExternalDoubleOptIn": false, "CustomFields": [
         "FName=Kyle",
         "LName=Surb",
         "CEmail=something@email.com"
@@ -92,8 +92,4 @@ const exitSignup = () => {
 
 export default SignUp;
 
-
-async function myReq(){
-    return fetch('https://api.moosend.com/v3/subscribers/069d5463-04dc-4934-8746-83bed945e9fc/subscribe.json?apikey=c572f3e1-bb24-4118-a43d-37c1219c7d1c', mypayload)
-}
 
