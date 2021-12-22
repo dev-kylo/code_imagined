@@ -32,10 +32,14 @@ const handleSubmit = async (e) => {
     const emailF = e.target.elements['email'].value;
     const honey = e.target.elements['email'].honey;
 
+    console.log(first);
+    console.log(surname);
+    console.log(emailF);
     if (honey) return;
     const formB = { 'Name': `${first} ${surname}`, 'Email': emailF, 'CustomFields': [
         `FName=${first}`,
         `LName=${surname}`
+        `Email=${emailF}`
       ]};
     const pkg ={
         method: 'POST',
@@ -52,7 +56,7 @@ const handleSubmit = async (e) => {
         submitHeading: !result.Error? `You're almost done, ${first}!` : 'Oh no!',
         loading: false,
         formSubmitted: true,
-        submitMessage: !result.Error ? "One last step to go! Please check your emails and confirm." : response.Error
+        submitMessage: !result.Error ? "One last step to go! Please check your emails and confirm." : result.Error
     })
     
   }
