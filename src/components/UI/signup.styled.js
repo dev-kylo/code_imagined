@@ -27,14 +27,14 @@ const handleSubmit = async (e) => {
         submitMessage: 'Performing some functional javascript magic🧙...'
     })
     
-    const first = e.target.elements['fname'].value;
-    const surname = e.target.elements['sname'].value;
-    const emailF = e.target.elements['email'].value;
+    const first = e.target.elements['fname'].value.trim();
+    const surname = e.target.elements['sname'].value.trim();
+    const emailF = e.target.elements['email'].value.trim();
     const honey = e.target.elements['email'].honey;
 
     if (honey) return;
-    
-    const formB = { 'Email': emailF, 'Name': `${first} ${surname}`, 'CustomFields': [
+
+    const formB = { Email: emailF, Name: `${first} ${surname}`, 'CustomFields': [
         `FName=${first}`,
         `LName=${surname}`,
         `CEmail=${emailF}`
