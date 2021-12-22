@@ -40,8 +40,6 @@ const handleSubmit = async (e) => {
         `CEmail=${emailF}`
       ]};
 
-    console.log('Form Submission')
-    console.log(formB)
     const pkg ={
         method: 'POST',
         headers: {
@@ -51,14 +49,11 @@ const handleSubmit = async (e) => {
         body: JSON.stringify(formB)
     };
 
-    console.log(pkg)
 
     try {
         const response = await fetch(`${process.env.GATSBY__MOOSEND_ENDPOINT}${process.env.GATSBY__MOOSEND_INTRO_MAILLIST}/subscribe.json?apikey=${process.env.GATSBY__MOOSEND_API_KEY}`, pkg);
         const result = await response.json();
 
-            console.log('Form Result')
-            console.log(result);
         setFormStatus({ 
             submitHeading: !result.Error? `You're almost done, ${first}!` : 'Oh no! 😧',
             loading: false,
@@ -67,16 +62,15 @@ const handleSubmit = async (e) => {
         })
 
     } catch(e) {
-        console.log(e)
+
         setFormStatus({ 
             submitHeading: 'Oh no! 😧',
             loading: false,
             formSubmitted: true,
-            submitMessage: "Unfortunately that did not work"
+            submitMessage: "There seems to be an error. Please try submit the form again or try a different browser."
         })
     }
 
-    
   }
 
 

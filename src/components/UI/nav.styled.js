@@ -4,7 +4,6 @@ import {SignupContext} from '../../context/toggle';
 import { Flex, Button, Text, Box} from 'rebass/styled-components/';
 import { Label, Switch } from '@rebass/forms/styled-components';
 import { Hl } from './text.styled';
-import {Link} from 'gatsby';
 
 
 const Nav = props => {
@@ -36,7 +35,7 @@ return (
                 height="100%">
             
                 {/* <Box></Box> */}
-                <Button bg="red" sx={{marginLeft: '1em'}} onClick={() => showSignUp()}> Start Building Your Model</Button>
+                <Button bg="red" sx={{marginLeft: '1em'}} onClick={() => showSignUp()}> Subscribe and Learn</Button>
                 <Flex>
                     <Label sx={{display: 'flex', alignItems: 'center'}}> 
                         <Text fontSize={[14, 14, 18, 18]}><Hl blue={!animate}>Animations {animate? 'ON' : 'OFF'}</Hl></Text>
@@ -45,7 +44,7 @@ return (
                             checked={animate}
                             onClick={toggleAnimations}
                             sx={{ cursor: 'pointer' }}
-                            m = '5px'
+                            m='5px'
                         />
                     </Label>
                 </Flex>
