@@ -33,11 +33,15 @@ const handleSubmit = async (e) => {
     const honey = e.target.elements['email'].honey;
 
     if (honey) return;
-    const formB = { 'Name': `${first} ${surname}`, 'Email': emailF, 'CustomFields': [
+    
+    const formB = { 'Email': emailF, 'Name': `${first} ${surname}`, 'CustomFields': [
         `FName=${first}`,
         `LName=${surname}`,
-        `Email=${emailF}`
+        `CEmail=${emailF}`
       ]};
+
+    console.log('Form Submission')
+    console.log(formB)
     const pkg ={
         method: 'POST',
         contentType: 'application/json',
@@ -48,6 +52,9 @@ const handleSubmit = async (e) => {
 
     const response = await fetch(`${process.env.GATSBY__MOOSEND_ENDPOINT}${process.env.GATSBY__MOOSEND_INTRO_MAILLIST}/subscribe.json?apikey=${process.env.GATSBY__MOOSEND_API_KEY}`, pkg);
     const result = await response.json();
+
+    console.log('Form Result')
+    console.log(result);
 
     setFormStatus({ 
         submitHeading: !result.Error? `You're almost done, ${first}!` : 'Oh no! 😧',

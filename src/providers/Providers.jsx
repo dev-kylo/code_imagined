@@ -14,8 +14,6 @@ import Drawer from "../components/UI/drawer";
 
 const Providers = (props) => {
 
-  console.log('provider props');
-  console.log(props)
 
   const [isScrollingDown, setScrollingDown] = useState(false);
 
