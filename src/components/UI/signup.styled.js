@@ -34,11 +34,7 @@ const handleSubmit = async (e) => {
 
     if (honey) return;
 
-    const formB = { "Email": emailF, "Name": `${first} ${surname}`, "HasExternalDoubleOptIn": false, "CustomFields": [
-        `FName=${first}`,
-        `LName=${surname}`,
-        `CEmail=${emailF}`
-      ]};
+    const formB = { "Email": emailF, "Name": `${first} ${surname}`, "HasExternalDoubleOptIn": false }
 
     console.log('Form Submission')
     console.log(formB)
@@ -91,4 +87,3 @@ const exitSignup = () => {
 };
 
 export default SignUp;
-
