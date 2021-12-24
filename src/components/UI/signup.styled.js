@@ -16,6 +16,12 @@ const [formStatus, setFormStatus] = useState({
     submitMessage: ''
 })
 
+const createErrorMessage = (str) => {
+    if (str.includes('already subscribed'))
+        return 'Looks like you are already subscribed!'
+    else return str;
+}
+
 
 const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,33 +39,17 @@ const handleSubmit = async (e) => {
     const honey = e.target.elements['email'].honey;
 
     if (honey) return;
-
-    const formB = { Email: emailF, Name: `${first} ${surname}`, HasExternalDoubleOptIn: false, CustomFields: [
-        `FName=${first}`,
-        `LName=${surname}`,
-        `CEmail=${emailF}`
-      ]};
-
-    const pkg ={
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-        },
-        body: JSON.stringify(formB)
-    };
-
-
+    
     try {
-        const response = await fetch(`${process.env.GATSBY__MOOSEND_ENDPOINT}${process.env.GATSBY__MOOSEND_INTRO_MAILLIST}/subscribe.json?apikey=${process.env.GATSBY__MOOSEND_API_KEY}`, pkg);
-        const result = await response.json();
+        const response = await addToMailchimp(email, {  FNAME: first, LNAME: sur});
 
         setFormStatus({ 
             submitHeading: !result.Error? `You're almost done, ${first}!` : 'Oh no! 😧',
             loading: false,
             formSubmitted: true,
-            submitMessage: !result.Error ? "One last step to go! Please check your emails and confirm. 🔥🔥🔥" : result.Error
+            submitMessage: response.result === 'success' ? "One last step to go! Please check your emails and confirm 🔥🔥🔥" : createErrorMessage(response.msg)
         })
+
 
     } catch(e) {
 
