@@ -5,7 +5,7 @@ import Modal from './modal.styled';
 import FormResult from './signup-result';
 import Form from './signup-form';
 import MageFunk from '../../content/illustrations/mage/mage';
-
+import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 const SignUp = () => {
 
@@ -35,16 +35,16 @@ const handleSubmit = async (e) => {
     
     const first = e.target.elements['fname'].value.trim();
     const surname = e.target.elements['sname'].value.trim();
-    const emailF = e.target.elements['email'].value.trim();
+    const email = e.target.elements['email'].value.trim();
     const honey = e.target.elements['email'].honey;
 
     if (honey) return;
     
     try {
-        const response = await addToMailchimp(email, {  FNAME: first, LNAME: sur});
+        const response = await addToMailchimp(email, {  FNAME: first, LNAME: surname});
 
         setFormStatus({ 
-            submitHeading: !result.Error? `You're almost done, ${first}!` : 'Oh no! 😧',
+            submitHeading: response.result === 'success'? `You're almost done, ${first}!` : 'Oh no! 😧',
             loading: false,
             formSubmitted: true,
             submitMessage: response.result === 'success' ? "One last step to go! Please check your emails and confirm 🔥🔥🔥" : createErrorMessage(response.msg)

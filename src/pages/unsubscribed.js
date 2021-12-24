@@ -39,8 +39,6 @@ const UnSubscribed = () => {
             <TextContainer>
                 <p>I'm really sorry to see you go. Please can you let me know why you decided to unsubscribe, so I can make improvements to my content. Thank you!
                 </p>
-                
-                <H2>Tell me about you</H2>
 
                 <Box
                     as='form'
