@@ -9,11 +9,15 @@ import DownloadLink from "../../components/UI/downloadLink.styled";
 import { Flex } from "rebass/styled-components";
 import SignUp from "../../components/UI/signup.styled";
 
+const isBrowser = typeof window !== "undefined"
+
 const Thankyou = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const authorised = urlParams.get('tkn');
-    console.log(authorised)
-    console.log(process.env.GATSBY_FUNCTIONS_DOWNLOAD_LINK)
+    let authorised = '';
+    if (isBrowser){
+        const urlParams = new URLSearchParams(window.location.search);
+        authorised = urlParams.get('tkn');
+    }
+
     let content = (
         <>
             <H2>This guide is free for subscribers</H2>
@@ -22,7 +26,7 @@ const Thankyou = () => {
         </>
     )
     
-    if(authorised === process.env.GATSBY_FUNCTIONS_DOWNLOAD_LINK){
+    if(authorised === process.env.GATSBY_FUNCTIONS_DOWNLOAD_TOKEN){
         content =  (
         <>
             <H2>My gift to you</H2>
@@ -31,7 +35,7 @@ const Thankyou = () => {
             
             <p>Email me your thoughts at kylo@thegreatsync.com, or DM me on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/kylorobs"> Twitter</a> or <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/devkylo/">Instagram</a></p>
             <Flex justifyContent="center">
-            <DownloadLink href="https://res.cloudinary.com/the-great-sync/image/upload/v1642311935/Functions_GiveAway_1_bm1eck.pdf" download>A Visual Memory Model for Functions - pdf, 3MB</DownloadLink>
+            <DownloadLink href={process.env.GATSBY_FUNCTIONS_DOWNLOAD_LINK} download>A Visual Memory Model for Functions - pdf, 3MB</DownloadLink>
             </Flex>
         </>
         )
