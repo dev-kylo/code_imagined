@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import React from 'react';
 import {Link} from 'gatsby'
 
-const StyledButton = styled.button`
+export const StyledButton = styled.button`
     background: ${props => props.theme.colors.red};
     color: white;
     display: inline-block;
@@ -42,7 +42,6 @@ export const Button = props => {
 
     const clickHandler = (e) => {
         e.preventDefault();
-        console.log('I was clicked');
         props.clicked();
     }
 
