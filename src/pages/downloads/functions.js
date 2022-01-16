@@ -9,10 +9,10 @@ import DownloadLink from "../../components/UI/downloadLink.styled";
 import { Flex } from "rebass/styled-components";
 import SignUp from "../../components/UI/signup.styled";
 
-const isBrowser = typeof window !== "undefined"
 
 const Thankyou = () => {
     let authorised = '';
+    const isBrowser = typeof window !== "undefined";
     if (isBrowser){
         const urlParams = new URLSearchParams(window.location.search);
         authorised = urlParams.get('tkn');
