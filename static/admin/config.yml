@@ -9,7 +9,6 @@ media_library:
     cloud_name: the-great-sync
     api_key: 296358997549996
 
-
 local_backend: true
 media_folder: static/img
 public_folder: /img
