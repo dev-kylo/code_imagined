@@ -72,23 +72,34 @@ export const TextContainer = styled.section `
     }
 `
 
+
+export const PostTemplate = ({title, html}) => (
+  <>
+  <PageTitle postTitle>{title}</PageTitle>
+  <TextContainer>
+      <div
+        className="blog-post-content"
+        dangerouslySetInnerHTML={ { __html: html } }
+      />
+  </TextContainer>
+  </>
+)
+
 export default function Post({
   data
 }) {
 
   const { markdownRemark } = data;
   const {  html, frontmatter: post } = markdownRemark;
+  console.log('--- MARKDOWN IN BLOG TEMPLATE ----')
   console.log(markdownRemark);
 
   return (
     <Providers postTheme={true}>
-      <PageTitle postTitle>{post.title}</PageTitle>
-      <TextContainer>
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-      </TextContainer>
+      <PostTemplate 
+        title={post.title}
+        html={html}
+      />
     </Providers>
   );
 }

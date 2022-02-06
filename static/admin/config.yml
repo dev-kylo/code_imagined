@@ -1,18 +1,24 @@
 backend:
   name: github
   repo: kylorobs/code_imagined
-  branch: moo
+  branch: main
+
 media_library:
   name: cloudinary
   config:
     cloud_name: the-great-sync
     api_key: 296358997549996
-public_folder: /images/uploads
+
+
+local_backend: true
+media_folder: static/img
+public_folder: /img
 site_url: https://thegreatsync.com/
+
 collections:
   - name: posts
-    label: posts
-    folder: posts
+    label: Posts
+    folder: "src/pages/posts"
     create: true
     fields:
       - { name: path, label: Path }

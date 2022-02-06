@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: `The Great Sync Javascript Mental Model`,
     description: `Building a visual mental model for learning javascript. The Great Sync Javascript mental model will help you break down the fundamental concepts.`,
-    author: `Kyle Robinson`,
+    author: `Kylo Robinson`,
     siteUrl: 'https://thegreatsync.com'
   },
   plugins: [
@@ -21,7 +21,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-open-graph-images`,
     `gatsby-transformer-remark`,
     {
@@ -64,6 +63,12 @@ module.exports = {
       options: {
         path: `${__dirname}/posts`,
         name: 'markdown-pages',
+      },
+    },
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
     {
