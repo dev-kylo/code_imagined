@@ -45,19 +45,6 @@ exports.createPages = async ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    console.log('Blog Content');  
-    console.log(result.data.allMarkdownRemark.edges)
-
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      // const previousPostId = index === 0 ? null : posts[index - 1].id
-      // const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
-
-      createPage({
-        path: node.frontmatter.path,
-        component: postTemplate,
-        context: {  },
-      });
-    });
   });
 
 };
