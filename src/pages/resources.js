@@ -29,23 +29,23 @@ const Resources = ({data}) => {
 
 export default Resources;
 
-export const pageQuery = graphql`
-  query GetAllPostTitles {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 3
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            date
-            path
-            title
-          }
-        }
-      }
-    }
+// export const pageQuery = graphql`
+//   query GetAllPostTitles {
+//     allMarkdownRemark(
+//       sort: { order: DESC, fields: [frontmatter___date] }
+//       limit: 3
+//     ) {
+//       edges {
+//         node {
+//           id
+//           frontmatter {
+//             date
+//             path
+//             title
+//           }
+//         }
+//       }
+//     }
 
-  }
-`;
+//   }
+// `;

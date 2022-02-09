@@ -1,9 +1,7 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Providers from '../../providers/Providers';
 import PageTitle from '../UI/pageTitle.styled';
-import Drawer from '../UI/drawer';
 
 
 export const TextContainer = styled.section `
@@ -104,16 +102,3 @@ export default function Post({
   );
 }
 
-export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      id
-      html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
-        title
-      }
-    }
-  }
-`;
