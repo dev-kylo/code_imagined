@@ -3,8 +3,8 @@ import '../utils/fontawesome';
 import Providers from "../providers/Providers";
 import PageTitle from "../components/UI/pageTitle.styled";
 import styled from 'styled-components';
-import { TextContainer } from "../components/templates/post";
 import Drawer from "../components/UI/drawer";
+import { TextContainer } from "../components/UI/textContainer";
 
 
 const Extra = () => {

@@ -1,13 +1,13 @@
 import React, { useContext } from "react"
 import Providers from "../../providers/Providers";
 import PageTitle from "../../components/UI/pageTitle.styled";
-import { TextContainer } from "../../components/templates/post";
 import Drawer from "../../components/UI/drawer";
 
 import { H2 } from "../../components/UI/headings.styled";
 import DownloadLink from "../../components/UI/downloadLink.styled";
 import { Flex } from "rebass/styled-components";
 import SignUp from "../../components/UI/signup.styled";
+import { TextContainer } from "../../components/UI/textContainer";
 
 
 const Thankyou = () => {

@@ -1,11 +1,9 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
- require("dotenv").config({
-  path: `.env`,
- })
+const linkResolver = require('./src/utils/linkResolver.js')
+
+require("dotenv").config({
+  path:  `.env`,
+ });
+
 
 module.exports = {
   siteMetadata: {
@@ -23,6 +21,15 @@ module.exports = {
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-open-graph-images`,
     `gatsby-transformer-remark`,
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'thegreatsync',
+        accessToken: 'MC5ZZ05ldEJFQUFCOEFIMUN2.Ku-_vRrvv709DihM77-977-977-977-9Zu-_vXDvv70ddFZy77-9R07vv70gKQYK77-9aHpQ',
+        customTypesApiToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoibWFjaGluZTJtYWNoaW5lIiwiZGJpZCI6InRoZWdyZWF0c3luYy05MjAyNDgxNC1hNTYyLTQzZTctOTZjOS1mNDA2OWU1NDFjM2FfNCIsImRhdGUiOjE2NDQzODgxNzAsImRvbWFpbiI6InRoZWdyZWF0c3luYyIsImlhdCI6MTY0NDM4ODE3MH0.eOkEZ3HGRfJ895Iwud6n_doX17GSaQVJkrw21hU-pd0',
+        linkResolver: (doc) => linkResolver(doc),
+      },
+    },
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
       options: {

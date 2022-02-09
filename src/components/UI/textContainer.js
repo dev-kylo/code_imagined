@@ -1,8 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
-import Providers from '../../providers/Providers';
-import PageTitle from '../UI/pageTitle.styled';
-
+import styled from "styled-components"
 
 export const TextContainer = styled.section `
     width: 70%;
@@ -69,36 +65,3 @@ export const TextContainer = styled.section `
       }
     }
 `
-
-
-export const PostTemplate = ({title, html}) => (
-  <>
-  <PageTitle postTitle>{title}</PageTitle>
-  <TextContainer>
-      <div
-        className="blog-post-content"
-        dangerouslySetInnerHTML={ { __html: html } }
-      />
-  </TextContainer>
-  </>
-)
-
-export default function Post({
-  data
-}) {
-
-  const { markdownRemark } = data;
-  const {  html, frontmatter: post } = markdownRemark;
-  console.log('--- MARKDOWN IN BLOG TEMPLATE ----')
-  console.log(markdownRemark);
-
-  return (
-    <Providers postTheme={true}>
-      <PostTemplate 
-        title={post.title}
-        html={html}
-      />
-    </Providers>
-  );
-}
-

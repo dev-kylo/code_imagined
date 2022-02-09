@@ -3,17 +3,14 @@ import '../utils/fontawesome';
 import Providers from "../providers/Providers";
 import PageTitle from "../components/UI/pageTitle.styled";
 import styled from 'styled-components';
-import { TextContainer } from "../components/templates/post";
 import Drawer from "../components/UI/drawer";
-import SignUp from "../components/UI/signup.styled";
-
 import { Flex, Box, Button} from 'rebass/styled-components';
 import {
     Label,
     Input,
     Textarea
   } from '@rebass/forms/styled-components'
-import { H2 } from "../components/UI/headings.styled";
+import { TextContainer } from "../components/UI/textContainer";
 
 
   
