@@ -33,6 +33,7 @@ const FooterContainer = styled.footer`
     small {
         margin: 1em 0;
         font-size: 18px; 
+        color: ${props => props.dark? props.theme.colors.navy : 'white'};
 
         @media only screen and (max-width: 480px){
             min-width: 100%;
@@ -45,7 +46,7 @@ const FooterContainer = styled.footer`
             padding: 0;
             font-size: 18px; 
             text-decoration: none;
-            color: ${props => props.theme.colors.pink};
+            color: ${props => props.dark? props.theme.colors.navy : props.theme.colors.pink};
         }
 
 
@@ -56,11 +57,11 @@ const FooterContainer = styled.footer`
 
 
 
-const Footer = () => {
+const Footer = (props) => {
 
   return (
   <StyledFooter>
-    <FooterContainer>
+    <FooterContainer dark={props.dark}>
         <hr></hr>
         <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap">
             <small> © 2021 The Great Sync - All Rights Reserved</small>

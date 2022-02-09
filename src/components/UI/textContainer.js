@@ -20,6 +20,11 @@ export const TextContainer = styled.section `
       padding: 0.5em 0;
       line-height: ${props => props.small? '26px': '33px'};
       z-index: 150;
+
+      strong {
+          color: ${props => props.theme.colors.red};
+          font-weight: bold;
+      }
       
       @media (max-width: 1100px){
           line-height: 28px;
@@ -63,5 +68,8 @@ export const TextContainer = styled.section `
         padding:0.2rem;
        list-style: initial;
       }
+    }
+    img {
+        max-width: 100%;
     }
 `
