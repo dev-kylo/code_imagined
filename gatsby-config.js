@@ -33,7 +33,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
-        exclude: [`/__generated/*`],
+        createLinkInHead: true,
+        exclude: [`/__generated/*`, `/subscribed/`, `/unsubscribed/`, `/404/*`, `/downloads/*`, `/thankyou/`],
       },
     },
     {
