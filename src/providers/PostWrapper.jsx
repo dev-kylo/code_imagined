@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SEO from '../layout/seo';
 import Layout from '../layout/layout';
 import { theme } from '../theme';

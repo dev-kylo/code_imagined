@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import '../utils/fontawesome';
 import Providers from "../providers/Providers";
 import PageTitle from "../components/UI/pageTitle.styled";
@@ -15,22 +15,13 @@ import { H2 } from "../components/UI/headings.styled";
 import { TextContainer } from "../components/UI/textContainer";
 
 
-  
-
  const HoneyInput = styled.div`
     opacity: 0;
     visibility: hidden;
     height: 1px;
  ` 
 
-
 const Subscribed = () => {
-
-    // const [experience, setExperience] = useState('');
-    // const [goals, setGoals] = useState('');
-    // const [reason, setReason] = useState('');
-
-
     return (
         <Providers>
             <Drawer />
@@ -53,7 +44,7 @@ const Subscribed = () => {
                         <input type="hidden" name="form-name" value="newsubscriber" />
                         <Flex flexDirection="column" mx={-2} mb={0}>
                             <Box width={1} px={2}>
-                                <Label mb="0.4rem" htmlFor='name'>What is your level of experience with Javascript?</Label>
+                                <Label mb="0.4rem" htmlFor='experience'>What is your level of experience with Javascript?</Label>
                                 <Textarea
                                     id='experience'
                                     name='experience'
@@ -62,7 +53,7 @@ const Subscribed = () => {
                                 />
                             </Box>
                             <Box m="1rem 0" width={1} px={2}>
-                                <Label mb="0.4rem " htmlFor='name'>What are your goals when it comes to learning Javascript?</Label>
+                                <Label mb="0.4rem " htmlFor='goals'>What are your goals when it comes to learning Javascript?</Label>
                                 <Textarea
                                     id='goals'
                                     name='goals'
@@ -71,7 +62,7 @@ const Subscribed = () => {
                                 />
                             </Box>
                             <Box m="1rem 0" width={1} px={2}>
-                                <Label mb="0.4rem " htmlFor='name'>Why are you here? What drove you to look for visuals ways of learning?</Label>
+                                <Label mb="0.4rem " htmlFor='reason'>Why are you here? What drove you to look for visuals ways of learning?</Label>
                                 <Textarea
                                     id='reason'
                                     name='reason'
@@ -96,25 +87,6 @@ const Subscribed = () => {
                             </Box>
                         </Flex>
             </Box>
-                {/* <form data-netlify="true" name="newsubscriber" method="post" onSubmit={handleSubmit}>
-                    
-                    <input type="hidden" name="form-name" value="newsubscriber" />
-                    
-                    <label>What level of experience would you say you are?
-                        <input name="experience" value={experience} type="text" onChange={(val) => setExperience(val)} />
-                    </label>
-
-                    <label>What are your goals when it comes to learning Javascript?
-                        <input name="goals" type="text" value={goals} onChange={(val) => setGoals(val)} />
-                    </label>
-
-                    <label>What about what you have seen so far makes learning Javascript with visual analogy so exciting?
-                        <input name="reason" type="text" value={reason} onChange={(val) => setReason(val)} />
-                    </label>
-
-                    <input type="submit"/>
-                </form> */}
-            
             
             </TextContainer>
             <SignUp />

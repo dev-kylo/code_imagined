@@ -9,7 +9,6 @@ import ModalContext from '../context/toggle';
 import '../utils/fontawesome';
 import FadeOnScroll from "../hoc/fadeOnScroll";
 import Footer from "../components/UI/footer.styled";
-import Drawer from "../components/UI/drawer";
 
 
 const Providers = (props) => {

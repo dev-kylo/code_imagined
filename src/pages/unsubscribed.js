@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import '../utils/fontawesome';
 import Providers from "../providers/Providers";
 import PageTitle from "../components/UI/pageTitle.styled";
@@ -23,11 +23,6 @@ import { TextContainer } from "../components/UI/textContainer";
 
 
 const UnSubscribed = () => {
-
-    // const [experience, setExperience] = useState('');
-    // const [goals, setGoals] = useState('');
-    // const [reason, setReason] = useState('');
-
 
     return (
         <Providers>

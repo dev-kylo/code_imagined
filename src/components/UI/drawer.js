@@ -1,4 +1,4 @@
-import { graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
 import React, {useState} from 'react';
 import { bubble as Menu } from 'react-burger-menu';
 import styled from 'styled-components';

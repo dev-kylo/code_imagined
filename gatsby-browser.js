@@ -1,4 +1,4 @@
-// Example gatsby-browser.js and gatsby-ssr.js file
+//Example gatsby-browser.js and gatsby-ssr.js file
 
 import * as React from 'react'
 import { Link } from 'gatsby'

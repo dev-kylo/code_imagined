@@ -1,26 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-import Providers from '../providers/Providers';
 import PageTitle from '../components/UI/pageTitle.styled';
 import { SliceZone } from '@prismicio/react';
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import { TextContainer } from '../components/UI/textContainer';
 import { components } from '../slices';
 import PostWrapper from '../providers/PostWrapper';
 
-
-
-export const PostTemplate = ({title, html}) => (
-  <>
-  <PageTitle postTitle>{title}</PageTitle>
-  <TextContainer>
-      <div
-        className="blog-post-content"
-        dangerouslySetInnerHTML={ { __html: html } }
-      />
-  </TextContainer>
-  </>
-)
 
 export default function Post({
   data

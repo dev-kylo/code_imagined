@@ -5,7 +5,6 @@ import PageTitle from "../components/UI/pageTitle.styled";
 import styled from 'styled-components';
 import Drawer from "../components/UI/drawer";
 import CalendlyPopupButton from "../components/UI/calendlyPopup";
-import SignUp from "../components/UI/signup.styled";
 import { TextContainer } from "../components/UI/textContainer";
 
 

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { Card, Image, Text } from "rebass/styled-components";
+import { Card, Image } from "rebass/styled-components";
 import React from 'react';
-import { theme } from '../../theme';
 
 const Paper = styled.div`
     background: ${({red, theme}) => red ? theme.colors.navy : theme.colors.blue};
