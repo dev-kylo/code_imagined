@@ -18,9 +18,16 @@ module.exports = {
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-robots-txt`,
     `gatsby-plugin-open-graph-images`,
     `gatsby-transformer-remark`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://thegreatsync.com/',
+        sitemap: 'https://thegreatsync.com/sitemap-pages.xml',
+        policy: [{userAgent: '*', allow: '/'}]
+      }
+    },
     {
       resolve: 'gatsby-source-prismic',
       options: {
