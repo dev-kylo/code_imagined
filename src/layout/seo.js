@@ -25,7 +25,7 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description;
-  const mainTitle = title || site.siteMetadata.title;
+  const mainTitle = title ? `The Great Sync - ${title}` : site.siteMetadata.title;
   return (
     <Helmet
       htmlAttributes={{
@@ -68,7 +68,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: `Learn Javascript visually using memory techniques`,
         },
       ].concat(meta)}
     >
