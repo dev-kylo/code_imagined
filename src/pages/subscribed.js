@@ -22,6 +22,7 @@ import { TextContainer } from "../components/UI/textContainer";
  ` 
 
 const Subscribed = () => {
+
     return (
         <Providers>
             <Drawer />
@@ -31,7 +32,7 @@ const Subscribed = () => {
                     with story and visual analogy, and introduce you to The Great Sync.
                 </p>
                 <p>Before you go, I WOULD love to hear from you and understand a bit more about your background and goals.</p>
-                
+                            
                 <H2>Tell me about you</H2>
 
                 <Box

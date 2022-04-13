@@ -22,7 +22,7 @@ export default function Post({
       postTitle={title}
       description={desc}
     >
-       <PageTitle postTitle>{title}</PageTitle>
+      <PageTitle postTitle>{title}</PageTitle>
       <TextContainer>
       <SliceZone slices={post.body} components={components} />
       </TextContainer>
@@ -52,6 +52,7 @@ export const query = graphql`
           }
           ...PostDataBodyImage 
           ...PostDataBodyText
+          ...PostDataBodyCode
         }
       }
     }
