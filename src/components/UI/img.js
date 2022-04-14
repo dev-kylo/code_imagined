@@ -5,7 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 const ImageContainer = styled.div`
     width: 100%; 
-    max-width: 1000px;
+    max-width: ${props => props.maxWidth? `${props.maxWidth}px`: '1000px'};
     margin: auto;
     height: auto;
     margin: 2rem 0;
@@ -16,8 +16,8 @@ const ImageContainer = styled.div`
     }
 `
 
-const Img = ({gatsbyImageData, altText}) => (
-    <ImageContainer>
+const Img = ({gatsbyImageData, altText, maxWidth}) => (
+    <ImageContainer maxWidth={maxWidth}>
         <GatsbyImage image={gatsbyImageData} alt={altText || ''} />
     </ImageContainer>
 );

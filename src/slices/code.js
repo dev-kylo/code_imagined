@@ -7,11 +7,22 @@ const Slice_Code = ({ slice }) => {
 
     console.log(slice)
 
-    let codeString = slice? slice.primary.codestring.text : '';
+    let codeString = slice? `${slice.primary.codestring.text}` : '';
+    console.log(codeString);
+
+
 
     if(slice){   	
+        if (slice.primary.hide) return null;
         return (
-            <SyntaxHighlighter language="javascript" style={vs2015} customStyle={{'font-size': '18px','font-family': 'monospace','line-height': '28px' }}>
+            <SyntaxHighlighter 
+                language="javascript" 
+                style={vs2015} 
+                customStyle={{'font-size': '18px','font-family': 'monospace','line-height': '28px' }}
+                lineProps={{ style : { paddingBottom: '8'}}}
+                wrapLines
+                wrapLongLines
+                >
                 {codeString}
             </SyntaxHighlighter>
         );
@@ -25,8 +36,12 @@ export default Slice_Code
 export const query = graphql`
   fragment PostDataBodyCode on PrismicPostDataBodyCode {
     primary {
+        hide
         codestring {
             text
+            html
+            raw
+            richText
         }
     }
   }
