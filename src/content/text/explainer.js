@@ -64,7 +64,7 @@ const Explainer = () => {
                         all living in my imagination. It could be referred back to whenever I was stuck or confused. It broke down the difficult concepts, and tied everything together.</P>
                 <P>I have relied on it to grow my knowledge of the language, and have used it to coach many junior and aspiring devs. </P>
                 <P>I would love for you to make it your own, to build it brick by brick, 
-                    function invocation by function invocation, and create a visual mental model that lasts forever.</P>
+                    function invocation by function invocation, and create a visual model of the language that lasts forever.</P>
                 <P> </P>
                 <Flex justifyContent="center">
                     <Button center clicked={showSignUp}>Show me The Great Sync!</Button>

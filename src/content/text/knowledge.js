@@ -5,7 +5,7 @@ import {Copy} from '../../components/UI/containers.styled'
 
 const knowledge = () => (
     <Copy>
-        <H2> Solution: a visual mental model</H2>
+        <H2> Solution: a visual, memorable model</H2>
         <P>We can build something in our minds that keeps everything we know and understand about Javascript in one place. </P>
     </Copy>
 );
