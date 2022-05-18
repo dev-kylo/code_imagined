@@ -1,3 +1,4 @@
+
 const linkResolver = require('./src/utils/linkResolver.js')
 
 require("dotenv").config({
@@ -36,6 +37,9 @@ module.exports = {
         customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
         linkResolver: (doc) => linkResolver(doc),
       },
+    },
+    {
+      resolve: `gatsby-remark-prismjs`,
     },
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
