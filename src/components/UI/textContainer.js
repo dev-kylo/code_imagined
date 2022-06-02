@@ -50,17 +50,26 @@ export const TextContainer = styled.section `
       }
     }
 
-    h2 {
+    h2, h3 {
         font-family: ${props => props.theme.fonts.heading1};
         color: ${props => props.theme.colors.navy};
-        font-size: 28px;
         text-align: left;
         padding: 0.5em 0;
         margin: 1em 0;
+      }
+    h2 {
+        font-size: 28px;
         @media (min-width: 600px){
             font-size: 30px;
         }
-      }
+    }
+    h3 {
+        font-size: 22px;
+        margin: 0.5em 0;
+        @media (min-width: 600px){
+            font-size: 25px;
+        }
+    }
 
     ul {
       li {

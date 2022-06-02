@@ -3,10 +3,11 @@
 import Slice_Image from "./image";
 import Slice_Text from "./text";
 import Slice_Code from "./code";
-
+import Slice_Gallery from "./gallery";
 
 export const components = {
     text: Slice_Text,
     image: Slice_Image,
-    code_: Slice_Code
+    code_: Slice_Code,
+    gallery: Slice_Gallery
   }

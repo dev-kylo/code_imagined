@@ -6,9 +6,8 @@ import { GatsbyImage } from "gatsby-plugin-image"
 const ImageContainer = styled.div`
     width: 100%; 
     max-width: ${props => props.maxWidth? `${props.maxWidth}px`: '1000px'};
-    margin: auto;
     height: auto;
-    margin: 2rem 0;
+    margin: 2rem auto;
     img {
         width: 100%;
         height: auto;
