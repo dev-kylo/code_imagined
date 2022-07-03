@@ -96,7 +96,7 @@ const Drawer = ({posts}) => {
       
             <ul style={{width: '100%'}}>
               <DrawerItem><Link to="/">Home</Link></DrawerItem>
-              <DrawerItem><Link to="/workshops">Workshops</Link></DrawerItem>
+              {/* <DrawerItem><Link to="/workshops">Workshops</Link></DrawerItem> */}
               {/* <DrawerItem><Link to="/resources">Blog</Link></DrawerItem> */}
               <DrawerItem><Link to="/extra">Extra Reading</Link></DrawerItem>
             </ul> 
