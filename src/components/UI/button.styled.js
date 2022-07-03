@@ -38,14 +38,19 @@ export const StyledButton = styled.button`
         }
 `
 
-export const Button = props => {
+export const Button = ({children, clicked, link, type = 'link'}) => {
 
     const clickHandler = (e) => {
         e.preventDefault();
-        props.clicked();
-    }
+        clicked();
+    };
 
-    if (props.link) return <Link to={props.link}><StyledButton>{props.children}</StyledButton></Link>
+    console.log(type);
 
-    return <StyledButton onClick={e => clickHandler(e)}>{props.children}</StyledButton>
+    if (link && type === 'link') return <Link to={link}><StyledButton>{children}</StyledButton></Link>
+    if (link && type === 'external') return <a target="_blank" rel="noopener noreferrer" href={link}><StyledButton>{children}</StyledButton></a>
+    if (link && type === 'download') return <a target="_blank" rel="noopener noreferrer" href={link} download><StyledButton>{children}</StyledButton></a>
+   
+    return <StyledButton onClick={e => clickHandler(e)}>{children}</StyledButton>
 }
+

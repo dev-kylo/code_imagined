@@ -13,6 +13,15 @@ export const TextContainer = styled.section `
         width: 80%;
     }
 
+    ol, ul {
+    list-style: auto;
+    margin-left: 1em;
+    }
+
+    li::marker {
+        color: ${props => props.theme.colors.red};
+    }
+
     p, li {
       font-family: ${props => props.theme.fonts.par};
       color: ${props => props.theme.colors.navy};
@@ -21,9 +30,37 @@ export const TextContainer = styled.section `
       line-height: ${props => props.small? '26px': '33px'};
       z-index: 150;
 
-      strong {
+    strong {
           color: ${props => props.theme.colors.red};
           font-weight: bold;
+      }
+
+    em {
+        font-style: italic;
+    }
+
+      .codespan {
+        font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        font-size: 0.8em;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+        background: #021627;
+        color: white;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.5rem;
+        margin: 0 0.3rem;
+        margin-right: 0.1em;
       }
       
       @media (max-width: 1100px){
