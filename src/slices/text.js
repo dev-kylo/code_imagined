@@ -3,8 +3,6 @@ import { PrismicRichText } from '@prismicio/react'
 import { graphql } from "gatsby";
 
 const Slice_Text = ({ slice }) => {
-    console.log('----slice----');
-    console.log(slice)
     if(slice){   	
         return (
             <div>

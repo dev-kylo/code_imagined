@@ -56,6 +56,7 @@ export const query = graphql`
           ...PostDataBodyGallery
           ...PostDataBodyButton
           ...PostDataBodyVideo
+          ...PostDataBodySignUp
         }
       }
     }

@@ -7,6 +7,7 @@ import {
     Input,
   } from '@rebass/forms/styled-components'
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
   
 
@@ -18,7 +19,7 @@ import styled from 'styled-components';
 const Form = (props) => (
     <>
     <H3 dark>Free email course</H3>
-    <P small dark style={{'margin-bottom': '1em'}}>Sign up for a free introduction to building a javascript visual mental model.</P>
+    <P small dark style={{'margin-bottom': '1em'}}>Learn Javascript visually with the <a style={{textDecoration: 'none'}} target="_blank" rel="noopener noreferrer" href="/posts/flying-ships-object-cloning-short-course">Flying Ships & Object Cloning</a> short course. </P>
     <Box
         as='form'
         onSubmit={e => props.submit(e)}
