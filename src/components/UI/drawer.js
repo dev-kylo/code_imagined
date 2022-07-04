@@ -97,7 +97,8 @@ const Drawer = ({posts}) => {
             <ul style={{width: '100%'}}>
               <DrawerItem><Link to="/">Home</Link></DrawerItem>
               {/* <DrawerItem><Link to="/workshops">Workshops</Link></DrawerItem> */}
-              {/* <DrawerItem><Link to="/resources">Blog</Link></DrawerItem> */}
+              <DrawerItem><Link to="/flying-ships-object-cloning-short-course">Free Course</Link></DrawerItem>
+              <DrawerItem><a target="_blank" rel="noopener noreferrer" href="https://www.codenewbie.org/podcast/how-to-use-different-memory-techniques-to-learn-coding"> Code Newbie Podcast</a></DrawerItem>
               <DrawerItem><Link to="/extra">Extra Reading</Link></DrawerItem>
             </ul> 
         
