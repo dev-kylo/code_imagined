@@ -5,9 +5,6 @@ import {Button} from '../../components/UI/button.styled';
 import { SignupContext } from '../../context/toggle';
 import { H2 } from '../../components/UI/headings.styled';
 import { Flex } from 'rebass/styled-components';
-import { Link } from 'gatsby';
-import PageLink from '../../components/UI/pagelink';
-
 
 const TextContainer = styled.section `
     width: 70%;
@@ -59,7 +56,7 @@ const Explainer = () => {
                     <P>Soon though, I began notice big gaps in my understanding. 
                     I still felt like I didn't have a full grasp of Javascript fundamentals. I just couldn't fit all the pieces together.</P>
                 </CallOut>
-                <P>The truth? I still found javascript hard. There were some things I did not understand fully, or couldn't wrap my mind around at all. I wrote more about this in my blog post on <PageLink to="/posts/why-javascript-is-difficult">Why Learning Javascript is Difficult.</PageLink></P>
+                <P>The truth? I still found javascript hard. There were some things I did not understand fully, or couldn't wrap my mind around at all.</P>
                 <P>And that's when I began The Great Sync - a single, powerful resource which exposed the bare bones of Javascript,
                         all living in my imagination. It could be referred back to whenever I was stuck or confused. It broke down the difficult concepts, and tied everything together.</P>
                 <P>I have relied on it to grow my knowledge of the language, and have used it to coach many junior and aspiring devs. </P>

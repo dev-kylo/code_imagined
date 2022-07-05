@@ -31,8 +31,8 @@ const ButtonWrapper = styled.div`
   height: auto!important;
 
   @media(max-width: 780px){
-    right: 2rem;
-    bottom: 2rem;
+    right: 1.5rem;
+    bottom: 1rem;
   }
 
 `

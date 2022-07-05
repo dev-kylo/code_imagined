@@ -18,6 +18,7 @@ const StyledBurger = styled.button`
   z-index: 2000;
   border-radius: 4rem;
   transition: background 0.3s ease-in;
+  border: 1px solid black;
   &:hover {
     background: ${({ theme }) => theme.colors.red};;
   }
