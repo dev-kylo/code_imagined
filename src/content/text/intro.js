@@ -70,7 +70,7 @@ const Intro = props => {
                         />
                     </Logo>
                     <Title>
-                        <H1>The Great Sync - A Visual Model For Javascript</H1>
+                        <H1>The Great Sync - visual & memorable Javascript</H1>
                         <DesktopDisplay>
                         <P>Can you build a React app but still find javascript hard? Use your imagination to build a mental model of javascript fundamentals.</P>
                         </DesktopDisplay>
@@ -94,7 +94,7 @@ const Intro = props => {
                 </DesktopDisplay>
                 <Title>
                     <DesktopDisplay>
-                        <H1>The Great Sync - A Visual Model For Javascript</H1>
+                        <H1>The Great Sync - visual & memorable Javascript</H1>
                     </DesktopDisplay>
                     <MobileDisplay>
                         <H2> Build a foundation</H2>
