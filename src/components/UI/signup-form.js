@@ -16,6 +16,7 @@ import { Link } from 'gatsby';
     visibility: hidden;
  ` 
 
+
 const Form = (props) => (
     <>
     <H3 dark>Free email course</H3>
