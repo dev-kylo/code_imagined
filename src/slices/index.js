@@ -7,6 +7,7 @@ import Slice_Gallery from "./gallery";
 import Slice_Button from "./button";
 import Slice_Video from "./video";
 import Slice_Signup from "./signup";
+import Slice_Form from "./form";
 
 export const components = {
     text: Slice_Text,
@@ -15,5 +16,6 @@ export const components = {
     gallery: Slice_Gallery,
     button: Slice_Button,
     video: Slice_Video,
-    sign_up: Slice_Signup
-  }
+    sign_up: Slice_Signup,
+    form: Slice_Form
+}
