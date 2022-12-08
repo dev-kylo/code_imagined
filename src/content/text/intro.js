@@ -4,6 +4,7 @@ import { H1, H2 } from '../../components/UI/headings.styled';
 import { P } from '../../components/UI/text.styled';
 import styled from 'styled-components';
 import { DesktopDisplay, MobileDisplay} from '../../components/UI/containers.styled';
+import { Box } from 'rebass';
 
 const Logo = styled.div`
     width: 160px;
@@ -100,6 +101,20 @@ const Intro = props => {
                         <H2> Build a foundation</H2>
                     </MobileDisplay>
                     <P>Can you build a React app but still find javascript hard? Use your imagination to build a mental model of javascript fundamentals.</P>
+                    <Box
+                        sx={{
+                            display: 'inline-block',
+                            color: 'white',
+                            bg: '#AB3428',
+                            px: 2,
+                            py: 1,
+                            my:2,
+                            borderRadius: 9999,
+                        }}>
+                            <P>🔥 Full Course Coming early 2023 🔥</P>
+                        
+                    </Box>
+        
                 </Title>
             </Container>
         )

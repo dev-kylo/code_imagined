@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const H1 = styled.h1`
     font-family: ${props => props.theme.fonts.heading1};
-    color: ${props => props.theme.colors.white};
+    color: ${props => 'white'};
     font-size: 35px;
     padding: 1rem;
     padding-top: 0;

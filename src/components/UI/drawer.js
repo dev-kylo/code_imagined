@@ -1,7 +1,8 @@
 import { Link } from 'gatsby';
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import { bubble as Menu } from 'react-burger-menu';
 import styled from 'styled-components';
+import { MenuContext } from '../../context/menuContext';
 import { theme} from '../../theme';
 import BurgerMenu from './burgerMenu';
 import DrawerItem from './drawerItem';
@@ -17,8 +18,6 @@ const MenuContainer = styled.div`
       min-width: 300px
     }
   }
-
-
 
 `
 
@@ -54,7 +53,7 @@ const styles = {
     maxWidth: '550px',
   },
   bmMenu: {
-    background: theme.colors.black,
+    background: theme.colors.blue,
     padding: '1.5em 1em 0',
     fontSize: '1.15em',
     width: '100%'
@@ -73,31 +72,28 @@ const styles = {
   bmOverlay: {
     background: 'rgba(0, 0, 0, 0.3)'
   }
-}
+};
+
+const Highlight = styled.span`
+  background: ${({ theme }) =>  theme.colors.red};
+  color: white;
+  padding: 0.5em 1em;
+`
 
 const Drawer = ({posts}) => {
 
-  const [isOpen, setOpen] = useState(false);
-
-    const openHandler = (e) => {
-      e.preventDefault();
-      setOpen(!isOpen);
-    };
-
-    const closeHandler = () => {
-      setOpen(false);
-    }
-
+  const {menuIsOpen, openMenu, closeMenu} = useContext(MenuContext)
 
     // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
     return (
       <MenuContainer>
-          <Menu onClose={closeHandler} isOpen={isOpen} right pageWrapId={ "page-wrap" } styles={styles} customBurgerIcon={<ButtonWrapper><BurgerMenu hide={isOpen}  click={openHandler} /></ButtonWrapper>}>
+          <Menu onClose={closeMenu} isOpen={menuIsOpen} right pageWrapId={ "page-wrap" } styles={styles} customBurgerIcon={<ButtonWrapper><BurgerMenu hide={menuIsOpen}  click={openMenu} /></ButtonWrapper>}>
       
             <ul style={{width: '100%'}}>
               <DrawerItem><Link to="/">Home</Link></DrawerItem>
               {/* <DrawerItem><Link to="/workshops">Workshops</Link></DrawerItem> */}
-              <DrawerItem><Link to="/posts/flying-ships-object-cloning-short-course">Free Course</Link></DrawerItem>
+              <DrawerItem><Highlight><Link to="/posts/flying-ships-object-cloning-short-course">Course Release</Link></Highlight></DrawerItem>
+              <DrawerItem><Link to="/posts/flying-ships-object-cloning-short-course">Taster Course</Link></DrawerItem>
               <DrawerItem><a target="_blank" rel="noopener noreferrer" href="https://www.codenewbie.org/podcast/how-to-use-different-memory-techniques-to-learn-coding"> Code Newbie Podcast</a></DrawerItem>
               <DrawerItem><Link to="/extra">Extra Reading</Link></DrawerItem>
             </ul> 

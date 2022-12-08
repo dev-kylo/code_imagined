@@ -11,7 +11,7 @@ const StyledBurger = styled.button`
   align-items: center;
   width: 4rem;
   height: 4rem;
-  background: ${({ theme }) =>  theme.colors.primary};;
+  background: ${({ theme }) =>  theme.colors.blue};;
   border: none;
   cursor: pointer;
   padding: 0.7rem;
@@ -30,7 +30,7 @@ const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.4rem;
-    background: black;
+    background: white;
     border-radius: 5px;
     border: 1px solid black;
     transition: all 0.3s linear;

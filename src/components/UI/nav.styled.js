@@ -4,11 +4,14 @@ import {SignupContext} from '../../context/toggle';
 import { Flex, Button, Text, Box} from 'rebass/styled-components/';
 import { Label, Switch } from '@rebass/forms/styled-components';
 import { Hl } from './text.styled';
+import { DesktopDisplay } from './containers.styled';
+import { MenuContext } from '../../context/menuContext';
+
 
 
 const Nav = props => {
 
-
+    const {openMenu, menuIsOpen} = useContext(MenuContext);
     const showSignUp = useContext(SignupContext).show;
     const animate = useContext(SignupContext).animate;
     const toggleAnimations = useContext(SignupContext).toggleAnimate;   
@@ -22,8 +25,6 @@ return (
                 zIndex: '10000000',
                 width: '100%',
                 transformOrigin: 'top',
-                // opacity: `${props.scrollingDown? 0: 1}`,
-                // transform: `${props.scrollingDown? 'scaleY(0)': 'scaleY(1)'}`,
                 transition: 'opacity 1s,  transform 1s',
         }}>
             <Flex
@@ -35,19 +36,24 @@ return (
                 height="100%">
             
                 {/* <Box></Box> */}
-                <Button bg="red" sx={{marginLeft: '1em'}} onClick={() => showSignUp()}> Subscribe and Learn</Button>
-                <Flex>
-                    <Label sx={{display: 'flex', alignItems: 'center'}}> 
-                        <Text fontSize={[14, 14, 18, 18]}><Hl blue={!animate}>Animations {animate? 'ON' : 'OFF'}</Hl></Text>
-                        <Switch
-                            color={animate? 'green' : 'red'}
-                            checked={animate}
-                            onClick={toggleAnimations}
-                            sx={{ cursor: 'pointer' }}
-                            m='5px'
-                        />
-                    </Label>
-                </Flex>
+                <div>
+                        <Button bg="blue" sx={{marginLeft: '1em'}} onClick={() => openMenu()}> {!menuIsOpen? 'Menu' : 'Close'}</Button>
+                        {!menuIsOpen && <Button bg="red" sx={{marginLeft: '1em'}} onClick={() => showSignUp()}> Subscribe and Learn</Button>}
+                </div>
+                       <DesktopDisplay > 
+                            <Flex >
+                            <Text fontSize={[14, 14, 18, 18]}><Hl blue={!animate}>Animations {animate? 'ON' : 'OFF'}</Hl></Text>
+                                <Label sx={{display: 'flex', alignItems: 'center', width: '4em'}}> 
+                                    <Switch
+                                        color={animate? 'green' : 'red'}
+                                        checked={animate}
+                                        onClick={toggleAnimations}
+                                        sx={{ cursor: 'pointer' }}
+                                        m='5px'
+                                    />
+                                </Label>
+                            </Flex>
+                    </DesktopDisplay>
             </Flex>
         </Box>
 

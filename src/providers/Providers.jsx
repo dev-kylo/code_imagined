@@ -9,6 +9,7 @@ import ModalContext from '../context/toggle';
 import '../utils/fontawesome';
 import FadeOnScroll from "../hoc/fadeOnScroll";
 import Footer from "../components/UI/footer.styled";
+import MenuProvider from "../context/menuContext";
 
 
 const Providers = (props) => {
@@ -19,16 +20,18 @@ const Providers = (props) => {
   return (
     <ThemeProvider theme={theme}>
       <SEO />
-      <FadeOnScroll setScrollDown={ setScrollingDown }>
-        <LayersManager>
-          <Layout postTheme={props.postTheme}>
-            <ModalContext>
-              <Nav scrollingDown={isScrollingDown} />
-                {props.children}
-            </ModalContext>
-          </Layout>
-        </LayersManager>
-      </FadeOnScroll>
+      <MenuProvider>
+        <FadeOnScroll setScrollDown={ setScrollingDown }>
+          <LayersManager>
+            <Layout postTheme={props.postTheme}>
+              <ModalContext>
+                <Nav scrollingDown={isScrollingDown} />
+                  {props.children}
+              </ModalContext>
+            </Layout>
+          </LayersManager>
+        </FadeOnScroll>
+      </MenuProvider>
       <Footer />
     </ThemeProvider>
   )

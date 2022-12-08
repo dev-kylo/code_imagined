@@ -7,20 +7,17 @@ import {
     Input,
   } from '@rebass/forms/styled-components'
 import styled from 'styled-components';
-import { Link } from 'gatsby';
-
-  
 
  const HoneyInput = styled.div`
     opacity: 0;
     visibility: hidden;
+    position: absolute;
  ` 
-
 
 const Form = (props) => (
     <>
-    <H3 dark>Free email course</H3>
-    <P small dark style={{'margin-bottom': '1em'}}>Learn Javascript visually with the <a style={{textDecoration: 'none'}} target="_blank" rel="noopener noreferrer" href="/posts/flying-ships-object-cloning-short-course">Flying Ships & Object Cloning</a> short course. </P>
+    <H3 dark>Free email taster</H3>
+    <P small dark style={{'margin-bottom': '1em'}}>I'm soon to release the full experience, but in the meantime grab a <a style={{textDecoration: 'none'}} target="_blank" rel="noopener noreferrer" href="/posts/flying-ships-object-cloning-short-course">a tiny taster</a> of what is to come. You will also receive course updates🔥🔥</P>
     <Box
         as='form'
         onSubmit={e => props.submit(e)}
