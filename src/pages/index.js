@@ -9,7 +9,6 @@ import Drawer from "../components/UI/drawer";
 
 const Home = () => {
 
-
   return (
       <Providers>
         <Drawer />
