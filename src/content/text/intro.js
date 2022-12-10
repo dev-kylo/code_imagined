@@ -5,6 +5,8 @@ import { P } from '../../components/UI/text.styled';
 import styled from 'styled-components';
 import { DesktopDisplay, MobileDisplay} from '../../components/UI/containers.styled';
 import { Box } from 'rebass';
+import { Link } from 'gatsby';
+
 
 const Logo = styled.div`
     width: 160px;
@@ -111,7 +113,7 @@ const Intro = props => {
                             my:2,
                             borderRadius: 9999,
                         }}>
-                            <P>🔥 Full Course Coming early 2023 🔥</P>
+                            <Link to="/course-updates" style={{textDecoration: 'none'}}><P>🔥 Full Course Coming early 2023 🔥</P></Link>
                         
                     </Box>
         
