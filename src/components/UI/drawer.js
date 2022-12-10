@@ -10,7 +10,6 @@ import { Flex, Text} from 'rebass/styled-components/';
 import { Label, Switch } from '@rebass/forms/styled-components';
 import { SignupContext } from '../../context/toggle';
 import { Hl } from './text.styled';
-import { DesktopDisplay } from './containers.styled';
 
 
 const MenuContainer = styled.div`
@@ -87,23 +86,23 @@ const Drawer = ({posts}) => {
     return (
       <MenuContainer>
           <Menu onClose={closeMenu} isOpen={menuIsOpen} right pageWrapId={ "page-wrap" } styles={styles} customBurgerIcon={<ButtonWrapper><BurgerMenu hide={menuIsOpen}  click={openMenu} /></ButtonWrapper>}>
-          <DesktopDisplay> 
-                            <Flex justifyContent='center' alignItems='center'>
-                            <Text fontSize={[14, 14, 18, 18]}><Hl blue={!animate}>Animations {animate? 'ON' : 'OFF'}</Hl></Text>
-                                <Label sx={{display: 'flex', alignItems: 'center', width: '4em'}}> 
-                                    <Switch
-                                        color={animate? 'green' : 'red'}
-                                        checked={animate}
-                                        onClick={toggleAnimate}
-                                        sx={{ cursor: 'pointer' }}
-                                        m='5px'
-                                    />
-                                </Label>
-                            </Flex>
-                </DesktopDisplay>
+
+            <Flex justifyContent='center' alignItems='center'>
+            <Text fontSize={[14, 14, 18, 18]}><Hl red={!animate}>Animations {animate? 'ON' : 'OFF'}</Hl></Text>
+                <Label sx={{display: 'flex', alignItems: 'center', width: '4em'}}> 
+                    <Switch
+                        color={animate? 'green' : 'red'}
+                        checked={animate}
+                        onClick={toggleAnimate}
+                        sx={{ cursor: 'pointer' }}
+                        m='5px'
+                    />
+                </Label>
+            </Flex>
+             
             <ul style={{width: '100%'}}>
               {/* <DrawerItem><Link to="/workshops">Workshops</Link></DrawerItem> */}
-              <DrawerItem><Link to="/posts/flying-ships-object-cloning-short-course">Course Release</Link></DrawerItem>
+              <DrawerItem><Link to="/posts/flying-ships-object-cloning-short-course">🔥Course Release🔥</Link></DrawerItem>
               <DrawerItem><Link to="/posts/flying-ships-object-cloning-short-course">Taster Course</Link></DrawerItem>
               <DrawerItem><a target="_blank" rel="noopener noreferrer" href="https://www.codenewbie.org/podcast/how-to-use-different-memory-techniques-to-learn-coding"> Code Newbie Podcast</a></DrawerItem>
               <DrawerItem><Link to="/extra">Extra Reading</Link></DrawerItem>

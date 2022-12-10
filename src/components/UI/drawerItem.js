@@ -15,7 +15,7 @@ const DrawerItem = styled.li`
         color: white;
         text-decoration: none;
         :hover {
-            color: ${props => props.theme.colors.navy};
+            color: ${props => props.theme.colors.red};
             filter: brightness(1.5);
             font-weight: 800;
             border-color: ${props => props.theme.colors.navy};
