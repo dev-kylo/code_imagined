@@ -10,6 +10,7 @@ import '../utils/fontawesome';
 import Footer from "../components/UI/footer.styled";
 import Drawer from "../components/UI/drawer";
 import SignUp from "../components/UI/signup.styled";
+import MenuProvider from "../context/menuContext";
 
 
 const PostWrapper = (props) => {
@@ -17,6 +18,7 @@ const PostWrapper = (props) => {
   return (
     <ThemeProvider theme={theme}>
         <SEO title={props.postTitle} description={props.description}/>
+        <MenuProvider>
         <LayersManager>
           <Layout postTheme={props.postTheme}>
             <ModalContext>
@@ -27,6 +29,7 @@ const PostWrapper = (props) => {
             </ModalContext>
           </Layout>
         </LayersManager>
+        </MenuProvider>
       <Footer dark />
     </ThemeProvider>
   )
