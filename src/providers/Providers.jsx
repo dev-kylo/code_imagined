@@ -14,7 +14,6 @@ import MenuProvider from "../context/menuContext";
 
 const Providers = (props) => {
 
-
   const [isScrollingDown, setScrollingDown] = useState(false);
 
   return (
