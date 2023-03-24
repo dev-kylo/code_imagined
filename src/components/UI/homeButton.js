@@ -27,7 +27,7 @@ const HomeButton = () => {
           <StaticImage
             src="../../images/home.png"
             alt="The Execution Stack - a stack of isles with waterfalls"
-            placeholder="tracedSVG"
+            placeholder="blurred"
             fullWidth
           />
         </StyledIcon>

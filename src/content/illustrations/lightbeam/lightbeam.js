@@ -1,14 +1,13 @@
-import React from 'react';
-import { StaticImage } from "gatsby-plugin-image";
-
+import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 
 const LightBeam = () => (
-        <StaticImage
-            src="../../../images/lightbeam.png"
-            alt="A beam of yellow light"
-            placeholder="tracedSVG"
-            fullWidth
-        />
-);
+  <StaticImage
+    src="../../../images/lightbeam.png"
+    alt="A beam of yellow light"
+    placeholder="blurred"
+    fullWidth
+  />
+)
 
-export default LightBeam;
+export default LightBeam

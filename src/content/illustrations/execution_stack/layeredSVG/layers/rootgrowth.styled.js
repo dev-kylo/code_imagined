@@ -1,25 +1,24 @@
-import React from 'react';
+import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import styled from 'styled-components';
+import styled from "styled-components"
 
 const RootContainer = styled.div`
-    position: absolute;
-    bottom: 13.5%;
-    right: 20%;
-    z-index: 2000;
-    width: 8%;
+  position: absolute;
+  bottom: 13.5%;
+  right: 20%;
+  z-index: 2000;
+  width: 8%;
 `
 
-export const RootGrowth = () =>  (
-        <RootContainer>
-            <StaticImage
-                src="../../../../../images/root.png"
-                alt="A tree root"
-                placeholder="tracedSVG"
-                fullWidth
-            />
-        </RootContainer>
+export const RootGrowth = () => (
+  <RootContainer>
+    <StaticImage
+      src="../../../../../images/root.png"
+      alt="A tree root"
+      placeholder="blurred"
+      fullWidth
+    />
+  </RootContainer>
 )
 
-
-export default RootGrowth;
+export default RootGrowth

@@ -1,38 +1,37 @@
-import React from 'react';
+import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import styled from 'styled-components';
+import styled from "styled-components"
 
 const SphereContainer = styled.div`
-    position: absolute;
-    bottom: 5%;
-    left: 21%;
-    z-index: 2000;
-    width: 65%;
+  position: absolute;
+  bottom: 5%;
+  left: 21%;
+  z-index: 2000;
+  width: 65%;
 
-    @media (min-width: 1200px){
-        width: 60%;
-    }
+  @media (min-width: 1200px) {
+    width: 60%;
+  }
 
-    @media (min-width: 1500px){
-        width: 45%;
-    }
+  @media (min-width: 1500px) {
+    width: 45%;
+  }
 
-    @media (orientation: landscape) and (max-width: 600px){
-        width: 35%;
-        left: 35%;
-    }
+  @media (orientation: landscape) and (max-width: 600px) {
+    width: 35%;
+    left: 35%;
+  }
 `
 
-export const Sphere = () =>  (
-        <SphereContainer>
-            <StaticImage
-                src="../../../images/sphere.png"
-                alt="A sphere containing an in ocean with some islands, and a submarine hovering over."
-                placeholder="tracedSVG"
-                fullWidth
-            />
-        </SphereContainer>
+export const Sphere = () => (
+  <SphereContainer>
+    <StaticImage
+      src="../../../images/sphere.png"
+      alt="A sphere containing an in ocean with some islands, and a submarine hovering over."
+      placeholder="blurred"
+      fullWidth
+    />
+  </SphereContainer>
 )
 
-
-export default Sphere;
+export default Sphere

@@ -1,14 +1,13 @@
-import React from 'react';
-import { StaticImage } from "gatsby-plugin-image";
-
+import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 
 const ogImage = () => (
-        <StaticImage
-            src="../images/magePreview.png"
-            alt="A beam of yellow light"
-            placeholder="tracedSVG"
-            fullWidth
-        />
-);
+  <StaticImage
+    src="../images/magePreview.png"
+    alt="A beam of yellow light"
+    placeholder="blurred"
+    fullWidth
+  />
+)
 
-export default ogImage;
+export default ogImage
