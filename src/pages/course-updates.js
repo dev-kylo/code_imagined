@@ -9,6 +9,7 @@ import { P } from "../components/UI/text.styled"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
+import { H2 } from "../components/UI/headings.styled"
 
 const CardStrip = styled(Link)`
   display: block;
@@ -64,6 +65,7 @@ const CardDate = styled.span`
 const CourseUpdates = ({ data }) => {
   const posts = data.allPrismicPost.edges
     .filter(edge => edge.node.tags.includes("courseUpdate"))
+    .sort()
     .map(edge => (
       <CardStrip to={`/posts/${edge.node.uid}`}>
         <span>{edge.node.data.title.text}</span>
@@ -77,6 +79,7 @@ const CourseUpdates = ({ data }) => {
       <Drawer />
       <PageTitle>Course Release Updates For 2023</PageTitle>
       <TextContainer autoHeight>
+        <H2>The release is now weeks away</H2>
         <P>
           I am currently building the full online course and community for The
           Great Sync. This is the culmination of YEARS of work.{" "}
@@ -88,7 +91,7 @@ const CourseUpdates = ({ data }) => {
         </P>
         <P>
           {" "}
-          Included will be visualisations and models (which I call imagimodels)
+          Included will be visualizations and models (which I call imagimodels)
           of all the main concepts in javascript, along with videos, text and
           code snippets, which will build a complete picture of javascript and
           how everthing fits together. It will break down not only the
@@ -110,7 +113,7 @@ const CourseUpdates = ({ data }) => {
 
 export const query = graphql`
   query CourseUpdatesQuery {
-    allPrismicPost {
+    allPrismicPost(sort: { fields: [data___published], order: DESC }){
       edges {
         node {
           uid

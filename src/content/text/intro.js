@@ -56,6 +56,15 @@ const Container = styled.section`
     }
 `
 
+const SubHeading = styled.span`
+    display: block;
+    margin-top: 1rem; 
+    font-size: 1.5rem;
+
+    @media (min-width: 780px){
+        font-size: 2rem;
+    }
+`
 
 
 
@@ -73,9 +82,9 @@ const Intro = props => {
                         />
                     </Logo>
                     <Title>
-                        <H1>The Great Sync - visual & memorable Javascript</H1>
+                        <H1>The Great Sync <SubHeading>- visual & memorable Javascript</SubHeading></H1>
                         <DesktopDisplay>
-                        <P>Can you build a React app but still find javascript hard? Use your imagination to build a mental model of javascript fundamentals.</P>
+                        <P>Do you find javascript difficult? Trying to level up? User your imagination to write and read javascript confidently.</P>
                         </DesktopDisplay>
                     </Title>
             </Container>
@@ -97,23 +106,23 @@ const Intro = props => {
                 </DesktopDisplay>
                 <Title>
                     <DesktopDisplay>
-                        <H1>The Great Sync - visual & memorable Javascript</H1>
+                        <H1>The Great Sync<SubHeading>- visual & memorable Javascript </SubHeading></H1>
                     </DesktopDisplay>
                     <MobileDisplay>
                         <H2> Build a foundation</H2>
                     </MobileDisplay>
-                    <P>Can you build a React app but still find javascript hard? Use your imagination to build a mental model of javascript fundamentals.</P>
+                    <P>Do you find javascript difficult? Trying to level up? User your imagination to write and read javascript confidently.</P>
                     <Box
                         sx={{
                             display: 'inline-block',
                             color: 'white',
                             bg: '#AB3428',
-                            px: 2,
-                            py: 1,
+                            px: 1,
+                            py: 0.5,
                             my:2,
                             borderRadius: 9999,
                         }}>
-                            <Link to="/course-updates" style={{textDecoration: 'none'}}><P>🔥 Full Course Coming early 2023 🔥</P></Link>
+                            <Link to="/course-updates" style={{textDecoration: 'none'}}><P>🔥 Course Release Updates 🔥</P></Link>
                         
                     </Box>
         

@@ -5,8 +5,8 @@ import {Copy} from '../../components/UI/containers.styled'
 
 const model = () => (
     <Copy>
-        <H2> Terminology matters!</H2>
-        <P>If you know it, can you communicate it? The words we use matter - whether writing about personal projects, or asking a senior dev a question. </P>
+        <H2>Recognise the patterns</H2>
+        <P>To see patterns, you need <strong style={{color: 'white'}}>'big picture'</strong> understanding. How does everything fit together? </P>
     </Copy>
 );
 

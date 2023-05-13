@@ -18,9 +18,11 @@ const Extra = () => {
             <h2>Posts I have written</h2>
             <ul>
                 <li><Link to="/posts/why-javascript-is-difficult" >Why Learning Javascript is Difficult.</Link></li>
+                <li><Link to="/posts/learning-from-the-challenges-of-other-coders/" >Notes from discussions with javascript learners</Link></li>
+                <li><Link to="/posts/the-great-sync-improves-how-you-learn-javascript/">The Great Sync improves how you learn javascript</Link></li>
             </ul>
 
-            <h2>Javascript</h2>
+            <h2>Javascript Resources</h2>
             <ul>
                 <li><a 
                 target="_blank" 
