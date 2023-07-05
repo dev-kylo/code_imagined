@@ -17,7 +17,7 @@ import styled from 'styled-components';
 const Form = (props) => (
     <>
     <H3 dark>Free email taster</H3>
-    <P small dark style={{'margin-bottom': '1em'}}>I'm soon to release the full experience, but in the meantime grab a <a style={{textDecoration: 'none'}} target="_blank" rel="noopener noreferrer" href="/posts/flying-ships-object-cloning-short-course">a tiny taster</a> of what is to come. You will also receive course updates🔥🔥</P>
+    <P small dark style={{'margin-bottom': '1em'}}>The Syncer Program course launches on 30th July, but in the meantime grab a <a style={{textDecoration: 'none'}} target="_blank" rel="noopener noreferrer" href="/posts/flying-ships-object-cloning-short-course">a tiny taster</a> of what is to come. You will also receive course updates🔥🔥</P>
     <Box
         as='form'
         onSubmit={e => props.submit(e)}
@@ -58,7 +58,7 @@ const Form = (props) => (
 
             <Box px={2} ml='auto'>
                 <Flex width="100%" justifyContent='center'>
-                    <Button variant='signup'>
+                    <Button variant='signup' disabled={props.loading}>
                         Sign me up
                     </Button>
                 </Flex>

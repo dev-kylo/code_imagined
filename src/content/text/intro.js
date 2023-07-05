@@ -82,7 +82,7 @@ const Intro = props => {
                         />
                     </Logo>
                     <Title>
-                        <H1>The Great Sync <SubHeading>- visual & memorable Javascript</SubHeading></H1>
+                        <H1>The Great Sync <SubHeading>- visual & memorable JavaScript</SubHeading></H1>
                         <DesktopDisplay>
                         <P>Do you find javascript difficult? Trying to level up? User your imagination to write and read javascript confidently.</P>
                         </DesktopDisplay>
@@ -106,12 +106,12 @@ const Intro = props => {
                 </DesktopDisplay>
                 <Title>
                     <DesktopDisplay>
-                        <H1>The Great Sync<SubHeading>- visual & memorable Javascript </SubHeading></H1>
+                        <H1>The Great Sync<SubHeading>- visual & memorable JavaScript </SubHeading></H1>
                     </DesktopDisplay>
                     <MobileDisplay>
                         <H2> Build a foundation</H2>
                     </MobileDisplay>
-                    <P>Do you find javascript difficult? Trying to level up? User your imagination to write and read javascript confidently.</P>
+                    <P>Do you find javascript difficult? Trying to level up? User your imagination to write and read JavaScript confidently.</P>
                     <Box
                         sx={{
                             display: 'inline-block',
@@ -122,7 +122,7 @@ const Intro = props => {
                             my:2,
                             borderRadius: 9999,
                         }}>
-                            <Link to="/course-updates" style={{textDecoration: 'none'}}><P>🔥 Course Release Updates 🔥</P></Link>
+                            <Link to="/course-updates" style={{textDecoration: 'none'}}><P>🔥 Course Launches 30th July 🔥</P></Link>
                         
                     </Box>
         

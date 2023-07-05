@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react'
 import { Flex } from 'rebass';
 import styled from 'styled-components';
@@ -34,6 +35,7 @@ const FooterContainer = styled.footer`
         margin: 1em 0;
         font-size: 18px; 
         color: ${props => props.dark? props.theme.colors.navy : 'white'};
+        display: block;
 
         @media only screen and (max-width: 480px){
             min-width: 100%;
@@ -56,7 +58,6 @@ const FooterContainer = styled.footer`
 
 
 
-
 const Footer = (props) => {
 
   return (
@@ -64,7 +65,11 @@ const Footer = (props) => {
     <FooterContainer dark={props.dark}>
         <hr></hr>
         <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap">
-            <small> © 2021 The Great Sync - All Rights Reserved</small>
+            <div>
+            <small> © 2023 Code Imagined - The Great Sync. All Rights Reserved</small>
+            <small>View the <Link to="/posts/terms-and-conditions"> Terms & Conditions</Link></small>
+            <small>View the <Link to="/posts/privacy-policy"> Privacy Policy</Link></small>
+            </div>
             <small><a href="mailto:kylo@thegreatsync.com">kylo@thegreatsync.com</a></small>
         </Flex>
     </FooterContainer>

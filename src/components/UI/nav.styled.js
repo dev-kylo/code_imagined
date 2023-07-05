@@ -42,7 +42,7 @@ return (
                 {/* <Box></Box> */}
                 <NavBtns>
                         <HomeButton />
-                        {!menuIsOpen && <Button bg="red" sx={{marginLeft: '1em'}} onClick={() => showSignUp()}> Subscribe and Learn</Button>}
+                        {!menuIsOpen && <Button bg="red" sx={{marginLeft: '1em'}} onClick={() => showSignUp()}> FREE Email Taster</Button>}
                 </NavBtns>
                 <DesktopDisplay><Button bg="blue" sx={{marginRight: '1em'}} onClick={() => openMenu()}> {!menuIsOpen? 'Menu' : 'Close'}</Button></DesktopDisplay> 
 

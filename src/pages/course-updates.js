@@ -77,9 +77,9 @@ const CourseUpdates = ({ data }) => {
     <Providers>
       {/* <Drawer posts={posts} /> */}
       <Drawer />
-      <PageTitle>Course Release Updates For 2023</PageTitle>
+      <PageTitle>The Syncer Program Course Launch</PageTitle>
       <TextContainer autoHeight>
-        <H2>The release is now weeks away</H2>
+        <H2>Launches 30th July! Now only weeks away.</H2>
         <P>
           I am currently building the full online course and community for The
           Great Sync. This is the culmination of YEARS of work.{" "}
@@ -91,16 +91,15 @@ const CourseUpdates = ({ data }) => {
         </P>
         <P>
           {" "}
-          Included will be visualizations and models (which I call imagimodels)
-          of all the main concepts in javascript, along with videos, text and
+          Included will be visualizations and models of all the main concepts in JavaScript, along with videos, text and
           code snippets, which will build a complete picture of javascript and
-          how everthing fits together. It will break down not only the
+          how everthing fits together. 
+          </P><P>It will break down not only the
           fundamentals, but the patterns for building DRY and SOLID programs,
           which can be applied to any project or application.
         </P>
         <P>
-          Make sure you are subscribed to my emails, follow me on Instagram and
-          bookmark this page for the upcoming release date.
+          Make sure you are subscribed to my emails, follow me on Instagram and help me spread the word of the launch 🙏
         </P>
         {/* <MainVideo /> */}
       </TextContainer>
