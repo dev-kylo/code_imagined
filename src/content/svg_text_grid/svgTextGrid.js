@@ -6,20 +6,34 @@ import Learn from '../text/learn';
 import Difficult from '../text/difficult';
 import Model from '../text/model';
 import Knowledge from '../text/knowledge';
-import ExecutionStack from '../illustrations/execution_stack/executionStack';
 import GeniePrototype from '../illustrations/prototype_genie/prototypeGenie';
 import { Sphere } from "../illustrations/sphere/sphere";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Invocation = lazy(() => import( '../illustrations/invocation/Invocation'));
 const RainIsland = lazy(() => import( '../illustrations/rain_island/rainIsland'));
+
+
 
 const SvgTextGrid = () => {
   const isSSR = typeof window === "undefined"
   return (
         <LandingGrid>
-          <GridArea name="svg1" color="#01140F">
-              <ExecutionStack />
-              <Intro mobile />
+          <GridArea name="svg1" color="#01140F" >
+              {/* <ExecutionStack /> */}
+            
+              <StaticImage
+                    src="https://res.cloudinary.com/the-great-sync/image/upload/v1686771432/3000x2000/EC_sdbbpu.png"
+                    alt="Mage Funk sorceress character with an invocation orb"
+                    placeholder="blurred"
+                    fullWidth
+                />
+           
+              <div style={{position: 'absolute', top: 0, right: 0}}>
+                <Intro mobile />
+              </div>
+
+
           </GridArea>
           <GridArea  name="svg1_text" color="#041440">
             <Intro />

@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StaticImage } from "gatsby-plugin-image"
 import { H1, H2 } from '../../components/UI/headings.styled';
 import { P } from '../../components/UI/text.styled';
 import styled from 'styled-components';
 import { DesktopDisplay, MobileDisplay} from '../../components/UI/containers.styled';
-import { Box } from 'rebass';
-import { Link } from 'gatsby';
-
+import { SignupContext } from '../../context/toggle';
+import { Flex } from 'rebass/styled-components';
+import {Button} from '../../components/UI/button.styled';
 
 const Logo = styled.div`
     width: 160px;
@@ -24,7 +24,7 @@ const Logo = styled.div`
 `
 export  const Title = styled.div`
     display: inline-block;
-    padding: 1em;
+    padding: 0.5em;
     padding-top: 0;
     z-index: 100;
     & h1 {
@@ -37,12 +37,13 @@ export  const Title = styled.div`
     }
 
     @media (min-width: 1500px){
-        padding: 4em;
+        padding: 2em;
     }
 
 
     @media (min-width: 1800px){
-        padding: 6em;
+        margin-top: 2rem;
+        padding: 2em;
     }
 `
 
@@ -59,16 +60,22 @@ const Container = styled.section`
 const SubHeading = styled.span`
     display: block;
     margin-top: 1rem; 
-    font-size: 1.5rem;
+    font-size: 2rem!important;
+    color: white;
+    text-align: center;
+    line-height: 35px;
 
     @media (min-width: 780px){
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 `
 
 
 
 const Intro = props => {
+
+    const showSignUp = useContext(SignupContext).show;
+
     if (props.mobile){
         return (
         <MobileDisplay>
@@ -83,9 +90,10 @@ const Intro = props => {
                     </Logo>
                     <Title>
                         <H1>The Great Sync <SubHeading>- visual & memorable JavaScript</SubHeading></H1>
-                        <DesktopDisplay>
-                        <P>Do you find javascript difficult? Trying to level up? User your imagination to write and read javascript confidently.</P>
-                        </DesktopDisplay>
+                                            
+                        <Flex justifyContent="center">
+                            <Button center clicked={showSignUp}>🚀Join the waiting list🚀</Button>
+                        </Flex>
                     </Title>
             </Container>
         </MobileDisplay>
@@ -106,13 +114,21 @@ const Intro = props => {
                 </DesktopDisplay>
                 <Title>
                     <DesktopDisplay>
-                        <H1>The Great Sync<SubHeading>- visual & memorable JavaScript </SubHeading></H1>
+                        <H1 style={{textAlign: 'center'}}>Frustrated by JavaScript?</H1>
+                        <SubHeading>
+                            Introducing <span style={{color: '#ab3528', fontWeight: 'bold'}}>The Syncer Program</span> - Level Up With Visual & Memorable JavaScript
+                            </SubHeading>
                     </DesktopDisplay>
                     <MobileDisplay>
                         <H2> Build a foundation</H2>
                     </MobileDisplay>
-                    <P>Do you find javascript difficult? Trying to level up? User your imagination to write and read JavaScript confidently.</P>
-                    <Box
+                    <P style={{maxWidth: '600px', textAlign: 'center', margin: '1rem auto'}}>Join the flagship learning experience to help you finally see the big picture and be confident with JavaScript!</P>
+                    
+                    <Flex justifyContent="center">
+                    <Button center clicked={showSignUp}>🚀Join the waiting list🚀</Button>
+                    </Flex>
+                    
+                    {/* <Box
                         sx={{
                             display: 'inline-block',
                             color: 'white',
@@ -122,9 +138,9 @@ const Intro = props => {
                             my:2,
                             borderRadius: 9999,
                         }}>
-                            <Link to="/course-updates" style={{textDecoration: 'none'}}><P>🔥 Course Launches 30th July 🔥</P></Link>
+                            <Link to="/course-updates" style={{textDecoration: 'none'}}><P>🚀Join the waiting list🚀</P></Link>
                         
-                    </Box>
+                    </Box> */}
         
                 </Title>
             </Container>

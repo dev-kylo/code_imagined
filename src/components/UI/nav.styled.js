@@ -44,7 +44,11 @@ return (
                         <HomeButton />
                         {!menuIsOpen && <Button bg="red" sx={{marginLeft: '1em'}} onClick={() => showSignUp()}> FREE Email Taster</Button>}
                 </NavBtns>
-                <DesktopDisplay><Button bg="blue" sx={{marginRight: '1em'}} onClick={() => openMenu()}> {!menuIsOpen? 'Menu' : 'Close'}</Button></DesktopDisplay> 
+                <DesktopDisplay>
+                <span style={{fontSize: '1.3rem', fontWeight: 'bold'}}>🚀 Launching <span style={{fontSize: '1.8rem'}}>30 July</span> 🚀</span>
+                </DesktopDisplay>
+                <DesktopDisplay>
+                    <Button bg="blue" sx={{marginRight: '1em'}} onClick={() => openMenu()}> {!menuIsOpen? 'Menu' : 'Close'}</Button></DesktopDisplay> 
 
             </Flex>
         </Box>
