@@ -10,13 +10,14 @@ import { TextContainer } from "../components/UI/textContainer";
 
 const Purchase = () => {
 
+
   useEffect(() => {
     if(typeof window !== 'undefined'){{  
-      console.log( process.env.NEXT_PUBLIC_VENDORID)
-      // (window as any).Paddle!.Environment.set('sandbox');
-      const vendorId = process.env.NEXT_PUBLIC_VENDORID || '1';
-      window.Paddle.Setup({ vendor: +vendorId});
-      window.Paddle.Checkout.open({ product: 842496});
+    
+    //   // (window as any).Paddle!.Environment.set('sandbox');
+    //   const vendorId = process.env.NEXT_PUBLIC_VENDORID || '1';
+    //   window.Paddle.Setup({ vendor: +vendorId});
+    //   window.Paddle.Checkout.open({ product: 842496});
     }}
   }, [])
  
