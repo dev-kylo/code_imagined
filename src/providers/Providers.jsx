@@ -16,7 +16,7 @@ import { Script } from "gatsby";
 
 const Providers = (props) => {
 
-  // const [isScrollingDown, setScrollingDown] = useState(false);
+  const [isScrollingDown, setScrollingDown] = useState(false);
 
   return (
     <ThemeProvider theme={theme}>
