@@ -22,6 +22,7 @@ const Providers = (props) => {
     <ThemeProvider theme={theme}>
       <SEO />
       <Script src="https://cdn.paddle.com/paddle/paddle.js" />
+
       <MenuProvider>
         <FadeOnScroll setScrollDown={ setScrollingDown }>
           <LayersManager>
