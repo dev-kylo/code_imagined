@@ -6,7 +6,8 @@ import styled from 'styled-components';
 import { DesktopDisplay, MobileDisplay} from '../../components/UI/containers.styled';
 import { SignupContext } from '../../context/toggle';
 import { Flex } from 'rebass/styled-components';
-import {Button} from '../../components/UI/button.styled';
+// import {Button} from '../../components/UI/button.styled';
+import { Box } from 'rebass/styled-components';
 
 const Logo = styled.div`
     width: 160px;
@@ -89,10 +90,26 @@ const Intro = props => {
                         />
                     </Logo>
                     <Title>
-                        <H1>The Great Sync <SubHeading>- visual & memorable JavaScript</SubHeading></H1>
+                        {/* <H1>The Great Sync <SubHeading>- visual & memorable JavaScript</SubHeading></H1> */}
+                        <H1>The Syncer Program <SubHeading> is LIVE </SubHeading></H1>
                                             
                         <Flex justifyContent="center">
-                            <Button center clicked={showSignUp}>🚀Join the waiting list🚀</Button>
+                            {/* <Button center clicked={showSignUp}>🚀Join the waiting list🚀</Button> */}
+
+                            <Box
+                        sx={{
+                            display: 'inline-block',
+                            color: 'white',
+                            bg: '#AB3428',
+                            px: 1,
+                            py: 0.5,
+                            my:2,
+                            borderRadius: 9999,
+                        }}>
+                            <a href="https://thesyncerprogram.thegreatsync.com/" style={{textDecoration: 'none'}}><P>🚀Join the program🚀</P></a>
+                        
+                    </Box> 
+
                         </Flex>
                     </Title>
             </Container>
@@ -113,11 +130,17 @@ const Intro = props => {
                     </Logo>
                 </DesktopDisplay>
                 <Title>
-                    <DesktopDisplay>
-                        <H1 style={{textAlign: 'center'}}>Frustrated by JavaScript?</H1>
+                    {/* <DesktopDisplay>
+                        <H1 style={{textAlign: 'center'}}>The Syncer Program has launched!</H1>
                         <SubHeading>
                             Introducing <span style={{color: '#ab3528', fontWeight: 'bold'}}>The Syncer Program</span> - Level Up With Visual & Memorable JavaScript
                             </SubHeading>
+                    </DesktopDisplay> */}
+                                        <DesktopDisplay>
+                        <H1 style={{textAlign: 'center'}}>The Syncer Program has launched!</H1>
+                        <SubHeading>
+                                Sign ups open until Thursday 3rd of August
+                        </SubHeading>
                     </DesktopDisplay>
                     <MobileDisplay>
                         <H2> Build a foundation</H2>
@@ -125,7 +148,23 @@ const Intro = props => {
                     <P style={{maxWidth: '600px', textAlign: 'center', margin: '1rem auto'}}>Join the flagship learning experience to help you finally see the big picture and be confident with JavaScript!</P>
                     
                     <Flex justifyContent="center">
-                    <Button center clicked={showSignUp}>🚀Join the waiting list🚀</Button>
+                    {/* <Button center clicked={showSignUp}>🚀Join the program🚀</Button> */}
+
+
+                    <Box
+                        sx={{
+                            display: 'inline-block',
+                            color: 'white',
+                            bg: '#AB3428',
+                            px: 1,
+                            py: 0.5,
+                            my:2,
+                            borderRadius: 9999,
+                        }}>
+                            <a href="https://thesyncerprogram.thegreatsync.com/" style={{textDecoration: 'none'}}><P>🚀Join the program🚀</P></a>
+                        
+                    </Box> 
+                    
                     </Flex>
                     
                     {/* <Box
