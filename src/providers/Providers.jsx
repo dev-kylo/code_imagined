@@ -10,7 +10,7 @@ import '../utils/fontawesome';
 import FadeOnScroll from "../hoc/fadeOnScroll";
 import Footer from "../components/UI/footer.styled";
 import MenuProvider from "../context/menuContext";
-import { Script } from "gatsby";
+
 
 
 
@@ -21,7 +21,6 @@ const Providers = (props) => {
   return (
     <ThemeProvider theme={theme}>
       <SEO />
-      <Script src="https://cdn.paddle.com/paddle/paddle.js" />
 
       <MenuProvider>
         <FadeOnScroll setScrollDown={ setScrollingDown }>
