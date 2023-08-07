@@ -6,8 +6,8 @@ import styled from 'styled-components';
 import { DesktopDisplay, MobileDisplay} from '../../components/UI/containers.styled';
 import { SignupContext } from '../../context/toggle';
 import { Flex } from 'rebass/styled-components';
-// import {Button} from '../../components/UI/button.styled';
-import { Box } from 'rebass/styled-components';
+import {Button} from '../../components/UI/button.styled';
+
 
 const Logo = styled.div`
     width: 160px;
@@ -28,12 +28,30 @@ export  const Title = styled.div`
     padding: 0.5em;
     padding-top: 0;
     z-index: 100;
-    & h1 {
+    h1 {
         margin-top: 0;
+        font-size: 4rem;
     }
 
     @media(min-width: 600px){
         padding: 2em;
+        font-size: 1rem;
+
+        h1 {
+            font-size: 3rem;
+        }
+        // padding-top: 1em;
+    }
+
+
+    @media(min-width: 1200px){
+        padding: 2em;
+        font-size: 1rem;
+
+        h1 {
+            font-size: 4rem;
+            margin-top: 2rem;
+        }
         // padding-top: 1em;
     }
 
@@ -43,8 +61,11 @@ export  const Title = styled.div`
 
 
     @media (min-width: 1800px){
-        margin-top: 2rem;
+        margin-top: 4rem;
         padding: 2em;
+        h1 {
+            font-size: 5rem;
+        }
     }
 `
 
@@ -84,33 +105,19 @@ const Intro = props => {
                     <Logo>
                         <StaticImage
                             src="../../images/small_logo.png"
-                            alt="The Execution Stack - a stack of isles with waterfalls"
+                            alt="The Great Sync logo"
                             placeholder="blurred"
                             fullWidth
                         />
                     </Logo>
                     <Title>
                         {/* <H1>The Great Sync <SubHeading>- visual & memorable JavaScript</SubHeading></H1> */}
-                        <H1>The Syncer Program <SubHeading> is LIVE </SubHeading></H1>
+                        <H1 style={{textAlign: 'center'}}>Frustrated with JavaScript?</H1>
+           
                                             
-                        <Flex justifyContent="center">
-                            {/* <Button center clicked={showSignUp}>🚀Join the waiting list🚀</Button> */}
-
-                            <Box
-                        sx={{
-                            display: 'inline-block',
-                            color: 'white',
-                            bg: '#AB3428',
-                            px: 1,
-                            py: 0.5,
-                            my:2,
-                            borderRadius: 9999,
-                        }}>
-                            <a href="https://thesyncerprogram.thegreatsync.com/" style={{textDecoration: 'none'}}><P>🚀Join the program🚀</P></a>
-                        
-                    </Box> 
-
-                        </Flex>
+                        {/* <Flex justifyContent="center">
+                            <Button center clicked={showSignUp}>Sign up for a free taster</Button>
+                        </Flex> */}
                     </Title>
             </Container>
         </MobileDisplay>
@@ -119,67 +126,27 @@ const Intro = props => {
     else {
         return (
             <Container>
-                <DesktopDisplay>
-                    <Logo>
-                        <StaticImage
-                            src="../../images/small_logo.png"
-                            alt="The Execution Stack - a stack of isles with waterfalls"
-                            placeholder="blurred"
-                            fullWidth
-                        />
-                    </Logo>
-                </DesktopDisplay>
+
                 <Title>
-                    {/* <DesktopDisplay>
-                        <H1 style={{textAlign: 'center'}}>The Syncer Program has launched!</H1>
+                    <DesktopDisplay>
+                        <H1 style={{textAlign: 'center'}}>Frustrated with JavaScript?</H1>
                         <SubHeading>
-                            Introducing <span style={{color: '#ab3528', fontWeight: 'bold'}}>The Syncer Program</span> - Level Up With Visual & Memorable JavaScript
-                            </SubHeading>
-                    </DesktopDisplay> */}
-                                        <DesktopDisplay>
-                        <H1 style={{textAlign: 'center'}}>The Syncer Program has launched!</H1>
-                        <SubHeading>
-                                Sign ups open until Thursday 3rd of August
+                            A visual approach can help you gain confidence and see the big picture.
                         </SubHeading>
+                        <P style={{maxWidth: '600px', textAlign: 'center', margin: '1rem auto'}}></P>
                     </DesktopDisplay>
+ 
                     <MobileDisplay>
                         <H2> Build a foundation</H2>
                     </MobileDisplay>
-                    <P style={{maxWidth: '600px', textAlign: 'center', margin: '1rem auto'}}>Join the flagship learning experience to help you finally see the big picture and be confident with JavaScript!</P>
+                    <P style={{maxWidth: '600px', textAlign: 'center', margin: '1rem auto'}}>The Great Sync is novel visual learning method based on mnemonic principles, helping you understand and recognize the fundamental patterns to build anything.</P>
                     
                     <Flex justifyContent="center">
-                    {/* <Button center clicked={showSignUp}>🚀Join the program🚀</Button> */}
+                        <Button center clicked={showSignUp}>Sign up for a free taster</Button>
 
-
-                    <Box
-                        sx={{
-                            display: 'inline-block',
-                            color: 'white',
-                            bg: '#AB3428',
-                            px: 1,
-                            py: 0.5,
-                            my:2,
-                            borderRadius: 9999,
-                        }}>
-                            <a href="https://thesyncerprogram.thegreatsync.com/" style={{textDecoration: 'none'}}><P>🚀Join the program🚀</P></a>
-                        
-                    </Box> 
-                    
                     </Flex>
                     
-                    {/* <Box
-                        sx={{
-                            display: 'inline-block',
-                            color: 'white',
-                            bg: '#AB3428',
-                            px: 1,
-                            py: 0.5,
-                            my:2,
-                            borderRadius: 9999,
-                        }}>
-                            <Link to="/course-updates" style={{textDecoration: 'none'}}><P>🚀Join the waiting list🚀</P></Link>
-                        
-                    </Box> */}
+ 
         
                 </Title>
             </Container>

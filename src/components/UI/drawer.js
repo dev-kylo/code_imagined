@@ -102,7 +102,7 @@ const Drawer = ({posts}) => {
              
             <ul style={{width: '100%'}}>
               {/* <DrawerItem><Link to="/workshops">Workshops</Link></DrawerItem> */}
-              <DrawerItem><Link to="/course-updates">🔥The Syncer Program🔥</Link></DrawerItem>
+              <DrawerItem><Link to="/subscribe">The Syncer Program - Course</Link></DrawerItem>
               <DrawerItem><a target="_blank" rel="noopener noreferrer" href="https://www.smashingmagazine.com/2023/05/learning-javascript-with-imagination/"> Smashing Magazine</a></DrawerItem>
               {/* <DrawerItem><Link to="/posts/flying-ships-object-cloning-short-course">Taster Course</Link></DrawerItem> */}
               <DrawerItem><a target="_blank" rel="noopener noreferrer" href="https://www.codenewbie.org/podcast/how-to-use-different-memory-techniques-to-learn-coding"> Code Newbie Podcast</a></DrawerItem>

@@ -29,7 +29,7 @@ const SvgTextGrid = () => {
                     fullWidth
                 />
            
-              <div style={{position: 'absolute', top: 0, right: 0}}>
+              <div style={{position: 'absolute', right: 0, bottom: '50%'}}>
                 <Intro mobile />
               </div>
 
