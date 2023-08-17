@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { LandingGrid, GridArea } from './grids.styled'
 import Intro from './textBlocks/intro'
@@ -8,12 +8,10 @@ import Model from './textBlocks/model'
 import Knowledge from './textBlocks/knowledge'
 import GeniePrototype from './imageBlocks/prototype_genie/prototypeGenie'
 import { Sphere } from './imageBlocks/sphere/sphere'
-
-const Invocation = lazy(() => import('./imageBlocks/invocation/Invocation'))
-const RainIsland = lazy(() => import('./imageBlocks/rain_island/rainIsland'))
+import Invocation from './imageBlocks/invocation/Invocation'
+import RainIsland from './imageBlocks/rain_island/rainIsland'
 
 const Lander = () => {
-    const isSSR = typeof window === 'undefined'
     return (
         <LandingGrid>
             <GridArea name="svg1" color="#01140F">
@@ -38,21 +36,13 @@ const Lander = () => {
                 <Learn />
             </GridArea>
             <GridArea name="svg3" color="pink">
-                {!isSSR && (
-                    <React.Suspense fallback={<div>Loading...</div>}>
-                        <Invocation />
-                    </React.Suspense>
-                )}
+                <Invocation />
             </GridArea>
             <GridArea name="svg3_text" color="#AB3428">
                 <Difficult />
             </GridArea>
             <GridArea name="svg4" color="#01140F">
-                {!isSSR && (
-                    <React.Suspense fallback={<div>Loading...</div>}>
-                        <RainIsland />
-                    </React.Suspense>
-                )}
+                <RainIsland />
             </GridArea>
             <GridArea name="svg4_text" color="#0E34A0">
                 <Model />

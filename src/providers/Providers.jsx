@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../utils/fontawesome'
 
 import { ThemeProvider } from 'styled-components'
 import { LayersManager } from 'react-layers-manager'
-import FadeOnScroll from '../hoc/fadeOnScroll'
+
 import SEO from '../layout/seo'
 import Layout from '../layout/layout'
 import { theme } from '../theme'
@@ -13,23 +13,19 @@ import Footer from '../components/layout/footer/footer.styled'
 import MenuProvider from '../context/menuContext'
 
 const Providers = ({ postTheme, children }) => {
-    const [isScrollingDown, setScrollingDown] = useState(false)
-
     return (
         <ThemeProvider theme={theme}>
             <SEO />
 
             <MenuProvider>
-                <FadeOnScroll setScrollDown={setScrollingDown}>
-                    <LayersManager>
-                        <Layout postTheme={postTheme}>
-                            <ModalContext>
-                                <Nav scrollingDown={isScrollingDown} />
-                                {children}
-                            </ModalContext>
-                        </Layout>
-                    </LayersManager>
-                </FadeOnScroll>
+                <LayersManager>
+                    <Layout postTheme={postTheme}>
+                        <ModalContext>
+                            <Nav />
+                            {children}
+                        </ModalContext>
+                    </Layout>
+                </LayersManager>
             </MenuProvider>
             <Footer />
         </ThemeProvider>

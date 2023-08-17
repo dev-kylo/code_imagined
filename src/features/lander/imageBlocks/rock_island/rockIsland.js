@@ -1,9 +1,6 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import gsap from 'gsap'
 import objectSvg from '../../../../images/object_island.svg'
-import withAnimationContext from '../../../../hoc/withAnimationContext'
-import withAnimateOnScroll from '../../../../hoc/withAnimateOnScroll'
 
 const StyledSVG = styled(objectSvg)`
     width: 100%;
@@ -42,30 +39,11 @@ const StyledSVG = styled(objectSvg)`
 `
 
 const RockIsland = props => {
-    let refo = useRef(null)
-
-    const hover = el => {
-        const tl = gsap.timeline({ paused: true })
-        tl.to(el, {
-            y: '-10',
-            ease: 'power2.easeInOut',
-            repeat: -1,
-            duration: 2.5,
-            yoyo: true,
-        })
-        return tl
-    }
-
-    useEffect(() => {
-        const island = refo.querySelector('svg')
-        props.tl.add(hover(island))
-    })
-
     return (
-        <div id="objectIsland" ref={el => (refo = el)}>
+        <div id="objectIsland">
             <StyledSVG />
         </div>
     )
 }
 
-export default withAnimateOnScroll(withAnimationContext(RockIsland, true), true)
+export default RockIsland

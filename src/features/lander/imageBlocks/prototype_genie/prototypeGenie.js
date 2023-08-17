@@ -1,10 +1,7 @@
-import React, { useEffect } from 'react'
-import gsap from 'gsap'
+import React from 'react'
 import styled from 'styled-components'
 import Prototype from './prototype'
 import LightBeam from '../lightbeam/lightbeam'
-import withAnimationContext from '../../../../hoc/withAnimationContext'
-import withAnimateOnScroll from '../../../../hoc/withAnimateOnScroll'
 
 const BeamContainer = styled.div`
     position: absolute;
@@ -56,30 +53,9 @@ const Container = styled.div`
 `
 
 const PrototypeGenie = props => {
-    let beam
-
-    useEffect(() => {
-        const moveBeam = () => {
-            gsap.set(beam, { transformOrigin: '95% 3%' })
-            const tl = gsap.timeline()
-            tl.to(beam, {
-                rotate: 30,
-                duration: 2,
-                ease: 'power2.easeOut',
-            })
-            tl.to(beam, {
-                rotate: 40,
-                duration: 4,
-                ease: 'power2.easeOut',
-            })
-            return tl
-        }
-        props.tl.add(moveBeam(beam))
-    }, [props, beam])
-
     return (
         <Container>
-            <BeamContainer ref={el => (beam = el)}>
+            <BeamContainer>
                 <LightBeam />
             </BeamContainer>
             <Prototype />
@@ -87,4 +63,4 @@ const PrototypeGenie = props => {
     )
 }
 
-export default withAnimateOnScroll(withAnimationContext(PrototypeGenie, true), true)
+export default PrototypeGenie

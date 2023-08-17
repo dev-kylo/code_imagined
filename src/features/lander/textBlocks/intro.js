@@ -76,20 +76,6 @@ const Container = styled.section`
     }
 `
 
-const SubHeading = styled(H2)`
-    display: block;
-    margin-top: 1rem;
-    font-size: 2rem !important;
-    color: white;
-    text-align: center;
-    line-height: 35px;
-    max-width: 600px;
-
-    @media (min-width: 780px) {
-        font-size: 1.5rem;
-    }
-`
-
 const Intro = props => {
     const showSignUp = useContext(SignupContext).show
 

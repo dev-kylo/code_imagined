@@ -1,8 +1,6 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
-import gsap from 'gsap'
-import withAnimationContext from '../../../../hoc/withAnimationContext'
 
 const MageContainer = styled.div`
     position: absolute;
@@ -17,29 +15,10 @@ const MageContainer = styled.div`
         display: none;
     }
 `
-const MageFunk = props => {
-    let mageElement = useRef(null)
-
-    useEffect(() => {
-        const flyMage = () => {
-            const tl = gsap.timeline()
-            gsap.set(mageElement, { transform: props.transform })
-            tl.to(mageElement, {
-                y: 10,
-                duration: 4,
-                ease: 'Power1.easeInOut',
-                yoyo: true,
-                repeat: -1,
-            })
-
-            return tl
-        }
-        props.tl.add(flyMage())
-    }, [props.tl, props.transform])
-
+const MageFunk = () => {
     return (
-        <MageContainer invoking={props.invoking}>
-            <div ref={el => (mageElement = el)}>
+        <MageContainer>
+            <div>
                 <StaticImage
                     src="../../../../images/mage.png"
                     alt="Mage Funk sorceress character with an invocation orb"
@@ -51,4 +30,4 @@ const MageFunk = props => {
     )
 }
 
-export default withAnimationContext(MageFunk)
+export default MageFunk
