@@ -76,13 +76,14 @@ const Container = styled.section`
     }
 `
 
-const SubHeading = styled.span`
+const SubHeading = styled(H2)`
     display: block;
     margin-top: 1rem;
     font-size: 2rem !important;
     color: white;
     text-align: center;
     line-height: 35px;
+    max-width: 600px;
 
     @media (min-width: 780px) {
         font-size: 1.5rem;
@@ -120,17 +121,19 @@ const Intro = props => {
         <Container>
             <Title>
                 <DesktopDisplay>
-                    <H1 style={{ textAlign: 'center' }}>Frustrated with JavaScript?</H1>
-                    <SubHeading>A visual approach can help you gain confidence and see the big picture.</SubHeading>
-                    <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }} />
+                    <H1 style={{ textAlign: 'center' }}>Learn JavaScript Visually & Memorably</H1>
+                    {/* <SubHeading>
+                        A visual and mnemonic approach can help you gain confidence and see the big picture.
+                    </SubHeading>
+                    <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }} /> */}
                 </DesktopDisplay>
 
                 <MobileDisplay>
                     <H2> Build a foundation</H2>
                 </MobileDisplay>
                 <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }}>
-                    The Great Sync is novel visual learning method based on mnemonic principles, helping you understand
-                    and recognize the fundamental patterns to build anything.
+                    The Great Sync's visual and mnemonic approach to learning helps you gain confidence, recognize
+                    patterns and see the big picture.
                 </P>
 
                 <Flex justifyContent="center">

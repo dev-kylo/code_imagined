@@ -25,7 +25,8 @@ export const TextContainer = styled.section`
     }
 
     p,
-    li {
+    li,
+    span {
         font-family: ${props => props.theme.fonts.par};
         color: ${props => props.theme.colors.navy};
         font-size: ${props => (props.small ? '18px' : '22px')};
@@ -115,6 +116,7 @@ export const TextContainer = styled.section`
     }
     h2 {
         font-size: 28px;
+        font-family: ${props => props.theme.fonts.heading2};
         @media (min-width: 600px) {
             font-size: 30px;
         }

@@ -1,6 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import '@fontsource/playfair-display/900.css'
 import '@fontsource/raleway'
 import '@fontsource/montserrat'
+import '@fontsource/passion-one'
 
 export const theme = {
     breakpoints: ['350px', '500px', '800px', '1100px'],
@@ -17,9 +19,9 @@ export const theme = {
         navy: '#041440',
     },
     fonts: {
-        heading1: "'Playfair Display', serif",
-        heading2: "font-family: 'Jockey One', sans-serif",
-        par: "'Raleway', sans-serif",
+        heading1: "'Passion One', serif",
+        heading2: "font-family: 'Passion One', serif",
+        par: "'Montserrat', sans-serif",
     },
     fontWeights: {
         body: 400,
@@ -40,11 +42,11 @@ export const theme = {
         },
         signup: {
             fontSize: [18, 18, 18, 18],
-            fontFamily: "'Raleway', sans-serif",
+            fontFamily: "'Montserrat', sans-serif",
         },
     },
     text: {
-        fontFamily: "'Raleway', sans-serif",
+        fontFamily: "'Montserrat', sans-serif",
     },
     buttons: {
         primary: {
