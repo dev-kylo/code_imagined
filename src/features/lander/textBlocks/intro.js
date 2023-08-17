@@ -13,6 +13,7 @@ const Logo = styled.div`
     height: auto;
     display: block;
     margin: 2em auto;
+    position: absolute;
 
     @media (min-width: 600px) {
         width: 180px;
@@ -27,25 +28,25 @@ export const Title = styled.div`
     padding: 0.5em;
     padding-top: 0;
     z-index: 100;
+
+    background: #00000085;
     h1 {
         margin-top: 0;
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     @media (min-width: 600px) {
         padding: 2em;
         font-size: 1rem;
-
+        background: none;
         h1 {
             font-size: 3rem;
         }
-        // padding-top: 1em;
     }
 
     @media (min-width: 1200px) {
         padding: 2em;
         font-size: 1rem;
-
         h1 {
             font-size: 4rem;
             margin-top: 2rem;
@@ -68,12 +69,10 @@ export const Title = styled.div`
 
 const Container = styled.section`
     max-width: 100%;
-
-    @media (max-width: 600px) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `
 
 const Intro = props => {
@@ -83,18 +82,21 @@ const Intro = props => {
         return (
             <MobileDisplay>
                 <Container>
-                    <Logo>
+                    {/* <Logo>
                         <StaticImage
                             src="../../../images/small_logo.png"
                             alt="The Great Sync logo"
                             placeholder="blurred"
                             fullWidth
                         />
-                    </Logo>
+                    </Logo> */}
                     <Title>
                         {/* <H1>The Great Sync <SubHeading>- visual & memorable JavaScript</SubHeading></H1> */}
-                        <H1 style={{ textAlign: 'center' }}>Frustrated with JavaScript?</H1>
-
+                        <H1 style={{ textAlign: 'center' }}>Learn JavaScript Visually & Memorably</H1>
+                        <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }}>
+                            The Great Sync's visual and mnemonic approach to learning helps you gain confidence,
+                            recognize patterns and see the big picture.
+                        </P>
                         {/* <Flex justifyContent="center">
                             <Button center clicked={showSignUp}>Sign up for a free taster</Button>
                         </Flex> */}
@@ -108,25 +110,16 @@ const Intro = props => {
             <Title>
                 <DesktopDisplay>
                     <H1 style={{ textAlign: 'center' }}>Learn JavaScript Visually & Memorably</H1>
-                    {/* <SubHeading>
-                        A visual and mnemonic approach can help you gain confidence and see the big picture.
-                    </SubHeading>
-                    <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }} /> */}
+                    <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }}>
+                        The Great Sync's visual and mnemonic approach to learning helps you gain confidence, recognize
+                        patterns and see the big picture.
+                    </P>
+                    <Flex justifyContent="center">
+                        <Button center clicked={showSignUp}>
+                            Sign up for a free taster
+                        </Button>
+                    </Flex>
                 </DesktopDisplay>
-
-                <MobileDisplay>
-                    <H2> Build a foundation</H2>
-                </MobileDisplay>
-                <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }}>
-                    The Great Sync's visual and mnemonic approach to learning helps you gain confidence, recognize
-                    patterns and see the big picture.
-                </P>
-
-                <Flex justifyContent="center">
-                    <Button center clicked={showSignUp}>
-                        Sign up for a free taster
-                    </Button>
-                </Flex>
             </Title>
         </Container>
     )

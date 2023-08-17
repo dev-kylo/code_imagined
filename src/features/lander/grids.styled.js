@@ -5,7 +5,6 @@ export const LandingGrid = styled.section`
     grid-template-columns: 1fr;
     grid-template-rows:
         minmax(100vh, auto)
-        minmax(60vh, auto)
         minmax(30vh, auto)
         minmax(55vh, auto)
         minmax(50vh, auto)
@@ -16,7 +15,6 @@ export const LandingGrid = styled.section`
         minmax(50vh, auto);
     grid-template-areas:
         'svg1'
-        'svg1_text'
         'svg2'
         'svg2_text'
         'svg3'

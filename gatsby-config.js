@@ -6,8 +6,8 @@ require('dotenv').config({
 
 module.exports = {
     siteMetadata: {
-        title: `The Great Sync Javascript Mental Model`,
-        description: `Learn Javascript visually using effective memory techniques. The Great Sync Javascript mental model will help you understand difficult concepts. It will make javascript easy to remember, by using mnemonic techniques and abstractions.`,
+        title: `The Great Sync JavaScript visual mental model`,
+        description: `Learn Javascript visually using effective memory techniques. The Great Sync Javascript mental model will help you understand difficult concepts.`,
         author: `Dev Kylo`,
         siteUrl: 'https://thegreatsync.com',
     },

@@ -1,5 +1,6 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
+import styled from 'styled-components'
 import { LandingGrid, GridArea } from './grids.styled'
 import Intro from './textBlocks/intro'
 import Learn from './textBlocks/learn'
@@ -11,20 +12,39 @@ import { Sphere } from './imageBlocks/sphere/sphere'
 import Invocation from './imageBlocks/invocation/Invocation'
 import RainIsland from './imageBlocks/rain_island/rainIsland'
 
+const StyledBlock = styled.div`
+    width: 100%;
+    height: 4rem;
+    background: rgb(4, 20, 64);
+    position: absolute;
+`
+
+const Label = styled.div`
+    position: absolute;
+    right: 0px;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 89%;
+`
+
 const Lander = () => {
     return (
         <LandingGrid>
             <GridArea name="svg1" color="#01140F">
+                <StyledBlock />
+                {/* <ExecutionIsle> */}
                 <StaticImage
                     src="https://res.cloudinary.com/the-great-sync/image/upload/v1686771432/3000x2000/EC_sdbbpu.png"
                     alt="Mage Funk sorceress character with an invocation orb"
                     placeholder="blurred"
                     fullWidth
                 />
+                {/* </ExecutionIsle> */}
 
-                <div style={{ position: 'absolute', right: 0, bottom: '50%' }}>
+                <Label>
                     <Intro mobile />
-                </div>
+                </Label>
             </GridArea>
             <GridArea name="svg1_text" color="#041440">
                 <Intro />
