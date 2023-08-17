@@ -76,7 +76,7 @@ const Testimonial = ({ name, text, profile }) => {
                 />
             </QuoteContainer>
             <Flex justifyContent="center" alignItems="center" mt={3}>
-                <Profile class="logo" src={profile} alt="logo" />
+                <Profile className="logo" src={profile} alt="logo" />
                 <Name>{name}</Name>
             </Flex>
         </Container>
