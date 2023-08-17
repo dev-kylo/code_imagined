@@ -1,42 +1,33 @@
-import React from "react"
-import Explainer from "../content/text/explainer"
-import SvgTextGrid from "../content/svg_text_grid/svgTextGrid"
-import SignUp from "../components/UI/signup.styled"
-import "../utils/fontawesome"
-import Providers from "../providers/Providers"
-import Drawer from "../components/UI/drawer"
-import Testimonials from "../components/UI/testimonials"
-import { useContext } from "react"
-import { SignupContext } from "../context/toggle"
-import { useEffect } from "react"
-
+import React, { useContext, useEffect } from 'react'
+import Intro from '../features/lander/intro'
+import Lander from '../features/lander/lander'
+import SignUp from '../features/signup/signup.styled'
+import '../utils/fontawesome'
+import Providers from '../providers/Providers'
+import Drawer from '../components/layout/sidenav/drawer'
+import Testimonials from '../features/testimonials/testimonials'
+import { SignupContext } from '../context/toggle'
 
 const Home = () => {
-  const showSignUp = useContext(SignupContext).show;
+    const showSignUp = useContext(SignupContext).show
 
+    useEffect(() => {
+        const checkIfAlreadyShown = localStorage.getItem('tgs-modal-shown') === 'true'
+        if (!checkIfAlreadyShown) {
+            showSignUp()
+            // localStorage.setItem("tgs-modal-shown", true);
+        }
+    }, [showSignUp])
 
-  const signUpPopup = () => {
-    const checkIfAlreadyShown = localStorage.getItem("tgs-modal-shown") === 'true';
-    console.log('Sing up')
-    if(!checkIfAlreadyShown){
-      showSignUp();
-      // localStorage.setItem("tgs-modal-shown", true);
-    }
-  }
-
-  useEffect(() => signUpPopup(), [])
-
-
-
-  return (
-    <Providers>
-      <Drawer />
-      <SvgTextGrid />
-      <Testimonials />
-      <Explainer />
-      <SignUp />
-    </Providers>
-  )
+    return (
+        <Providers>
+            <Drawer />
+            <Lander />
+            <Testimonials />
+            <Intro />
+            <SignUp />
+        </Providers>
+    )
 }
 
 export default Home

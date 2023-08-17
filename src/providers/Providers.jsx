@@ -1,42 +1,39 @@
-import React, { useState } from "react";
-import SEO from '../layout/seo';
-import Layout from '../layout/layout';
-import { theme } from '../theme';
-import { ThemeProvider } from 'styled-components';
-import Nav from '../components/UI/nav.styled';
+import React, { useState } from 'react'
+import '../utils/fontawesome'
+
+import { ThemeProvider } from 'styled-components'
 import { LayersManager } from 'react-layers-manager'
-import ModalContext from '../context/toggle';
-import '../utils/fontawesome';
-import FadeOnScroll from "../hoc/fadeOnScroll";
-import Footer from "../components/UI/footer.styled";
-import MenuProvider from "../context/menuContext";
+import FadeOnScroll from '../hoc/fadeOnScroll'
+import SEO from '../layout/seo'
+import Layout from '../layout/layout'
+import { theme } from '../theme'
+import Nav from '../components/layout/topnav/nav.styled'
+import ModalContext from '../context/toggle'
+import Footer from '../components/layout/footer/footer.styled'
+import MenuProvider from '../context/menuContext'
 
+const Providers = ({ postTheme, children }) => {
+    const [isScrollingDown, setScrollingDown] = useState(false)
 
+    return (
+        <ThemeProvider theme={theme}>
+            <SEO />
 
-
-const Providers = (props) => {
-
-  const [isScrollingDown, setScrollingDown] = useState(false);
-
-  return (
-    <ThemeProvider theme={theme}>
-      <SEO />
-
-      <MenuProvider>
-        <FadeOnScroll setScrollDown={ setScrollingDown }>
-          <LayersManager>
-            <Layout postTheme={props.postTheme}>
-              <ModalContext>
-                <Nav scrollingDown={isScrollingDown} />
-                  {props.children}
-              </ModalContext>
-            </Layout>
-          </LayersManager>
-        </FadeOnScroll>
-      </MenuProvider>
-      <Footer />
-    </ThemeProvider>
-  )
+            <MenuProvider>
+                <FadeOnScroll setScrollDown={setScrollingDown}>
+                    <LayersManager>
+                        <Layout postTheme={postTheme}>
+                            <ModalContext>
+                                <Nav scrollingDown={isScrollingDown} />
+                                {children}
+                            </ModalContext>
+                        </Layout>
+                    </LayersManager>
+                </FadeOnScroll>
+            </MenuProvider>
+            <Footer />
+        </ThemeProvider>
+    )
 }
 
-export default Providers;
+export default Providers

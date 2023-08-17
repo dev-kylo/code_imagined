@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-
+/* eslint-disable react/jsx-no-constructed-context-values */
+import React, { useCallback, useState } from 'react'
 
 export const MenuContext = React.createContext({
     visible: false,
@@ -7,32 +7,30 @@ export const MenuContext = React.createContext({
     exit: () => {},
     animate: true,
     toggleAnimate: () => {},
-
 })
 
-const MenuProvider = (props) => {
+const MenuProvider = ({ children }) => {
+    const [isOpen, setOpen] = useState(false)
 
-    const [isOpen, setOpen] = useState(false);
+    const openHandler = useCallback(() => {
+        setOpen(true)
+    }, [])
 
-    const openHandler = () => {
-      setOpen(!isOpen);
-    };
-
-    const closeHandler = () => {
-      setOpen(false);
-    }
-
+    const closeHandler = useCallback(() => {
+        setOpen(false)
+    }, [])
 
     return (
-        <MenuContext.Provider value={{
-            openMenu: openHandler,
-            closeMenu: closeHandler,
-            menuIsOpen: isOpen
-        }}>
-                {props.children}
+        <MenuContext.Provider
+            value={{
+                openMenu: openHandler,
+                closeMenu: closeHandler,
+                menuIsOpen: isOpen,
+            }}
+        >
+            {children}
         </MenuContext.Provider>
-    ) 
-
+    )
 }
 
-export default MenuProvider;
+export default MenuProvider

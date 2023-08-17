@@ -1,13 +1,18 @@
-import React from "react";
-import styled from 'styled-components';
+/* eslint-disable camelcase */
+import React from 'react'
+import styled from 'styled-components'
 
 const Embed = styled.div`
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 25px; height: 0; overflow: hidden;
+    padding-top: 25px;
+    height: 0;
+    overflow: hidden;
     margin-bottom: 1em;
 
-    iframe, object, embed {
+    iframe,
+    object,
+    embed {
         position: absolute;
         top: 0;
         left: 0;
@@ -17,15 +22,14 @@ const Embed = styled.div`
 `
 
 const Slice_Embed = ({ slice }) => {
-    if(slice){   	
+    if (slice) {
         return (
             <div>
                 <Embed dangerouslySetInnerHTML={{ __html: slice.primary.embed_link.html }} />
             </div>
-        );
-    } else {
-      return null;
+        )
     }
+    return null
 }
 
 export default Slice_Embed

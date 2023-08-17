@@ -1,6 +1,5 @@
-import React from "react";
-import { createGlobalStyle } from "styled-components"
-
+import React from 'react'
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalLayout = createGlobalStyle`
     
@@ -31,7 +30,7 @@ const GlobalLayout = createGlobalStyle`
     }
     body {
         line-height: 1;
-        background-color: ${props => props.postTheme? '#e8e8e8' : props.theme.colors.background}
+        background-color: ${props => (props.postTheme ? '#e8e8e8' : props.theme.colors.background)}
     }
     ol, ul {
         list-style: none;
@@ -58,11 +57,11 @@ const GlobalLayout = createGlobalStyle`
 
 function Layout({ children, postTheme }) {
     return (
-      <React.Fragment>
-            <GlobalLayout postTheme={postTheme}/>
+        <>
+            <GlobalLayout postTheme={postTheme} />
             {children}
-      </React.Fragment>
+        </>
     )
-  }
+}
 
-export default Layout;
+export default Layout

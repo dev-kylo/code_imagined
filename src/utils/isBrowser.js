@@ -1,6 +1,6 @@
-function isBrowser(){
+function isBrowser() {
     console.log('Checking for browser')
-    return typeof window !== "undefined";
+    return typeof window !== 'undefined'
 }
 
-export default isBrowser;
+export default isBrowser

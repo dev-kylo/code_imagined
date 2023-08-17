@@ -1,16 +1,14 @@
-import React from 'react';
+/* eslint-disable react/display-name */
+import React from 'react'
 
-const withSuspense = (Cmp) => {
-
-    return (props) => {
-    
+const withSuspense = Cmp => {
+    return props => {
         return (
             <React.Suspense>
-                <Cmp { ...props }></Cmp>
+                <Cmp {...props} />
             </React.Suspense>
         )
     }
-
 }
 
-export default withSuspense;
+export default withSuspense

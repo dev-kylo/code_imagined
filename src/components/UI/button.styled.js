@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import React from 'react';
-import {Link} from 'gatsby'
+import styled from 'styled-components'
+import React from 'react'
+import { Link } from 'gatsby'
 
 export const StyledButton = styled.button`
     background: ${props => props.theme.colors.red};
@@ -14,43 +14,53 @@ export const StyledButton = styled.button`
     font-size: 1.2rem;
     cursor: pointer;
     text-align: center;
-    transition: background 250ms ease-in-out, 
-                box-shadow 150ms ease-out,
-                transform 150ms ease;
+    transition: background 250ms ease-in-out, box-shadow 150ms ease-out, transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
     box-shadow: 5px -5px ${props => props.theme.colors.green};
 
+    &:hover,
+    button:focus {
+        background: ${props => props.theme.colors.blue};
+        box-shadow: 7px -7px ${props => props.theme.colors.pink};
+    }
 
-        &:hover,
-        button:focus {
-            background: ${props => props.theme.colors.blue};
-            box-shadow: 7px -7px ${props => props.theme.colors.pink};
-        }
+    &:focus {
+        outline: 1px solid #fff;
+        outline-offset: -4px;
+    }
 
-        &:focus {
-            outline: 1px solid #fff;
-            outline-offset: -4px;
-        }
-
-        &:active {
-            transform: scale(0.99);
-        }
+    &:active {
+        transform: scale(0.99);
+    }
 `
 
-export const Button = ({children, clicked, link, type = 'link'}) => {
+export const Button = ({ children, clicked, link, type = 'link' }) => {
+    const clickHandler = e => {
+        e.preventDefault()
+        clicked()
+    }
 
-    const clickHandler = (e) => {
-        e.preventDefault();
-        clicked();
-    };
+    console.log(type)
 
-    console.log(type);
+    if (link && type === 'link')
+        return (
+            <Link to={link}>
+                <StyledButton>{children}</StyledButton>
+            </Link>
+        )
+    if (link && type === 'external')
+        return (
+            <a target="_blank" rel="noopener noreferrer" href={link}>
+                <StyledButton>{children}</StyledButton>
+            </a>
+        )
+    if (link && type === 'download')
+        return (
+            <a target="_blank" rel="noopener noreferrer" href={link} download>
+                <StyledButton>{children}</StyledButton>
+            </a>
+        )
 
-    if (link && type === 'link') return <Link to={link}><StyledButton>{children}</StyledButton></Link>
-    if (link && type === 'external') return <a target="_blank" rel="noopener noreferrer" href={link}><StyledButton>{children}</StyledButton></a>
-    if (link && type === 'download') return <a target="_blank" rel="noopener noreferrer" href={link} download><StyledButton>{children}</StyledButton></a>
-   
     return <StyledButton onClick={e => clickHandler(e)}>{children}</StyledButton>
 }
-

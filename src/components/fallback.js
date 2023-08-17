@@ -1,9 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { graphql, useStaticQuery } from "gatsby";
-import Img from 'gatsby-image';
-
-
+import React from 'react'
+import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 const Container = styled.div`
     width: 100%;
@@ -16,20 +14,19 @@ const Container = styled.div`
     }
 `
 
-
 const Fallback = props => {
     const eci = useStaticQuery(graphql`
-    query ecifallback{
-        file(relativePath: { eq: "outline_eci.png" }) {
-        childImageSharp {
-            # Specify the image processing specifications right in the query.
-            fluid {
-            ...GatsbyImageSharpFluid
+        query ecifallback {
+            file(relativePath: { eq: "outline_eci.png" }) {
+                childImageSharp {
+                    # Specify the image processing specifications right in the query.
+                    fluid {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
             }
         }
-        }
-    }
-    `);
+    `)
 
     return (
         <Container>
@@ -38,4 +35,4 @@ const Fallback = props => {
     )
 }
 
-export default Fallback;
+export default Fallback

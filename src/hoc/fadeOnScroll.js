@@ -1,25 +1,22 @@
-import React, { useState } from 'react';
-import ScrollTrigger from 'react-scroll-trigger';
+import React, { useState } from 'react'
+import ScrollTrigger from 'react-scroll-trigger'
 
-const FadeOnScroll = (props) => {
+const FadeOnScroll = ({ children, setScrollDown }) => {
+    const [progress, setProgress] = useState(0)
 
-        const [progress, setProgress] = useState(0);
+    const onProgress = scroll => {
+        if (scroll.progress > progress) {
+            setScrollDown(true)
+        } else setScrollDown(false)
 
-        const onProgress = (scroll) => {
-          
-            if(scroll.progress > progress){
-                props.setScrollDown(true)
-            }
-            else props.setScrollDown(false)
+        setProgress(scroll.progress)
+    }
 
-            setProgress(scroll.progress);
-        }
-    
-        return (
-            <ScrollTrigger triggerOnLoad={false} onProgress={onProgress}>
-                    {props.children}
-            </ScrollTrigger>
-        )
+    return (
+        <ScrollTrigger triggerOnLoad={false} onProgress={onProgress}>
+            {children}
+        </ScrollTrigger>
+    )
 }
 
-export default FadeOnScroll;
+export default FadeOnScroll

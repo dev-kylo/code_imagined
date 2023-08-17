@@ -1,30 +1,32 @@
-import { graphql } from "gatsby";
-import React from "react";
-import Img from "../components/UI/img";
-
-
+/* eslint-disable camelcase */
+import { graphql } from 'gatsby'
+import React from 'react'
+import Img from '../components/UI/img'
 
 const Slice_Image = ({ slice }) => {
-    if(slice){  
-        const data = slice.primary;
+    if (slice) {
+        const data = slice.primary
         return (
-            <Img maxWidth={data.maxwidth} gatsbyImageData={data.uploaded_image.gatsbyImageData} altText={data.uploaded_image.alt} />
+            <Img
+                maxWidth={data.maxwidth}
+                gatsbyImageData={data.uploaded_image.gatsbyImageData}
+                altText={data.uploaded_image.alt}
+            />
         )
-    } else {
-      return null;
     }
+    return null
 }
 
-export default Slice_Image;
+export default Slice_Image
 
 export const query = graphql`
-  fragment PostDataBodyImage on PrismicPostDataBodyImage {
-    primary {
-        maxwidth
-        uploaded_image {
-          alt
-          gatsbyImageData(placeholder: BLURRED, width: 1200)
+    fragment PostDataBodyImage on PrismicPostDataBodyImage {
+        primary {
+            maxwidth
+            uploaded_image {
+                alt
+                gatsbyImageData(placeholder: BLURRED, width: 1200)
+            }
         }
-      }
-  }
+    }
 `

@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
-import { Layer } from 'react-layers-manager';
-import styled from 'styled-components';
-import FocusTrap from 'focus-trap-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' ;
-import { SignupContext } from '../../context/toggle';
-
+import React, { useContext } from 'react'
+import { Layer } from 'react-layers-manager'
+import styled from 'styled-components'
+import FocusTrap from 'focus-trap-react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { SignupContext } from '../../context/toggle'
 
 const Backdrop = styled.div`
     position: fixed;
@@ -15,7 +14,7 @@ const Backdrop = styled.div`
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
-`;
+`
 
 const ModalContent = styled.div`
     left: 50%;
@@ -37,7 +36,7 @@ const ModalContent = styled.div`
     overflow-y: scroll;
     z-index: 100000;
     transition: all 0.2s ease-in;
-    @media (max-width: 800px){
+    @media (max-width: 800px) {
         padding: 15px;
         min-width: 80%;
     }
@@ -54,50 +53,41 @@ const ExitButton = styled.button`
     font-size: 0.6rem;
 
     &:hover {
-        cursor: pointer
+        cursor: pointer;
     }
 `
 
+const Modal = ({ hideExitBtn, smallwindow, children, exitCb }) => {
+    const { visible } = useContext(SignupContext)
+    const { exit } = useContext(SignupContext)
 
-const Modal = props => {
-
-    const visible = useContext(SignupContext).visible;
-    const exit = useContext(SignupContext).exit;
-    
-    const clickHandler = (e) => {
-        e.preventDefault();
+    const clickHandler = e => {
+        e.preventDefault()
         console.log(e.target)
-        console.log(props.exit);
-        if (props.exitCb) props.exitCb()
-        exit();
+
+        if (exitCb) exitCb()
+        exit()
     }
 
-    
-
-
     const exitBtn = (
-        <ExitButton onClick={(e) => clickHandler(e)}>
-            <FontAwesomeIcon icon='times' size="3x"/>
+        <ExitButton onClick={e => clickHandler(e)}>
+            <FontAwesomeIcon icon="times" size="3x" />
         </ExitButton>
     )
 
-
-    if (!visible) return null;
-    else return (
+    if (!visible) return null
+    return (
         <Layer>
             <Backdrop role="dialog" aria-modal="true">
                 <FocusTrap>
-                    <ModalContent show={true} smallwindow={!!props.smallwindow} >
-                        
-                            {props.hideExitBtn ? null : exitBtn}
-                            {props.children}
-                        
+                    <ModalContent show smallwindow={!!smallwindow}>
+                        {hideExitBtn ? null : exitBtn}
+                        {children}
                     </ModalContent>
                 </FocusTrap>
             </Backdrop>
         </Layer>
     )
+}
 
-};
-
-export default Modal;
+export default Modal

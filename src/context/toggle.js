@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-
+/* eslint-disable react/jsx-no-constructed-context-values */
+import React, { useState, useEffect } from 'react'
 
 export const SignupContext = React.createContext({
     visible: false,
@@ -8,57 +7,50 @@ export const SignupContext = React.createContext({
     exit: () => {},
     animate: true,
     toggleAnimate: () => {},
-
 })
 
-const ModalContext = (props) => {
-
-    const [visibility, toggle] = useState(false);
-    const [play, toggleAnimations] = useState(true);
+const ModalContext = ({ children }) => {
+    const [visibility, setVisibility] = useState(false)
+    const [play, toggleAnimations] = useState(true)
 
     const showModal = () => {
-        toggle(true);
+        setVisibility(true)
     }
 
-    
-  const signUpPopup = () => {
-    const checkIfAlreadyShown = localStorage.getItem("tgs-modal-shown") === 'true';
-    console.log('Sing up')
-    if(!checkIfAlreadyShown){
-
-        const timer = setTimeout(() => {
-            showModal();
-            clearTimeout(timer);
-        }, 15000)
-        localStorage.setItem("tgs-modal-shown", true);
+    const signUpPopup = () => {
+        const checkIfAlreadyShown = localStorage.getItem('tgs-modal-shown') === 'true'
+        if (!checkIfAlreadyShown) {
+            const timer = setTimeout(() => {
+                showModal()
+                clearTimeout(timer)
+            }, 15000)
+            localStorage.setItem('tgs-modal-shown', true)
+        }
     }
-  }
 
     useEffect(() => signUpPopup(), [])
 
- 
     const toggleAnimate = () => {
-        console.log('toggling animations')
-        toggleAnimations(!play);
-     
-    };
+        toggleAnimations(!play)
+    }
 
     const exitModal = () => {
-        toggle(false);
+        setVisibility(false)
     }
 
     return (
-        <SignupContext.Provider value={{
-            visible: visibility, 
-            show: showModal, 
-            exit: exitModal,
-            animate: play,
-            toggleAnimate
-        }}>
-                {props.children}
+        <SignupContext.Provider
+            value={{
+                visible: visibility,
+                show: showModal,
+                exit: exitModal,
+                animate: play,
+                toggleAnimate,
+            }}
+        >
+            {children}
         </SignupContext.Provider>
-    ) 
-
+    )
 }
 
-export default ModalContext;
+export default ModalContext
