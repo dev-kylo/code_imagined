@@ -92,7 +92,7 @@ const Intro = props => {
                     </Logo> */}
                     <Title>
                         {/* <H1>The Great Sync <SubHeading>- visual & memorable JavaScript</SubHeading></H1> */}
-                        <H1 style={{ textAlign: 'center' }}>Learn JavaScript Visually & Memorably</H1>
+                        <H1 style={{ textAlign: 'center' }}>The Great Sync JavaScript Mental Model</H1>
                         <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }}>
                             The Great Sync's visual and mnemonic approach to learning helps you gain confidence,
                             recognize patterns and see the big picture.
@@ -109,7 +109,7 @@ const Intro = props => {
         <Container>
             <Title>
                 <DesktopDisplay>
-                    <H1 style={{ textAlign: 'center' }}>Learn JavaScript Visually & Memorably</H1>
+                    <H1 style={{ textAlign: 'center' }}>The Great Sync JavaScript Mental Model</H1>
                     <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }}>
                         The Great Sync's visual and mnemonic approach to learning helps you gain confidence, recognize
                         patterns and see the big picture.
