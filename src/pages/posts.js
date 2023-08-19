@@ -7,8 +7,6 @@ import PageTitle from '../components/UI/pageTitle.styled'
 import PostsList from '../features/posts/postsList'
 
 function Blog({ data }) {
-    console.log(data)
-
     return (
         <Providers>
             <PageTitle postTitle>The Great Sync Blog</PageTitle>
