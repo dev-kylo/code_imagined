@@ -4,22 +4,20 @@ import { useDisclosure } from '@mantine/hooks'
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { Box as RebassBox } from 'rebass/styled-components/'
 import { SignupContext } from '../../../context/toggle'
-import { DesktopDisplay, MobileDisplay } from '../containers/containers.styled'
+import { DesktopDisplay } from '../containers/containers.styled'
 import { Title } from '../../UI/text.styled'
 
 const HEADER_HEIGHT = rem(70)
 
 const StyledHeader = styled(Header)`
-    background: #01150f;
+    background: #01150f !important;
 
-    transform-origin: top;
     transition: opacity 1s transform 1s;
 
     @media (max-width: 780px) {
-        position: fixed;
-        z-index: 10000;
+        position: fixed !important;
+        z-index: 10000 !important;
         /* height: 40rem !important; */
     }
 `
