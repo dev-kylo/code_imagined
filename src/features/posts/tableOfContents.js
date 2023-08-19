@@ -40,7 +40,7 @@ const useStyles = createStyles(theme => ({
 // }
 
 export function TableOfContents({ links }) {
-    const [active, setActive] = useState(links[0].link)
+    const [active, setActive] = useState((links && links[0]?.link) || '')
     const { classes, cx } = useStyles()
     const items = links.map(item => (
         <Box
