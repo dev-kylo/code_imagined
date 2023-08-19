@@ -5,11 +5,7 @@ import { graphql } from 'gatsby'
 
 const Slice_Text = ({ slice }) => {
     const setSubHeadingId = props => {
-        console.log('SETTING SUBHEAD')
-        // console.log(children)
-        console.log(props)
         const id = props.text.replace(/\W+/g, '-').toLowerCase()
-        // const id = 'abc'
         return <h2 id={id}>{props.children}</h2>
     }
 
