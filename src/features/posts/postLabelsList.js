@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 import PostLabelCard from '../../components/UI/postLabelCard'
 import { Title } from '../../components/UI/text.styled'
 
@@ -21,15 +22,23 @@ function random(array) {
 const Container = styled.div`
     max-width: 400px;
     margin: 4rem auto;
+    .title {
+        margin-top: 1.5rem !important;
+        padding: 0;
+    }
 `
 
 const PostLabelsList = ({ postsData }) => {
     return (
         <Container>
             <Title>Latest posts</Title>
-            {postsData.slice(0, 4).map(node => (
-                <PostLabelCard key={node.id} image={random(backgrounds)} title={node.data.title.text} />
-            ))}
+            <div className="title">
+                {postsData.slice(0, 3).map(node => (
+                    <Link to={`/posts/${node.uid}`} style={{ textDecoration: 'none' }}>
+                        <PostLabelCard key={node.id} image={random(backgrounds)} title={node.data.title.text} />
+                    </Link>
+                ))}
+            </div>
         </Container>
     )
 }

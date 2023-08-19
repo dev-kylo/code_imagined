@@ -2,7 +2,6 @@ import React from 'react'
 import { Flex } from 'rebass/styled-components'
 import Providers from '../../providers/Providers'
 import PageTitle from '../../components/UI/pageTitle.styled'
-import Drawer from '../../components/layout/sidenav/drawer'
 
 import { H2 } from '../../components/UI/headings.styled'
 import DownloadLink from '../../components/UI/downloadLink.styled'
@@ -60,7 +59,6 @@ const Thankyou = () => {
 
     return (
         <Providers>
-            <Drawer />
             <PageTitle>A Visual Memory Model For Functions</PageTitle>
             <TextContainer>{content}</TextContainer>
             <SignUp />

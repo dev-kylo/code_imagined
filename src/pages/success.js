@@ -2,7 +2,6 @@ import React from 'react'
 import '../utils/fontawesome'
 import Providers from '../providers/Providers'
 import PageTitle from '../components/UI/pageTitle.styled'
-import Drawer from '../components/layout/sidenav/drawer'
 import { TextContainer } from '../components/layout/containers/textContainer'
 
 const Success = () => {
@@ -15,7 +14,6 @@ const Success = () => {
     }
     return (
         <Providers>
-            <Drawer />
             <PageTitle postTitle>Thank you for submitting!</PageTitle>
             <TextContainer>
                 <p>{decodeURIComponent(msg)}</p>

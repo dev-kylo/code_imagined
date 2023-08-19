@@ -3,7 +3,6 @@ import '../utils/fontawesome'
 import { Link } from 'gatsby'
 import Providers from '../providers/Providers'
 import PageTitle from '../components/UI/pageTitle.styled'
-import Drawer from '../components/layout/sidenav/drawer'
 import { TextContainer } from '../components/layout/containers/textContainer'
 import { H2 } from '../components/UI/headings.styled'
 import { P } from '../components/UI/text.styled'
@@ -11,7 +10,6 @@ import { P } from '../components/UI/text.styled'
 const NotFound = () => {
     return (
         <Providers>
-            <Drawer />
             <PageTitle>Page Not Found</PageTitle>
             <TextContainer>
                 <H2>Oh no!</H2>

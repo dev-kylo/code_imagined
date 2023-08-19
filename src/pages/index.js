@@ -4,7 +4,7 @@ import Lander from '../features/lander/lander'
 import SignUp from '../features/signup/signup.styled'
 import '../utils/fontawesome'
 import Providers from '../providers/Providers'
-import Drawer from '../components/layout/sidenav/drawer'
+
 import Testimonials from '../features/testimonials/testimonials'
 import { SignupContext } from '../context/toggle'
 
@@ -21,7 +21,6 @@ const Home = () => {
 
     return (
         <Providers>
-            <Drawer />
             <Lander />
             <Testimonials />
             <Intro />

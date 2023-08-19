@@ -4,11 +4,24 @@ import { PrismicRichText } from '@prismicio/react'
 import { graphql } from 'gatsby'
 
 const Slice_Text = ({ slice }) => {
+    const setSubHeadingId = props => {
+        console.log('SETTING SUBHEAD')
+        // console.log(children)
+        console.log(props)
+        const id = props.text.replace(/\W+/g, '-').toLowerCase()
+        // const id = 'abc'
+        return <h2 id={id}>{props.children}</h2>
+    }
+
     if (slice) {
         return (
             <div>
-                {/* {RichText.render(slice.primary.content)}  */}
-                <PrismicRichText field={slice.primary.content.richText} />
+                <PrismicRichText
+                    field={slice.primary.content.richText}
+                    components={{
+                        heading2: setSubHeadingId,
+                    }}
+                />
             </div>
         )
     }

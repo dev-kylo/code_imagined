@@ -1,7 +1,6 @@
 import React from 'react'
 import '../utils/fontawesome'
 import Providers from '../providers/Providers'
-import Drawer from '../components/layout/sidenav/drawer'
 import { TextContainer } from '../components/layout/containers/textContainer'
 
 const Purchase = () => {
@@ -30,7 +29,6 @@ const Purchase = () => {
 
     return (
         <Providers>
-            <Drawer />
             <TextContainer>
                 <div className="checkout-container" />
             </TextContainer>

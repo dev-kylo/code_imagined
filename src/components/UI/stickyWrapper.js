@@ -6,7 +6,7 @@ const StyledTOC = styled.aside`
     height: 100vh;
     top: 0;
     overflow: auto;
-    padding-top: 4rem;
+    padding-top: 2rem;
 
     /* Scrollbar Styles */
     &::-webkit-scrollbar {

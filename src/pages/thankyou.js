@@ -4,13 +4,11 @@ import { Link } from 'gatsby'
 import Providers from '../providers/Providers'
 import PageTitle from '../components/UI/pageTitle.styled'
 import { H2 } from '../components/UI/headings.styled'
-import Drawer from '../components/layout/sidenav/drawer'
 import { TextContainer } from '../components/layout/containers/textContainer'
 
 const Thankyou = () => {
     return (
         <Providers>
-            <Drawer />
             <PageTitle postTitle>I'm so excited to have you on board!</PageTitle>
             <TextContainer>
                 <H2>Wooohooo!</H2>

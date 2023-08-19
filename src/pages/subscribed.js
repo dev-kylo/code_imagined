@@ -6,7 +6,6 @@ import { Label, Input, Textarea } from '@rebass/forms/styled-components'
 import Providers from '../providers/Providers'
 import PageTitle from '../components/UI/pageTitle.styled'
 import SignUp from '../features/signup/signup.styled'
-import Drawer from '../components/layout/sidenav/drawer'
 import { TextContainer } from '../components/layout/containers/textContainer'
 import { H2 } from '../components/UI/headings.styled'
 
@@ -19,7 +18,6 @@ const HoneyInput = styled.div`
 const Subscribed = () => {
     return (
         <Providers>
-            <Drawer />
             <PageTitle>You're subscribed!</PageTitle>
             <TextContainer>
                 <p>

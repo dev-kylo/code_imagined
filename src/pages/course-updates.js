@@ -5,7 +5,6 @@ import PageSubtitle from '../components/UI/pageSubtitle.styled'
 import PageTitle from '../components/UI/pageTitle.styled'
 import Providers from '../providers/Providers'
 import SignUp from '../features/signup/signup.styled'
-import Drawer from '../components/layout/sidenav/drawer'
 import { TextContainer } from '../components/layout/containers/textContainer'
 import { P } from '../components/UI/text.styled'
 import { H2 } from '../components/UI/headings.styled'
@@ -74,7 +73,7 @@ const CourseUpdates = ({ data }) => {
     return (
         <Providers>
             {/* <Drawer posts={posts} /> */}
-            <Drawer />
+
             <PageTitle>The Syncer Program Course Launch</PageTitle>
             <TextContainer autoHeight>
                 <H2>Launches 30th July! Now only weeks away.</H2>

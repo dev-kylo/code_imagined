@@ -4,16 +4,13 @@ import { Container } from '@mantine/core'
 import { graphql } from 'gatsby'
 import Providers from '../providers/Providers'
 import PageTitle from '../components/UI/pageTitle.styled'
-import Drawer from '../components/layout/sidenav/drawer'
 import PostsList from '../features/posts/postsList'
-import StickyWrapper from '../components/UI/stickyWrapper'
 
 function Blog({ data }) {
     console.log(data)
 
     return (
         <Providers>
-            <Drawer />
             <PageTitle postTitle>The Great Sync Blog</PageTitle>
             <Container py="xl">
                 <PostsList posts={data.allPrismicPost.nodes} />

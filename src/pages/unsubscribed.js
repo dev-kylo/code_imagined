@@ -5,7 +5,6 @@ import { Flex, Box, Button } from 'rebass/styled-components'
 import { Label, Input, Textarea } from '@rebass/forms/styled-components'
 import Providers from '../providers/Providers'
 import PageTitle from '../components/UI/pageTitle.styled'
-import Drawer from '../components/layout/sidenav/drawer'
 import { TextContainer } from '../components/layout/containers/textContainer'
 
 const HoneyInput = styled.div`
@@ -17,7 +16,6 @@ const HoneyInput = styled.div`
 const UnSubscribed = () => {
     return (
         <Providers>
-            <Drawer />
             <PageTitle>You're unsubscribed!</PageTitle>
             <TextContainer>
                 <p>

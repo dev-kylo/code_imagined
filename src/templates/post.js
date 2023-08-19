@@ -7,10 +7,10 @@ import { TextContainer } from '../components/layout/containers/textContainer'
 import { components } from '../slices'
 import PostWrapper from '../providers/PostWrapper'
 import PostLabelsList from '../features/posts/postLabelsList'
-
 import { TableOfContents } from '../features/posts/tableOfContents'
 import StickyWrapper from '../components/UI/stickyWrapper'
 import { DesktopDisplay } from '../components/layout/containers/containers.styled'
+import { getQuickLinks } from '../utils/quickLinksFormatters'
 
 export default function Post({ data }) {
     if (!data) return null
@@ -20,24 +20,6 @@ export default function Post({ data }) {
     const desc = post.short_desc.text
 
     // { label: string; link: string; order: number }[];
-
-    const contents = [
-        {
-            label: 'How much does it cost?',
-            link: '/john',
-            order: 1,
-        },
-        {
-            label: 'When does it go live?',
-            link: '/team',
-            order: 1,
-        },
-        {
-            label: 'Will the course remain open?',
-            link: '/paul',
-            order: 1,
-        },
-    ]
 
     // function isActive({ href, location }) {
     //     const [, , module, pageName] = href.split('/')
@@ -49,6 +31,8 @@ export default function Post({ data }) {
 
     //     return true
     // }
+
+    const subheadings = getQuickLinks(data.prismicPost)
 
     return (
         <PostWrapper postTheme postTitle={title} description={desc}>
@@ -63,7 +47,7 @@ export default function Post({ data }) {
                     <StickyWrapper>
                         <ScrollArea.Autosize scrollbarSize={16} h="auto" offsetScrollbars>
                             <DesktopDisplay>
-                                <TableOfContents links={contents} active="/team" />
+                                <TableOfContents links={subheadings} />
                             </DesktopDisplay>
                             <PostLabelsList postsData={data.allPrismicPost.nodes} />
                         </ScrollArea.Autosize>

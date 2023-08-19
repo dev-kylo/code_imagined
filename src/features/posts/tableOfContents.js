@@ -1,5 +1,5 @@
-import React from 'react'
-import { createStyles, Box, Text, Group, rem } from '@mantine/core'
+import React, { useState } from 'react'
+import { createStyles, Box, Group, rem } from '@mantine/core'
 import { Title } from '../../components/UI/text.styled'
 
 const useStyles = createStyles(theme => ({
@@ -39,13 +39,14 @@ const useStyles = createStyles(theme => ({
 //   active: string;
 // }
 
-export function TableOfContents({ links, active }) {
+export function TableOfContents({ links }) {
+    const [active, setActive] = useState(links[0].link)
     const { classes, cx } = useStyles()
     const items = links.map(item => (
         <Box
             component="a"
             href={item.link}
-            onClick={event => event.preventDefault()}
+            onClick={() => setActive(item.link)}
             key={item.label}
             className={cx(classes.link, { [classes.linkActive]: active === item.link })}
             sx={theme => ({ paddingLeft: `calc(${item.order} * ${theme.spacing.md})` })}
