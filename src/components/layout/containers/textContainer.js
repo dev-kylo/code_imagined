@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const TextContainer = styled.section`
-    width: 70%;
+    width: 100%;
     margin: auto;
     padding: 2em;
     max-width: 850px;
