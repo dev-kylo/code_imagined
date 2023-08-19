@@ -26,6 +26,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@mantine/core": "^6.0.19",
     "@mantine/hooks": "^6.0.19",
+    "@mantine/ssr": "^6.0.19",
     "@mux/mux-player-react": "^1.8.0",
     "@prismicio/react": "^2.5.2",
     "@rebass/forms": "^4.0.6",

@@ -5,9 +5,8 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import { PrismicProvider } from '@prismicio/react'
-// import { createStylesServer, ServerStyles } from '@mantine/ssr'
-// import { renderToString } from 'react-dom/server'
-// import { MantineProvider } from '@mantine/core'
+import { createStylesServer, ServerStyles } from '@mantine/ssr'
+import { renderToString } from 'react-dom/server'
 
 function App({ children }) {
     return (
@@ -20,10 +19,10 @@ function App({ children }) {
 }
 
 // optional: you can provide your cache as a first argument in createStylesServer function
-// const stylesServer = createStylesServer()
+const stylesServer = createStylesServer()
 
-// export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString, setHeadComponents }) => {
-//     const html = renderToString(bodyComponent)
-//     setHeadComponents([<ServerStyles html={html} server={stylesServer} />])
-//     replaceBodyHTMLString(html)
-// }
+export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString, setHeadComponents }) => {
+    const html = renderToString(bodyComponent)
+    setHeadComponents([<ServerStyles html={html} server={stylesServer} />])
+    replaceBodyHTMLString(html)
+}
