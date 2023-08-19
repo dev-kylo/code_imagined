@@ -14,7 +14,7 @@ import TopNav from '../components/layout/topnav/topNav'
 const Providers = ({ postTheme, children }) => {
     return (
         <ThemeProvider theme={theme}>
-            <MantineProvider theme={{ fontFamily: 'Open Sans' }}>
+            <MantineProvider theme={theme}>
                 <SEO />
 
                 <LayersManager>
