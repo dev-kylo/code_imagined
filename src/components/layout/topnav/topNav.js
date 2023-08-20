@@ -46,12 +46,13 @@ const useStyles = createStyles(theme => ({
     link: {
         display: 'block',
         lineHeight: 1,
-        padding: `${rem(8)} ${rem(12)}`,
+        padding: `${rem(8)} ${rem(24)}`,
         borderRadius: theme.radius.sm,
         textDecoration: 'none',
-        color: theme.colors.dark[0],
+        color: 'white',
         fontSize: theme.fontSizes.xl,
         fontWeight: 500,
+        // backgroundColor: '#8080804a',
 
         '&:hover': {
             backgroundColor: 'rgb(171, 52, 40)',
@@ -117,7 +118,7 @@ function TopNav() {
                                 <Logo>
                                     <StaticImage
                                         src="../../../images/small_logo.png"
-                                        alt="Mage Funk sorceress character with an invocation orb"
+                                        alt="The Great Sync JavaScript Mental Model logo"
                                         placeholder="blurred"
                                         fullWidth
                                     />
