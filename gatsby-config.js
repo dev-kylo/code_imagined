@@ -24,7 +24,7 @@ module.exports = {
             options: {
                 host: 'https://thegreatsync.com/',
                 sitemap: 'https://thegreatsync.com/sitemap-pages.xml',
-                policy: [{ userAgent: '*', allow: '/' }],
+                policy: [{ userAgent: '*', allow: '/', disallow: ['/workshops'] }],
             },
         },
         {
@@ -52,6 +52,7 @@ module.exports = {
                     `/downloads/*`,
                     `/thankyou/`,
                     `/posts/testpost`,
+                    `/workshops`,
                 ],
             },
         },
