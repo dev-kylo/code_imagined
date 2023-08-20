@@ -19,7 +19,7 @@ function Blog({ data }) {
 
 export const query = graphql`
     query BlogQuery {
-        allPrismicPost(filter: { tags: { eq: "courseUpdate" } }, sort: { data: { published: DESC } }) {
+        allPrismicPost(sort: { data: { published: DESC } }) {
             nodes {
                 id
                 uid

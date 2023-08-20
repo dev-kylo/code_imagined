@@ -9,11 +9,13 @@ import PostWrapper from '../providers/PostWrapper'
 import PostLabelsList from '../features/posts/postLabelsList'
 import { TableOfContents } from '../features/posts/tableOfContents'
 import StickyWrapper from '../components/UI/stickyWrapper'
-import { DesktopDisplay } from '../components/layout/containers/containers.styled'
+
 import { getQuickLinks } from '../utils/quickLinksFormatters'
 
 export default function Post({ data }) {
     if (!data) return null
+
+    console.log(data)
 
     const post = data.prismicPost.data
     const title = post.title.text || 'Untitled'
@@ -40,16 +42,24 @@ export default function Post({ data }) {
             <Grid mx={15}>
                 <Grid.Col xs={12} lg={9} orderSm={2}>
                     <TextContainer>
+                        <TableOfContents links={subheadings} />
                         <SliceZone slices={post.body} components={components} />
                     </TextContainer>
                 </Grid.Col>
                 <Grid.Col xs={12} lg={3} orderSm={1}>
                     <StickyWrapper>
                         <ScrollArea.Autosize scrollbarSize={16} h="auto" offsetScrollbars>
-                            <DesktopDisplay>
-                                <TableOfContents links={subheadings} />
-                            </DesktopDisplay>
-                            <PostLabelsList postsData={data.allPrismicPost.nodes} />
+                            <PostLabelsList
+                                postsData={data.allPrismicPost.nodes}
+                                title="Related Posts"
+                                tag={data.prismicPost?.tags?.length > 0 ? data.prismicPost.tags[0] : 'none'}
+                                currentId={data.prismicPost?.id}
+                            />
+                            <PostLabelsList
+                                postsData={data.allPrismicPost.nodes}
+                                title="Most Recent"
+                                currentId={data.prismicPost?.id}
+                            />
                         </ScrollArea.Autosize>
                     </StickyWrapper>
                 </Grid.Col>
@@ -64,6 +74,7 @@ export const query = graphql`
             id
             uid
             type
+            tags
             data {
                 published
                 title {
@@ -89,7 +100,7 @@ export const query = graphql`
                 }
             }
         }
-        allPrismicPost(filter: { tags: { eq: "courseUpdate" } }, sort: { data: { published: DESC } }) {
+        allPrismicPost(sort: { data: { published: DESC } }) {
             nodes {
                 id
                 uid

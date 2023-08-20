@@ -59,5 +59,5 @@ export const CallOut = styled.div`
 `
 export const Title = styled.span`
     font-size: 28px;
-    font-family: ${props => props.theme.fonts.heading1};
+    font-family: ${props => props.theme.fonts.heading1} !important;
 `

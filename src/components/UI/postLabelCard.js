@@ -34,7 +34,7 @@ function PostLabelCard({ image, category, title, date, author }) {
     return (
         <Card withBorder radius="md" p={0} className={classes.card}>
             <Group noWrap spacing={0}>
-                <Image src={image} height={100} width={140} />
+                <Image src={image} height={100} width={80} alt="" role="presentation" />
                 <div className={classes.body}>
                     <Text className={classes.title} mt="xs" mb="md">
                         {title}

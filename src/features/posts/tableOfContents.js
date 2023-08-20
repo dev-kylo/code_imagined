@@ -1,6 +1,14 @@
-import React, { useState } from 'react'
-import { createStyles, Box, Group, rem } from '@mantine/core'
+import React, { useEffect, useState } from 'react'
+import { createStyles, Box, rem, Accordion } from '@mantine/core'
+import styled from 'styled-components'
 import { Title } from '../../components/UI/text.styled'
+import isBrowser from '../../utils/isBrowser'
+
+const Container = styled.div`
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 2rem;
+`
 
 const useStyles = createStyles(theme => ({
     link: {
@@ -42,6 +50,14 @@ const useStyles = createStyles(theme => ({
 export function TableOfContents({ links }) {
     const [active, setActive] = useState((links && links[0]?.link) || '')
     const { classes, cx } = useStyles()
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        if (isBrowser()) {
+            if (window.innerWidth < 780) setIsMobile(true)
+        }
+    }, [])
+
     const items = links.map(item => (
         <Box
             component="a"
@@ -56,11 +72,15 @@ export function TableOfContents({ links }) {
     ))
 
     return (
-        <div>
-            <Group mb="md">
-                <Title>Quick Page Links</Title>
-            </Group>
-            {items}
-        </div>
+        <Container>
+            <Accordion variant="contained" defaultValue={isMobile ? '' : 'contents1'}>
+                <Accordion.Item value="contents1">
+                    <Accordion.Control style={{ textAlign: 'center' }}>
+                        <Title>Table of Contents</Title>
+                    </Accordion.Control>
+                    <Accordion.Panel> {items}</Accordion.Panel>
+                </Accordion.Item>
+            </Accordion>
+        </Container>
     )
 }
