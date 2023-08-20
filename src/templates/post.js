@@ -100,7 +100,7 @@ export const query = graphql`
                 }
             }
         }
-        allPrismicPost(sort: { data: { published: DESC } }) {
+        allPrismicPost(filter: { data: { standalone: { ne: true } } }, sort: { data: { published: DESC } }) {
             nodes {
                 id
                 uid
