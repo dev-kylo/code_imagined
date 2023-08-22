@@ -39,14 +39,14 @@ export default function Post({ data }) {
     return (
         <PostWrapper postTheme postTitle={title} description={desc}>
             <PageTitle postTitle>{title}</PageTitle>
-            <Grid mx={15}>
-                <Grid.Col xs={12} lg={9} orderSm={2}>
+            <Grid mx="auto" maw={1400} gutter={45}>
+                <Grid.Col xs={12} lg={9} orderLg={2}>
                     <TextContainer>
                         <TableOfContents links={subheadings} />
                         <SliceZone slices={post.body} components={components} />
                     </TextContainer>
                 </Grid.Col>
-                <Grid.Col xs={12} lg={3} orderSm={1}>
+                <Grid.Col xs={12} lg={3} orderLg={1}>
                     <StickyWrapper>
                         <ScrollArea.Autosize scrollbarSize={16} h="auto" offsetScrollbars>
                             <PostLabelsList
@@ -89,14 +89,14 @@ export const query = graphql`
                         slice_label
                         slice_type
                     }
-                    ...PostDataBodyImage
-                    ...PostDataBodyText
-                    ...PostDataBodyCode
-                    ...PostDataBodyGallery
-                    ...PostDataBodyButton
-                    ...PostDataBodyVideo
-                    ...PostDataBodySignUp
-                    ...PostDataBodyForm
+                    ...PostComponentImage
+                    ...PostComponentText
+                    ...PostComponentCode
+                    ...PostComponentGallery
+                    ...PostComponentButton
+                    ...PostComponentVideo
+                    ...PostComponentSignUp
+                    ...PostComponentForm
                 }
             }
         }
