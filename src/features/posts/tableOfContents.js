@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { createStyles, Box, rem, Accordion } from '@mantine/core'
 import styled from 'styled-components'
 import { Title } from '../../components/UI/text.styled'
-import isBrowser from '../../utils/isBrowser'
+import { MobileDisplay, DesktopDisplay } from '../../components/layout/containers/containers.styled'
 
 const Container = styled.div`
-    max-width: 80%;
     margin: auto;
     margin-bottom: 2rem;
+
+    @media (min-width: 780px) {
+        max-width: 80%;
+    }
 `
 
 const useStyles = createStyles(theme => ({
@@ -50,13 +53,6 @@ const useStyles = createStyles(theme => ({
 export function TableOfContents({ links }) {
     const [active, setActive] = useState((links && links[0]?.link) || '')
     const { classes, cx } = useStyles()
-    const [isMobile, setIsMobile] = useState(false)
-
-    useEffect(() => {
-        if (isBrowser()) {
-            if (window.innerWidth < 780) setIsMobile(true)
-        }
-    }, [])
 
     const items = links.map(item => (
         <Box
@@ -73,14 +69,26 @@ export function TableOfContents({ links }) {
 
     return (
         <Container>
-            <Accordion variant="contained" defaultValue={isMobile ? '' : 'contents1'}>
-                <Accordion.Item value="contents1">
-                    <Accordion.Control style={{ textAlign: 'center' }}>
-                        <Title>Table of Contents</Title>
-                    </Accordion.Control>
-                    <Accordion.Panel> {items}</Accordion.Panel>
-                </Accordion.Item>
-            </Accordion>
+            <DesktopDisplay>
+                <Accordion variant="contained" defaultValue="item-1">
+                    <Accordion.Item value="item-1">
+                        <Accordion.Control style={{ textAlign: 'center' }}>
+                            <Title>Table of Contents</Title>
+                        </Accordion.Control>
+                        <Accordion.Panel> {items}</Accordion.Panel>
+                    </Accordion.Item>
+                </Accordion>
+            </DesktopDisplay>
+            <MobileDisplay>
+                <Accordion variant="contained">
+                    <Accordion.Item value="item-2">
+                        <Accordion.Control style={{ textAlign: 'center' }}>
+                            <Title>Table of Contents</Title>
+                        </Accordion.Control>
+                        <Accordion.Panel> {items}</Accordion.Panel>
+                    </Accordion.Item>
+                </Accordion>
+            </MobileDisplay>
         </Container>
     )
 }
