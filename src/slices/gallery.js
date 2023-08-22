@@ -52,7 +52,27 @@ const Slice_Gallery = ({ slice }) => {
 export default Slice_Gallery
 
 export const query = graphql`
-    fragment PostDataBodyGallery on PrismicPostDataBodyGallery {
+    fragment PostComponentGallery on PrismicPostDataBodyGallery {
+        primary {
+            columns
+            grid
+        }
+        items {
+            alt {
+                text
+            }
+            caption {
+                text
+            }
+            image {
+                alt
+                url
+                gatsbyImageData(placeholder: BLURRED, width: 1200)
+            }
+        }
+    }
+
+    fragment CourseComponentGallery on PrismicCoursePageDataBodyGallery {
         primary {
             columns
             grid

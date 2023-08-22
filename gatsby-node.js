@@ -1,12 +1,9 @@
 const { createOpenGraphImage } = require('gatsby-plugin-open-graph-images')
-// const { fmImagesToRelative } = require('gatsby-remark-relative-images');
-// const { createFilePath } = require('gatsby-source-filesystem')
+
 const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql }) => {
     const { createPage } = actions
-
-    // const postTemplate = path.resolve('src/components/templates/post.js');
 
     createOpenGraphImage(createPage, {
         path: '/og-image/index.png',
@@ -31,6 +28,30 @@ exports.createPages = async ({ actions, graphql }) => {
         }
     `)
 
+    const coursePages = await graphql(`
+        {
+            allPrismicCourse {
+                nodes {
+                    uid
+                    id
+                    data {
+                        body {
+                            ... on PrismicCourseDataBodyCoursePages {
+                                items {
+                                    course_page {
+                                        uid
+                                        id
+                                    }
+                                }
+                                slice_type
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `)
+
     postPages.data.allPrismicPost.nodes.forEach(page => {
         createPage({
             path: `/posts/${page.uid}`,
@@ -38,6 +59,23 @@ exports.createPages = async ({ actions, graphql }) => {
             context: {
                 id: page.id,
             },
+        })
+    })
+
+    coursePages.data.allPrismicCourse.nodes.forEach(course => {
+        const courseUid = course.uid
+        console.log(course.data.body)
+        const pages = course.data.body.find(bodyItem => bodyItem.slice_type === 'course_pages')
+
+        pages.items.forEach(page => {
+            console.log(page)
+            createPage({
+                path: `/courses/${courseUid}/${page.course_page.uid}`,
+                component: path.resolve(__dirname, 'src/templates/coursePage.js'),
+                context: {
+                    id: page.course_page.id,
+                },
+            })
         })
     })
 }

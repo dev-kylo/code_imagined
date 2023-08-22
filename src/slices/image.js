@@ -20,7 +20,17 @@ const Slice_Image = ({ slice }) => {
 export default Slice_Image
 
 export const query = graphql`
-    fragment PostDataBodyImage on PrismicPostDataBodyImage {
+    fragment PostComponentImage on PrismicPostDataBodyImage {
+        primary {
+            maxwidth
+            uploaded_image {
+                alt
+                gatsbyImageData(placeholder: BLURRED, width: 1200)
+            }
+        }
+    }
+
+    fragment CourseComponentImage on PrismicCoursePageDataBodyImage {
         primary {
             maxwidth
             uploaded_image {
