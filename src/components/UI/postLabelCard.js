@@ -5,6 +5,7 @@ const useStyles = createStyles(theme => ({
     card: {
         margin: '0.5rem 0',
         backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
+        width: '100%',
     },
 
     title: {

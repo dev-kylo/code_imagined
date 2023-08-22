@@ -11,7 +11,8 @@ function random(array) {
 }
 
 const Container = styled.div`
-    max-width: 400px;
+    /* max-width: 400px; */
+    width: 100%;
     margin: 2rem auto;
     margin-bottom: 3rem;
     .title {

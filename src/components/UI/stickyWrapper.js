@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const StyledTOC = styled.aside`
     position: sticky;
-    height: 100vh;
     top: 0;
     overflow: auto;
     padding-top: 2rem;

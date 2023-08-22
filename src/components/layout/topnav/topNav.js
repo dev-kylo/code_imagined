@@ -57,6 +57,10 @@ const useStyles = createStyles(theme => ({
         '&:hover': {
             backgroundColor: 'rgb(171, 52, 40)',
         },
+
+        '@media(max-width: 780px)': {
+            color: 'black',
+        },
     },
 
     linkLabel: {
