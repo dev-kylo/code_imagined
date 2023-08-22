@@ -23,9 +23,13 @@ export const TextContainer = styled.section`
         color: ${props => props.theme.colors.red};
     }
 
+    .language-js {
+        margin: 2rem 0;
+    }
+
     p,
     li,
-    span {
+    .layout-wrapper span.token {
         font-family: ${props => props.theme.fonts.par};
         color: ${props => props.theme.colors.navy};
         font-size: ${props => (props.small ? '18px' : '22px')};
@@ -51,6 +55,12 @@ export const TextContainer = styled.section`
             -moz-hyphens: auto;
             -webkit-hyphens: auto;
             hyphens: auto;
+            text-decoration: none;
+            background: #e8f5ff;
+            color: rgb(28, 126, 214);
+            :hover {
+                text-decoration: underline;
+            }
         }
 
         em {
@@ -112,6 +122,15 @@ export const TextContainer = styled.section`
         text-align: left;
         padding: 0.5em 0;
         margin: 1em 0;
+
+        a {
+            background: #e8f5ff;
+            color: rgb(28, 126, 214);
+            text-decoration: none;
+            :hover {
+                text-decoration: underline;
+            }
+        }
     }
     h2 {
         font-size: 28px;
