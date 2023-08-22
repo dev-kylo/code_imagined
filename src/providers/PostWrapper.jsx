@@ -24,6 +24,7 @@ const PostWrapper = ({ postTitle, description, postTheme, children }) => {
                             <TopNav />
 
                             <SignUp />
+
                             {children}
                         </ModalContext>
                     </Layout>

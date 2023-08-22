@@ -89,14 +89,14 @@ export const query = graphql`
                         slice_label
                         slice_type
                     }
-                    ...PostDataBodyImage
-                    ...PostDataBodyText
-                    ...PostDataBodyCode
-                    ...PostDataBodyGallery
-                    ...PostDataBodyButton
-                    ...PostDataBodyVideo
-                    ...PostDataBodySignUp
-                    ...PostDataBodyForm
+                    ...PostComponentImage
+                    ...PostComponentText
+                    ...PostComponentCode
+                    ...PostComponentGallery
+                    ...PostComponentButton
+                    ...PostComponentVideo
+                    ...PostComponentSignUp
+                    ...PostComponentForm
                 }
             }
         }
