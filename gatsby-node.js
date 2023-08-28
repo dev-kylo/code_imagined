@@ -32,21 +32,17 @@ exports.createPages = async ({ actions, graphql }) => {
         {
             allPrismicCourse {
                 nodes {
-                    uid
-                    id
                     data {
-                        body {
-                            ... on PrismicCourseDataBodyCoursePages {
-                                items {
-                                    course_page {
-                                        uid
-                                        id
-                                    }
-                                }
-                                slice_type
+                        course_pages {
+                            course_page {
+                                uid
+                                id
                             }
                         }
                     }
+                    id
+                    uid
+                    prismicId
                 }
             }
         }
@@ -64,10 +60,17 @@ exports.createPages = async ({ actions, graphql }) => {
 
     coursePages.data.allPrismicCourse.nodes.forEach(course => {
         const courseUid = course.uid
-        console.log(course.data.body)
-        const pages = course.data.body.find(bodyItem => bodyItem.slice_type === 'course_pages')
+        const pages = course.data.course_pages
 
-        pages.items.forEach(page => {
+        createPage({
+            path: `/courses/${courseUid}`,
+            component: path.resolve(__dirname, 'src/templates/course.js'),
+            context: {
+                id: course.prismicId,
+            },
+        })
+
+        pages.forEach(page => {
             console.log(page)
             createPage({
                 path: `/courses/${courseUid}/${page.course_page.uid}`,

@@ -39,7 +39,20 @@ export const query = graphql`
         }
     }
 
-    fragment CourseComponentButton on PrismicCoursePageDataBodyButton {
+    fragment CourseComponentButton on PrismicCourseDataBodyButton {
+        primary {
+            button_type
+            button_text {
+                text
+            }
+            button_link {
+                url
+                target
+            }
+        }
+    }
+
+    fragment CoursePageComponentButton on PrismicCoursePageDataBodyButton {
         primary {
             button_type
             button_text {

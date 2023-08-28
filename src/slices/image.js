@@ -30,7 +30,17 @@ export const query = graphql`
         }
     }
 
-    fragment CourseComponentImage on PrismicCoursePageDataBodyImage {
+    fragment CourseComponentImage on PrismicCourseDataBodyImage {
+        primary {
+            maxwidth
+            uploaded_image {
+                alt
+                gatsbyImageData(placeholder: BLURRED, width: 1200)
+            }
+        }
+    }
+
+    fragment CoursePageComponentImage on PrismicCoursePageDataBodyImage {
         primary {
             maxwidth
             uploaded_image {

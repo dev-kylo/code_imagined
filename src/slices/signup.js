@@ -34,7 +34,13 @@ export const query = graphql`
         }
     }
 
-    fragment CourseComponentSignUp on PrismicCoursePageDataBodySignUp {
+    fragment CourseComponentSignUp on PrismicCourseDataBodySignUp {
+        primary {
+            id
+        }
+    }
+
+    fragment CoursePageComponentSignUp on PrismicCoursePageDataBodySignUp {
         primary {
             id
         }

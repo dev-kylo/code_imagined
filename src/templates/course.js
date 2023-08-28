@@ -7,12 +7,12 @@ import { TextContainer } from '../components/layout/containers/textContainer'
 import { components } from '../slices'
 import PostWrapper from '../providers/PostWrapper'
 
-export default function CoursePage({ data }) {
+export default function Course({ data }) {
     if (!data) return null
 
     console.log(data)
 
-    const post = data.prismicCoursePage.data
+    const post = data.prismicCourse.data
     const title = post.title.text || 'Untitled'
     const desc = post.short_desc.text
 
@@ -22,12 +22,12 @@ export default function CoursePage({ data }) {
             <Grid mx={15}>
                 <Grid.Col xs={12} lg={9} orderSm={2}>
                     <TextContainer>
-                        {/* <TableOfContents links={subheadings} /> */}
                         <SliceZone slices={post.body} components={components} />
                     </TextContainer>
                 </Grid.Col>
                 <Grid.Col xs={12} lg={3} orderSm={1}>
-                    <h2>Stuff</h2>
+                    {/* <TableOfContents links={subheadings} /> */}
+                    <h2>Course Contents</h2>
                 </Grid.Col>
             </Grid>
         </PostWrapper>
@@ -35,18 +35,21 @@ export default function CoursePage({ data }) {
 }
 
 export const query = graphql`
-    query CoursePageQuery($id: ID) {
-        prismicCoursePage(prismicId: { eq: $id }) {
-            id
-            uid
-            type
-            tags
+    query CourseQuery($id: ID) {
+        prismicCourse(prismicId: { eq: $id }) {
             data {
+                type
+                visible
                 title {
                     text
                 }
                 short_desc {
                     text
+                }
+                course_pages {
+                    course_page {
+                        uid
+                    }
                 }
                 body {
                     ... on PrismicSliceType {
@@ -54,16 +57,17 @@ export const query = graphql`
                         slice_label
                         slice_type
                     }
-                    ...CoursePageComponentCode
-                    ...CoursePageComponentImage
-                    ...CoursePageComponentText
-                    ...CoursePageComponentVideo
-                    ...CoursePageComponentGallery
-                    ...CoursePageComponentButton
-                    ...CoursePageComponentSignUp
-                    ...CoursePageComponentForm
+                    ...CourseComponentCode
+                    ...CourseComponentImage
+                    ...CourseComponentText
+                    ...CourseComponentVideo
+                    ...CourseComponentGallery
+                    ...CourseComponentButton
+                    ...CourseComponentSignUp
+                    ...CourseComponentForm
                 }
             }
+            type
         }
     }
 `

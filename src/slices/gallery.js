@@ -72,7 +72,27 @@ export const query = graphql`
         }
     }
 
-    fragment CourseComponentGallery on PrismicCoursePageDataBodyGallery {
+    fragment CourseComponentGallery on PrismicCourseDataBodyGallery {
+        primary {
+            columns
+            grid
+        }
+        items {
+            alt {
+                text
+            }
+            caption {
+                text
+            }
+            image {
+                alt
+                url
+                gatsbyImageData(placeholder: BLURRED, width: 1200)
+            }
+        }
+    }
+
+    fragment CoursePageComponentGallery on PrismicCoursePageDataBodyGallery {
         primary {
             columns
             grid

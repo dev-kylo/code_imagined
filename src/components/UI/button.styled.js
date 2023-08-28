@@ -7,9 +7,10 @@ export const StyledButton = styled.button`
     color: white;
     display: inline-block;
     border: none;
-    padding: 1rem 2rem;
-    margin: 1.5em 0;
+    padding: ${({ size }) => (size === 'small' ? '0.5rem 2rem' : '1rem 2rem')};
+    /* margin: 1.5em 0; */
     text-decoration: none;
+    width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
     font-family: sans-serif;
     font-size: 1.2rem;
     cursor: pointer;
@@ -35,7 +36,7 @@ export const StyledButton = styled.button`
     }
 `
 
-export const Button = ({ children, clicked, link, type = 'link' }) => {
+export const Button = ({ children, clicked, link, fullWidth, style = {}, size = 'medium', type = 'link' }) => {
     const clickHandler = e => {
         e.preventDefault()
         clicked()
@@ -46,21 +47,31 @@ export const Button = ({ children, clicked, link, type = 'link' }) => {
     if (link && type === 'link')
         return (
             <Link to={link}>
-                <StyledButton>{children}</StyledButton>
+                <StyledButton size={size} style={style} fullWidth={fullWidth}>
+                    {children}
+                </StyledButton>
             </Link>
         )
     if (link && type === 'external')
         return (
             <a target="_blank" rel="noopener noreferrer" href={link}>
-                <StyledButton>{children}</StyledButton>
+                <StyledButton size={size} fullWidth={fullWidth} style={style}>
+                    {children}
+                </StyledButton>
             </a>
         )
     if (link && type === 'download')
         return (
             <a target="_blank" rel="noopener noreferrer" href={link} download>
-                <StyledButton>{children}</StyledButton>
+                <StyledButton size={size} fullWidth={fullWidth} style={style}>
+                    {children}
+                </StyledButton>
             </a>
         )
 
-    return <StyledButton onClick={e => clickHandler(e)}>{children}</StyledButton>
+    return (
+        <StyledButton size={size} fullWidth={fullWidth} style={style} onClick={e => clickHandler(e)}>
+            {children}
+        </StyledButton>
+    )
 }

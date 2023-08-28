@@ -1,13 +1,10 @@
 import styled from 'styled-components'
 
 export const TextContainer = styled.section`
-    /* width: 100%; */
     margin: auto;
     padding: 2em;
-    /* max-width: 850px; */
     margin-bottom: 1em;
     background-color: white;
-    /* min-height: ${props => (props.autoHeight ? 'auto' : '80vh')}; */
 
     @media (max-width: 800px) {
         padding: 1em;

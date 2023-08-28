@@ -119,7 +119,12 @@ export const query = graphql`
             form_id
         }
     }
-    fragment CourseComponentForm on PrismicCoursePageDataBodyForm {
+    fragment CourseComponentForm on PrismicCourseDataBodyForm {
+        primary {
+            form_id
+        }
+    }
+    fragment CoursePageComponentForm on PrismicCoursePageDataBodyForm {
         primary {
             form_id
         }

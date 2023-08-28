@@ -77,7 +77,27 @@ export const query = graphql`
         }
     }
 
-    fragment CourseComponentVideo on PrismicCoursePageDataBodyVideo {
+    fragment CourseComponentVideo on PrismicCourseDataBodyVideo {
+        primary {
+            video_url {
+                embed_url
+            }
+            file_url {
+                url
+            }
+            mux_assetid {
+                text
+            }
+            mux_playbackid {
+                text
+            }
+            mux_title {
+                text
+            }
+        }
+    }
+
+    fragment CoursePageComponentVideo on PrismicCoursePageDataBodyVideo {
         primary {
             video_url {
                 embed_url
