@@ -6,6 +6,7 @@ import PageTitle from '../components/UI/pageTitle.styled'
 import { TextContainer } from '../components/layout/containers/textContainer'
 import { components } from '../slices'
 import PostWrapper from '../providers/PostWrapper'
+import SignUpWall from '../features/courses/signUpWall'
 
 export default function CoursePage({ data }) {
     if (!data) return null
@@ -23,7 +24,9 @@ export default function CoursePage({ data }) {
                 <Grid.Col xs={12} lg={9} orderSm={2}>
                     <TextContainer>
                         {/* <TableOfContents links={subheadings} /> */}
-                        <SliceZone slices={post.body} components={components} />
+                        <SignUpWall>
+                            <SliceZone slices={post.body} components={components} />
+                        </SignUpWall>
                     </TextContainer>
                 </Grid.Col>
                 <Grid.Col xs={12} lg={3} orderSm={1}>

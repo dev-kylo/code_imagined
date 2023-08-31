@@ -1,20 +1,45 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { SliceZone } from '@prismicio/react'
-import { graphql } from 'gatsby'
-import { Grid } from '@mantine/core'
+import { Link, graphql } from 'gatsby'
+import { Flex, Grid } from '@mantine/core'
 import PageTitle from '../components/UI/pageTitle.styled'
 import { TextContainer } from '../components/layout/containers/textContainer'
 import { components } from '../slices'
 import PostWrapper from '../providers/PostWrapper'
+import CoursePages from '../features/courses/coursePages'
+import { Button } from '../components/UI/button.styled'
+import { getQuickLinks } from '../utils/quickLinksFormatters'
+import { TableOfContents } from '../features/posts/tableOfContents'
+import StickyWrapper from '../components/UI/stickyWrapper'
+import { SignupContext } from '../context/toggle'
+import { checkForValidUser } from '../features/courses/signUpWall'
+
+const StartCourseButton = ({ link, size = 'medium' }) => (
+    <Flex justify="center">
+        <Button link={link} size={size}>
+            Start Course
+        </Button>
+    </Flex>
+)
 
 export default function Course({ data }) {
-    if (!data) return null
+    useEffect(() => {
+        checkForValidUser()
+    }, [])
+
+    const showSignUp = useContext(SignupContext).show
 
     console.log(data)
 
     const post = data.prismicCourse.data
     const title = post.title.text || 'Untitled'
-    const desc = post.short_desc.text
+    const desc = post.short_desc?.text
+    const isFree = post.type === 'free'
+    // const isVisible = post.visible
+    const { uid } = data.prismicCourse
+    const firstPageUid = post.course_pages && post.course_pages[0].course_page.uid
+    const subheadings = getQuickLinks(data.prismicCourse)
+    console.log(subheadings)
 
     return (
         <PostWrapper postTheme postTitle={title} description={desc}>
@@ -23,11 +48,28 @@ export default function Course({ data }) {
                 <Grid.Col xs={12} lg={9} orderSm={2}>
                     <TextContainer>
                         <SliceZone slices={post.body} components={components} />
+                        <Flex justify="center">
+                            <StartCourseButton link={`/courses/${uid}/${firstPageUid}`} />
+                        </Flex>
                     </TextContainer>
                 </Grid.Col>
                 <Grid.Col xs={12} lg={3} orderSm={1}>
                     {/* <TableOfContents links={subheadings} /> */}
-                    <h2>Course Contents</h2>
+                    {isFree && (
+                        <>
+                            <CoursePages pages={post.course_pages} />
+                            <StartCourseButton link={`/courses/${uid}/${firstPageUid}`} size="small" />
+                        </>
+                    )}
+                    {!isFree && (
+                        <>
+                            {/* <CoursePages pages={post.course_pages} />
+                            <StartCourseButton link={`/courses/${uid}/${firstPageUid}`} size="small" /> */}
+                            <StickyWrapper>
+                                <TableOfContents links={subheadings} />
+                            </StickyWrapper>
+                        </>
+                    )}
                 </Grid.Col>
             </Grid>
         </PostWrapper>
@@ -49,6 +91,16 @@ export const query = graphql`
                 course_pages {
                     course_page {
                         uid
+                        document {
+                            ... on PrismicCoursePage {
+                                id
+                                data {
+                                    title {
+                                        text
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
                 body {
@@ -68,6 +120,7 @@ export const query = graphql`
                 }
             }
             type
+            uid
         }
     }
 `

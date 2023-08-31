@@ -15,7 +15,7 @@ const useStyles = createStyles(theme => ({
     },
 
     body: {
-        padding: theme.spacing.md,
+        paddingLeft: theme.spacing.md,
     },
 }))
 
@@ -30,12 +30,12 @@ const useStyles = createStyles(theme => ({
 //   };
 // }
 
-function PostLabelCard({ image, category, title, date, author }) {
+function PostLabelCard({ image, title, size = 'medium' }) {
     const { classes } = useStyles()
     return (
         <Card withBorder radius="md" p={0} className={classes.card}>
             <Group noWrap spacing={0}>
-                <Image src={image} height={100} width={80} alt="" role="presentation" />
+                <Image src={image} height={size === 'medium' ? 100 : 60} width={80} alt="" role="presentation" />
                 <div className={classes.body}>
                     <Text className={classes.title} mt="xs" mb="md">
                         {title}
