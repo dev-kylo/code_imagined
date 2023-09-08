@@ -42,8 +42,6 @@ export const Button = ({ children, clicked, link, fullWidth, style = {}, size = 
         clicked()
     }
 
-    console.log(type)
-
     if (link && type === 'link')
         return (
             <Link to={link}>

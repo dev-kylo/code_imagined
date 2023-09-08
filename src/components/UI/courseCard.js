@@ -71,7 +71,7 @@ export function CourseCard({ image, title, description, type, badges, link }) {
                 </Card.Section> */}
 
                 <Flex justify="center" mt="xl">
-                    <Button size="small" link={link}>
+                    <Button type="link" size="small" link={link}>
                         Learn more
                     </Button>
                 </Flex>

@@ -76,7 +76,8 @@ exports.createPages = async ({ actions, graphql }) => {
                 path: `/courses/${courseUid}/${page.course_page.uid}`,
                 component: path.resolve(__dirname, 'src/templates/coursePage.js'),
                 context: {
-                    id: page.course_page.id,
+                    pageId: page.course_page.id,
+                    courseId: course.prismicId,
                 },
             })
         })

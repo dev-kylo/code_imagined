@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { SliceZone } from '@prismicio/react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { Flex, Grid } from '@mantine/core'
 import PageTitle from '../components/UI/pageTitle.styled'
 import { TextContainer } from '../components/layout/containers/textContainer'
@@ -11,7 +11,6 @@ import { Button } from '../components/UI/button.styled'
 import { getQuickLinks } from '../utils/quickLinksFormatters'
 import { TableOfContents } from '../features/posts/tableOfContents'
 import StickyWrapper from '../components/UI/stickyWrapper'
-import { SignupContext } from '../context/toggle'
 import { checkForValidUser } from '../features/courses/signUpWall'
 
 const StartCourseButton = ({ link, size = 'medium' }) => (
@@ -27,8 +26,6 @@ export default function Course({ data }) {
         checkForValidUser()
     }, [])
 
-    const showSignUp = useContext(SignupContext).show
-
     console.log(data)
 
     const post = data.prismicCourse.data
@@ -39,7 +36,6 @@ export default function Course({ data }) {
     const { uid } = data.prismicCourse
     const firstPageUid = post.course_pages && post.course_pages[0].course_page.uid
     const subheadings = getQuickLinks(data.prismicCourse)
-    console.log(subheadings)
 
     return (
         <PostWrapper postTheme postTitle={title} description={desc}>
@@ -54,7 +50,6 @@ export default function Course({ data }) {
                     </TextContainer>
                 </Grid.Col>
                 <Grid.Col xs={12} lg={3} orderSm={1}>
-                    {/* <TableOfContents links={subheadings} /> */}
                     {isFree && (
                         <>
                             <CoursePages pages={post.course_pages} />
@@ -62,13 +57,9 @@ export default function Course({ data }) {
                         </>
                     )}
                     {!isFree && (
-                        <>
-                            {/* <CoursePages pages={post.course_pages} />
-                            <StartCourseButton link={`/courses/${uid}/${firstPageUid}`} size="small" /> */}
-                            <StickyWrapper>
-                                <TableOfContents links={subheadings} />
-                            </StickyWrapper>
-                        </>
+                        <StickyWrapper>
+                            <TableOfContents links={subheadings} />
+                        </StickyWrapper>
                     )}
                 </Grid.Col>
             </Grid>
@@ -97,6 +88,9 @@ export const query = graphql`
                                 data {
                                     title {
                                         text
+                                    }
+                                    thumbnail {
+                                        gatsbyImageData(width: 250)
                                     }
                                 }
                             }

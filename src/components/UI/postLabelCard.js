@@ -1,10 +1,17 @@
 import React from 'react'
 import { createStyles, Card, Image, Text, Group } from '@mantine/core'
+import styled from 'styled-components'
+import { GatsbyImage } from 'gatsby-plugin-image'
+
+const StyledCard = styled(Card)`
+    text-decoration: none !important;
+    background-color: ${({ isCurrentPage, theme }) => (isCurrentPage ? theme.colors.navy : 'white')};
+    color: ${({ isCurrentPage, theme }) => (isCurrentPage ? 'white' : theme.colors.navy)}; ;
+`
 
 const useStyles = createStyles(theme => ({
     card: {
         margin: '0.5rem 0',
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
         width: '100%',
     },
 
@@ -12,6 +19,7 @@ const useStyles = createStyles(theme => ({
         fontWeight: 700,
         fontFamily: `Greycliff CF, ${theme.fontFamily}`,
         lineHeight: 1.2,
+        textDecoration: 'none',
     },
 
     body: {
@@ -19,30 +27,28 @@ const useStyles = createStyles(theme => ({
     },
 }))
 
-// interface PostLabelProps {
-//   image: string;
-//   category: string;
-//   title: string;
-//   date: string;
-//   author: {
-//     name: string;
-//     avatar: string;
-//   };
-// }
-
-function PostLabelCard({ image, title, size = 'medium' }) {
+function PostLabelCard({ image, gatsbyImage, title, isCurrentPage, size = 'medium' }) {
     const { classes } = useStyles()
     return (
-        <Card withBorder radius="md" p={0} className={classes.card}>
+        <StyledCard withBorder radius="md" p={0} className={classes.card} isCurrentPage={isCurrentPage}>
             <Group noWrap spacing={0}>
-                <Image src={image} height={size === 'medium' ? 100 : 60} width={80} alt="" role="presentation" />
+                {gatsbyImage ? (
+                    <GatsbyImage
+                        image={gatsbyImage}
+                        alt=""
+                        role="presentation"
+                        style={{ width: '80px', height: '60px' }}
+                    />
+                ) : (
+                    <Image src={image} height={size === 'medium' ? 100 : 60} width={80} alt="" role="presentation" />
+                )}
                 <div className={classes.body}>
                     <Text className={classes.title} mt="xs" mb="md">
                         {title}
                     </Text>
                 </div>
             </Group>
-        </Card>
+        </StyledCard>
     )
 }
 

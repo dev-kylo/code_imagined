@@ -7,6 +7,7 @@ function CoursesList({ courses }) {
     const cards = courses.map(course => (
         <Link to={`/courses/${course.uid}`} style={{ textDecoration: 'none' }}>
             <CourseCard
+                link={`/courses/${course.uid}`}
                 title={course.data.title.text}
                 image={course.data.cover.gatsbyImageData.images.fallback.src}
                 type={course.data.type}

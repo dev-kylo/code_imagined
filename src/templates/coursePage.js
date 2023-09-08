@@ -7,6 +7,10 @@ import { TextContainer } from '../components/layout/containers/textContainer'
 import { components } from '../slices'
 import PostWrapper from '../providers/PostWrapper'
 import SignUpWall from '../features/courses/signUpWall'
+import { getQuickLinks } from '../utils/quickLinksFormatters'
+import { TableOfContents } from '../features/posts/tableOfContents'
+import CoursePages from '../features/courses/coursePages'
+import NextPageButton from '../features/courses/nextPageButton'
 
 export default function CoursePage({ data }) {
     if (!data) return null
@@ -16,6 +20,8 @@ export default function CoursePage({ data }) {
     const post = data.prismicCoursePage.data
     const title = post.title.text || 'Untitled'
     const desc = post.short_desc.text
+    const course = data.prismicCourse
+    const subheadings = getQuickLinks(data.prismicCoursePage)
 
     return (
         <PostWrapper postTheme postTitle={title} description={desc}>
@@ -23,14 +29,26 @@ export default function CoursePage({ data }) {
             <Grid mx={15}>
                 <Grid.Col xs={12} lg={9} orderSm={2}>
                     <TextContainer>
-                        {/* <TableOfContents links={subheadings} /> */}
+                        <TableOfContents links={subheadings} />
                         <SignUpWall>
                             <SliceZone slices={post.body} components={components} />
+                            <div style={{ marginTop: '4rem' }}>
+                                <NextPageButton
+                                    courseUid={course.uid}
+                                    currentPageId={data.prismicCoursePage.id}
+                                    pages={course.data.course_pages}
+                                />
+                            </div>
                         </SignUpWall>
                     </TextContainer>
                 </Grid.Col>
                 <Grid.Col xs={12} lg={3} orderSm={1}>
-                    <h2>Stuff</h2>
+                    <CoursePages
+                        courseUid={course.uid}
+                        currentPageId={data.prismicCoursePage.id}
+                        title={course?.data?.title.text}
+                        pages={course.data.course_pages}
+                    />
                 </Grid.Col>
             </Grid>
         </PostWrapper>
@@ -38,8 +56,8 @@ export default function CoursePage({ data }) {
 }
 
 export const query = graphql`
-    query CoursePageQuery($id: ID) {
-        prismicCoursePage(prismicId: { eq: $id }) {
+    query CoursePageQuery($pageId: ID, $courseId: ID) {
+        prismicCoursePage(prismicId: { eq: $pageId }) {
             id
             uid
             type
@@ -65,6 +83,35 @@ export const query = graphql`
                     ...CoursePageComponentButton
                     ...CoursePageComponentSignUp
                     ...CoursePageComponentForm
+                }
+            }
+        }
+        prismicCourse(prismicId: { eq: $courseId }) {
+            uid
+            data {
+                visible
+                title {
+                    text
+                }
+                course_pages {
+                    course_page {
+                        uid
+                        document {
+                            ... on PrismicCoursePage {
+                                id
+                                uid
+                                data {
+                                    title {
+                                        text
+                                    }
+
+                                    thumbnail {
+                                        gatsbyImageData(width: 250)
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
