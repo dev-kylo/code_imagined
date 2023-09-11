@@ -118,7 +118,7 @@ export const TextContainer = styled.section`
         color: ${props => props.theme.colors.navy};
         text-align: left;
         padding: 0.5em 0;
-        margin: 1em 0;
+        margin: 0.25em 0;
 
         a {
             background: #e8f5ff;
@@ -153,5 +153,9 @@ export const TextContainer = styled.section`
     }
     img {
         max-width: 100%;
+    }
+
+    button {
+        margin-top: 2rem;
     }
 `

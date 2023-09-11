@@ -90,7 +90,7 @@ const FixedHeight = styled.div`
 //   }
 const links = [
     { link: '/posts', label: 'Blog' },
-    // { link: '/courses', label: 'Courses' },
+    { link: '/courses', label: 'Courses' },
     // { link: '/featured', label: 'Featured' },
     { link: '/extra', label: 'Extra' },
 ]

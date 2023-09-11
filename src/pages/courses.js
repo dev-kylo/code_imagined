@@ -8,9 +8,6 @@ import PageTitle from '../components/UI/pageTitle.styled'
 import CoursesList from '../features/courses/coursesList'
 
 function Courses({ data }) {
-    console.log('COURSES DATA')
-    console.log(data)
-
     return (
         <Providers>
             <PageTitle>Free & Premium Courses</PageTitle>
@@ -23,7 +20,7 @@ function Courses({ data }) {
 
 export const query = graphql`
     query BlogQuery {
-        allPrismicCourse {
+        allPrismicCourse(sort: { data: { type: DESC } }) {
             nodes {
                 id
                 uid
@@ -35,11 +32,15 @@ export const query = graphql`
                             uid
                         }
                     }
+                    type
                     cover {
                         gatsbyImageData(width: 400)
                         alt
                     }
                     title {
+                        text
+                    }
+                    short_desc {
                         text
                     }
                 }

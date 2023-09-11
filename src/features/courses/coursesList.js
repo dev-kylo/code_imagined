@@ -11,12 +11,7 @@ function CoursesList({ courses }) {
                 title={course.data.title.text}
                 image={course.data.cover.gatsbyImageData.images.fallback.src}
                 type={course.data.type}
-                description="Some descriptive text will go here. This is a premiium course covering everything from objects to closures. It is designed to test you and take your JavaScript skills to the next level!"
-                // badges={[
-                //     { label: 'Mnemonics', emoji: '🤯' },
-                //     { label: 'Learning', emoji: '🤔' },
-                //     { label: 'Studying', emoji: '🧠' },
-                // ]}
+                description={course.data.short_desc.text}
             />
         </Link>
     ))

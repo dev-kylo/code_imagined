@@ -29,8 +29,8 @@ export default function CoursePage({ data }) {
             <Grid mx={15}>
                 <Grid.Col xs={12} lg={9} orderSm={2}>
                     <TextContainer>
-                        <TableOfContents links={subheadings} />
                         <SignUpWall>
+                            <TableOfContents links={subheadings} />
                             <SliceZone slices={post.body} components={components} />
                             <div style={{ marginTop: '4rem' }}>
                                 <NextPageButton

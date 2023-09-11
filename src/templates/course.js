@@ -45,14 +45,14 @@ export default function Course({ data }) {
                     <TextContainer>
                         <SliceZone slices={post.body} components={components} />
                         <Flex justify="center">
-                            <StartCourseButton link={`/courses/${uid}/${firstPageUid}`} />
+                            {isFree && <StartCourseButton link={`/courses/${uid}/${firstPageUid}`} />}
                         </Flex>
                     </TextContainer>
                 </Grid.Col>
                 <Grid.Col xs={12} lg={3} orderSm={1}>
                     {isFree && (
                         <>
-                            <CoursePages pages={post.course_pages} />
+                            <CoursePages pages={post.course_pages} courseUid={data.prismicCourse.uid} />
                             <StartCourseButton link={`/courses/${uid}/${firstPageUid}`} size="small" />
                         </>
                     )}
@@ -85,6 +85,7 @@ export const query = graphql`
                         document {
                             ... on PrismicCoursePage {
                                 id
+                                uid
                                 data {
                                     title {
                                         text

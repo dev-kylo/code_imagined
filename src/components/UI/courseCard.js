@@ -11,8 +11,14 @@ const useStyles = createStyles(theme => ({
     },
 }))
 
+const StyledBadge = styled(Badge)`
+    background: ${({ primary, theme }) => (!primary ? theme.colors.blue : theme.colors.red)};
+    min-width: ${({ primary }) => (!primary ? '50px' : '75px')};
+`
+
 const StyledCard = styled(Card)`
     background: white;
+    min-height: 600px;
 
     .title {
         font-size: 32px;
@@ -27,55 +33,32 @@ const StyledCard = styled(Card)`
     }
 `
 
-// interface CourseCardProps {
-//   image: string;
-//   title: string;
-//   type: 'premium' | 'free';
-//   description: string;
-//   badges: {
-//     emoji: string;
-//     label: string;
-//   }[];
-// }
-
 export function CourseCard({ image, title, description, type, badges, link }) {
     const { classes } = useStyles()
-
-    // const features = badges.map(badge => (
-    //     <Badge color="gray" key={badge.label} leftSection={badge.emoji}>
-    //         {badge.label}
-    //     </Badge>
-    // ))
 
     return (
         <StyledCard withBorder radius="md" p="md" className={classes.card}>
             <Card.Section>
-                <Image src={image} alt={title} height="auto" />
+                <Image src={image} alt={title} height="250px" />
             </Card.Section>
 
-            <div>
+            <Flex direction="column" justify="space-between" style={{ height: '300px' }}>
                 <Card.Section className={classes.section} mt="md">
                     <Flex gap="md" justify="space-between" align="flex-start" direction="row">
                         <span className="title">{title}</span>
-                        <Badge variant="gradient" size="sm" mt={6}>
-                            {!type || type.contains('free') ? 'free short' : type}
-                        </Badge>
+                        <StyledBadge variant="gradient" color="red" size="sm" mt={6} primary={type === 'paid'}>
+                            {type !== 'paid' ? 'free' : 'premium'}
+                        </StyledBadge>
                     </Flex>
                     <span className="desc">{description}</span>
                 </Card.Section>
-                {/* 
-                <Card.Section className={classes.section}>
-                    <Group spacing={7} mt={5}>
-                        {features}
-                    </Group>
-                </Card.Section> */}
 
                 <Flex justify="center" mt="xl">
-                    <Button type="link" size="small" link={link}>
-                        Learn more
+                    <Button color={type === 'paid' ? 'red' : 'blue'} type="link" size="small" link={link}>
+                        {type === 'paid' ? 'Learn More' : 'Access'}
                     </Button>
                 </Flex>
-            </div>
+            </Flex>
         </StyledCard>
     )
 }

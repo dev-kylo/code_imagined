@@ -34,15 +34,25 @@ const SignUpWall = ({ children }) => {
 
     return (
         <>
-            <h2 style={{ textAlign: 'center' }}> Sign up to gain access</h2>
+            <h2 style={{ textAlign: 'center' }}> Coming Soon!</h2>
             <p style={{ textAlign: 'center' }}>
-                By signing up to The Great Sync you will gain access to this short course, PLUS get all the updates and
-                news.
+                This course has not released yet. You will be emailed as soon as it is, by subscribing below.
             </p>
             <Flex justify="center" mt={24}>
                 <Button clicked={showSignUp}> Sign Up</Button>
             </Flex>
         </>
+        // <>
+        //     <h2 style={{ textAlign: 'center' }}> Sign up to gain access</h2>
+        //     <p style={{ textAlign: 'center' }}>
+        //         By signing up to The Great Sync you will gain access to this short course, PLUS get all the updates and
+        //         news.
+        //     </p>
+        //     <p style={{ textAlign: 'center' }}>If you have already signed up, click the link in the email to access.</p>
+        //     <Flex justify="center" mt={24}>
+        //         <Button clicked={showSignUp}> Sign Up</Button>
+        //     </Flex>
+        // </>
     )
 }
 

@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 export const StyledButton = styled.button`
-    background: ${props => props.theme.colors.red};
+    background: ${({ theme, color }) => (color === 'red' ? theme.colors.red : theme.colors.blue)};
     color: white;
     display: inline-block;
     border: none;
@@ -18,11 +18,11 @@ export const StyledButton = styled.button`
     transition: background 250ms ease-in-out, box-shadow 150ms ease-out, transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
-    box-shadow: 5px -5px ${props => props.theme.colors.green};
+    box-shadow: 5px -5px ${({ theme, color }) => (color === 'red' ? theme.colors.green : theme.colors.purple)};
 
     &:hover,
     button:focus {
-        background: ${props => props.theme.colors.blue};
+        background: ${({ theme, color }) => (color === 'red' ? theme.colors.blue : theme.colors.red)};
         box-shadow: 7px -7px ${props => props.theme.colors.pink};
     }
 
@@ -36,7 +36,16 @@ export const StyledButton = styled.button`
     }
 `
 
-export const Button = ({ children, clicked, link, fullWidth, style = {}, size = 'medium', type = 'link' }) => {
+export const Button = ({
+    children,
+    clicked,
+    link,
+    fullWidth,
+    style = {},
+    color = 'red',
+    size = 'medium',
+    type = 'link',
+}) => {
     const clickHandler = e => {
         e.preventDefault()
         clicked()
@@ -45,7 +54,7 @@ export const Button = ({ children, clicked, link, fullWidth, style = {}, size = 
     if (link && type === 'link')
         return (
             <Link to={link}>
-                <StyledButton size={size} style={style} fullWidth={fullWidth}>
+                <StyledButton color={color} size={size} style={style} fullWidth={fullWidth}>
                     {children}
                 </StyledButton>
             </Link>
@@ -53,7 +62,7 @@ export const Button = ({ children, clicked, link, fullWidth, style = {}, size = 
     if (link && type === 'external')
         return (
             <a target="_blank" rel="noopener noreferrer" href={link}>
-                <StyledButton size={size} fullWidth={fullWidth} style={style}>
+                <StyledButton color={color} size={size} fullWidth={fullWidth} style={style}>
                     {children}
                 </StyledButton>
             </a>
@@ -61,14 +70,14 @@ export const Button = ({ children, clicked, link, fullWidth, style = {}, size = 
     if (link && type === 'download')
         return (
             <a target="_blank" rel="noopener noreferrer" href={link} download>
-                <StyledButton size={size} fullWidth={fullWidth} style={style}>
+                <StyledButton color={color} size={size} fullWidth={fullWidth} style={style}>
                     {children}
                 </StyledButton>
             </a>
         )
 
     return (
-        <StyledButton size={size} fullWidth={fullWidth} style={style} onClick={e => clickHandler(e)}>
+        <StyledButton color={color} size={size} fullWidth={fullWidth} style={style} onClick={e => clickHandler(e)}>
             {children}
         </StyledButton>
     )
