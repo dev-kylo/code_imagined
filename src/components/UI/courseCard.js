@@ -1,15 +1,15 @@
 import React from 'react'
-import { Card, Image, Flex, Badge, createStyles } from '@mantine/core'
+import { Card, Image, Flex, Badge } from '@mantine/core'
 import styled from 'styled-components'
 import { Button } from './button.styled'
 
-const useStyles = createStyles(theme => ({
-    section: {
-        paddingLeft: theme.spacing.md,
-        paddingRight: theme.spacing.md,
-        paddingBottom: theme.spacing.md,
-    },
-}))
+// const useStyles = createStyles(theme => ({
+//     section: {
+//         paddingLeft: theme.spacing.md,
+//         paddingRight: theme.spacing.md,
+//         paddingBottom: theme.spacing.md,
+//     },
+// }))
 
 const StyledBadge = styled(Badge)`
     background: ${({ primary, theme }) => (!primary ? theme.colors.blue : theme.colors.red)};
@@ -19,6 +19,10 @@ const StyledBadge = styled(Badge)`
 const StyledCard = styled(Card)`
     background: white;
     min-height: 600px;
+
+    .section {
+        padding: 0 1rem 1rem 1rem;
+    }
 
     .title {
         font-size: 32px;
@@ -34,16 +38,16 @@ const StyledCard = styled(Card)`
 `
 
 export function CourseCard({ image, title, description, type, badges, link }) {
-    const { classes } = useStyles()
+    // const { classes } = useStyles()
 
     return (
-        <StyledCard withBorder radius="md" p="md" className={classes.card}>
+        <StyledCard withBorder radius="md" p="md" className="card">
             <Card.Section>
                 <Image src={image} alt={title} height="250px" />
             </Card.Section>
 
             <Flex direction="column" justify="space-between" style={{ height: '300px' }}>
-                <Card.Section className={classes.section} mt="md">
+                <Card.Section className="section" mt="md">
                     <Flex gap="md" justify="space-between" align="flex-start" direction="row">
                         <span className="title">{title}</span>
                         <StyledBadge variant="gradient" color="red" size="sm" mt={6} primary={type === 'paid'}>
