@@ -18,7 +18,7 @@ function Courses({ data }) {
 }
 
 export const query = graphql`
-    query CourseQuery {
+    query CoursesQuery {
         allPrismicCourse(sort: { data: { type: DESC } }) {
             nodes {
                 id
