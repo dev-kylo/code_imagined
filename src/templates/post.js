@@ -15,8 +15,6 @@ import { getQuickLinks } from '../utils/quickLinksFormatters'
 export default function Post({ data }) {
     if (!data) return null
 
-    console.log(data)
-
     const post = data.prismicPost.data
     const title = post.title.text || 'Untitled'
     const desc = post.short_desc.text

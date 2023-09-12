@@ -118,8 +118,6 @@ export const TextContainer = styled.section`
         color: ${props => props.theme.colors.navy};
         text-align: left;
         padding: 0.5em 0;
-        margin: 0.25em 0;
-
         a {
             background: #e8f5ff;
             color: rgb(28, 126, 214);
@@ -131,6 +129,7 @@ export const TextContainer = styled.section`
     }
     h2 {
         font-size: 28px;
+        margin: 1.5rem 0 0.25rem 0;
         font-family: ${props => props.theme.fonts.heading2};
         @media (min-width: 600px) {
             font-size: 30px;
@@ -138,7 +137,7 @@ export const TextContainer = styled.section`
     }
     h3 {
         font-size: 22px;
-        margin: 0.5em 0;
+        margin: 0.5rem 0;
         @media (min-width: 600px) {
             font-size: 25px;
         }

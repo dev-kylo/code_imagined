@@ -26,15 +26,13 @@ export default function Course({ data }) {
         checkForValidUser()
     }, [])
 
-    console.log(data)
-
     const post = data.prismicCourse.data
     const title = post.title.text || 'Untitled'
     const desc = post.short_desc?.text
     const isFree = post.type === 'free'
     // const isVisible = post.visible
     const { uid } = data.prismicCourse
-    const firstPageUid = post.course_pages && post.course_pages[0].course_page.uid
+    const firstPageUid = !isFree && post?.course_pages && post.course_pages[0]?.course_page.uid
     const subheadings = getQuickLinks(data.prismicCourse)
 
     return (

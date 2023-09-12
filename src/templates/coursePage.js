@@ -15,9 +15,7 @@ import NextPageButton from '../features/courses/nextPageButton'
 export default function CoursePage({ data }) {
     if (!data) return null
 
-    console.log(data)
-
-    const post = data.prismicCoursePage.data
+    const post = data.prismicCoursePage?.data
     const title = post.title.text || 'Untitled'
     const desc = post.short_desc.text
     const course = data.prismicCourse
