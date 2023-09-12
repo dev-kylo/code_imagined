@@ -14,20 +14,18 @@ import TopNav from '../components/layout/topnav/topNav'
 const Providers = ({ postTheme, children }) => {
     return (
         <ThemeProvider theme={theme}>
-            <MantineProvider theme={theme}>
-                <SEO />
+            <SEO />
 
-                <LayersManager>
-                    <Layout postTheme={postTheme}>
-                        <ModalContext>
-                            <TopNav />
-                            {children}
-                        </ModalContext>
-                    </Layout>
-                </LayersManager>
+            <LayersManager>
+                <Layout postTheme={postTheme}>
+                    <ModalContext>
+                        <TopNav />
+                        {children}
+                    </ModalContext>
+                </Layout>
+            </LayersManager>
 
-                <Footer />
-            </MantineProvider>
+            <Footer />
         </ThemeProvider>
     )
 }
