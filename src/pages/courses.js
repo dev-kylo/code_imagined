@@ -6,14 +6,14 @@ import Providers from '../providers/Providers'
 import PageTitle from '../components/UI/pageTitle.styled'
 
 import CoursesList from '../features/courses/coursesList'
+import SignUp from '../features/signup/signup.styled'
 
 function Courses({ data }) {
     return (
         <Providers>
             <PageTitle>Free & Premium Courses</PageTitle>
-            <Container py="xl">
-                <CoursesList courses={data.allPrismicCourse.nodes} />
-            </Container>
+            <CoursesList courses={data.allPrismicCourse.nodes} />
+            <SignUp />
         </Providers>
     )
 }
