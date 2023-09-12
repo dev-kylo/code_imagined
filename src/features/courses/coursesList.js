@@ -2,7 +2,7 @@ import React from 'react'
 import { SimpleGrid, Container } from '@mantine/core'
 import { Link } from 'gatsby'
 // import { CourseCard } from '../../components/UI/courseCard'
-import PostCard from '../../components/UI/postCard'
+import CourseCardSecondary from '../../components/UI/courseCardSecondary'
 
 function CoursesList({ courses }) {
     const cards = courses.map(course => (
@@ -14,10 +14,12 @@ function CoursesList({ courses }) {
                 type={course.data.type}
                 description={course.data.short_desc.text}
             /> */}
-            <PostCard
+            <CourseCardSecondary
                 image={course.data.cover.gatsbyImageData.images.fallback.src}
                 title={course.data.title.text}
                 publishDate={course.data.short_desc.text}
+                type={course.data.type}
+                link={`/courses/${course.uid}`}
             />
         </Link>
     ))
