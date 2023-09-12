@@ -12,7 +12,6 @@ module.exports = {
         siteUrl: 'https://thegreatsync.com',
     },
     plugins: [
-        `gatsby-plugin-mantine`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-image`,
         `gatsby-transformer-sharp`,
