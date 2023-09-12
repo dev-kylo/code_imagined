@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
-import { Container } from '@mantine/core'
 import { graphql } from 'gatsby'
 import Providers from '../providers/Providers'
 import PageTitle from '../components/UI/pageTitle.styled'
