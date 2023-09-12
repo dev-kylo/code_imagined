@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Image, Flex, Badge } from '@mantine/core'
+import { Card, Image, Flex } from '@mantine/core'
 import styled from 'styled-components'
 import { Button } from './button.styled'
 
@@ -11,10 +11,10 @@ import { Button } from './button.styled'
 //     },
 // }))
 
-const StyledBadge = styled(Badge)`
-    background: ${({ primary, theme }) => (!primary ? theme.colors.blue : theme.colors.red)};
-    min-width: ${({ primary }) => (!primary ? '50px' : '75px')};
-`
+// const StyledBadge = styled(Badge)`
+//     background: ${({ primary, theme }) => `${!primary ? theme.colors.blue : theme.colors.red}!important`};
+//     min-width: ${({ primary }) => (!primary ? '50px!important' : '75px!important')};
+// `
 
 const StyledCard = styled(Card)`
     background: white;
@@ -50,9 +50,9 @@ export function CourseCard({ image, title, description, type, badges, link }) {
                 <Card.Section className="section" mt="md">
                     <Flex gap="md" justify="space-between" align="flex-start" direction="row">
                         <span className="title">{title}</span>
-                        <StyledBadge variant="gradient" color="red" size="sm" mt={6} primary={type === 'paid'}>
+                        {/* <StyledBadge variant="gradient" color="red" size="sm" mt={6} primary={type === 'paid'}>
                             {type !== 'paid' ? 'free' : 'premium'}
-                        </StyledBadge>
+                        </StyledBadge> */}
                     </Flex>
                     <span className="desc">{description}</span>
                 </Card.Section>
