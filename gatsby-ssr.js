@@ -7,14 +7,14 @@ import { Link } from 'gatsby'
 import { PrismicProvider } from '@prismicio/react'
 // import { createStylesServer, ServerStyles } from '@mantine/ssr'
 // import { renderToString } from 'react-dom/server'
-// import { MantineProvider } from '@mantine/core'
+import { MantineProvider } from '@mantine/core'
 
 function App({ children }) {
     return (
         <PrismicProvider internalLinkComponent={({ href, ...props }) => <Link to={href} {...props} />}>
-            {/* <MantineProvider withGlobalStyles withNormalizeCSS> */}
-            {children}
-            {/* </MantineProvider> */}
+            <MantineProvider withGlobalStyles withNormalizeCSS>
+                {children}
+            </MantineProvider>
         </PrismicProvider>
     )
 }
