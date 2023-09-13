@@ -13,19 +13,9 @@ const HoneyInput = styled.div`
 
 const Form = ({ loading, submit }) => (
     <>
-        <H3 dark>Free email taster</H3>
+        <H3 dark>Hey I'm Kylo 👋</H3>
         <P small dark style={{ 'margin-bottom': '1em' }}>
-            The Syncer Program for learning JavaScript visually will launch again later this year, but in the meantime
-            grab a{' '}
-            <a
-                style={{ textDecoration: 'none' }}
-                target="_blank"
-                rel="noopener noreferrer"
-                href="/posts/flying-ships-object-cloning-short-course"
-            >
-                a tiny taster
-            </a>{' '}
-            of what is to come 🔥
+            I want to show you how to begin building a mental model of JavaScript, using visual & mnemonic learning.
         </P>
         <Box as="form" onSubmit={e => submit(e)}>
             <Flex flexDirection="column" mx={-2} mb={0}>

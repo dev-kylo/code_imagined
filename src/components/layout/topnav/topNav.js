@@ -134,7 +134,7 @@ function TopNav() {
                         </Group>
                         <DesktopDisplay>
                             <Button radius="xl" h={30} bg="rgb(171, 52, 40)" onClick={showSignUp}>
-                                Get the FREE minicourse
+                                Learn more
                             </Button>
                         </DesktopDisplay>
                         {!opened && <Burger opened={opened} onClick={toggle} className={classes.burger} size="md" />}
@@ -155,7 +155,7 @@ function TopNav() {
 
                     <Group position="center" pt={24} grow pb="xl" px="md">
                         <Button bg="rgb(171, 52, 40)" onClick={showSignUpFromDrawer}>
-                            Get the Free Mini Course
+                            Receive Free resources
                         </Button>
                     </Group>
                 </Drawer>

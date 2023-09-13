@@ -7,7 +7,7 @@ const Card = styled.div`
     :hover,
     :focus,
     :active {
-        filter: brightness(1.6);
+        filter: brightness(1.3);
     }
 `
 
@@ -48,12 +48,16 @@ const useStyles = createStyles(theme => ({
         left: 0,
         width: '100%',
         height: '100%',
-        backgroundColor: 'rgba(0, 0, 0, 0.6)', // Adjust the opacity as needed
+        background: 'linear-gradient(#ffffff00 25%, #01130f 35%)', // Adjust the opacity as needed
         pointerEvents: 'none', // Allow clicks to go through the overlay
+        zIndex: 40,
     },
     content: {
-        position: 'relative', // Add relative positioning to the content container
-        zIndex: 2, // Adjust the content's z-index to ensure it's above the overlay
+        bottom: '2.5rem',
+        boxShadow: '4px 11px 14px 6px rgb(79 79 79 / 41%)',
+        padding: '1rem',
+        position: 'absolute', // Add relative positioning to the content container
+        zIndex: 50, // Adjust the content's z-index to ensure it's above the overlay
     },
 }))
 
@@ -68,14 +72,17 @@ function CourseCardSecondary({ image, title, publishDate, type, link }) {
 
     return (
         <Card>
-            <Paper
-                shadow="md"
-                p="xl"
-                radius="md"
-                sx={{ backgroundImage: `url(${image})` }}
-                className={`${classes.card}`}
-            >
+            <Paper radius="md" className={`${classes.card}`}>
                 <div className={classes.overlay} />
+                <div
+                    style={{
+                        height: '40%',
+                        width: '100%',
+                        backgroundImage: `url(${image})`,
+                        position: 'relative',
+                        backgroundSize: 'cover',
+                    }}
+                />
                 <div className={classes.content}>
                     <Title order={3} className={classes.title}>
                         {title}
@@ -83,12 +90,12 @@ function CourseCardSecondary({ image, title, publishDate, type, link }) {
                     <Text className={classes.publishDate} size="xs">
                         {publishDate}
                     </Text>
+                    <Flex justify="center" style={{ zIndex: 1000, marginTop: '3rem' }}>
+                        <Button color={type === 'paid' ? 'red' : 'blue'} type="link" size="small" link={link}>
+                            {type === 'paid' ? 'Learn More' : 'Free Access'}
+                        </Button>
+                    </Flex>
                 </div>
-                <Flex justify="center" mt="xl" style={{ zIndex: 1000 }}>
-                    <Button color={type === 'paid' ? 'red' : 'blue'} type="link" size="small" link={link}>
-                        {type === 'paid' ? 'Learn More' : 'Free Access'}
-                    </Button>
-                </Flex>
             </Paper>
         </Card>
     )
