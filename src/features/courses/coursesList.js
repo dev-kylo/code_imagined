@@ -1,8 +1,19 @@
 import React from 'react'
-import { SimpleGrid, Container } from '@mantine/core'
+import { Container } from '@mantine/core'
 import { Link } from 'gatsby'
 // import { CourseCard } from '../../components/UI/courseCard'
+import styled from 'styled-components'
 import CourseCardSecondary from '../../components/UI/courseCardSecondary'
+
+const Grid = styled.div`
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media (max-width: 780x) {
+        grid-template-columns: 1fr;
+    }
+`
 
 function CoursesList({ courses }) {
     const cards = courses.map(course => (
@@ -26,9 +37,7 @@ function CoursesList({ courses }) {
 
     return (
         <Container py="sm">
-            <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-                {cards}
-            </SimpleGrid>
+            <Grid>{cards}</Grid>
         </Container>
     )
 }

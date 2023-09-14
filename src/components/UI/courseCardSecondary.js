@@ -21,6 +21,7 @@ const useStyles = createStyles(theme => ({
         alignItems: 'flex-start',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        boxShadow: '4px 11px 14px 6px rgb(79 79 79 / 41%)',
     },
 
     title: {
@@ -54,7 +55,6 @@ const useStyles = createStyles(theme => ({
     },
     content: {
         bottom: '2.5rem',
-        boxShadow: '4px 11px 14px 6px rgb(79 79 79 / 41%)',
         padding: '1rem',
         position: 'absolute', // Add relative positioning to the content container
         zIndex: 50, // Adjust the content's z-index to ensure it's above the overlay
