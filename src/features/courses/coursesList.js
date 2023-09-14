@@ -35,11 +35,7 @@ function CoursesList({ courses }) {
         </Link>
     ))
 
-    return (
-        <Container py="sm">
-            <Grid>{cards}</Grid>
-        </Container>
-    )
+    return <Grid>{cards}</Grid>
 }
 
 export default CoursesList
