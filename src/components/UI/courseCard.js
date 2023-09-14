@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Image, Flex, Badge } from '@mantine/core'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { Button } from './button.styled'
 
 const StyledBadge = styled(Badge)`
