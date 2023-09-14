@@ -1,9 +1,7 @@
 import React from 'react'
-import { Container } from '@mantine/core'
 import { Link } from 'gatsby'
 // import { CourseCard } from '../../components/UI/courseCard'
 import styled from 'styled-components'
-import CourseCardSecondary from '../../components/UI/courseCardSecondary'
 import ShadowCard from '../../components/UI/shadowCard'
 
 const Grid = styled.div`
@@ -30,9 +28,9 @@ function CoursesList({ courses }) {
     ))
 
     return (
-        <Container py="sm">
-            <Grid>{cards}</Grid>
-        </Container>
+        // <Container py="sm">
+        <Grid>{cards}</Grid>
+        // </Container>
     )
 }
 
