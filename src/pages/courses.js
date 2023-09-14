@@ -25,12 +25,6 @@ export const query = graphql`
                 uid
                 type
                 data {
-                    course_pages {
-                        course_page {
-                            id
-                            uid
-                        }
-                    }
                     type
                     cover {
                         gatsbyImageData(width: 400)
