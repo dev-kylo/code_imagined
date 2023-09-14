@@ -28,7 +28,6 @@ const HomeButton = () => {
                         src="../../images/home.png"
                         alt="The Execution Stack - a stack of isles with waterfalls"
                         placeholder="blurred"
-                        fullWidth
                     />
                 </StyledIcon>
             </Button>

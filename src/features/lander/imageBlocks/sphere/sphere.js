@@ -29,7 +29,6 @@ export const Sphere = () => (
             src="../../../../images/sphere.png"
             alt="A sphere containing an in ocean with some islands, and a submarine hovering over."
             placeholder="blurred"
-            fullWidth
         />
     </SphereContainer>
 )

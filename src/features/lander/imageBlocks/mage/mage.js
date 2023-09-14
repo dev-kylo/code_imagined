@@ -23,7 +23,6 @@ const MageFunk = () => {
                     src="../../../../images/mage.png"
                     alt="Mage Funk sorceress character with an invocation orb"
                     placeholder="blurred"
-                    fullWidth
                 />
             </div>
         </MageContainer>

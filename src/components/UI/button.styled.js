@@ -10,7 +10,7 @@ export const StyledButton = styled.button`
     padding: ${({ size }) => (size === 'small' ? '0.5rem 2rem' : '1rem 2rem')};
     /* margin: 1.5em 0; */
     text-decoration: none;
-    width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
+    width: ${({ fillWidth }) => (fillWidth ? '100%' : 'auto')};
     font-family: sans-serif;
     font-size: 1.2rem;
     cursor: pointer;
@@ -54,7 +54,7 @@ export const Button = ({
     if (link && type === 'link')
         return (
             <Link to={link}>
-                <StyledButton color={color} size={size} style={style} fullWidth={fullWidth}>
+                <StyledButton color={color} size={size} style={style} fillWidth={fullWidth}>
                     {children}
                 </StyledButton>
             </Link>

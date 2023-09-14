@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Flex } from '@mantine/core'
+import { navigate } from 'gatsby'
 import { Button } from './button.styled'
 
 const Card = styled.div`
@@ -81,7 +82,7 @@ const ShadowCard = ({ image, title, description, type, link }) => {
                     <Title>{title}</Title>
                     <Description>{description}</Description>
                     <Flex justify="center" style={{ zIndex: 1000, marginTop: '3rem' }}>
-                        <Button color={type === 'paid' ? 'red' : 'blue'} type="link" size="small" link={link}>
+                        <Button color={type === 'paid' ? 'red' : 'blue'} clicked={() => navigate(link)} size="small">
                             {type === 'paid' ? 'Learn More' : 'Free Access'}
                         </Button>
                     </Flex>

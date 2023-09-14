@@ -18,7 +18,7 @@ function CoursesList({ courses }) {
     const cards = courses.map(course => (
         <Link key={course.uid} to={`/courses/${course.uid}`} style={{ textDecoration: 'none' }}>
             <ShadowCard
-                image="https://images.prismic.io/thegreatsync/9e9c235e-3487-40f4-9e8e-7d38b04e55a5_genie_crewmember.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=400&h=367"
+                image={course.data.cover.gatsbyImageData.images.fallback.src}
                 title={course.data.title.text}
                 description={course.data.short_desc.text}
                 type={course.data.type}

@@ -38,7 +38,6 @@ const Lander = () => {
                     src="https://res.cloudinary.com/the-great-sync/image/upload/v1686771432/3000x2000/EC_sdbbpu.png"
                     alt="Mage Funk sorceress character with an invocation orb"
                     placeholder="blurred"
-                    fullWidth
                 />
                 {/* </ExecutionIsle> */}
 

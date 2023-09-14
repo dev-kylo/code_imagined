@@ -6,7 +6,6 @@ const Prototype = () => (
         src="../../../../images/plain_genie_prototype.png"
         alt="The Execution Stack - a stack of isles with waterfalls"
         placeholder="blurred"
-        fullWidth
     />
 )
 

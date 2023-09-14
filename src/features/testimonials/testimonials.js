@@ -36,7 +36,7 @@ const TestimonialGrid = styled.div`
 const Testimonials = () => (
     <TestimonialGrid>
         {testimonials.map(tst => (
-            <Testimonial {...tst} />
+            <Testimonial key={`${tst.name}-key`} {...tst} />
         ))}
     </TestimonialGrid>
 )

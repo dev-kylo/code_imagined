@@ -27,6 +27,7 @@ export const query = graphql`
                 data {
                     type
                     cover {
+                        gatsbyImageData(width: 400)
                         alt
                     }
                     title {

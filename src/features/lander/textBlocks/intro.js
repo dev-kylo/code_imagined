@@ -87,7 +87,7 @@ const Intro = props => {
                             src="../../../images/small_logo.png"
                             alt="The Great Sync logo"
                             placeholder="blurred"
-                            fullWidth
+                         
                         />
                     </Logo> */}
                     <Title>

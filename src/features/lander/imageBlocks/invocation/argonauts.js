@@ -38,7 +38,6 @@ const Argonauts = () => {
                 src="../../../../images/Argonauts.png"
                 alt="The Execution Stack - a stack of isles with waterfalls"
                 placeholder="blurred"
-                fullWidth
             />
         </Container>
     )

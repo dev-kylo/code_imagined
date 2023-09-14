@@ -99,10 +99,10 @@ function TopNav() {
     const { classes } = useStyles()
     const [opened, { toggle }] = useDisclosure(false)
     const showSignUp = useContext(SignupContext).show
-    const items = links.map(link => {
+    const items = links.map(linkconf => {
         return (
-            <Link key={link.label} href={link.link} className={classes.link} onClick={event => event.preventDefault()}>
-                {link.label}
+            <Link key={linkconf.label} to={linkconf.link} className={classes.link}>
+                {linkconf.label}
             </Link>
         )
     })
@@ -124,7 +124,6 @@ function TopNav() {
                                         src="../../../images/small_logo.png"
                                         alt="The Great Sync JavaScript Mental Model logo"
                                         placeholder="blurred"
-                                        fullWidth
                                     />
                                 </Logo>
                             </Link>
@@ -155,7 +154,7 @@ function TopNav() {
 
                     <Group position="center" pt={24} grow pb="xl" px="md">
                         <Button bg="rgb(171, 52, 40)" onClick={showSignUpFromDrawer}>
-                            Receive Free resources
+                            Learn more
                         </Button>
                     </Group>
                 </Drawer>
