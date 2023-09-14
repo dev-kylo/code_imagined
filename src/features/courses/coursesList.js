@@ -6,7 +6,7 @@ import CourseCardSecondary from '../../components/UI/courseCardSecondary'
 
 function CoursesList({ courses }) {
     const cards = courses.map(course => (
-        <Link to={`/courses/${course.uid}`} style={{ textDecoration: 'none' }}>
+        <Link key={course.uid} to={`/courses/${course.uid}`} style={{ textDecoration: 'none' }}>
             {/* <CourseCard
                 link={`/courses/${course.uid}`}
                 title={course.data.title.text}
