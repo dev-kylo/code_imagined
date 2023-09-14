@@ -21,6 +21,8 @@ export const theme = {
     fonts: {
         heading1: "'Passion One', serif",
         heading2: "font-family: 'Passion One', serif",
+        subheading:
+            'Greycliff CF -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji',
         par: "'Montserrat', sans-serif",
     },
     fontWeights: {

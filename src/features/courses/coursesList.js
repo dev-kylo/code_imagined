@@ -4,13 +4,14 @@ import { Link } from 'gatsby'
 // import { CourseCard } from '../../components/UI/courseCard'
 import styled from 'styled-components'
 import CourseCardSecondary from '../../components/UI/courseCardSecondary'
+import ShadowCard from '../../components/UI/shadowCard'
 
 const Grid = styled.div`
     display: grid;
     grid-gap: 3rem;
     grid-template-columns: 1fr 1fr 1fr;
 
-    @media (max-width: 780x) {
+    @media (max-width: 780px) {
         grid-template-columns: 1fr;
     }
 `
@@ -18,17 +19,10 @@ const Grid = styled.div`
 function CoursesList({ courses }) {
     const cards = courses.map(course => (
         <Link key={course.uid} to={`/courses/${course.uid}`} style={{ textDecoration: 'none' }}>
-            {/* <CourseCard
-                link={`/courses/${course.uid}`}
-                title={course.data.title.text}
+            <ShadowCard
                 image={course.data.cover.gatsbyImageData.images.fallback.src}
-                type={course.data.type}
+                title={course.data.title.text}
                 description={course.data.short_desc.text}
-            /> */}
-            <CourseCardSecondary
-                image={course.data.cover.gatsbyImageData.images.fallback.src}
-                title={course.data.title.text}
-                publishDate={course.data.short_desc.text}
                 type={course.data.type}
                 link={`/courses/${course.uid}`}
             />
