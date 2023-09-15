@@ -76,7 +76,7 @@ function SEO({ description, lang, meta, title, postSchema }) {
                             "@id": "https://thegreatsync.com/posts/${postSchema.uid}"
                         },
                         "headline": "${postSchema.title}",
-                        "description: "${postSchema.description}",
+                        "description": "${postSchema.description}",
                         "image": "${postSchema.imageUrl}",
                         "author": {
                         "@type": "Person",
