@@ -5,15 +5,29 @@ const path = require(`path`)
 exports.createPages = async ({ actions, graphql }) => {
     const { createPage } = actions
 
+    // standard OG image for thegreatsync.com
     createOpenGraphImage(createPage, {
         path: '/og-image/index.png',
-        component: path.resolve(`src/layout/ogImage.js`),
+        component: path.resolve(`src/layout/og/ogImage.js`),
         size: {
             width: 1200,
             height: 630,
         },
         context: {
             description: 'A character from The Great Sync Javascript Mental Model',
+        },
+    })
+
+    // logo OG image for thegreatsync.com
+    createOpenGraphImage(createPage, {
+        path: '/og-image/logo.png',
+        component: path.resolve(`src/layout/og/logo.js`),
+        size: {
+            width: 1200,
+            height: 630,
+        },
+        context: {
+            description: 'Logo for The Great Sync JavaScript Mental Model - Code Imagined',
         },
     })
 
@@ -71,7 +85,6 @@ exports.createPages = async ({ actions, graphql }) => {
         })
 
         pages.forEach(page => {
-            console.log(page)
             createPage({
                 path: `/courses/${courseUid}/${page.course_page.uid}`,
                 component: path.resolve(__dirname, 'src/templates/coursePage.js'),

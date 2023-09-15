@@ -72,7 +72,7 @@ export function TableOfContents({ links }) {
             <DesktopDisplay>
                 <Accordion variant="contained" defaultValue="item-1">
                     <Accordion.Item value="item-1">
-                        <Accordion.Control style={{ textAlign: 'center' }}>
+                        <Accordion.Control style={{ textAlign: 'center', marginTop: 0 }}>
                             <Title>Table of Contents</Title>
                         </Accordion.Control>
                         <Accordion.Panel> {items}</Accordion.Panel>
@@ -82,7 +82,7 @@ export function TableOfContents({ links }) {
             <MobileDisplay>
                 <Accordion variant="contained">
                     <Accordion.Item value="item-2">
-                        <Accordion.Control style={{ textAlign: 'center' }}>
+                        <Accordion.Control style={{ textAlign: 'center', marginTop: 0 }}>
                             <Title>Table of Contents</Title>
                         </Accordion.Control>
                         <Accordion.Panel> {items}</Accordion.Panel>

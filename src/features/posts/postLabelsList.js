@@ -35,8 +35,13 @@ const PostLabelsList = ({ postsData, title, tag, currentId, length = 2 }) => {
             <Title>{title}</Title>
             <div className="title">
                 {data?.slice(0, length).map(node => (
-                    <Link to={`/posts/${node.uid}`} style={{ textDecoration: 'none' }}>
-                        <PostLabelCard key={node.id} image={random(backgrounds)} title={node.data.title.text} />
+                    <Link key={`/posts/${node.uid}-label`} to={`/posts/${node.uid}`} style={{ textDecoration: 'none' }}>
+                        <PostLabelCard
+                            key={node.id}
+                            gatsbyImage={node?.data.banner?.gatsbyImageData}
+                            image={random(backgrounds)}
+                            title={node.data.title.text}
+                        />
                     </Link>
                 ))}
             </div>

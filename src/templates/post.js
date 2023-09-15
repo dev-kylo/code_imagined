@@ -34,8 +34,16 @@ export default function Post({ data }) {
 
     const subheadings = getQuickLinks(data.prismicPost)
 
+    const postSchema = {
+        title,
+        description: desc,
+        imageUrl: post?.banner?.fixed?.src,
+        publishedDate: post.published,
+        uid: data.prismicPost.uid,
+    }
+
     return (
-        <PostWrapper postTheme postTitle={title} description={desc}>
+        <PostWrapper postTheme postTitle={title} description={desc} postSchema={postSchema}>
             <PageTitle postTitle>{title}</PageTitle>
             <Grid mx="auto" maw={1400} gutter={45}>
                 <Grid.Col xs={12} lg={9} orderLg={2}>
@@ -55,7 +63,7 @@ export default function Post({ data }) {
                             />
                             <PostLabelsList
                                 postsData={data.allPrismicPost.nodes}
-                                title="Most Recent"
+                                title="Most Recent Posts"
                                 currentId={data.prismicPost?.id}
                             />
                         </ScrollArea.Autosize>
@@ -81,6 +89,11 @@ export const query = graphql`
                 short_desc {
                     text
                 }
+                banner {
+                    fixed {
+                        src
+                    }
+                }
                 body {
                     ... on PrismicSliceType {
                         id
@@ -105,6 +118,9 @@ export const query = graphql`
                 data {
                     title {
                         text
+                    }
+                    banner {
+                        gatsbyImageData
                     }
                     published
                 }

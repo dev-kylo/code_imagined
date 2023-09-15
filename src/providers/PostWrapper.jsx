@@ -12,11 +12,11 @@ import SignUp from '../features/signup/signup.styled'
 
 import TopNav from '../components/layout/topnav/topNav'
 
-const PostWrapper = ({ postTitle, description, postTheme, children }) => {
+const PostWrapper = ({ postTitle, description, postTheme, children, postSchema }) => {
     return (
         <ThemeProvider theme={theme}>
             <MantineProvider theme={{ fontFamily: 'Open Sans' }}>
-                <SEO title={postTitle} description={description} />
+                <SEO title={postTitle} description={description} postSchema={postSchema} />
 
                 <LayersManager>
                     <Layout postTheme={postTheme}>

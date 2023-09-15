@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, postSchema }) {
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, title }) {
 
     const metaDescription = description || site.siteMetadata.description
     const mainTitle = title ? `${title}` : site.siteMetadata.title
+
     return (
         <Helmet
             htmlAttributes={{
@@ -60,10 +61,41 @@ function SEO({ description, lang, meta, title }) {
                 },
                 {
                     name: `twitter:description`,
-                    content: `Learn Javascript visually using memory techniques`,
+                    content: metaDescription,
                 },
             ].concat(meta)}
-        />
+        >
+            {postSchema && (
+                <script type="application/ld+json">
+                    {`
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BlogPosting",
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": "https://thegreatsync.com/posts/${postSchema.uid}"
+                        },
+                        "headline": "${postSchema.title}",
+                        "description: "${postSchema.description}",
+                        "image": "${postSchema.imageUrl}",
+                        "author": {
+                        "@type": "Person",
+                        "name": "${site.siteMetadata.author}"
+                        },
+                        "publisher": {
+                        "@type": "Organization",
+                        "name": "${site.siteMetadata.title}",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://thegreatsync.com/og-image/logo.png"
+                            }
+                        },
+                        "datePublished": "${postSchema.publishedDate}"
+                     }
+            `}
+                </script>
+            )}
+        </Helmet>
     )
 }
 
