@@ -32,7 +32,7 @@ export default function Course({ data }) {
     const isFree = post.type === 'free'
     // const isVisible = post.visible
     const { uid } = data.prismicCourse
-    const firstPageUid = !isFree && post?.course_pages && post.course_pages[0]?.course_page.uid
+    const firstPageUid = isFree && post?.course_pages && post.course_pages[0]?.course_page.uid
     const subheadings = getQuickLinks(data.prismicCourse)
 
     return (
