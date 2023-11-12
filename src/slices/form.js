@@ -79,11 +79,11 @@ const Slice_Form = ({ slice }) => {
                             <Flex flexDirection="column" mx={-2} mb={0}>
                                 <Box width={1} px={2}>
                                     {body.map(edge => {
-                                        const { input_type, label_text, placeholder_text, required } = edge.primary
-                                        console.log(input_type, placeholder_text)
+                                        const { label_text, required } = edge.primary
+
                                         return (
                                             <Box key={edge.id} width={1} px={2}>
-                                                <Label mb="0.4rem" htmlFor="improved">
+                                                <Label mb="0.4rem" htmlFor="improved" style={{ marginTop: '15px' }}>
                                                     {label_text.text}
                                                 </Label>
                                                 <Textarea id={edge.id} name={edge.id} rows="4" required={required} />

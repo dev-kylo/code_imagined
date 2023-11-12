@@ -18,7 +18,7 @@ const NextPageButton = ({ pages, courseUid, currentPageId }) => {
 
     if (!link) return null
 
-    const page = pages[currentPageIndex]?.course_page
+    const page = pages[currentPageIndex + 1]?.course_page
 
     return (
         <Flex justify="center" align="center" mt={24}>
@@ -33,10 +33,12 @@ const NextPageButton = ({ pages, courseUid, currentPageId }) => {
                         zIndex: 5,
                     }}
                 >
-                    <PostLabelCard
-                        title={page?.document.data.title.text}
-                        gatsbyImage={page?.document?.data?.thumbnail?.gatsbyImageData}
-                    />
+                    {page && (
+                        <PostLabelCard
+                            title={page?.document.data.title.text}
+                            gatsbyImage={page?.document?.data?.thumbnail?.gatsbyImageData}
+                        />
+                    )}
                 </div>
             </Link>
             <Button link={link}> Next </Button>
