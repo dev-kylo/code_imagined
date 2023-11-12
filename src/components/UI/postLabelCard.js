@@ -30,7 +30,14 @@ const useStyles = createStyles(theme => ({
     },
 }))
 
-function PostLabelCard({ image, gatsbyImage, title, isCurrentPage, size = 'medium' }) {
+const Icon = styled.div`
+    position: absolute;
+    top: 10;
+    right: 10px;
+    z-index: 200;
+`
+
+function PostLabelCard({ image, gatsbyImage, title, isCurrentPage, icon, size = 'medium' }) {
     const { classes } = useStyles()
     return (
         <StyledCard withBorder radius="md" p={0} className={classes.card} isCurrentPage={isCurrentPage}>
@@ -52,11 +59,12 @@ function PostLabelCard({ image, gatsbyImage, title, isCurrentPage, size = 'mediu
                         role="presentation"
                     />
                 )}
-                <div className={classes.body} style={{ width: '60%' }}>
+                <div className={classes.body} style={{ width: '60%', position: 'relative' }}>
                     <Text className={classes.title} mt="xs" mb="md">
                         {title}
                     </Text>
                 </div>
+                <Icon>{icon}</Icon>
             </Group>
         </StyledCard>
     )

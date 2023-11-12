@@ -50,7 +50,7 @@ const useStyles = createStyles(theme => ({
 //   active: string;
 // }
 
-export function TableOfContents({ links }) {
+export function TableOfContents({ links, defaultOpen = true }) {
     const [active, setActive] = useState((links && links[0]?.link) || '')
     const { classes, cx } = useStyles()
 
@@ -70,7 +70,7 @@ export function TableOfContents({ links }) {
     return (
         <Container>
             <DesktopDisplay>
-                <Accordion variant="contained" defaultValue="item-1">
+                <Accordion variant="contained" defaultValue={defaultOpen ? 'item-1' : undefined}>
                     <Accordion.Item value="item-1">
                         <Accordion.Control style={{ textAlign: 'center', marginTop: 0 }}>
                             <Title>Table of Contents</Title>

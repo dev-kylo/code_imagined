@@ -28,7 +28,7 @@ export default function CoursePage({ data }) {
                 <Grid.Col xs={12} lg={9} orderSm={2}>
                     <TextContainer>
                         <SignUpWall>
-                            <TableOfContents links={subheadings} />
+                            <TableOfContents links={subheadings} defaultOpen={false} />
                             <SliceZone slices={post.body} components={components} />
                             <div style={{ marginTop: '4rem' }}>
                                 <NextPageButton
@@ -42,6 +42,7 @@ export default function CoursePage({ data }) {
                 </Grid.Col>
                 <Grid.Col xs={12} lg={3} orderSm={1}>
                     <CoursePages
+                        showIcon
                         courseUid={course.uid}
                         currentPageId={data.prismicCoursePage.id}
                         title={course?.data?.title.text}
