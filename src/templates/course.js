@@ -50,7 +50,7 @@ export default function Course({ data }) {
                 <Grid.Col xs={12} lg={3} orderSm={1}>
                     {isFree && (
                         <>
-                            <CoursePages pages={post.course_pages} courseUid={data.prismicCourse.uid} />
+                            <CoursePages pages={post.course_pages} courseUid={data.prismicCourse.uid} disable />
                             <StartCourseButton link={`/courses/${uid}/${firstPageUid}`} size="small" />
                         </>
                     )}

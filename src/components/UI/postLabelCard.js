@@ -6,6 +6,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 const StyledCard = styled(Card)`
     width: 100%;
     max-width: 780px;
+    position: relative,
     text-decoration: none !important;
     background-color: ${({ isCurrentPage, theme }) => (isCurrentPage ? theme.colors.navy : 'white')};
     color: ${({ isCurrentPage, theme }) => (isCurrentPage ? 'white' : theme.colors.navy)}; ;
@@ -40,10 +41,16 @@ function PostLabelCard({ image, gatsbyImage, title, isCurrentPage, size = 'mediu
                         alt=""
                         role="presentation"
                         objectFit="cover"
-                        style={{ width: '80px', height: '100px', objectFit: 'cover' }}
+                        style={{ width: '80px', height: size === 'small' ? '60px' : '100px', objectFit: 'cover' }}
                     />
                 ) : (
-                    <Image src={image} height="100px" width={80} alt="" role="presentation" />
+                    <Image
+                        src={image}
+                        height={size === 'small' ? '60px' : '100px'}
+                        width={80}
+                        alt=""
+                        role="presentation"
+                    />
                 )}
                 <div className={classes.body} style={{ width: '60%' }}>
                     <Text className={classes.title} mt="xs" mb="md">

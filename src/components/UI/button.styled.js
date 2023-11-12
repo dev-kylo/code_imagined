@@ -19,6 +19,8 @@ export const StyledButton = styled.button`
     -webkit-appearance: none;
     -moz-appearance: none;
     box-shadow: 5px -5px ${({ theme, color }) => (color === 'red' ? theme.colors.green : theme.colors.purple)};
+    position: relative;
+    z-index: 50;
 
     &:hover,
     button:focus {

@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { Flex } from '@mantine/core'
+import React, { useContext, useEffect, useState } from 'react'
+import { Flex, Loader } from '@mantine/core'
 import { SignupContext } from '../../context/toggle'
 import { Button } from '../../components/UI/button.styled'
 import isBrowser from '../../utils/isBrowser'
@@ -29,30 +29,37 @@ export function checkForValidUser() {
 
 const SignUpWall = ({ children }) => {
     const showSignUp = useContext(SignupContext).show
+    const [isChecking, setIsChecking] = useState(true)
+    const [isValid, setIsValid] = useState(false)
 
-    if (checkForValidUser()) return children
+    useEffect(() => {
+        if (!isValid) setIsValid(true)
+        setIsChecking(false)
+    }, [isValid])
+
+    if (isChecking)
+        return (
+            <Flex justify="center" mt={24}>
+                <Loader color="red" size="xl" />
+            </Flex>
+        )
+
+    if (isValid) return children
 
     return (
         <>
-            <h2 style={{ textAlign: 'center' }}> Coming Soon!</h2>
+            <h2 style={{ textAlign: 'center' }}> Sign up to gain access</h2>
             <p style={{ textAlign: 'center' }}>
-                This course has not released yet. You will be emailed as soon as it is, by subscribing below.
+                By signing up to The Great Sync you will gain access to this short course, PLUS get all updates and
+                news.
+            </p>
+            <p style={{ textAlign: 'center' }}>
+                If you have already signed up, click the link in the email originally sent to you.
             </p>
             <Flex justify="center" mt={24}>
                 <Button clicked={showSignUp}> Sign Up</Button>
             </Flex>
         </>
-        // <>
-        //     <h2 style={{ textAlign: 'center' }}> Sign up to gain access</h2>
-        //     <p style={{ textAlign: 'center' }}>
-        //         By signing up to The Great Sync you will gain access to this short course, PLUS get all the updates and
-        //         news.
-        //     </p>
-        //     <p style={{ textAlign: 'center' }}>If you have already signed up, click the link in the email to access.</p>
-        //     <Flex justify="center" mt={24}>
-        //         <Button clicked={showSignUp}> Sign Up</Button>
-        //     </Flex>
-        // </>
     )
 }
 
