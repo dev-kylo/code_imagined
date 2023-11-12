@@ -11,8 +11,8 @@ export function getTokenFromURL(paramName) {
 
 export function checkForPermissionParam() {
     const isSigned = getTokenFromURL('token')
-    if (isSigned && isSigned === process.env.USERTOKEN) {
-        localStorage.setItem('tgs-user', process.env.USERTOKEN)
+    if (isSigned && isSigned === process.env.GATSBY_USERTOKEN) {
+        localStorage.setItem('tgs-user', process.env.GATSBY_USERTOKEN)
         return true
     }
     return false
@@ -20,7 +20,7 @@ export function checkForPermissionParam() {
 
 export function checkForValidUser() {
     if (isBrowser()) {
-        const user = localStorage.getItem('tgs-user') === process.env.USERTOKEN
+        const user = localStorage.getItem('tgs-user') === process.env.GATSBY_USERTOKEN
         if (!user) return checkForPermissionParam()
         return true
     }
