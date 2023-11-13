@@ -1,15 +1,28 @@
 import React from 'react'
-import { createStyles, Card, Image, Text, Group } from '@mantine/core'
+import { createStyles, Image, Text, Group } from '@mantine/core'
 import styled from 'styled-components'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
-const StyledCard = styled(Card)`
-    width: 100%;
-    max-width: 780px;
-    position: relative,
-    text-decoration: none !important;
-    background-color: ${({ isCurrentPage, theme }) => (isCurrentPage ? theme.colors.navy : 'white')};
-    color: ${({ isCurrentPage, theme }) => (isCurrentPage ? 'white' : theme.colors.navy)}; ;
+const StyledCard = styled.div`
+ 
+        width: 100%;
+        max-width: 780px;
+        position: relative,
+        text-decoration: none !important;
+        background-color: ${({ isCurrentPage, theme }) =>
+            isCurrentPage ? `${theme.colors.navy} !important` : 'white'};
+        color: ${({ isCurrentPage, theme }) => (isCurrentPage ? 'white' : theme.colors.navy)}; 
+        text-decoration: none;
+        box-sizing: border-box;
+        border-radius: 0.5rem;
+        box-shadow: none;
+        position: relative;
+        overflow: hidden;
+        background-color: #fff;
+        margin: 0.5rem 0;
+        width: 100%;
+        padding: 0rem;
+
 `
 
 const useStyles = createStyles(theme => ({
@@ -40,7 +53,7 @@ const Icon = styled.div`
 function PostLabelCard({ image, gatsbyImage, title, isCurrentPage, icon, size = 'medium' }) {
     const { classes } = useStyles()
     return (
-        <StyledCard withBorder radius="md" p={0} className={classes.card} isCurrentPage={isCurrentPage}>
+        <StyledCard isCurrentPage={isCurrentPage}>
             <Group noWrap spacing={0}>
                 {gatsbyImage ? (
                     <GatsbyImage
