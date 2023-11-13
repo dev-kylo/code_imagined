@@ -97,9 +97,11 @@ const Intro = props => {
                             The Great Sync's visual and mnemonic approach to learning helps you gain confidence,
                             recognize patterns and see the big picture.
                         </P>
-                        {/* <Flex justifyContent="center">
-                            <Button center clicked={showSignUp}>Sign up for a free taster</Button>
-                        </Flex> */}
+                        <Flex justifyContent="center">
+                            <Button size="small" center clicked={showSignUp}>
+                                Get the FREE course
+                            </Button>
+                        </Flex>
                     </Title>
                 </Container>
             </MobileDisplay>
@@ -116,7 +118,7 @@ const Intro = props => {
                     </P>
                     <Flex justifyContent="center">
                         <Button center clicked={showSignUp}>
-                            Sign up for a free taster
+                            Show me The Great Sync
                         </Button>
                     </Flex>
                 </DesktopDisplay>
