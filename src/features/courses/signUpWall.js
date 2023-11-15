@@ -33,7 +33,9 @@ const SignUpWall = ({ children }) => {
     const [isValid, setIsValid] = useState(false)
 
     useEffect(() => {
-        if (!isValid) setIsValid(true)
+        if (!isValid) {
+            if (checkForValidUser()) setIsValid(true)
+        }
         setIsChecking(false)
     }, [isValid])
 
