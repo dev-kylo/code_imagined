@@ -6,7 +6,7 @@ import PageTitle from '../components/UI/pageTitle.styled'
 import { TextContainer } from '../components/layout/containers/textContainer'
 import { components } from '../slices'
 import PostWrapper from '../providers/PostWrapper'
-import SignUpWall from '../features/courses/signUpWall'
+// import SignUpWall from '../features/courses/signUpWall'
 import { getQuickLinks } from '../utils/quickLinksFormatters'
 import { TableOfContents } from '../features/posts/tableOfContents'
 import CoursePages from '../features/courses/coursePages'
@@ -27,19 +27,19 @@ export default function CoursePage({ data }) {
             <Grid mx={15}>
                 <Grid.Col xs={12} lg={9} orderSm={2}>
                     <TextContainer>
-                        <SignUpWall>
-                            {subheadings && subheadings.length > 0 ? (
-                                <TableOfContents links={subheadings} defaultOpen={false} />
-                            ) : null}
-                            <SliceZone slices={post.body} components={components} />
-                            <div style={{ marginTop: '4rem' }}>
-                                <NextPageButton
-                                    courseUid={course.uid}
-                                    currentPageId={data.prismicCoursePage.id}
-                                    pages={course.data.course_pages}
-                                />
-                            </div>
-                        </SignUpWall>
+                        {/* <SignUpWall> */}
+                        {subheadings && subheadings.length > 0 ? (
+                            <TableOfContents links={subheadings} defaultOpen={false} />
+                        ) : null}
+                        <SliceZone slices={post.body} components={components} />
+                        <div style={{ marginTop: '4rem' }}>
+                            <NextPageButton
+                                courseUid={course.uid}
+                                currentPageId={data.prismicCoursePage.id}
+                                pages={course.data.course_pages}
+                            />
+                        </div>
+                        {/* </SignUpWall> */}
                     </TextContainer>
                 </Grid.Col>
                 <Grid.Col xs={12} lg={3} orderSm={1}>
