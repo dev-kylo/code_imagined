@@ -25,7 +25,7 @@ export default function CoursePage({ data }) {
         <PostWrapper postTheme postTitle={title} description={desc}>
             <PageTitle postTitle>{title}</PageTitle>
             <Grid mx={15}>
-                <Grid.Col xs={12} lg={9} orderSm={2}>
+                <Grid.Col sm={12} lg={9} orderLg={2}>
                     <TextContainer>
                         <SignUpWall>
                             {subheadings && subheadings.length > 0 ? (
@@ -42,7 +42,7 @@ export default function CoursePage({ data }) {
                         </SignUpWall>
                     </TextContainer>
                 </Grid.Col>
-                <Grid.Col xs={12} lg={3} orderSm={1}>
+                <Grid.Col sm={12} lg={3} orderLg={1}>
                     <CoursePages
                         showIcon
                         courseUid={course.uid}

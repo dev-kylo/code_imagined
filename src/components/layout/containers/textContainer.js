@@ -5,6 +5,9 @@ export const TextContainer = styled.section`
     padding: 2em;
     margin-bottom: 1em;
     background-color: white;
+    box-shadow: 13px 14px 10px -13px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 13px 14px 10px -13px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 13px 14px 10px -13px rgba(0, 0, 0, 0.2);
 
     @media (max-width: 800px) {
         padding: 1em;

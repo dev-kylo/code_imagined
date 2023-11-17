@@ -22,6 +22,15 @@ const StyledCard = styled.div`
         margin: 0.5rem 0;
         width: 100%;
         padding: 0rem;
+        box-shadow: 13px 14px 10px -13px rgba(0,0,0,0.2);
+        -webkit-box-shadow: 13px 14px 10px -13px rgba(0,0,0,0.2);
+        -moz-box-shadow: 13px 14px 10px -13px rgba(0,0,0,0.2);
+
+        :hover {
+            box-shadow: 13px 14px 10px -13px rgba(0,0,0,0.4);
+            -webkit-box-shadow: 13px 14px 10px -13px rgba(0,0,0,0.4);
+            -moz-box-shadow: 13px 14px 10px -13px rgba(0,0,0,0.4);
+        }
 
 `
 
