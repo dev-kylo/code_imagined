@@ -6,9 +6,8 @@ import { Button } from '../../components/UI/button.styled'
 import PostLabelCard from '../../components/UI/postLabelCard'
 
 const NextPageButton = ({ pages, courseUid, currentPageId }) => {
-    const currentPageIndex = pages.findIndex(node => {
-        const page = node.course_page
-        return page.document.id === currentPageId
+    const currentPageIndex = pages.findIndex(pg => {
+        return pg?.course_page?.document.id === currentPageId
     })
 
     const link =
