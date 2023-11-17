@@ -86,7 +86,6 @@ const CoursePages = ({ pages, title, courseUid, currentPageId, showIcon, disable
                     const isCurrentPage = currentPageId && page.document.id === currentPageId
 
                     const isCompleted = checkForPageCompletion(courseUid, page.document.id)
-                    if (isCurrentPage) console.log({ isCompleted, showIcon })
 
                     if (isCurrentPage || disable) {
                         return (
@@ -94,7 +93,7 @@ const CoursePages = ({ pages, title, courseUid, currentPageId, showIcon, disable
                                 isCurrentPage={isCurrentPage}
                                 size="small"
                                 image={random(backgrounds)}
-                                key={page.document.id}
+                                key={`label-${page.document.id}-current`}
                                 title={page.document.data.title.text}
                                 gatsbyImage={page?.document?.data?.thumbnail?.gatsbyImageData}
                             />
@@ -102,11 +101,14 @@ const CoursePages = ({ pages, title, courseUid, currentPageId, showIcon, disable
                     }
 
                     return (
-                        <Link to={`/courses/${courseUid}/${page.document.uid}`} style={{ textDecoration: 'none' }}>
+                        <Link
+                            to={`/courses/${courseUid}/${page.document.uid}`}
+                            style={{ textDecoration: 'none' }}
+                            key={`label-${page.document.id}`}
+                        >
                             <PostLabelCard
                                 size="small"
                                 image={random(backgrounds)}
-                                key={page.document.id}
                                 title={page.document.data.title.text}
                                 gatsbyImage={page?.document?.data?.thumbnail?.gatsbyImageData}
                                 icon={

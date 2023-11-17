@@ -16,7 +16,7 @@ const Grid = styled.div`
 
 function CoursesList({ courses }) {
     const cards = courses.map(course => (
-        <Link key={course.uid} to={`/courses/${course.uid}`} style={{ textDecoration: 'none' }}>
+        <Link key={`course-${course.uid}`} to={`/courses/${course.uid}`} style={{ textDecoration: 'none' }}>
             <ShadowCard
                 image={course.data.cover.gatsbyImageData.images.fallback.src}
                 title={course.data.title.text}
