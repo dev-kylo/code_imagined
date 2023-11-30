@@ -14,11 +14,8 @@ const HoneyInput = styled.div`
 const Form = ({ loading, submit }) => (
     <>
         <H3 dark>Hey I'm Kylo 👋</H3>
-        <P small dark style={{ 'margin-bottom': '0em' }}>
-            I want to show you how to begin building a mental model of JavaScript 🧠🤯.
-        </P>
         <P small dark style={{ 'margin-bottom': '1em' }}>
-            Gain access to a free short course and weekly updates.
+            I want to show you how to begin building a mental model of JavaScript 🧠
         </P>
         <Box as="form" onSubmit={e => submit(e)}>
             <Flex flexDirection="column" mx={-2} mb={0}>

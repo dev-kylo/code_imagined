@@ -33,20 +33,19 @@ const Lander = () => {
         <LandingGrid>
             <GridArea name="svg1" color="#01140F">
                 <StyledBlock />
-                {/* <ExecutionIsle> */}
                 <StaticImage
                     src="https://res.cloudinary.com/the-great-sync/image/upload/v1686771432/3000x2000/EC_sdbbpu.png"
                     alt="Mage Funk sorceress character with an invocation orb"
                     placeholder="blurred"
                 />
-                {/* </ExecutionIsle> */}
-
                 <Label>
                     <Intro mobile />
                 </Label>
             </GridArea>
             <GridArea name="svg1_text" color="#041440">
+                {/* <DesktopDisplay> */}
                 <Intro />
+                {/* </DesktopDisplay> */}
             </GridArea>
             <GridArea name="svg2" color="#008578">
                 <GeniePrototype />

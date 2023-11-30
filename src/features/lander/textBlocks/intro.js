@@ -73,6 +73,10 @@ const Container = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media (max-width: 480px) {
+        display: ${({ mobileView }) => (mobileView ? 'none' : '')};
+    }
 `
 
 const Intro = props => {
@@ -108,7 +112,7 @@ const Intro = props => {
         )
     }
     return (
-        <Container>
+        <Container mobileView>
             <Title>
                 <DesktopDisplay>
                     <H1 style={{ textAlign: 'center' }}>The Great Sync JavaScript Mental Model</H1>

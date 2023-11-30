@@ -45,13 +45,13 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
     font-family: ${props => props.theme.fonts.heading1};
     color: ${props => (props.dark ? props.theme.colors.navy : props.theme.colors.white)};
-    font-size: 28px;
+    font-size: 2.5rem;
     text-align: center;
     padding: 0.5em 0;
     z-index: 150;
-    margin: ${props => (props.large ? '2em auto' : '1em auto')};
+    margin: ${props => (props.large ? '2em auto' : '0 auto')};
     @media (min-width: 600px) {
-        font-size: 35px;
+        font-size: ${props => (props.large ? '3.5rem' : '3rem')};
         text-align: ${props => (props.center ? 'center' : 'left')};
     }
 `

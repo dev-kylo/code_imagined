@@ -12,7 +12,6 @@ const TextContainer = styled.section`
     margin: auto;
     padding: 2em;
     margin-bottom: 1em;
-    background-color: ${props => props.theme.colors.navy};
     @media (max-width: 800px) {
         padding: 1em;
         width: 80%;
@@ -22,15 +21,12 @@ const TextContainer = styled.section`
 export const Heading = styled.div`
     display: flex;
     justify-content: center;
-    margin-top: 3em;
+    margin-top: 0;
 
-    div {
-        padding: 2em;
-        background-color: ${props => props.theme.colors.green};
+    padding: 1em;
 
-        h2 {
-            margin: 0;
-        }
+    h2 {
+        margin: 0;
     }
 `
 
@@ -40,18 +36,18 @@ const Intro = () => {
     return (
         <TextContainer>
             <Heading>
-                <div>
-                    <H2 center large>
-                        The Great Sync
-                    </H2>
-                </div>
+                <H2 center large>
+                    Learn JavaScript
+                    <br /> with The Great Sync
+                </H2>
             </Heading>
+
             <P>Hi!</P>
             <P>
-                I'm Kylo. I am a Javascript developer, and have been for many years. That said, I am not a guru. I have
+                I'm Kylo. I am a JavaScript developer, and have been for many years. That said, I am not a guru. I have
                 not worked for Google.
             </P>
-            <P>What I can say is that I am someone who needed a way to 'level up' in Javascript.</P>
+            <P>What I can say is that I am someone who needed a way to 'level up' in JavaScript.</P>
             <P>
                 When I first started I threw myself into building things - anything and everything - as you should! As a
                 visual learner, seeing my creations was incredibly satisfying.
@@ -68,19 +64,19 @@ const Intro = () => {
             </P>
             <P>
                 And that's when I began The Great Sync - a single, powerful resource which exposed the bare bones of
-                Javascript, all living in my imagination. It could be referred back to whenever I was stuck or confused.
+                JavaScript, all living in my imagination. It could be referred back to whenever I was stuck or confused.
                 It broke down the difficult concepts, and tied everything together.
             </P>
             <P>
                 I have relied on it to grow my knowledge of the language, and have used it to coach many junior and
-                aspiring devs.{' '}
+                aspiring devs.
             </P>
             <P>
-                I would love for you to make it your own, to build it brick by brick, function invocation by function
-                invocation, and create a visual model of the language that lasts forever.
+                I would love for you to make it your own, to build it brick by brick, function by function, and create a
+                visual mental model of the language that lasts forever.
             </P>
             <P> </P>
-            <Flex justifyContent="center">
+            <Flex justifyContent="center" mt={4}>
                 <Button center clicked={showSignUp}>
                     Show me The Great Sync!
                 </Button>
