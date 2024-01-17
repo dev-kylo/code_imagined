@@ -83,6 +83,33 @@ const FixedHeight = styled.div`
     }
 `
 
+const Strapline = styled.div`
+    font-size: 1.2rem;
+    background: #008578;
+    padding: 0.5rem;
+    text-align: center;
+    font-family: ${props => props.theme.fonts.heading1};
+    text-transform: uppercase;
+    background-color: ${props => props.theme.colors.green};
+    span {
+        color: ${props => props.theme.colors.white};
+        background-color: ${props => props.theme.colors.navy};
+        @media (min-width: 780px) {
+            padding: 10px 15px;
+        }
+    }
+
+    a {
+        color: white;
+        font-weight: bold;
+        font-size: 0.8rem;
+        text-decoration: none;
+        :hover {
+            color: ${props => props.theme.colors.red};
+        }
+    }
+`
+
 // const AddedHeight = styled.div
 
 //   interface HeaderActionProps {
@@ -159,7 +186,12 @@ function TopNav() {
                     </Group>
                 </Drawer>
             </Box>
+
             <FixedHeight />
+            <Strapline>
+                <span>The Syncer Program</span> launches on the 20th February 🚀{' '}
+                <Link to="/courses/the-syncer-program">Find out more</Link>
+            </Strapline>
         </>
     )
 }
