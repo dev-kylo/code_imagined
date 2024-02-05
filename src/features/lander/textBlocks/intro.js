@@ -73,6 +73,7 @@ const Container = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 20;
 
     @media (max-width: 480px) {
         display: ${({ mobileView }) => (mobileView ? 'none' : '')};
@@ -98,8 +99,8 @@ const Intro = props => {
                         {/* <H1>The Great Sync <SubHeading>- visual & memorable JavaScript</SubHeading></H1> */}
                         <H1 style={{ textAlign: 'center' }}>The Great Sync JavaScript Mental Model</H1>
                         <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }}>
-                            The Great Sync's visual and mnemonic approach to learning helps you gain confidence,
-                            recognize patterns and see the big picture.
+                            The Great Sync's visual and mnemonic approach to learning JavaScript helps you gain
+                            confidence, recognize patterns and see the big picture.
                         </P>
                         <Flex justifyContent="center">
                             <Button size="small" center clicked={showSignUp}>
@@ -117,8 +118,8 @@ const Intro = props => {
                 <DesktopDisplay>
                     <H1 style={{ textAlign: 'center' }}>The Great Sync JavaScript Mental Model</H1>
                     <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }}>
-                        The Great Sync's visual and mnemonic approach to learning helps you gain confidence, recognize
-                        patterns and see the big picture.
+                        The Great Sync's visual and mnemonic approach to learning JavaScript helps you gain confidence,
+                        recognize patterns and see the big picture.
                     </P>
                     <Flex justifyContent="center">
                         <Button center clicked={showSignUp}>

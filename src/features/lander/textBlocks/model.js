@@ -7,8 +7,8 @@ const model = () => (
     <Copy>
         <H2>Recognise the patterns</H2>
         <P>
-            To see patterns, you need <strong style={{ color: 'white' }}>'big picture'</strong> understanding. How does
-            everything fit together?{' '}
+            To see patterns, you need <strong style={{ color: 'white' }}>'big picture'</strong> understanding. How do
+            all these concepts fit together?{' '}
         </P>
     </Copy>
 )

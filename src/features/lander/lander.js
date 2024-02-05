@@ -11,6 +11,7 @@ import GeniePrototype from './imageBlocks/prototype_genie/prototypeGenie'
 import { Sphere } from './imageBlocks/sphere/sphere'
 import Invocation from './imageBlocks/invocation/Invocation'
 import RainIsland from './imageBlocks/rain_island/rainIsland'
+import DarkLord from './imageBlocks/operator/the_dark_lord'
 
 const StyledBlock = styled.div`
     width: 100%;
@@ -48,7 +49,7 @@ const Lander = () => {
                 {/* </DesktopDisplay> */}
             </GridArea>
             <GridArea name="svg2" color="#008578">
-                <GeniePrototype />
+                <DarkLord />
             </GridArea>
             <GridArea name="svg2_text" color="#5F5980">
                 <Learn />
