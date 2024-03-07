@@ -37,6 +37,10 @@ export const query = graphql`
           title {
             text
           }
+          banner {
+            gatsbyImageData(width: 400)
+            alt
+          }
           published
         }
         last_publication_date

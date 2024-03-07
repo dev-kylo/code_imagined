@@ -54,7 +54,7 @@ const UnSubscribed = () => {
           </Box>
         </TextContainer>
       </Providers>
-    </SEO>
+    </>
   )
 }
 
