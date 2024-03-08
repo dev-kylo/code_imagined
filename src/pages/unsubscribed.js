@@ -6,6 +6,7 @@ import { Label, Input, Textarea } from "@rebass/forms/styled-components"
 import Providers from "../providers/Providers"
 import PageTitle from "../components/UI/pageTitle.styled"
 import { TextContainer } from "../components/layout/containers/textContainer"
+import SEO from "../layout/seo"
 
 const HoneyInput = styled.div`
   opacity: 0;

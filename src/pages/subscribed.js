@@ -8,6 +8,7 @@ import PageTitle from "../components/UI/pageTitle.styled"
 import SignUp from "../features/signup/signup.styled"
 import { TextContainer } from "../components/layout/containers/textContainer"
 import { H2 } from "../components/UI/headings.styled"
+import SEO from "../layout/seo"
 
 const HoneyInput = styled.div`
   opacity: 0;
