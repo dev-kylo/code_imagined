@@ -3,14 +3,11 @@ import { Flex, Loader } from '@mantine/core'
 import { SignupContext } from '../../context/toggle'
 import { Button } from '../../components/UI/button.styled'
 import isBrowser from '../../utils/isBrowser'
+import { getTokenFromURL } from '../../utils/getTokenFromUrl'
 
-export function getTokenFromURL(paramName) {
-    const urlParams = new URLSearchParams(window.location.search)
-    return urlParams.get(paramName)
-}
 
 export function checkForPermissionParam() {
-    const isSigned = getTokenFromURL('token')
+    const isSigned = getTokenFromURL('token', window.location.search)
     if (isSigned && isSigned === process.env.GATSBY_USERTOKEN) {
         localStorage.setItem('tgs-user', process.env.GATSBY_USERTOKEN)
         return true
