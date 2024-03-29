@@ -36,19 +36,32 @@ const SignUp = () => {
 
         if (honey) return
 
+        const signup = { 
+            email, 
+            first_name: first,  
+            api_secret:  process.env.CONVERTKIT_APISECRET, 
+            fields: {
+                last_name: surname
+            }
+        };
+
         try {
-            const response = await addToMailchimp(email, { FNAME: first, LNAME: surname })
+            const response = await fetch(`${process.env.CONVERTKIT_BASEURL}/v3/tags/${process.env.CONVERTKIT_FREE_COURSE_TAG_ID}/subscribe`, {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json; charset=utf-8'},
+                body: JSON.stringify(signup)
+            })
+
+            if (!response || !response?.subscription) throw new Error(response?.message)
 
             setFormStatus({
-                submitHeading: response.result === 'success' ? `You're almost done, ${first}!` : 'Oh no! 😧',
+                submitHeading: `You're almost done, ${first}!`,
                 loading: false,
                 formSubmitted: true,
-                submitMessage:
-                    response.result === 'success'
-                        ? 'One last step to go! Please check your emails and confirm 🔥🔥🔥'
-                        : createErrorMessage(response.msg),
+                submitMessage: 'One last step to go! Please check your emails and confirm 🔥🔥🔥'
             })
         } catch (e) {
+            console.log(e);
             setFormStatus({
                 submitHeading: 'Oh no! 😧',
                 loading: false,
