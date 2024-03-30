@@ -46,11 +46,13 @@ const SignUp = () => {
         };
 
         try {
-            const response = await fetch(`${process.env.GATSBY_CONVERTKIT_BASEURL}/v3/tags/${process.env.GATSBY_CONVERTKIT_FREE_COURSE_TAG_ID}/subscribe`, {
+            const resp = await fetch(`${process.env.GATSBY_CONVERTKIT_BASEURL}/v3/tags/${process.env.GATSBY_CONVERTKIT_FREE_COURSE_TAG_ID}/subscribe`, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json; charset=utf-8'},
                 body: JSON.stringify(signup)
             })
+
+            const response = resp?.json();
 
             if (!response || !response?.subscription) throw new Error(response?.message)
 
