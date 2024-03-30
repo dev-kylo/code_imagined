@@ -52,7 +52,7 @@ const SignUp = () => {
                 body: JSON.stringify(signup)
             })
 
-            const response = resp?.json();
+            const response = await resp?.json();
 
             if (!response || !response?.subscription) throw new Error(response?.message)
 
