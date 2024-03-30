@@ -39,14 +39,14 @@ const SignUp = () => {
         const signup = { 
             email, 
             first_name: first,  
-            api_secret:  process.env.CONVERTKIT_APISECRET, 
+            api_secret:  process.env.GATSBY_CONVERTKIT_APISECRET, 
             fields: {
                 last_name: surname
             }
         };
 
         try {
-            const response = await fetch(`${process.env.CONVERTKIT_BASEURL}/v3/tags/${process.env.CONVERTKIT_FREE_COURSE_TAG_ID}/subscribe`, {
+            const response = await fetch(`${process.env.GATSBY_CONVERTKIT_BASEURL}/v3/tags/${process.env.GATSBY_CONVERTKIT_FREE_COURSE_TAG_ID}/subscribe`, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json; charset=utf-8'},
                 body: JSON.stringify(signup)
