@@ -12,7 +12,7 @@ import SEO from "../layout/seo"
 import isBrowser from "../utils/isBrowser"
 import { getTokenFromURL } from "../utils/getTokenFromUrl"
 import { Checkbox, Group } from "@mantine/core"
-import { navigate } from 'gatsby';
+
 
 const HoneyInput = styled.div`
   opacity: 0;
@@ -28,7 +28,7 @@ const Subscribed = () => {
     if (isBrowser()){
        const id = getTokenFromURL('ck_subscriber_id', window.location.search);
        if (id) setUserId(id)
-       else navigate('/');
+      //  else navigate('/');
     }
 
   }, [])
