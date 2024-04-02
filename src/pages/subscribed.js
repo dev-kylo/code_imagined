@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import "../utils/fontawesome"
 import styled from "styled-components"
 import { Flex, Box, Button } from "rebass/styled-components"
@@ -37,7 +37,7 @@ const Subscribed = () => {
             visual analogy, and introduce you to The Great Sync.
           </p>
           <p>
-            Before you go, I WOULD love to hear from you and understand a bit
+            Before you go check your emails, I WOULD love to hear from you and understand a bit
             more about your background and goals.
           </p>
 
@@ -66,11 +66,11 @@ const Subscribed = () => {
                 <Group mt="lg"> 
                   <Checkbox value="true" id="raw_beginner" name="raw_beginner" label="I am a raw beginner " />
                   <Checkbox value="true" id="struggle_syntax" name="struggle_syntax"  label="I struggle with syntax" />
-                  <Checkbox value="true" id="struggle_loops" name="struggle_loops" label="I struggle with loops" />
                   <Checkbox value="true"  id="attended_bootcamp" name="attended_bootcamp" label="I attended a bootcamp" />
                   <Checkbox value="true"  id="react_no_confidence" name="react_no_confidence" label="I know React but lack confidence" />
-                  <Checkbox value="true"  id="rely_tutorials" name="rely_tutorials"  label="I am in tutorial hell" />
-                  <Checkbox value="true"  id="never_built_own_app" name="never_built_own_app"  label="I have never built my own app" />
+                  <Checkbox value="true"  id="tutorial-hell" name="tutorial-hell"  label="I am in tutorial hell" />
+                  <Checkbox value="true"  id="career-transition" name="career-transition"  label="I am career transitioning" />
+                  <Checkbox value="true"  id="cant_build_own_app" name="cant_build_own_app"  label="I can't build without a tutorial" />
                   <Checkbox value="true"  id="applying_jobs" name="applying_jobs"  label="I am applying for jobs" />
                  </Group> 
       
@@ -90,8 +90,8 @@ const Subscribed = () => {
                 <Textarea id="reason" name="reason" rows="4" required />
               </Box>
 
-              { userId && <Textarea id="userid" name="userid" rows="1" value={userId} hidden style={{display: 'none'}}/> }
-              { userId && <Textarea id="account" name="account" rows="1" value={`https://app.convertkit.com/subscribers/${userId}`} hidden style={{display: 'none'}} /> }
+              <Textarea id="userid" name="userid" rows="1" value={userId} hidden style={{display: 'none'}}/> 
+              <Textarea id="account" name="account" rows="1" value={`https://app.convertkit.com/subscribers/${userId}`} hidden style={{display: 'none'}} /> 
         
               <HoneyInput>
                 <Input id="honey" name="honey" type="honey" />
@@ -112,9 +112,3 @@ const Subscribed = () => {
 
 export default Subscribed
 
-// I am a raw beginner
-// I struggle with syntax
-// I struggle with loops
-// I attended a bootcamp
-// I can build a React app but lack confidence
-// I am frustrated I rely on tutorials to build
