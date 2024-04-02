@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import "../utils/fontawesome"
 import styled from "styled-components"
 import { Flex, Box, Button } from "rebass/styled-components"
@@ -12,6 +12,7 @@ import SEO from "../layout/seo"
 import isBrowser from "../utils/isBrowser"
 import { getTokenFromURL } from "../utils/getTokenFromUrl"
 import { Checkbox, Group } from "@mantine/core"
+import { navigate } from 'gatsby';
 
 const HoneyInput = styled.div`
   opacity: 0;
@@ -21,7 +22,16 @@ const HoneyInput = styled.div`
 
 const Subscribed = () => {
 
-  const userId = isBrowser() && getTokenFromURL('ck_subscriber_id', window.location.search);
+  const [userId, setUserId] = useState(null)
+
+  useEffect(() => {
+    if (isBrowser()){
+       const id = getTokenFromURL('ck_subscriber_id', window.location.search);
+       if (id) setUserId(id)
+       else navigate('/');
+    }
+
+  }, [])
 
   return (
     <>
