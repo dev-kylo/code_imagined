@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Flex, Box } from 'rebass/styled-components'
-import addToMailchimp from 'gatsby-plugin-mailchimp'
 import Modal from '../../components/UI/modal.styled'
 import FormResult from './signup-result'
 import Form from './signup-form'
 import MageFunk from '../lander/imageBlocks/mage/mage'
+import { getTokenFromURL } from '../../utils/getTokenFromUrl'
+import { UserContext } from '../../context/user'
 
 const SignUp = () => {
     const [formStatus, setFormStatus] = useState({
@@ -14,10 +15,7 @@ const SignUp = () => {
         submitMessage: '',
     })
 
-    const createErrorMessage = str => {
-        if (str.includes('already subscribed')) return 'Looks like you are already subscribed!'
-        return str
-    }
+    const { adSource, adStart } = useContext(UserContext)
 
     const handleSubmit = async e => {
         e.preventDefault()
@@ -26,7 +24,7 @@ const SignUp = () => {
             loading: true,
             formSubmitted: true,
             submitHeading: '',
-            submitMessage: 'Performing some functional javascript magic🧙...',
+            submitMessage: 'Performing some functional JavaScript magic🧙...',
         })
 
         const first = e.target.elements.fname.value.trim()
@@ -34,25 +32,33 @@ const SignUp = () => {
         const email = e.target.elements.email.value.trim()
         const { honey } = e.target.elements.email
 
+        const source = adSource || getTokenFromURL('source', window.location.search) || ''
+        const start = adStart || getTokenFromURL('start', window.location.search) || ''
+
         if (honey) return
 
-        const signup = { 
-            email, 
-            first_name: first,  
-            api_secret:  process.env.GATSBY_CONVERTKIT_APISECRET, 
+        const signup = {
+            email,
+            first_name: first,
+            api_secret: process.env.GATSBY_CONVERTKIT_APISECRET,
             fields: {
-                last_name: surname
-            }
-        };
+                last_name: surname,
+                signup_source: source || '',
+                signup_start: start || '',
+            },
+        }
 
         try {
-            const resp = await fetch(`${process.env.GATSBY_CONVERTKIT_BASEURL}/v3/tags/${process.env.GATSBY_CONVERTKIT_FREE_COURSE_TAG_ID}/subscribe`, {
-                method: "POST",
-                headers: { 'Content-Type': 'application/json; charset=utf-8'},
-                body: JSON.stringify(signup)
-            })
+            const resp = await fetch(
+                `${process.env.GATSBY_CONVERTKIT_BASEURL}/v3/tags/${process.env.GATSBY_CONVERTKIT_FREE_COURSE_TAG_ID}/subscribe`,
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                    body: JSON.stringify(signup),
+                }
+            )
 
-            const response = await resp?.json();
+            const response = await resp?.json()
 
             if (!response || !response?.subscription) throw new Error(response?.message)
 
@@ -60,10 +66,10 @@ const SignUp = () => {
                 submitHeading: `You're almost done, ${first}!`,
                 loading: false,
                 formSubmitted: true,
-                submitMessage: 'One last step to go! Please check your emails and confirm 🔥🔥🔥'
+                submitMessage: 'One last step to go! Please check your emails and confirm 🔥🔥🔥',
             })
         } catch (e) {
-            console.log(e);
+            console.log(e)
             setFormStatus({
                 submitHeading: 'Oh no! 😧',
                 loading: false,

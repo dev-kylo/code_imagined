@@ -11,6 +11,7 @@ import Footer from '../components/layout/footer/footer.styled'
 import SignUp from '../features/signup/signup.styled'
 
 import TopNav from '../components/layout/topnav/topNav'
+import { UserProvider } from '../context/user'
 
 const PostWrapper = ({ postTitle, description, postTheme, children, postSchema }) => {
     return (
@@ -20,13 +21,15 @@ const PostWrapper = ({ postTitle, description, postTheme, children, postSchema }
 
                 <LayersManager>
                     <Layout postTheme={postTheme}>
-                        <ModalContext>
-                            <TopNav />
+                        <UserProvider>
+                            <ModalContext>
+                                <TopNav />
 
-                            <SignUp />
+                                <SignUp />
 
-                            {children}
-                        </ModalContext>
+                                {children}
+                            </ModalContext>
+                        </UserProvider>
                     </Layout>
                 </LayersManager>
 

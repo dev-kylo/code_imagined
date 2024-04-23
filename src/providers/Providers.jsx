@@ -8,16 +8,19 @@ import ModalContext from '../context/toggle'
 import Footer from '../components/layout/footer/footer.styled'
 
 import TopNav from '../components/layout/topnav/topNav'
+import { UserProvider } from '../context/user'
 
 const Providers = ({ postTheme, children }) => {
     return (
         <ThemeProvider theme={theme}>
             <LayersManager>
                 <Layout postTheme={postTheme}>
-                    <ModalContext>
-                        <TopNav />
-                        {children}
-                    </ModalContext>
+                    <UserProvider>
+                        <ModalContext>
+                            <TopNav />
+                            {children}
+                        </ModalContext>
+                    </UserProvider>
                 </Layout>
             </LayersManager>
             <Footer />
