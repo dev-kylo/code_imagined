@@ -21,7 +21,7 @@ const Container = styled.div`
     }
 `
 
-const PostLabelsList = ({ postsData, title, tag, currentId, length = 2 }) => {
+const PostLabelsList = ({ postsData, title, tag, currentId, length = 4 }) => {
     let data = postsData
     const latestIds = postsData.slice(0, 3).map(dt => dt.id)
     if (tag) data = data?.filter(post => post.tags.includes(tag) && !latestIds.includes(post.id))
