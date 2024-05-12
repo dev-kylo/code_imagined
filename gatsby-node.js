@@ -31,6 +31,17 @@ exports.createPages = async ({ actions, graphql }) => {
         },
     })
 
+    const pages = await graphql(`
+        {
+            allPrismicPage {
+                nodes {
+                    id
+                    uid
+                }
+            }
+        }
+    `)
+
     const postPages = await graphql(`
         {
             allPrismicPost {
@@ -62,6 +73,16 @@ exports.createPages = async ({ actions, graphql }) => {
         }
     `)
 
+    pages.data.allPrismicPage.nodes.forEach(page => {
+        createPage({
+            path: `/${page.uid}`,
+            component: path.resolve(__dirname, 'src/templates/page.js'),
+            context: {
+                id: page.id,
+            },
+        })
+    })
+
     postPages.data.allPrismicPost.nodes.forEach(page => {
         createPage({
             path: `/posts/${page.uid}`,
@@ -74,7 +95,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
     coursePages.data.allPrismicCourse.nodes.forEach(course => {
         const courseUid = course.uid
-        const pages = course.data.course_pages
+        const cpages = course.data.course_pages
 
         createPage({
             path: `/courses/${courseUid}`,
@@ -84,7 +105,7 @@ exports.createPages = async ({ actions, graphql }) => {
             },
         })
 
-        pages.forEach(page => {
+        cpages.forEach(page => {
             createPage({
                 path: `/courses/${courseUid}/${page.course_page.uid}`,
                 component: path.resolve(__dirname, 'src/templates/coursePage.js'),

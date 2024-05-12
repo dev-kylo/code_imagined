@@ -25,6 +25,15 @@ const Slice_Code = ({ slice }) => {
 export default Slice_Code
 
 export const query = graphql`
+    fragment PageComponentCode on PrismicPageDataBodyCode {
+        primary {
+            hide
+            codestring {
+                richText
+            }
+        }
+    }
+
     fragment PostComponentCode on PrismicPostDataBodyCode {
         primary {
             hide

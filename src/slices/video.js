@@ -57,6 +57,26 @@ const Slice_Video = ({ slice }) => {
 export default Slice_Video
 
 export const query = graphql`
+    fragment PageComponentVideo on PrismicPageDataBodyVideo {
+        primary {
+            video_url {
+                embed_url
+            }
+            file_url {
+                url
+            }
+            mux_assetid {
+                text
+            }
+            mux_playbackid {
+                text
+            }
+            mux_title {
+                text
+            }
+        }
+    }
+
     fragment PostComponentVideo on PrismicPostDataBodyVideo {
         primary {
             video_url {

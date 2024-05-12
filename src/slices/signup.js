@@ -28,6 +28,12 @@ const Slice_Signup = ({ slice }) => {
 export default Slice_Signup
 
 export const query = graphql`
+    fragment PageComponentSignUp on PrismicPageDataBodySignUp {
+        primary {
+            id
+        }
+    }
+
     fragment PostComponentSignUp on PrismicPostDataBodySignUp {
         primary {
             id

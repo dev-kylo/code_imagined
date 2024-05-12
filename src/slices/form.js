@@ -114,6 +114,12 @@ const Slice_Form = ({ slice }) => {
 export default Slice_Form
 
 export const query = graphql`
+    fragment PageComponentForm on PrismicPageDataBodyForm {
+        primary {
+            form_id
+        }
+    }
+
     fragment PostComponentForm on PrismicPostDataBodyForm {
         primary {
             form_id

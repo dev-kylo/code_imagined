@@ -26,6 +26,19 @@ const Slice_Button = ({ slice }) => {
 export default Slice_Button
 
 export const query = graphql`
+    fragment PageComponentButton on PrismicPageDataBodyButton {
+        primary {
+            button_type
+            button_text {
+                text
+            }
+            button_link {
+                url
+                target
+            }
+        }
+    }
+
     fragment PostComponentButton on PrismicPostDataBodyButton {
         primary {
             button_type
