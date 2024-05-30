@@ -38,7 +38,7 @@ const SignUpForm = ({ loading, submit, centerBtn }) => (
                     <Input id="email" name="email" type="email" required />
                 </Box>
                 <HoneyInput>
-                    <Input id="honey" name="H" type="honey" />
+                    <Input id="H" name="H" type="honey" />
                 </HoneyInput>
 
                 <Box px={2} ml="auto">

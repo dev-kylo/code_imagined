@@ -6,7 +6,7 @@ import { P } from '../../components/UI/text.styled'
 
 const FormResult = ({ heading, text, completed, result = 'success' }) => (
     <Flex flexDirection="column" justifyContent="center" alignItems="center">
-        {completed && (
+        {completed && result && (
             <RingProgress
                 sections={[{ value: 100, color: result === 'error' ? 'red' : 'teal' }]}
                 label={
@@ -17,6 +17,8 @@ const FormResult = ({ heading, text, completed, result = 'success' }) => (
                             radius="xl"
                             size="xl"
                             mt={0}
+                            disabled
+                            style={{ margin: 0 }}
                         >
                             <Text c={result === 'error' ? 'red' : 'teal'} fw={700} ta="center" size="md">
                                 {result === 'error' ? '😔' : '✔️'}

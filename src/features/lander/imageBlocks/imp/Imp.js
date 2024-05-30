@@ -25,6 +25,10 @@ const ImpText = styled.small`
     width: 50px;
     font-family: ${props => props.theme.fonts.subheading} !important;
     animation: ${fadeIn} 2s ease-out 3s forwards !important;
+
+    @media (max-width: 500px) {
+        display: none;
+    }
 `
 
 const ImpTextBottom = styled.small`
@@ -36,6 +40,10 @@ const ImpTextBottom = styled.small`
     font-family: ${props => props.theme.fonts.subheading} !important;
     font-style: italic;
     animation: ${fadeIn} 2s ease-out 3s forwards !important;
+
+    @media (max-width: 500px) {
+        display: none;
+    }
 `
 
 const Imp = ({ style, mobileHide }) => {

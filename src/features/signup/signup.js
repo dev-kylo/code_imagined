@@ -18,25 +18,28 @@ const SignUp = ({ layout, convertKitTag }) => {
 
     const { adSource, adStart } = useContext(UserContext)
 
-    const handleSubmit = async e => {
-        e.preventDefault()
+    const handleSubmit = async info => {
+        const isEvent = 'preventDefault' in info
+        if (isEvent) info.preventDefault()
+        const vals = isEvent ? info.target.elements : info
+
         setFormStatus({
             ...formStatus,
-            loading: false,
+            loading: true,
             formSubmitted: true,
             submitHeading: '',
             submitMessage: 'Performing some functional JavaScript magic🧙...',
         })
 
-        const first = e.target.elements.fname.value.trim()
-        const surname = e.target.elements.sname.value.trim()
-        const email = e.target.elements.email.value.trim()
-        const { H } = e.target.elements.email
+        const first = vals.fname?.value?.trim() || vals?.fname
+        const surname = vals.sname?.value?.trim() || vals?.sname
+        const email = vals.email?.value?.trim() || vals?.email
+        const H = vals?.H?.value?.trim() || vals?.H
 
         const source = adSource || getTokenFromURL('source', window.location.search) || ''
         const start = adStart || getTokenFromURL('start', window.location.search) || ''
 
-        if (H) return // honey pot field
+        if (typeof H === 'string') return // honey pot field
 
         const signup = {
             email,
@@ -75,7 +78,7 @@ const SignUp = ({ layout, convertKitTag }) => {
                 loading: false,
                 formSubmitted: true,
                 result: 'error',
-                submitMessage: 'There seems to be an error. Please try again or email Kylo at kylo@thegreatsync.com',
+                submitMessage: 'There seems to be an error!',
             })
         }
     }
@@ -97,7 +100,7 @@ const SignUp = ({ layout, convertKitTag }) => {
                     {formStatus.formSubmitted && !formStatus.loading && (
                         <FormResult
                             completed
-                            result={formStatus.result}
+                            result={formStatus?.result}
                             heading={formStatus.submitHeading}
                             text={formStatus.submitMessage}
                         />
@@ -115,7 +118,7 @@ const SignUp = ({ layout, convertKitTag }) => {
                     width={[1, 1, 1 / 3, 1 / 3]}
                     sx={{ position: 'absolute', bottom: '0', left: '0' }}
                 >
-                    <MageFunk invoking={formStatus.loading} />
+                    <MageFunk invoking={formStatus.loading} mobileHide />
                 </Box>
                 <Box width={[1, 1, 1 / 3, 1 / 3]} />
                 <Box p="1rem 0" pl={['0', '0', '0.5rem', '2rem']} width={[1, 1, 2 / 3, 2 / 3]}>
@@ -123,8 +126,8 @@ const SignUp = ({ layout, convertKitTag }) => {
                         <FormResult
                             heading={formStatus.submitHeading}
                             text={formStatus.submitMessage}
-                            completed
-                            result={formStatus.result}
+                            completed={formStatus?.result}
+                            result={formStatus?.result}
                         />
                     ) : (
                         <SignUpForm submit={handleSubmit} loading={formStatus.loading} />

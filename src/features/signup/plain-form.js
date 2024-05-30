@@ -2,6 +2,7 @@
 import React from 'react'
 import { TextInput } from '@mantine/core'
 import styled from 'styled-components'
+import { useForm } from '@mantine/form'
 import { StyledButton } from '../../components/UI/button.styled'
 import Imp from '../lander/imageBlocks/imp/Imp'
 import { HoneyInput } from './signup-form'
@@ -18,7 +19,7 @@ const Form = styled.form`
     max-width: 400px;
     margin: 1rem auto;
     position: relative;
-    z-index: 20000;
+    z-index: 2000;
     overflow: hidden;
     min-height: 300px;
 
@@ -30,15 +31,52 @@ const Form = styled.form`
 `
 
 function PlainForm({ loading, submitText, withShadow, submit, children }) {
+    const form = useForm()
+    const [submitted, setSubmitted] = React.useState(false)
+
+    const handleSubmit = vals => {
+        setSubmitted(true)
+        submit(vals)
+    }
+
     return (
-        <Form withShadow={withShadow} loading={loading} onSubmit={submit}>
+        <Form withShadow={withShadow} loading={loading} onSubmit={form.onSubmit(vals => handleSubmit(vals))}>
             {children || (
                 <>
-                    <TextInput withAsterisk label="First Name" size="md" />
-                    <TextInput withAsterisk label="Last Name" size="md" mt="sm" />
-                    <TextInput withAsterisk label="Email" type="email" placeholder="your@email.com" size="md" mt="sm" />
+                    <TextInput
+                        withAsterisk
+                        label="First Name"
+                        size="md"
+                        key={form.key('fname')}
+                        {...form.getInputProps('fname')}
+                    />
+                    <TextInput
+                        withAsterisk
+                        label="Last Name"
+                        size="md"
+                        mt="sm"
+                        key={form.key('sname')}
+                        {...form.getInputProps('sname')}
+                    />
+                    <TextInput
+                        withAsterisk
+                        label="Email"
+                        type="email"
+                        placeholder="your@email.com"
+                        size="md"
+                        mt="sm"
+                        key={form.key('email')}
+                        {...form.getInputProps('email')}
+                    />
                     <HoneyInput>
-                        <TextInput hidden label="H" size="md" mt="sm" />
+                        <TextInput
+                            hidden
+                            label="H"
+                            size="md"
+                            mt="sm"
+                            key={form.key('H')}
+                            {...form.getInputProps('H')}
+                        />
                     </HoneyInput>
 
                     <Flex>
@@ -49,7 +87,9 @@ function PlainForm({ loading, submitText, withShadow, submit, children }) {
                 </>
             )}
 
-            <Imp style={{ width: '120px', left: 0, bottom: 0, filter: loading ? 'opacity(20%)' : 'none' }} />
+            {!submitted && (
+                <Imp style={{ width: '120px', left: 0, bottom: 0, filter: loading ? 'opacity(20%)' : 'none' }} />
+            )}
         </Form>
     )
 }
