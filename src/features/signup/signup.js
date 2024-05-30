@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react'
 import { Flex, Box } from 'rebass/styled-components'
 import Modal from '../../components/UI/modal.styled'
 import FormResult from './signup-result'
-import Form from './signup-form'
+import SignUpForm from './signup-form'
 import MageFunk from '../lander/imageBlocks/mage/mage'
 import { getTokenFromURL } from '../../utils/getTokenFromUrl'
 import { UserContext } from '../../context/user'
+import PlainForm from './plain-form'
 
-const SignUp = () => {
+const SignUp = ({ layout, convertKitTag }) => {
     const [formStatus, setFormStatus] = useState({
         formSubmitted: false,
         loading: false,
@@ -21,7 +22,7 @@ const SignUp = () => {
         e.preventDefault()
         setFormStatus({
             ...formStatus,
-            loading: true,
+            loading: false,
             formSubmitted: true,
             submitHeading: '',
             submitMessage: 'Performing some functional JavaScript magic🧙...',
@@ -30,12 +31,12 @@ const SignUp = () => {
         const first = e.target.elements.fname.value.trim()
         const surname = e.target.elements.sname.value.trim()
         const email = e.target.elements.email.value.trim()
-        const { honey } = e.target.elements.email
+        const { H } = e.target.elements.email
 
         const source = adSource || getTokenFromURL('source', window.location.search) || ''
         const start = adStart || getTokenFromURL('start', window.location.search) || ''
 
-        if (honey) return
+        if (H) return // honey pot field
 
         const signup = {
             email,
@@ -49,14 +50,12 @@ const SignUp = () => {
         }
 
         try {
-            const resp = await fetch(
-                `${process.env.GATSBY_CONVERTKIT_BASEURL}/v3/tags/${process.env.GATSBY_CONVERTKIT_FREE_COURSE_TAG_ID}/subscribe`,
-                {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json; charset=utf-8' },
-                    body: JSON.stringify(signup),
-                }
-            )
+            const tag = convertKitTag || process.env.GATSBY_CONVERTKIT_FREE_COURSE_TAG_ID
+            const resp = await fetch(`${process.env.GATSBY_CONVERTKIT_BASEURL}/v3/tags/${tag}/subscribe`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                body: JSON.stringify(signup),
+            })
 
             const response = await resp?.json()
 
@@ -66,16 +65,17 @@ const SignUp = () => {
                 submitHeading: `You're almost done, ${first}!`,
                 loading: false,
                 formSubmitted: true,
-                submitMessage: 'One last step to go! Please check your emails and confirm 🔥🔥🔥',
+                result: 'success',
+                submitMessage: 'One last step to go! Please check your emails and confirm 🔥',
             })
         } catch (e) {
             console.log(e)
             setFormStatus({
-                submitHeading: 'Oh no! 😧',
+                submitHeading: 'Oh no!',
                 loading: false,
                 formSubmitted: true,
-                submitMessage:
-                    'There seems to be an error. Please try submit the form again or try a different browser.',
+                result: 'error',
+                submitMessage: 'There seems to be an error. Please try again or email Kylo at kylo@thegreatsync.com',
             })
         }
     }
@@ -88,6 +88,23 @@ const SignUp = () => {
             submitMessage: '',
         })
     }
+
+    if (layout === 'plain')
+        return (
+            <div style={{ position: 'relative', maxWidth: '800px', margin: 'auto' }}>
+                {formStatus.loading && <MageFunk invoking style={{ width: '150px' }} centered showText />}
+                <PlainForm submit={handleSubmit} loading={formStatus.loading}>
+                    {formStatus.formSubmitted && !formStatus.loading && (
+                        <FormResult
+                            completed
+                            result={formStatus.result}
+                            heading={formStatus.submitHeading}
+                            text={formStatus.submitMessage}
+                        />
+                    )}
+                </PlainForm>
+            </div>
+        )
 
     return (
         <Modal hideExitBtn={formStatus.loading} exitCb={() => exitSignup()}>
@@ -103,9 +120,14 @@ const SignUp = () => {
                 <Box width={[1, 1, 1 / 3, 1 / 3]} />
                 <Box p="1rem 0" pl={['0', '0', '0.5rem', '2rem']} width={[1, 1, 2 / 3, 2 / 3]}>
                     {formStatus.formSubmitted ? (
-                        <FormResult heading={formStatus.submitHeading} text={formStatus.submitMessage} />
+                        <FormResult
+                            heading={formStatus.submitHeading}
+                            text={formStatus.submitMessage}
+                            completed
+                            result={formStatus.result}
+                        />
                     ) : (
-                        <Form submit={handleSubmit} loading={formStatus.loading} />
+                        <SignUpForm submit={handleSubmit} loading={formStatus.loading} />
                     )}
                 </Box>
             </Flex>

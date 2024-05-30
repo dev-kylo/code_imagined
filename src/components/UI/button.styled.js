@@ -36,6 +36,16 @@ export const StyledButton = styled.button`
     &:active {
         transform: scale(0.99);
     }
+
+    &:disabled {
+        background: #a1a1a1;
+        box-shadow: 5px -5px #c5dad8;
+        cursor: default;
+        :hover {
+            background: #a1a1a1;
+            box-shadow: 5px -5px #c5dad8;
+        }
+    }
 `
 
 export const Button = ({

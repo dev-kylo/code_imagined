@@ -8,7 +8,7 @@ import { theme } from '../theme'
 import ModalContext from '../context/toggle'
 import '../utils/fontawesome'
 import Footer from '../components/layout/footer/footer.styled'
-import SignUp from '../features/signup/signup.styled'
+import SignUp from '../features/signup/signup'
 
 import TopNav from '../components/layout/topnav/topNav'
 import { UserProvider } from '../context/user'

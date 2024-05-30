@@ -5,13 +5,13 @@ import styled from 'styled-components'
 import { P } from '../../components/UI/text.styled'
 import { H3 } from '../../components/UI/headings.styled'
 
-const HoneyInput = styled.div`
+export const HoneyInput = styled.div`
     opacity: 0;
     visibility: hidden;
     position: absolute;
 `
 
-const Form = ({ loading, submit }) => (
+const SignUpForm = ({ loading, submit, centerBtn }) => (
     <>
         <H3 dark>Hey I'm Kylo 👋</H3>
         <P small dark style={{ 'margin-bottom': '1em' }}>
@@ -38,7 +38,7 @@ const Form = ({ loading, submit }) => (
                     <Input id="email" name="email" type="email" required />
                 </Box>
                 <HoneyInput>
-                    <Input id="honey" name="honey" type="honey" />
+                    <Input id="honey" name="H" type="honey" />
                 </HoneyInput>
 
                 <Box px={2} ml="auto">
@@ -53,4 +53,4 @@ const Form = ({ loading, submit }) => (
     </>
 )
 
-export default Form
+export default SignUpForm

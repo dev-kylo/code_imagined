@@ -7,7 +7,7 @@ import { TextContainer } from '../components/layout/containers/textContainer'
 import Providers from '../providers/Providers'
 import SEO from '../layout/seo'
 import { components } from '../slices'
-import SignUp from '../features/signup/signup.styled'
+import SignUp from '../features/signup/signup'
 
 export default function Page({ data }) {
     if (!data) return null

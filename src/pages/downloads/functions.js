@@ -5,7 +5,7 @@ import PageTitle from '../../components/UI/pageTitle.styled'
 
 import { H2 } from '../../components/UI/headings.styled'
 import DownloadLink from '../../components/UI/downloadLink.styled'
-import SignUp from '../../features/signup/signup.styled'
+import SignUp from '../../features/signup/signup'
 import { TextContainer } from '../../components/layout/containers/textContainer'
 
 const Thankyou = () => {

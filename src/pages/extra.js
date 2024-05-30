@@ -5,7 +5,7 @@ import { Container } from '@mantine/core'
 import Providers from '../providers/Providers'
 import PageTitle from '../components/UI/pageTitle.styled'
 import { TextContainer } from '../components/layout/containers/textContainer'
-import SignUp from '../features/signup/signup.styled'
+import SignUp from '../features/signup/signup'
 import SEO from '../layout/seo'
 
 const Extra = () => {
