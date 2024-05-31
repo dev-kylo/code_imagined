@@ -116,7 +116,7 @@ const Intro = props => {
         <Container mobileView>
             <Title>
                 <DesktopDisplay>
-                    <H1 style={{ textAlign: 'center' }}>The Great Sync JavaScript Mental Model</H1>
+                    <H1 style={{ textAlign: 'center' }}>Frustrated with JavaScript? Can't build anything?</H1>
                     <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }}>
                         The Great Sync's visual and mnemonic approach to learning JavaScript helps you gain confidence,
                         recognize patterns and see the big picture.
