@@ -30,7 +30,7 @@ const Form = styled.form`
     }
 `
 
-function PlainForm({ loading, submitText, withShadow, submit, children }) {
+function PlainForm({ loading, submitText, withShadow, submit, borderless, children }) {
     const form = useForm()
     const [submitted, setSubmitted] = React.useState(false)
 
@@ -40,7 +40,7 @@ function PlainForm({ loading, submitText, withShadow, submit, children }) {
     }
 
     return (
-        <Form withShadow={withShadow} loading={loading} onSubmit={form.onSubmit(vals => handleSubmit(vals))}>
+        <Form withShadow={borderless} loading={loading} onSubmit={form.onSubmit(vals => handleSubmit(vals))}>
             {children || (
                 <>
                     <TextInput
@@ -87,7 +87,7 @@ function PlainForm({ loading, submitText, withShadow, submit, children }) {
                 </>
             )}
 
-            {!submitted && (
+            {!submitted && !borderless && (
                 <Imp style={{ width: '120px', left: 0, bottom: 0, filter: loading ? 'opacity(20%)' : 'none' }} />
             )}
         </Form>

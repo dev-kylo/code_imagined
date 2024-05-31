@@ -8,7 +8,7 @@ import { getTokenFromURL } from '../../utils/getTokenFromUrl'
 import { UserContext } from '../../context/user'
 import PlainForm from './plain-form'
 
-const SignUp = ({ layout, convertKitTag }) => {
+const SignUp = ({ layout, convertKitTag, borderless }) => {
     const [formStatus, setFormStatus] = useState({
         formSubmitted: false,
         loading: false,
@@ -96,7 +96,7 @@ const SignUp = ({ layout, convertKitTag }) => {
         return (
             <div style={{ position: 'relative', maxWidth: '800px', margin: 'auto' }}>
                 {formStatus.loading && <MageFunk invoking style={{ width: '150px' }} centered showText />}
-                <PlainForm submit={handleSubmit} loading={formStatus.loading}>
+                <PlainForm submit={handleSubmit} loading={formStatus.loading} borderless={borderless}>
                     {formStatus.formSubmitted && !formStatus.loading && (
                         <FormResult
                             completed
