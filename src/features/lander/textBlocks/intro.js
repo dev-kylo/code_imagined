@@ -76,7 +76,7 @@ const LanderSignUp = () => (
         <H1 style={{ textAlign: 'center' }}>The Great Sync JavaScript Mental Model</H1>
         <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto', color: 'white' }}>
             <span style={{ color: 'pink', fontWeight: 'bold' }}> Are you worried your fundamentals are lacking? </span>
-            Sign up for a free resource: A Visual Deep Dive Into JavaScript Objects 👀
+            Sign up for a free resource: A Visual Deep Dive Into JavaScript Objects.
         </P>
         <SignupWrapper>
             <SignUp layout="plain" borderless submitBtnText="Gain Access" noLastName />
