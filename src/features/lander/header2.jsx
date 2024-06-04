@@ -48,6 +48,7 @@ const Title = styled.div`
         margin: auto;
         width: 70%;
         height: 50%;
+        background-color: #01150f;
         background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
             url('./fantasy-bg.jpg') no-repeat;
         background-size: cover;
@@ -97,6 +98,7 @@ const Strapline = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
+        background-color: #01150f;
         background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
             url('./fantasy-bg.jpg') no-repeat;
         background-size: cover;
