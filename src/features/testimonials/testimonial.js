@@ -9,7 +9,7 @@ const Container = styled.div`
     max-width: 1000px;
     padding: 25px 20px;
     position: relative;
-    border: 5px solid #476ce4;
+    border: ${({ theme }) => `7px solid ${theme.colors.pink}`};
     border-radius: 15px;
     font-family: 'Montserrat';
     display: flex;
@@ -28,11 +28,11 @@ const QuoteContainer = styled.div`
 `
 
 const Quote = styled.div`
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 1.3rem;
+    color: white;
+    font-size: 1.4rem;
     text-align: center;
     line-height: 28px;
-    color: ${props => props.theme.colors.white};
+    color: white;
     @media (max-width: 780px) {
         font-size: 1.1rem;
     }

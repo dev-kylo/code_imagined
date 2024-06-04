@@ -5,10 +5,11 @@ import { Copy } from '../../../components/layout/containers/containers.styled'
 
 const difficult = () => (
     <Copy>
-        <H2>Ask yourself...</H2>
+        <H2 style={{ textAlign: 'center', color: 'white' }}>Can't APPLY the fundamentals?</H2>
         <P>
-            How well do you understand JavaScript fundamentals? It's one thing building apps. It's another knowing the{' '}
-            <strong style={{ color: 'white' }}>language quirks</strong> which drive them.
+            Put aside the never-done-before idea in your head. I will show you how to{' '}
+            <span style={{ color: 'white' }}>first build projects that reveal patterns</span> you can use to build
+            anything you want!
         </P>
     </Copy>
 )

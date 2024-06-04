@@ -3,8 +3,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 export const StyledButton = styled.button`
-    background: ${({ theme, color }) => (color === 'red' ? theme.colors.red : theme.colors.blue)};
-    color: white;
+    background: ${({ theme, color }) => theme.colors[color]}};
+    color:  ${({ theme, color }) => (color === 'yellow' ? theme.colors.navy : 'white')}};
     display: inline-block;
     border: none;
     padding: ${({ size }) => (size === 'small' ? '0.5rem 2rem' : '1rem 2rem')};
@@ -24,7 +24,9 @@ export const StyledButton = styled.button`
 
     &:hover,
     button:focus {
-        background: ${({ theme, color }) => (color === 'red' ? theme.colors.blue : theme.colors.red)};
+        background: ${({ theme, color }) =>
+            color === 'red' ? theme.colors.blue : color === 'yellow' ? theme.colors.green : theme.colors.red};
+        color: ${({ color }) => (color === 'yellow' ? 'white' : 'black')}
         box-shadow: 7px -7px ${props => props.theme.colors.pink};
     }
 

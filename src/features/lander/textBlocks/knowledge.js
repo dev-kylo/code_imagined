@@ -5,10 +5,10 @@ import { Copy } from '../../../components/layout/containers/containers.styled'
 
 const knowledge = () => (
     <Copy>
-        <H2> Solution: mnemonic learning</H2>
+        <H2 style={{ textAlign: 'center', color: 'white' }}> You CAN do this!</H2>
         <P>
-            We can <strong style={{ color: 'white' }}>build</strong> something in our minds that keeps everything we
-            know and understand about Javascript in one place.{' '}
+            I didn't study computer science. <span style={{ color: 'white ' }}>I didn't find it easy</span>. I struggled
+            with JavaScript. But I kept going, and I can help you do the same!
         </P>
     </Copy>
 )

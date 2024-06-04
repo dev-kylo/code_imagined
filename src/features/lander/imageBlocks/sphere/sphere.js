@@ -7,14 +7,14 @@ const SphereContainer = styled.div`
     bottom: 5%;
     left: 21%;
     z-index: 2000;
-    width: 65%;
+    width: 60%;
 
     @media (min-width: 1200px) {
-        width: 60%;
+        width: 45%;
     }
 
     @media (min-width: 1500px) {
-        width: 45%;
+        width: 50%;
     }
 
     @media (orientation: landscape) and (max-width: 600px) {

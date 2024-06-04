@@ -5,10 +5,10 @@ import { Copy } from '../../../components/layout/containers/containers.styled'
 
 const learn = () => (
     <Copy>
-        <H2>Learn JavaScript visually </H2>
+        <H2 style={{ textAlign: 'center', color: 'white' }}>Can't REMEMBER the fundamentals?</H2>
         <P>
-            Computers need 0s and 1s. Programming languages are needed to instruct computers. Our brains need{' '}
-            <strong style={{ color: 'white' }}>story and analogy</strong> to understand them.
+            By creating a mnemonic representation of all concepts, you can easily recall them and understand them. The
+            best part? <span style={{ color: 'white' }}>You carry it everywhere in your imagination.</span>
         </P>
     </Copy>
 )

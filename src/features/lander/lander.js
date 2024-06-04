@@ -13,6 +13,8 @@ import Invocation from './imageBlocks/invocation/Invocation'
 import RainIsland from './imageBlocks/rain_island/rainIsland'
 import DarkLord from './imageBlocks/operator/the_dark_lord'
 import Header from './header'
+import Header2 from './header2'
+import ProfileCard from './profileCard/profileCard'
 
 const StyledBlock = styled.div`
     width: 100%;
@@ -33,7 +35,8 @@ const Label = styled.div`
 const Lander = () => {
     return (
         <>
-            <Header />
+            <Header2 />
+            <ProfileCard />
             <LandingGrid>
                 <GridArea name="svg1" color="#01140F">
                     <StyledBlock />

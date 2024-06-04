@@ -1,28 +1,10 @@
-import React, { useContext } from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
+import React from 'react'
 import styled from 'styled-components'
-import { Flex } from 'rebass/styled-components'
-import { H1, H2 } from '../../../components/UI/headings.styled'
+import { H1 } from '../../../components/UI/headings.styled'
 import { P } from '../../../components/UI/text.styled'
 import { DesktopDisplay, MobileDisplay } from '../../../components/layout/containers/containers.styled'
-import { SignupContext } from '../../../context/toggle'
-import { Button } from '../../../components/UI/button.styled'
+import SignUp from '../../signup/signup'
 
-const Logo = styled.div`
-    width: 160px;
-    height: auto;
-    display: block;
-    margin: 2em auto;
-    position: absolute;
-
-    @media (min-width: 600px) {
-        width: 180px;
-        height: auto;
-        float: right;
-        display: block;
-        margin: 3em 3em 0 0;
-    }
-`
 export const Title = styled.div`
     display: inline-block;
     padding: 0.5em;
@@ -80,33 +62,35 @@ const Container = styled.section`
     }
 `
 
-const Intro = props => {
-    const showSignUp = useContext(SignupContext).show
+const SignupWrapper = styled.div`
+    label,
+    h2,
+    p,
+    span {
+        color: white;
+    }
+`
 
-    if (props.mobile) {
+const LanderSignUp = () => (
+    <>
+        <H1 style={{ textAlign: 'center' }}>The Great Sync JavaScript Mental Model</H1>
+        <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto', color: 'white' }}>
+            <span style={{ color: 'pink', fontWeight: 'bold' }}> Are you worried your fundamentals are lacking? </span>
+            Sign up for a free resource: A Visual Deep Dive Into JavaScript Objects 👀
+        </P>
+        <SignupWrapper>
+            <SignUp layout="plain" borderless submitBtnText="Gain Access" noLastName />
+        </SignupWrapper>
+    </>
+)
+
+const Intro = ({ mobile }) => {
+    if (mobile) {
         return (
             <MobileDisplay>
                 <Container>
-                    {/* <Logo>
-                        <StaticImage
-                            src="../../../images/small_logo.png"
-                            alt="The Great Sync logo"
-                            placeholder="blurred"
-                         
-                        />
-                    </Logo> */}
                     <Title>
-                        {/* <H1>The Great Sync <SubHeading>- visual & memorable JavaScript</SubHeading></H1> */}
-                        <H1 style={{ textAlign: 'center' }}>The Great Sync JavaScript Mental Model</H1>
-                        <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }}>
-                            The Great Sync's visual and mnemonic approach to learning JavaScript helps you gain
-                            confidence, recognize patterns and see the big picture.
-                        </P>
-                        <Flex justifyContent="center">
-                            <Button size="small" center clicked={showSignUp}>
-                                Get the FREE course
-                            </Button>
-                        </Flex>
+                        <LanderSignUp />
                     </Title>
                 </Container>
             </MobileDisplay>
@@ -116,16 +100,7 @@ const Intro = props => {
         <Container mobileView>
             <Title>
                 <DesktopDisplay>
-                    <H1 style={{ textAlign: 'center' }}>Frustrated with JavaScript? Can't build anything?</H1>
-                    <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto' }}>
-                        The Great Sync's visual and mnemonic approach to learning JavaScript helps you gain confidence,
-                        recognize patterns and see the big picture.
-                    </P>
-                    <Flex justifyContent="center">
-                        <Button center clicked={showSignUp}>
-                            Show me The Great Sync
-                        </Button>
-                    </Flex>
+                    <LanderSignUp />
                 </DesktopDisplay>
             </Title>
         </Container>

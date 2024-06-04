@@ -21,16 +21,20 @@ const Form = styled.form`
     position: relative;
     z-index: 2000;
     overflow: hidden;
-    min-height: 300px;
+    min-height: ${props => (props.noLastName ? '200px' : '300px')};
 
     input,
     label {
         opacity: ${props => (props.loading ? '0.2' : '1')};
         transition: opacity 0.3s ease-in-out;
     }
+
+    button {
+        margin-top: 2rem;
+    }
 `
 
-function PlainForm({ loading, submitText, withShadow, submit, borderless, children }) {
+function PlainForm({ loading, submitBtnText, withShadow, submit, borderless, noLastName, children }) {
     const form = useForm()
     const [submitted, setSubmitted] = React.useState(false)
 
@@ -40,30 +44,40 @@ function PlainForm({ loading, submitText, withShadow, submit, borderless, childr
     }
 
     return (
-        <Form withShadow={borderless} loading={loading} onSubmit={form.onSubmit(vals => handleSubmit(vals))}>
+        <Form
+            withShadow={borderless}
+            loading={loading}
+            noLastName={noLastName}
+            onSubmit={form.onSubmit(vals => handleSubmit(vals))}
+        >
             {children || (
                 <>
                     <TextInput
                         withAsterisk
                         label="First Name"
+                        required
                         size="md"
                         key={form.key('fname')}
                         {...form.getInputProps('fname')}
                     />
-                    <TextInput
-                        withAsterisk
-                        label="Last Name"
-                        size="md"
-                        mt="sm"
-                        key={form.key('sname')}
-                        {...form.getInputProps('sname')}
-                    />
+                    {!noLastName && (
+                        <TextInput
+                            withAsterisk
+                            label="Last Name"
+                            size="md"
+                            mt="sm"
+                            required
+                            key={form.key('sname')}
+                            {...form.getInputProps('sname')}
+                        />
+                    )}
                     <TextInput
                         withAsterisk
                         label="Email"
                         type="email"
                         placeholder="your@email.com"
                         size="md"
+                        required
                         mt="sm"
                         key={form.key('email')}
                         {...form.getInputProps('email')}
@@ -80,8 +94,8 @@ function PlainForm({ loading, submitText, withShadow, submit, borderless, childr
                     </HoneyInput>
 
                     <Flex>
-                        <StyledButton disabled={loading} type="submit" size="small" color={loading ? 'blue' : 'red'}>
-                            {loading ? 'Loading...' : submitText || 'Submit'}
+                        <StyledButton disabled={loading} type="submit" size="large" color={loading ? 'blue' : 'yellow'}>
+                            {loading ? 'Loading...' : submitBtnText || 'Submit'}
                         </StyledButton>
                     </Flex>
                 </>

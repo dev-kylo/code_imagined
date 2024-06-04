@@ -8,7 +8,7 @@ import { getTokenFromURL } from '../../utils/getTokenFromUrl'
 import { UserContext } from '../../context/user'
 import PlainForm from './plain-form'
 
-const SignUp = ({ layout, convertKitTag, borderless }) => {
+const SignUp = ({ layout, convertKitTag, borderless, noLastName, submitBtnText }) => {
     const [formStatus, setFormStatus] = useState({
         formSubmitted: false,
         loading: false,
@@ -32,7 +32,7 @@ const SignUp = ({ layout, convertKitTag, borderless }) => {
         })
 
         const first = vals.fname?.value?.trim() || vals?.fname
-        const surname = vals.sname?.value?.trim() || vals?.sname
+        const surname = !noLastName && (vals.sname?.value?.trim() || vals?.sname)
         const email = vals.email?.value?.trim() || vals?.email
         const H = vals?.H?.value?.trim() || vals?.H
 
@@ -46,7 +46,7 @@ const SignUp = ({ layout, convertKitTag, borderless }) => {
             first_name: first,
             api_secret: process.env.GATSBY_CONVERTKIT_APISECRET,
             fields: {
-                last_name: surname,
+                last_name: surname || '',
                 signup_source: source || '',
                 signup_start: start || '',
             },
@@ -96,7 +96,13 @@ const SignUp = ({ layout, convertKitTag, borderless }) => {
         return (
             <div style={{ position: 'relative', maxWidth: '800px', margin: 'auto' }}>
                 {formStatus.loading && <MageFunk invoking style={{ width: '150px' }} centered showText />}
-                <PlainForm submit={handleSubmit} loading={formStatus.loading} borderless={borderless}>
+                <PlainForm
+                    submit={handleSubmit}
+                    loading={formStatus.loading}
+                    borderless={borderless}
+                    noLastName={noLastName}
+                    submitBtnText={submitBtnText}
+                >
                     {formStatus.formSubmitted && !formStatus.loading && (
                         <FormResult
                             completed

@@ -42,13 +42,15 @@ const Intro = () => {
                 </H2>
             </Heading>
 
-            <P>Hi!</P>
-            <P>
+            <P style={{ color: 'white' }}>Hi!</P>
+            <P style={{ color: 'white' }}>
                 I'm Kylo. I am a JavaScript developer, and have been for many years. That said, I am not a guru. I have
                 not worked for Google.
             </P>
-            <P>What I can say is that I am someone who needed a way to 'level up' in JavaScript.</P>
-            <P>
+            <P style={{ color: 'white' }}>
+                What I can say is that I am someone who needed a way to 'level up' in JavaScript.
+            </P>
+            <P style={{ color: 'white' }}>
                 When I first started I threw myself into building things - anything and everything - as you should! As a
                 visual learner, seeing my creations was incredibly satisfying.
             </P>
@@ -58,26 +60,26 @@ const Intro = () => {
                     grasp of Javascript fundamentals. I just couldn't fit all the pieces together.
                 </P>
             </CallOut>
-            <P>
+            <P style={{ color: 'white' }}>
                 The truth? I still found javascript hard. There were some things I did not understand fully, or couldn't
                 wrap my mind around at all.
             </P>
-            <P>
+            <P style={{ color: 'white' }}>
                 And that's when I began The Great Sync - a single, powerful resource which exposed the bare bones of
                 JavaScript, all living in my imagination. It could be referred back to whenever I was stuck or confused.
                 It broke down the difficult concepts, and tied everything together.
             </P>
-            <P>
+            <P style={{ color: 'white' }}>
                 I have relied on it to grow my knowledge of the language, and have used it to coach many junior and
                 aspiring devs.
             </P>
-            <P>
+            <P style={{ color: 'white' }}>
                 I would love for you to make it your own, to build it brick by brick, function by function, and create a
                 visual mental model of the language that lasts forever.
             </P>
-            <P> </P>
+            <P style={{ color: 'white' }}> </P>
             <Flex justifyContent="center" mt={4}>
-                <Button center clicked={showSignUp}>
+                <Button center clicked={showSignUp} color="yellow">
                     Show me The Great Sync!
                 </Button>
             </Flex>

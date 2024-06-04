@@ -9,25 +9,39 @@ const Card = styled.div`
     grid-template-columns: 1fr 2fr;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: auto;
-    margin-top: 2em;
-    min-height: 300px;
-    max-width: 800px;
+    min-height: 400px;
+    width: 100%;
+    z-index: 20000;
+    background: white;
+
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+
+        img {
+            max-height: 300px;
+        }
+    }
 `
 
 const Canvas = styled.div`
     background: white;
-    opacity: 0.7;
     color: black !important;
     texta-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: white;
 
     padding: 2rem;
     p {
         text-align: center;
         font-size: 1.2rem;
+        max-width: 600px;
+    }
+
+    @media (max-width: 600px) {
+        padding: 1.2rem;
     }
 
     span {
@@ -42,11 +56,14 @@ const ProfileCard = () => (
         <Canvas>
             <H2 style={{ color: 'black' }}>Hi, I'm Kylo</H2>
             <P style={{ color: 'black' }}>
-                I'm a <span>BreakThrough JavaScript Coach</span>, and a full-time Senior Developer.{' '}
+                I'm a <span style={{ color: 'red' }}>Break-Through JavaScript Coach</span>, and a full-time Senior
+                Developer.{' '}
             </P>
             <P style={{ color: 'black' }}>
-                I use visual and mnemonic techniques to help you build a foundational mental model
+                I use a visual and mnemonic teaching approach to help you build a mental model of JavaScript
+                fundamentals.
             </P>
+            <P style={{ color: 'black' }}>I call it The Great Sync.</P>
         </Canvas>
     </Card>
 )

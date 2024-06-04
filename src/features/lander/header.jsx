@@ -1,9 +1,10 @@
-import React from 'react'
+/* eslint-disable import/no-extraneous-dependencies */
+import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
+import { Fade, Flip } from 'react-awesome-reveal'
+import { StaticImage } from 'gatsby-plugin-image'
 import { H1 } from '../../components/UI/headings.styled'
-import { P } from '../../components/UI/text.styled'
 import { fadeIn } from '../../utils/animations'
-import SignUp from '../signup/signup'
 import ProfileCard from './profileCard/profileCard'
 
 const Title = styled.div`
@@ -11,6 +12,10 @@ const Title = styled.div`
     padding: 0.5em;
     padding-top: 0;
     z-index: 100;
+    background: #00000085;
+    transition: opacity 1s ease-in-out;
+
+    opacity: ${({ visible }) => (visible ? 1 : 0)};
 
     background: #00000085;
     h1 {
@@ -56,32 +61,44 @@ const Container = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: 20;
-
-    @media (max-width: 480px) {
-        display: ${({ mobileView }) => (mobileView ? 'none' : '')};
-    }
+    z-index: 2000;
+    transition: opacity 1s ease-in-out;
+    // opacity: ${({ visible }) => (visible ? 1 : 0)};
 `
 
 const Strapline = styled.div`
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: white;
-    z-index: -2;
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('/fantasy-bg.png') no-repeat;
-        background-size: cover;
-        background-position: center;
-        animation: ${fadeIn} 4s ease-out 0s forwards;
-        z-index: -1;
-    }
+    // psition: relative;
+    // height: 100vh;
+    // background: yellow;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    // background: green;
+    // width: 100%
+
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
+    // position: relative;
+    // width: 100%;
+    // height: 100vh;
+    // background: white;
+    // z-index: -2;
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: url('/fantasy-bg.png') no-repeat;
+    //     background-size: cover;
+    //     background-position: center;
+    //     animation: ${fadeIn} 4s ease-out 0s forwards;
+    //     z-index: -1;
+    // }
 `
 
 const Span = styled.div`
@@ -96,30 +113,106 @@ const Color = styled.div`
     display: inline;
 `
 
+const ScrollContainer = styled.div`
+    position: relative;
+    background: purple;
+    height: 150vh; /* Ensure there's enough content to scroll */
+    z-index: -10;
+`
+const StickyHeader = styled.div`
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: red;
+    z-index: -5;
+    background: url('/fantasy-bg.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: ${fadeIn} 4s ease-out 0s forwards;
+`
+
+const Spacer = styled.div`
+    height: 20vh; /* Create enough space for scrolling */
+`
+const ProfileCardWrapper = styled.div`
+    z-index: 1000000;
+    transition: opacity 1s ease-in-out;
+    opacity: ${({ visible }) => (visible ? 1 : 0)};
+`
+
 const Header = () => {
+    const [isContainerVisible, setIsContainerVisible] = useState(true)
+    const [showProfileCard, setShowProfileCard] = useState(false)
+    const containerRef = useRef()
+    const profileCardRef = useRef()
+
+    useEffect(() => {
+        const containerObserver = new IntersectionObserver(
+            ([entry]) => {
+                setIsContainerVisible(entry.isIntersecting)
+            },
+            {
+                threshold: 0.9, // Adjust this threshold as needed
+            }
+        )
+
+        const profileObserver = new IntersectionObserver(
+            ([entry]) => {
+                setShowProfileCard(entry.isIntersecting)
+            },
+            {
+                threshold: 0.8, // Adjust this threshold as needed
+            }
+        )
+
+        if (containerRef.current) {
+            containerObserver.observe(containerRef.current)
+        }
+
+        if (profileCardRef.current) {
+            profileObserver.observe(profileCardRef.current)
+        }
+
+        return () => {
+            if (containerRef.current) {
+                containerObserver.unobserve(containerRef.current)
+            }
+            if (profileCardRef.current) {
+                profileObserver.unobserve(profileCardRef.current)
+            }
+        }
+    }, [])
+
     return (
-        <Strapline>
-            <Container mobileView>
-                <Title>
-                    <H1 style={{ textAlign: 'center', color: 'black' }}>
-                        <Color color="blue">Imagine</Color> applying <br />
-                        JavaScript fundamentals to <br />
-                        ANY project
-                    </H1>
-                    {/* <H1 style={{ textAlign: 'center', color: 'black' }}>
-                        Imagine you were confident <br />
-                        with JavaScript
-                    </H1> */}
-                    <Span style={{ maxWidth: '600px', textAlign: 'center', margin: 'auto', color: 'black' }}>
-                        No more <Color color="red">TUTORIAL HELL</Color>
-                    </Span>
-                    <Span style={{ maxWidth: '700px', textAlign: 'center', margin: 'auto', color: 'black' }}>
-                        No more overwhelming <Color color="black">IMPOSTER SYNDROME</Color>
-                    </Span>
-                </Title>
-            </Container>
-            <ProfileCard />
-        </Strapline>
+        <ScrollContainer>
+            <StickyHeader>
+                <Strapline ref={containerRef}>
+                    <Container visible={isContainerVisible}>
+                        <Title visible={isContainerVisible}>
+                            <H1 style={{ textAlign: 'center', color: 'black' }}>
+                                <Color color="blue">Imagine</Color> applying <br />
+                                JavaScript fundamentals to <br />
+                                ANY project
+                            </H1>
+
+                            <Span style={{ maxWidth: '600px', textAlign: 'center', margin: 'auto', color: 'black' }}>
+                                No more <Color color="red">TUTORIAL HELL</Color>
+                            </Span>
+                            <Span style={{ maxWidth: '700px', textAlign: 'center', margin: 'auto', color: 'black' }}>
+                                No more overwhelming <Color color="black">IMPOSTER SYNDROME</Color>
+                            </Span>
+                        </Title>
+                    </Container>
+                </Strapline>
+
+                <Spacer />
+
+                <ProfileCardWrapper ref={profileCardRef} visible={showProfileCard}>
+                    <ProfileCard style={{ opacity: showProfileCard ? 1 : 0, transition: 'opacity 1s ease-in-out' }} />
+                </ProfileCardWrapper>
+            </StickyHeader>
+        </ScrollContainer>
     )
 }
 

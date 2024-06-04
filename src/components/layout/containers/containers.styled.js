@@ -14,6 +14,7 @@ export const Copy = styled.section`
     margin-right: auto;
     margin-bottom: 2em;
     max-width: 600px;
+    text-align: center;
 `
 
 export const MobileDisplay = styled.div`
