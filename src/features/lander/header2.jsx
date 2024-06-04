@@ -1,9 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
 import styled from 'styled-components'
-
 import { H1 } from '../../components/UI/headings.styled'
-import { fadeIn } from '../../utils/animations'
 
 const Title = styled.div`
     display: inline-block;
@@ -51,7 +49,7 @@ const Title = styled.div`
         width: 70%;
         height: 50%;
         background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-            url('/fantasy-bg.jpg') no-repeat;
+            url('../../images/fantasy-bg.jpg') no-repeat;
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -100,7 +98,7 @@ const Strapline = styled.div`
         width: 100%;
         height: 100%;
         background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-            url('/fantasy-bg.jpg') no-repeat;
+            url('../../images/fantasy-bg.jpg') no-repeat;
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
