@@ -138,7 +138,7 @@ function TopNav() {
 
     return (
         <>
-            <Box style={{ zIndex: 1000 }}>
+            <Box>
                 <StyledHeader height={HEADER_HEIGHT} sx={{ borderBottom: 0 }}>
                     <Container className={classes.inner} fluid>
                         <Group>
