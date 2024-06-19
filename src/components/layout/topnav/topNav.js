@@ -14,6 +14,7 @@ const StyledHeader = styled(Header)`
     background: #01150f !important;
     transition: opacity 1s transform 1s;
     position: relative;
+    z-index: 10000 !important;
 
     @media (max-width: 780px) {
         position: fixed !important;
