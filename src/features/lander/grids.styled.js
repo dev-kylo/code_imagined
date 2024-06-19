@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const LandingGrid = styled.section`
     display: grid;
     grid-template-columns: 1fr;
-    margin-bottom: 4rem;
     grid-template-rows:
         minmax(100vh, auto)
         minmax(30vh, auto)

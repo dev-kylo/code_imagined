@@ -12,6 +12,7 @@ const TextContainer = styled.section`
     margin: auto;
     padding: 2em;
     margin-bottom: 1em;
+    background: #000000bf;
     @media (max-width: 800px) {
         padding: 1em;
         width: 80%;

@@ -72,7 +72,7 @@ const Background = styled.div`
     background-size: cover;
 `
 
-const ShadowCard = ({ image, title, description, type, link }) => {
+const ShadowCard = ({ image, title, description, type, link, btnText }) => {
     return (
         <Card>
             <Paper>
@@ -82,8 +82,8 @@ const ShadowCard = ({ image, title, description, type, link }) => {
                     <Title>{title}</Title>
                     <Description>{description}</Description>
                     <Flex justify="center" style={{ zIndex: 1000, marginTop: '3rem' }}>
-                        <Button color={type === 'paid' ? 'red' : 'blue'} clicked={() => navigate(link)} size="small">
-                            {type === 'paid' ? 'Learn More' : 'Free Access'}
+                        <Button color="yellow" clicked={() => navigate(link)} size="small">
+                            {btnText || (type === 'paid' ? 'Learn More' : 'Free Access')}
                         </Button>
                     </Flex>
                 </Content>

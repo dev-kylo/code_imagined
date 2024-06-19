@@ -16,13 +16,13 @@ const Flex = styled.div`
 const Form = styled.form`
     box-shadow: ${props => (!props.withShadow ? '0 0 10px rgba(0, 0, 0, 0.1)' : 'none')};
     padding: 1.5rem;
-    max-width: 400px;
+    max-width: 480px;
     margin: 1rem auto;
     position: relative;
     z-index: 2000;
     overflow: hidden;
     min-height: ${props => (props.noLastName ? '200px' : '300px')};
-
+    background: white;
     input,
     label {
         opacity: ${props => (props.loading ? '0.2' : '1')};
@@ -30,7 +30,7 @@ const Form = styled.form`
     }
 
     button {
-        margin-top: 2rem;
+        margin-top: 3rem;
     }
 `
 
@@ -102,7 +102,7 @@ function PlainForm({ loading, submitBtnText, withShadow, submit, borderless, noL
             )}
 
             {!submitted && !borderless && (
-                <Imp style={{ width: '120px', left: 0, bottom: 0, filter: loading ? 'opacity(20%)' : 'none' }} />
+                <Imp style={{ width: '100px', left: 0, bottom: 0, filter: loading ? 'opacity(20%)' : 'none' }} />
             )}
         </Form>
     )

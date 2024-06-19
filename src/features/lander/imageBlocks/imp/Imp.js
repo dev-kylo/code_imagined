@@ -19,7 +19,7 @@ const ImpContainer = styled.div`
 const ImpText = styled.small`
     opacity: 0;
     position: absolute;
-    right: 20px;
+    right: 10px;
     bottom: 50%;
     font-size: 12px;
     width: 50px;

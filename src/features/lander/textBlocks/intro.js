@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { H1 } from '../../../components/UI/headings.styled'
+import { H2 } from '../../../components/UI/headings.styled'
 import { P } from '../../../components/UI/text.styled'
 import { DesktopDisplay, MobileDisplay } from '../../../components/layout/containers/containers.styled'
 import SignUp from '../../signup/signup'
@@ -73,15 +73,36 @@ const SignupWrapper = styled.div`
 
 const LanderSignUp = () => (
     <>
-        <H1 style={{ textAlign: 'center' }}>The Great Sync JavaScript Mental Model</H1>
+        <H2 style={{ textAlign: 'center', color: 'white' }}>The Great Sync is a universe of fundamentals</H2>
         <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto', color: 'white' }}>
-            <span style={{ color: 'pink', fontWeight: 'bold' }}> Are you worried your fundamentals are lacking? </span>
-            Sign up for a free resource: A Visual Deep Dive Into JavaScript Objects.
+            {' '}
+            Every concept is represented visually & imaginativaly, helping you UNDERSTAND and APPLY JavaScript
         </P>
-        <SignupWrapper>
-            <SignUp layout="plain" borderless submitBtnText="Gain Access" noLastName />
-        </SignupWrapper>
+        <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto', color: 'white' }}>
+            It's not an analogy. It's a model.
+        </P>
+        <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto', color: 'white' }}>
+            Here are the
+            <span
+                style={{
+                    background: 'pink',
+                    padding: '0.25rem 0.5rem',
+                    color: 'black',
+                    margin: '0 0.5rem',
+                    fontWeight: 'bold',
+                }}
+            >
+                4 main benefits{' '}
+            </span>{' '}
+            it provides:
+        </P>
     </>
+)
+
+export const SignUpSections = () => (
+    <SignupWrapper>
+        <SignUp layout="plain" borderless submitBtnText="Gain Access" noLastName />
+    </SignupWrapper>
 )
 
 const Intro = ({ mobile }) => {

@@ -32,6 +32,7 @@ const Canvas = styled.div`
     justify-content: center;
     align-items: center;
     background: white;
+    z-index: 10;
 
     padding: 2rem;
     p {
@@ -52,7 +53,7 @@ const Canvas = styled.div`
 
 const ProfileCard = () => (
     <Card>
-        <StaticImage src="../../../images/Kylo.jpg" alt="A devilish impish character" placeholder="blurred" />
+        <StaticImage src="../../../images/Kylo.jpg" alt="Profile picture of Kylo" placeholder="blurred" />
         <Canvas>
             <H2 style={{ color: 'black' }}>Hi, I'm Kylo</H2>
             <P style={{ color: 'black' }}>
@@ -60,8 +61,7 @@ const ProfileCard = () => (
                 Developer.{' '}
             </P>
             <P style={{ color: 'black' }}>
-                I use a visual and mnemonic teaching approach to help you build a mental model of JavaScript
-                fundamentals.
+                I use proven effective learning methods to help you build a mental model of JavaScript fundamentals.
             </P>
             <P style={{ color: 'black' }}>I call it The Great Sync.</P>
         </Canvas>

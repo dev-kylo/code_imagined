@@ -5,10 +5,9 @@ import { Copy } from '../../../components/layout/containers/containers.styled'
 
 const knowledge = () => (
     <Copy>
-        <H2 style={{ textAlign: 'center', color: 'white' }}> You CAN do this!</H2>
-        <P>
-            I didn't study computer science. <span style={{ color: 'white ' }}>I didn't find it easy</span>. I struggled
-            with JavaScript. But I kept going, and I can help you do the same!
+        <H2 style={{ textAlign: 'center', color: 'white' }}> It's a FOUNDATION you can build upon</H2>
+        <P style={{ color: 'white ' }}>
+            It becomes much easier to learn something new when you can compare it to what you already know.
         </P>
     </Copy>
 )

@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from 'react'
-import Intro from '../features/lander/intro'
 import Lander from '../features/lander/lander'
 import SignUp from '../features/signup/signup'
 import '../utils/fontawesome'
@@ -8,6 +7,9 @@ import Providers from '../providers/Providers'
 import Testimonials from '../features/testimonials/testimonials'
 import { SignupContext } from '../context/toggle'
 import SEO from '../layout/seo'
+import ExplainerCard from '../features/lander/profileCard/explainerCard'
+import Offers from '../features/lander/offers/offers'
+import Footer from '../components/layout/footer/footer.styled'
 
 const Home = () => {
     const showSignUp = useContext(SignupContext).show
@@ -26,8 +28,10 @@ const Home = () => {
             <Providers>
                 <Lander />
                 <Testimonials />
-                <Intro />
+                <ExplainerCard />
+                <Offers />
                 <SignUp />
+                <Footer />
             </Providers>
         </>
     )

@@ -7,14 +7,13 @@ import Learn from './textBlocks/learn'
 import Difficult from './textBlocks/difficult'
 import Model from './textBlocks/model'
 import Knowledge from './textBlocks/knowledge'
-import GeniePrototype from './imageBlocks/prototype_genie/prototypeGenie'
 import { Sphere } from './imageBlocks/sphere/sphere'
 import Invocation from './imageBlocks/invocation/Invocation'
 import RainIsland from './imageBlocks/rain_island/rainIsland'
 import DarkLord from './imageBlocks/operator/the_dark_lord'
-import Header from './header'
 import Header2 from './header2'
 import ProfileCard from './profileCard/profileCard'
+import SignUpCard from './signUpCard/signUpCard'
 
 const StyledBlock = styled.div`
     width: 100%;
@@ -79,6 +78,7 @@ const Lander = () => {
                     <Knowledge />
                 </GridArea>
             </LandingGrid>
+            <SignUpCard />
         </>
     )
 }

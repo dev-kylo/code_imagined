@@ -9,12 +9,13 @@ const Container = styled.div`
     max-width: 1000px;
     padding: 25px 20px;
     position: relative;
-    border: ${({ theme }) => `7px solid ${theme.colors.pink}`};
+    // border: ${({ theme }) => `7px solid ${theme.colors.pink}`};
     border-radius: 15px;
     font-family: 'Montserrat';
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background: #000000bf;
 
     @media (max-width: 780px) {
         padding: 15px 10px;
@@ -29,7 +30,7 @@ const QuoteContainer = styled.div`
 
 const Quote = styled.div`
     color: white;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-align: center;
     line-height: 28px;
     color: white;

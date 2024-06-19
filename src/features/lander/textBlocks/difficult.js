@@ -5,11 +5,10 @@ import { Copy } from '../../../components/layout/containers/containers.styled'
 
 const difficult = () => (
     <Copy>
-        <H2 style={{ textAlign: 'center', color: 'white' }}>Can't APPLY the fundamentals?</H2>
-        <P>
-            Put aside the never-done-before idea in your head. I will show you how to{' '}
-            <span style={{ color: 'white' }}>first build projects that reveal patterns</span> you can use to build
-            anything you want!
+        <H2 style={{ textAlign: 'center', color: 'white' }}>It helps you APPLY your knowledge</H2>
+        <P style={{ color: 'white' }}>
+            A visual model of how JavaScript works enables you to start identifying patterns - the building blocks
+            needed for coding without the aid of a tutorial.
         </P>
     </Copy>
 )

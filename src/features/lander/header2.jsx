@@ -1,85 +1,37 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { H1 } from '../../components/UI/headings.styled'
-
-const Title = styled.div`
-    display: inline-block;
-    z-index: 100;
-    transition: opacity 1s ease-in-out;
-    background: #00000085;
-    h1 {
-        margin-top: 0;
-        font-size: 3rem;
-    }
-
-    @media (min-width: 600px) {
-        padding: 2em;
-        font-size: 1rem;
-        background: none;
-        h1 {
-            font-size: 3rem;
-        }
-    }
-
-    @media (min-width: 1200px) {
-        padding: 2em;
-        font-size: 1rem;
-        h1 {
-            font-size: 4rem;
-            margin-top: 2rem;
-        }
-        // padding-top: 1em;
-    }
-
-    @media (min-width: 1800px) {
-        h1 {
-            font-size: 5rem;
-        }
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        width: 70%;
-        height: 50%;
-        background-color: #01150f;
-        background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-            url('./fantasy-bg.jpg') no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        filter: blur(2px);
-        z-index: -1;
-
-        @media (max-width: 1000px) {
-            width: 100%;
-        }
-    }
-`
+import { StaticImage } from 'gatsby-plugin-image'
+import { Button, Flex } from '@mantine/core'
+import { H1, H2 } from '../../components/UI/headings.styled'
+import { SignupContext } from '../../context/toggle'
+import SignUp from '../signup/signup'
 
 const Container = styled.div`
-    height: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    top: 0;
+    max-width: 800px;
+    position: absolute;
+    text-align: center;
+    padding: 3rem 2rem;
 
     z-index: 2000;
     transition: opacity 1s ease-in-out;
 
     #lander-heading {
+        font-size: 6rem;
+        margin: 0rem;
     }
 
     @media (max-width: 600px) {
+        padding: 1rem;
+        transform: translate(0, 0);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
         #lander-heading {
-            font-size: 2.5rem;
+            max-width: auto;
+            font-size: 4rem;
             margin-bottom: 1rem;
         }
     }
@@ -90,44 +42,39 @@ const Strapline = styled.div`
     width: 100%;
     height: 95vh;
     background: white;
-    z-index: -2;
-    &::before {
-        content: '';
-        position: absolute;
+    z-index: 0;
+    textshadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    img {
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #01150f;
-        background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-            url('./fantasy-bg.jpg') no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
+        object-fit: fit;
+        object-position: top;
+        z-index: ;
     }
 `
 
-const Span = styled.div`
-    display: block;
-    font-size: 2rem;
-    font-family: ${props => props.theme.fonts.heading1};
-    line-height: 1.5;
-    @media (max-width: 1000px) {
-        font-size: 1.3rem;
-    }
-`
-
-const Color = styled.div`
-    // color: ${props => props.theme.colors[`${props.color}`]};
-    display: inline;
-    textshadow: 2px 2px 4px rgba(0, 0, 0, 0.5)';
+const Subheading = styled(H2)`
+    color: white;
+    text-align: center;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `
 
 const Header2 = () => {
+    const showSignUp = useContext(SignupContext).show
     return (
-        <Strapline>
-            <Container>
-                <Title>
+        <div style={{ position: 'relative' }}>
+            <Strapline>
+                <StaticImage
+                    src="../../images/Callback_Executes.jpg"
+                    alt="A devilish impish character"
+                    placeholder="blurred"
+                    className="cb"
+                />
+                <Container>
                     <H1
                         id="lander-heading"
                         as="span"
@@ -138,47 +85,25 @@ const Header2 = () => {
                             display: 'block',
                         }}
                     >
-                        <Color color="blue">Imagine</Color>
-                        <br /> building JavaScript Projects <br />
-                        with CONFIDENCE
+                        The Great Sync
+                        <br />
+                        JavaScript Mental Model
                     </H1>
-
-                    <Span
-                        style={{
-                            maxWidth: '600px',
-                            textAlign: 'center',
-                            margin: 'auto',
-                            color: 'white',
-                            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-                        }}
-                    >
-                        No more <Color color="red">TUTORIAL HELL</Color>
-                    </Span>
-                    <Span
-                        style={{
-                            maxWidth: '700px',
-                            textAlign: 'center',
-                            margin: 'auto',
-                            color: 'white',
-                            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-                        }}
-                    >
-                        No more <Color color="black">IMPOSTER SYNDROME</Color>
-                    </Span>
-                    {/* <Span
-                        style={{
-                            maxWidth: '700px',
-                            textAlign: 'center',
-                            margin: 'auto',
-                            color: 'white',
-                            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-                        }}
-                    >
-                        Guided by a VISUAL MENTAL MODEL of the fundamentls
-                    </Span> */}
-                </Title>
-            </Container>
-        </Strapline>
+                    <Subheading> Learn Visually. Build Projects. Grow Confidence.</Subheading>
+                    <Flex justifyContent="center" mt={4}>
+                        <Button
+                            onClick={showSignUp}
+                            size="md"
+                            center
+                            clicked={showSignUp}
+                            style={{ background: 'yellow', color: 'black', margin: 'auto' }}
+                        >
+                            Get the introductory course
+                        </Button>
+                    </Flex>
+                </Container>
+            </Strapline>
+        </div>
     )
 }
 
