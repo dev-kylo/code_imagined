@@ -66,13 +66,14 @@ const Subheading = styled(H2)`
 const Header2 = () => {
     const showSignUp = useContext(SignupContext).show
     return (
-        <div style={{ position: 'relative' }}>
+        <div style={{ position: 'relative', overflow: 'hidden' }}>
             <Strapline>
                 <StaticImage
                     src="../../images/Callback_Executes.jpg"
                     alt="A devilish impish character"
                     placeholder="blurred"
                     className="cb"
+                    style={{ overflow: 'hidden' }}
                 />
                 <Container>
                     <H1
