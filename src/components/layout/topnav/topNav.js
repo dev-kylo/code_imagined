@@ -13,7 +13,7 @@ const HEADER_HEIGHT = rem(70)
 const StyledHeader = styled(Header)`
     background: #01150f !important;
     transition: opacity 1s transform 1s;
-    position: sticky;
+    position: relative;
 
     @media (max-width: 780px) {
         position: fixed !important;
