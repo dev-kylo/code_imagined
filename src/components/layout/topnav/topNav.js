@@ -11,12 +11,13 @@ import { Title } from '../../UI/text.styled'
 const HEADER_HEIGHT = rem(70)
 
 const StyledHeader = styled(Header)`
-    background: #01150f !important;
+    background: transparent !important;
     transition: opacity 1s transform 1s;
     position: relative;
     z-index: 10000 !important;
 
     @media (max-width: 780px) {
+        background: #01150f !important;
         position: fixed !important;
         z-index: 10000 !important;
         /* height: 40rem !important; */
