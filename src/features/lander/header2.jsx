@@ -5,7 +5,6 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { Button, Flex } from '@mantine/core'
 import { H1, H2 } from '../../components/UI/headings.styled'
 import { SignupContext } from '../../context/toggle'
-import SignUp from '../signup/signup'
 
 const Container = styled.div`
     top: 0;

@@ -11,7 +11,7 @@ import { Title } from '../../UI/text.styled'
 const HEADER_HEIGHT = rem(70)
 
 const StyledHeader = styled(Header)`
-    background: transparent !important;
+    background: #01150f !important;
     transition: opacity 1s transform 1s;
     position: relative;
     z-index: 10000 !important;
