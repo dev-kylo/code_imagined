@@ -2,8 +2,7 @@ import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Flex } from 'rebass'
-
-const { default: styled } = require('styled-components')
+import styled from 'styled-components'
 
 const Container = styled.div`
     max-width: 1000px;
