@@ -4,7 +4,9 @@ import { Flex } from 'rebass'
 import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
-    margin: 4em 0;
+    margin-top: 5em;
+    position: relative;
+    // background: #00000099;
     @media only screen and (max-width: 780px) {
         justify-content: center;
         padding: 0;
@@ -18,12 +20,15 @@ const StyledFooter = styled.footer`
     }
 `
 
-const FooterContainer = styled.footer`
-    width: 80%;
-    margin: 2em auto;
+const FooterContainer = styled.div`
+    padding: 0 2rem 2rem 2rem;
     font-family: ${props => props.theme.fonts.par}
     font-size: 18px; 
     color: white;
+    z-index: 1000000;
+ 
+    left: 50%
+    transform: translateX(-50%)
 
     @media only screen and (max-width: 780px){
         margin: auto;
@@ -58,11 +63,11 @@ const FooterContainer = styled.footer`
 const Footer = props => {
     return (
         <StyledFooter>
-            <FooterContainer dark={props.dark}>
+            <FooterContainer dark={props.dark} style={{ ...(props?.style || {}) }}>
                 <hr />
                 <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap">
                     <div>
-                        <small> © 2023 Code Imagined - The Great Sync. All Rights Reserved</small>
+                        <small> © 2024 Code Imagined - The Great Sync. All Rights Reserved</small>
                         <small>
                             View the <Link to="/posts/terms-and-conditions"> Terms & Conditions</Link>
                         </small>
@@ -70,9 +75,7 @@ const Footer = props => {
                             View the <Link to="/posts/privacy-policy"> Privacy Policy</Link>
                         </small>
                     </div>
-                    <small>
-                        <a href="mailto:kylo@thegreatsync.com">kylo@thegreatsync.com</a>
-                    </small>
+                    <small>Dev Kylo</small>
                 </Flex>
             </FooterContainer>
         </StyledFooter>

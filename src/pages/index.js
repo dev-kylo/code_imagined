@@ -9,7 +9,6 @@ import { SignupContext } from '../context/toggle'
 import SEO from '../layout/seo'
 import ExplainerCard from '../features/lander/profileCard/explainerCard'
 import Offers from '../features/lander/offers/offers'
-import Footer from '../components/layout/footer/footer.styled'
 
 const Home = () => {
     const showSignUp = useContext(SignupContext).show
@@ -31,7 +30,6 @@ const Home = () => {
                 <ExplainerCard />
                 <Offers />
                 <SignUp />
-                <Footer />
             </Providers>
         </>
     )

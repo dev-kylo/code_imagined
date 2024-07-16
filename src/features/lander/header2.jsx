@@ -2,9 +2,9 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
-import { Button, Flex } from '@mantine/core'
 import { H1, H2 } from '../../components/UI/headings.styled'
 import { SignupContext } from '../../context/toggle'
+import { StyledButton } from '../../components/UI/button.styled'
 
 const Container = styled.div`
     top: 0;
@@ -90,17 +90,17 @@ const Header2 = () => {
                         JavaScript Mental Model
                     </H1>
                     <Subheading> Learn Visually. Build Projects. Grow Confidence.</Subheading>
-                    <Flex justifyContent="center" mt={4}>
-                        <Button
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px' }}>
+                        <StyledButton
                             onClick={showSignUp}
-                            size="md"
+                            size="small"
                             center
                             clicked={showSignUp}
                             style={{ background: 'yellow', color: 'black', margin: 'auto' }}
                         >
-                            Get the introductory course
-                        </Button>
-                    </Flex>
+                            Start Here
+                        </StyledButton>
+                    </div>
                 </Container>
             </Strapline>
         </div>
