@@ -8,11 +8,11 @@ export const StyledButton = styled.button`
     display: inline-block;
     border: none;
     padding: ${({ size }) => (size === 'small' ? '0.5rem 2rem' : '1rem 2rem')};
+    font-family: ${props => props.theme.fonts.heading1};
     /* margin: 1.5em 0; */
     text-decoration: none;
     width: ${({ fillWidth }) => (fillWidth ? '100%' : 'auto')};
-    font-family: sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     cursor: pointer;
     text-align: center;
     transition: background 250ms ease-in-out, box-shadow 150ms ease-out, transform 150ms ease;
