@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import Reveal, { Zoom } from 'react-awesome-reveal'
 import ShadowCard from '../../../components/UI/shadowCard'
 import { H2 } from '../../../components/UI/headings.styled'
 
@@ -59,30 +60,32 @@ function Offers() {
                 </Canvas>
             </Bg>
             <Grid>
-                <Link key="course-1" to="/courses/the-syncer-program" style={{ textDecoration: 'none' }}>
-                    <ShadowCard
-                        image="https://images.prismic.io/thegreatsync/ce1e7bf0-dd57-4bb1-b870-73dec577b37b_the_syncer_program_2_petanl.png"
-                        title="The Syncer Program - Learn & Remember The Fundamentals"
-                        description="The mnemonic self-paced course on learning JavaScript visually and memorably. Journey through an imagined JavaScript universe, learning concepts in a way that sticks."
-                        type="paid"
-                        link="/courses/the-syncer-program"
-                    />
-                </Link>
-                <a
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href="https://calendly.com/thegreatsync/premium-coaching-program"
-                    style={{ textDecoration: 'none' }}
-                >
-                    <ShadowCard
-                        image="https://res.cloudinary.com/the-great-sync/image/upload/v1690715966/Screen_Shot_2023-07-30_at_3.19.05_PM_erh2cq.png"
-                        title="Start Building - 10 Weeks To JavaScript Confidence"
-                        description="Escape tutorial hell and start building your own projects. This is a guided 10 week part-time group learning program, designed to help you apply the fundamental patterns to your own projects, with the personal support of a Senior Developer."
-                        type=""
-                        link="https://calendly.com/thegreatsync/premium-coaching-program"
-                        btnText="Chat with Kylo About Joining"
-                    />
-                </a>
+                <Reveal cascade>
+                    <Link key="course-1" to="/courses/the-syncer-program" style={{ textDecoration: 'none' }}>
+                        <ShadowCard
+                            image="https://images.prismic.io/thegreatsync/ce1e7bf0-dd57-4bb1-b870-73dec577b37b_the_syncer_program_2_petanl.png"
+                            title="The Syncer Program - Learn & Remember The Fundamentals"
+                            description="The mnemonic self-paced course on learning JavaScript visually and memorably. Journey through an imagined JavaScript universe, learning concepts in a way that sticks."
+                            type="paid"
+                            link="/courses/the-syncer-program"
+                        />
+                    </Link>
+                    <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href="https://calendly.com/thegreatsync/premium-coaching-program"
+                        style={{ textDecoration: 'none' }}
+                    >
+                        <ShadowCard
+                            image="https://res.cloudinary.com/the-great-sync/image/upload/v1690715966/Screen_Shot_2023-07-30_at_3.19.05_PM_erh2cq.png"
+                            title="Start Building - 10 Weeks To JavaScript Confidence"
+                            description="Escape tutorial hell and start building your own projects. This is a guided 10 week part-time group learning program, designed to help you apply the fundamental patterns to your own projects, with the personal support of a Senior Developer."
+                            type=""
+                            link="https://calendly.com/thegreatsync/premium-coaching-program"
+                            btnText="Chat with Kylo About Joining"
+                        />
+                    </a>
+                </Reveal>
             </Grid>
         </>
     )

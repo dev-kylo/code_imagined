@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
+import { Zoom } from 'react-awesome-reveal'
 import { H2 } from '../../../components/UI/headings.styled'
 import { P } from '../../../components/UI/text.styled'
 
@@ -53,19 +54,22 @@ const Canvas = styled.div`
 const ExplainerCard = () => (
     <Card>
         <Canvas>
-            <H2 style={{ color: 'black' }}>Let me help you</H2>
-            <P style={{ color: 'black' }}>
-                I am a JavaScript developer, and have been for many years. That said, I am not a guru. I have not worked
-                for Google.
-            </P>
-            <P style={{ color: 'black' }}>
-                What I can say is that I once needed a way to 'level up' in JavaScript. I focussed on the fundamentals,
-                learnt the patterns, and applied them to projects. I have helped hundreds of students do the same.
-            </P>
-            <P style={{ color: 'black' }}>
-                If you're trying to break through and gain confidence with JavaScript, I can help you!
-            </P>
-            <P style={{ color: 'black' }}>Here are 2 OPTIONS to work together...</P>
+            <Zoom>
+                <H2 style={{ color: 'black' }}>Let me help you</H2>
+                <P style={{ color: 'black' }}>
+                    I am a JavaScript developer, and have been for many years. That said, I am not a guru. I have not
+                    worked for Google.
+                </P>
+                <P style={{ color: 'black' }}>
+                    What I can say is that I once needed a way to 'level up' in JavaScript. I focussed on the
+                    fundamentals, learnt the patterns, and applied them to projects. I have helped hundreds of students
+                    do the same.
+                </P>
+                <P style={{ color: 'black' }}>
+                    If you're trying to break through and gain confidence with JavaScript, I can help you!
+                </P>
+                <P style={{ color: 'black' }}>Here are 2 OPTIONS to work together...</P>
+            </Zoom>
         </Canvas>
         <StaticImage src="../../../images/Kylo2.png" alt="Dev Kylo by his screen" placeholder="blurred" />
     </Card>

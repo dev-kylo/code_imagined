@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Zoom } from 'react-awesome-reveal'
 import { H2 } from '../../../components/UI/headings.styled'
 import { P } from '../../../components/UI/text.styled'
 
@@ -13,7 +14,7 @@ const Container = styled.div`
 `
 
 export const Card = styled.div`
-    margin: 1.5rem 2rem;
+    margin: 3rem 2rem;
     z-index: 20000;
     background: transparent !important;
     align-self: ${({ align }) => align || 'center'};
@@ -41,6 +42,7 @@ const Canvas = styled.div`
 
     h2 {
         padding: 0;
+        font-size: 2.5rem;
     }
     p {
         font-size: 1.3rem;
@@ -63,35 +65,46 @@ const Canvas = styled.div`
 const BurningProblemCard = () => (
     <Container>
         <Card style={{ marginTop: 0 }}>
-            <Canvas color="navy">
-                <H2 style={{ color: 'white', textAlign: 'center' }}>Does learning JavaScript sound like this?</H2>
-            </Canvas>
+            <Zoom duration={1000}>
+                <Canvas color="navy">
+                    <H2 style={{ color: 'white', textAlign: 'center' }}>Does learning JavaScript sound like this?</H2>
+                </Canvas>
+            </Zoom>
         </Card>
         <Card align="flex-end">
-            <Canvas color="black">
-                <P style={{ color: 'white' }}> Stuck in endless tutorials...😠</P>
-            </Canvas>
+            <Zoom duration={1000} delay={500}>
+                <Canvas color="black">
+                    <P style={{ color: 'white' }}> Stuck in endless tutorials...😠</P>
+                </Canvas>
+            </Zoom>
         </Card>
         <Card align="flex-start">
-            <Canvas color="black">
-                <P style={{ color: 'white' }}>Can't remember what you've learnt...😳</P>
-            </Canvas>
+            <Zoom duration={1000} delay={500}>
+                <Canvas color="black">
+                    <P style={{ color: 'white' }}>Can't remember what you've learnt...😳</P>
+                </Canvas>
+            </Zoom>
         </Card>
-
         <Card align="flex-end">
-            <Canvas color="black">
-                <P style={{ color: 'white' }}>Zero confidence in your fundamentals...😔</P>
-            </Canvas>
+            <Zoom duration={1000} delay={500}>
+                <Canvas color="black">
+                    <P style={{ color: 'white' }}>Zero confidence in your fundamentals...😔</P>
+                </Canvas>
+            </Zoom>
         </Card>
         <Card align="flex-start">
-            <Canvas color="black">
-                <P style={{ color: 'white' }}>Can't build anything on your own...😰</P>
-            </Canvas>
+            <Zoom duration={1000} delay={500}>
+                <Canvas color="black">
+                    <P style={{ color: 'white' }}>Can't build anything on your own...😰</P>
+                </Canvas>
+            </Zoom>
         </Card>
         <Card>
-            <Canvas color="red">
-                <P style={{ color: 'white' }}>Questioning if you will ever 'get it'...😰</P>
-            </Canvas>
+            <Zoom duration={1000} delay={500}>
+                <Canvas color="red">
+                    <P style={{ color: 'white' }}>Wondering if you will ever 'get it'...🤔</P>
+                </Canvas>
+            </Zoom>
         </Card>
     </Container>
 )

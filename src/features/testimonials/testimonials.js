@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Reveal from 'react-awesome-reveal'
 import Testimonial from './testimonial'
 
 const testimonials = [
@@ -34,9 +35,11 @@ const TestimonialGrid = styled.div`
 
 const Testimonials = () => (
     <TestimonialGrid>
-        {testimonials.map(tst => (
-            <Testimonial key={`${tst.name}-key`} {...tst} />
-        ))}
+        <Reveal cascade>
+            {testimonials.map(tst => (
+                <Testimonial key={`${tst.name}-key`} {...tst} />
+            ))}
+        </Reveal>
     </TestimonialGrid>
 )
 

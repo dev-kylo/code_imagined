@@ -1,6 +1,7 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
+import Reveal, { Zoom } from 'react-awesome-reveal'
 import { LandingGrid, GridArea } from './grids.styled'
 import Intro from './textBlocks/intro'
 import Learn from './textBlocks/learn'
@@ -41,43 +42,55 @@ const Lander = () => {
             <LandingGrid>
                 <GridArea name="svg1" color="#01140F">
                     <StyledBlock />
+
                     <StaticImage
                         src="https://res.cloudinary.com/the-great-sync/image/upload/v1686771432/3000x2000/EC_sdbbpu.png"
                         alt="Mage Funk sorceress character with an invocation orb"
                         placeholder="blurred"
                     />
+
                     <Label>
                         <Intro mobile />
                     </Label>
                 </GridArea>
                 <GridArea name="svg1_text" color="#041440">
                     {/* <DesktopDisplay> */}
+
                     <Intro />
+
                     {/* </DesktopDisplay> */}
                 </GridArea>
                 <GridArea name="svg2" color="#008578">
                     <DarkLord />
                 </GridArea>
                 <GridArea name="svg2_text" color="#5F5980">
-                    <Learn />
+                    <Zoom>
+                        <Learn />
+                    </Zoom>
                 </GridArea>
                 <GridArea name="svg3" color="pink">
                     <Invocation />
                 </GridArea>
                 <GridArea name="svg3_text" color="#AB3428">
-                    <Difficult />
+                    <Zoom>
+                        <Difficult />
+                    </Zoom>
                 </GridArea>
                 <GridArea name="svg4" color="#01140F">
                     <RainIsland />
                 </GridArea>
                 <GridArea name="svg4_text" color="#0E34A0">
-                    <Model />
+                    <Zoom>
+                        <Model />
+                    </Zoom>
                 </GridArea>
                 <GridArea name="svg5" color="#5F5980">
                     <Sphere />
                 </GridArea>
                 <GridArea name="svg5_text" color="#008578">
-                    <Knowledge />
+                    <Zoom>
+                        <Knowledge />
+                    </Zoom>
                 </GridArea>
             </LandingGrid>
             <SignUpCard />
