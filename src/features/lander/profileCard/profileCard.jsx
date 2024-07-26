@@ -55,7 +55,7 @@ const ProfileCard = () => (
     <Card>
         <StaticImage src="../../../images/Kylo.jpg" alt="Profile picture of Kylo" placeholder="blurred" />
         <Canvas>
-            <H2 style={{ color: 'black' }}>Hi, I'm Kylo</H2>
+            <H2 style={{ color: 'black' }}>Learn JavaScript the RIGHT way </H2>
             <P style={{ color: 'black' }}>
                 I'm a <span style={{ color: 'red' }}>Break-Through JavaScript Coach</span>, and a full-time Senior
                 Developer.{' '}

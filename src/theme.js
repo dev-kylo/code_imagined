@@ -18,6 +18,7 @@ export const theme = {
         pink: 'pink',
         navy: '#041440',
         yellow: 'yellow',
+        black: '#000000',
     },
     fonts: {
         heading1: "'Passion One', serif",

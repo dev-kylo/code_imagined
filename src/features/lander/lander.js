@@ -14,6 +14,7 @@ import DarkLord from './imageBlocks/operator/the_dark_lord'
 import Header2 from './header2'
 import ProfileCard from './profileCard/profileCard'
 import SignUpCard from './signUpCard/signUpCard'
+import BurningProblemCard from './profileCard/burningProblem'
 
 const StyledBlock = styled.div`
     width: 100%;
@@ -35,6 +36,7 @@ const Lander = () => {
     return (
         <>
             <Header2 />
+            <BurningProblemCard />
             <ProfileCard />
             <LandingGrid>
                 <GridArea name="svg1" color="#01140F">
