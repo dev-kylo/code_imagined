@@ -63,7 +63,7 @@ const links = [
     { link: '/extra', label: 'Extra' },
 ]
 
-function TopNav() {
+function TopNav({ transparent }) {
     const items = links.map(linkconf => {
         return (
             <MenuLink key={linkconf.label} to={linkconf.link} className="menulink">
@@ -73,7 +73,7 @@ function TopNav() {
     })
 
     return (
-        <StyledHeader px={2} color="white" alignItems="center">
+        <StyledHeader px={2} color="white" alignItems="center" transparent={transparent}>
             <Link to="/">
                 <Logo>
                     <StaticImage

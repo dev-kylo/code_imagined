@@ -54,6 +54,12 @@ const Canvas = styled.div`
 
     @media (max-width: 600px) {
         padding: 1.2rem;
+        h2 {
+            font-size: 1.8rem;
+        }
+        p {
+            font-size: 1.1rem;
+        }
     }
 
     span {

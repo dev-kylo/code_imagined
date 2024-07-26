@@ -10,14 +10,14 @@ import Footer from '../components/layout/footer/footer.styled'
 import TopNav from '../components/layout/topnav/topNav'
 import { UserProvider } from '../context/user'
 
-const Providers = ({ postTheme, children }) => {
+const Providers = ({ postTheme, children, transparentNavBar }) => {
     return (
         <ThemeProvider theme={theme}>
             <LayersManager>
                 <Layout postTheme={postTheme}>
                     <UserProvider>
                         <ModalContext>
-                            <TopNav />
+                            <TopNav transparent={transparentNavBar} />
                             {children}
                         </ModalContext>
                     </UserProvider>

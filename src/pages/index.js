@@ -24,7 +24,7 @@ const Home = () => {
     return (
         <>
             <SEO />
-            <Providers>
+            <Providers transparentNavBar>
                 <Lander />
                 <Testimonials />
                 <ExplainerCard />

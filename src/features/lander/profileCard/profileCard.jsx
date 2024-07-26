@@ -17,6 +17,14 @@ const Card = styled.div`
     @media (max-width: 600px) {
         grid-template-columns: 1fr;
 
+        & > *:first-child {
+            order: 2;
+        }
+
+        & > *:nth-child(2) {
+            order: 1;
+        }
+
         img {
             max-height: 300px;
         }
@@ -56,6 +64,7 @@ const ProfileCard = () => (
         <StaticImage src="../../../images/Kylo.jpg" alt="Profile picture of Kylo" placeholder="blurred" />
         <Canvas>
             <H2 style={{ color: 'black' }}>Learn JavaScript the RIGHT way </H2>
+            <P style={{ color: 'black' }}> Hi, I'm Kylo 👋.</P>
             <P style={{ color: 'black' }}>
                 I'm a <span style={{ color: 'red' }}>Break-Through JavaScript Coach</span>, and a full-time Senior
                 Developer.{' '}
