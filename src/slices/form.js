@@ -63,8 +63,14 @@ const Slice_Form = ({ slice }) => {
                     const { edges } = data.allPrismicForm
                     const form = edges.find(edge => formId === +edge.node.data.form_id.text)
                     if (!form) return null
-                    const { form_title, submission_complete_message, submit_button_text, text, body } = form.node.data
-                    console.log(text)
+                    const {
+                        form_title,
+                        submission_complete_message,
+                        submit_button_text,
+                        backlink,
+                        backlink_button_text,
+                        body,
+                    } = form.node.data
                     const title = form_title.text.replace(/\s/g, '')
                     return (
                         <Box

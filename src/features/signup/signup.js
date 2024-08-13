@@ -34,12 +34,11 @@ const SignUp = ({ layout, convertKitTag, borderless, noLastName, submitBtnText }
         const first = vals.fname?.value?.trim() || vals?.fname
         const surname = !noLastName && (vals.sname?.value?.trim() || vals?.sname)
         const email = vals.email?.value?.trim() || vals?.email
-        const H = vals?.H?.value?.trim() || vals?.H
-
         const source = adSource || getTokenFromURL('source', window.location.search) || ''
         const start = adStart || getTokenFromURL('start', window.location.search) || ''
 
-        if (typeof H === 'string') return // honey pot field
+        // const H = vals?.H?.value?.trim() || vals?.H
+        // if (typeof H === 'string') return // honey pot field
 
         const signup = {
             email,
