@@ -73,10 +73,11 @@ const SignupWrapper = styled.div`
 
 const LanderSignUp = () => (
     <>
-        <H2 style={{ textAlign: 'center', color: 'white' }}>The Great Sync is a universe of fundamentals</H2>
+        <H2 style={{ textAlign: 'center', color: 'white' }}>The Great Sync is a memory palace of fundamentals</H2>
         <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto', color: 'white' }}>
             {' '}
-            Every concept is represented visually & imaginativaly, helping you UNDERSTAND and APPLY JavaScript
+            Every concept is represented visually & imaginativaly, helping you UNDERSTAND and APPLY JavaScript using
+            mnemonic learning.
         </P>
         <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto', color: 'white' }}>
             It's not an analogy. It's a model.

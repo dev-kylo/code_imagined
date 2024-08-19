@@ -61,12 +61,19 @@ const SignupWrapper = styled.div`
 const SignUpCard = () => (
     <Card>
         <Canvas>
-            <H2 style={{ color: 'white' }}> Signup For a Visual Deep Dive into Objects</H2>
+            <H2 as="span" style={{ color: 'white', margin: 0, padding: 0, fontSize: '2.2rem' }}>
+                FREE ACCESS:
+            </H2>
+            <H2 style={{ color: 'white' }}> Learn the system that powers The Great Sync </H2>
+            <P style={{ color: 'white' }}>
+                The learning system that will help you become a confident JavaScript developer in 3 steps: See, Build, &
+                Peg.
+            </P>
             <P style={{ color: 'white', marginBottom: '1.5rem' }}>
-                Get a taster of The Great Sync while we investigate objects, cloning and even the prototype chain.
+                Also included: A 2024 Roadmap to JavaScript Developer PDF
             </P>
             <SignupWrapper>
-                <SignUp layout="plain" submitBtnText="Gain Access" noLastName />
+                <SignUp layout="plain" submitBtnText="Get The 3 Steps To Confidence" noLastName />
             </SignupWrapper>
         </Canvas>
         <div />

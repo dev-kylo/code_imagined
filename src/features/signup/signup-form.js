@@ -32,9 +32,9 @@ const SignUpForm = ({ loading, submit, centerBtn }) => (
             I want to show you how to begin building a mental model of JavaScript. I will send you:
         </P>
         <List dark>
-            <li>🏝️ The 3 Steps to Confidence: A Learning Guide</li>
+            <li>🏝️ The 3 Steps to Confidence</li>
             <li>🏝️ A 2024 Roadmap to JavaScript Professional</li>
-            <li>🏝️ News & updates from The Great Sync.</li>
+            <li>🏝️ Intro to The Great Sync</li>
         </List>
         <Box as="form" onSubmit={e => submit(e)}>
             <Flex mx={-2} mb={3} mt={4} flexDirection={['column', 'row']}>

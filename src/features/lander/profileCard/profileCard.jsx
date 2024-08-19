@@ -131,14 +131,15 @@ const ProfileCard = () => (
             </Featured>
         </ProfileLogos>
         <Canvas>
-            <H2 style={{ color: 'black' }}>Learn JavaScript the RIGHT way </H2>
+            <H2 style={{ color: 'black', textAlign: 'left' }}>Can't get a grip on JavaScript?</H2>
             <P style={{ color: 'black' }}> Hi, I'm Kylo 👋.</P>
             <P style={{ color: 'black' }}>
                 I'm a <span style={{ color: 'red' }}>Break-Through JavaScript Coach</span>, and a full-time Senior
                 Developer.{' '}
             </P>
             <P style={{ color: 'black' }}>
-                I use proven effective learning methods to help you build a mental model of JavaScript fundamentals.
+                I use proven effective learning methods to help you build a mental model of JavaScript fundamentals,
+                giving you confidence to build your own projects
             </P>
             <P style={{ color: 'black' }}>I call it The Great Sync.</P>
         </Canvas>
