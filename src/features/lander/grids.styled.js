@@ -85,4 +85,6 @@ export const GridArea = styled.div`
     display: flex;
     position: relative;
     background-color: ${props => props.color};
+    align-items: center;
+    justify-content: center;
 `

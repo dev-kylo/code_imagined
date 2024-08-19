@@ -59,8 +59,8 @@ export const theme = {
             cursor: 'pointer',
         },
         signup: {
-            color: 'white',
-            bg: '#AB3428',
+            color: '#041440',
+            bg: 'yellow',
             margin: '1em auto',
             cursor: 'pointer',
             padding: '1em 1.5em',
@@ -69,7 +69,7 @@ export const theme = {
     },
     forms: {
         input: {
-            color: 'red',
+            color: '#041440',
             border: '2px solid navy',
             padding: '0.7rem',
             fontSize: [18],

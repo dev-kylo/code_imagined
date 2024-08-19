@@ -37,7 +37,7 @@ const Lander = () => {
     return (
         <>
             <Header2 />
-            <BurningProblemCard />
+
             <ProfileCard />
             <LandingGrid>
                 <GridArea name="svg1" color="#01140F">

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
 import { H1, H2 } from '../../components/UI/headings.styled'
 import { SignupContext } from '../../context/toggle'
-import { StyledButton } from '../../components/UI/button.styled'
+import LabelButton from '../../components/UI/LabelButton'
 
 const Container = styled.div`
     top: 0;
@@ -55,11 +55,16 @@ const Strapline = styled.div`
     }
 `
 
-const Subheading = styled(H2)`
-    color: white;
-    text-align: center;
-    font-size: 1.8rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+const Highlight = styled.span`
+    color: ${props => props.theme.colors[props.color || 'black']};
+    background: ${props => (props.bgColor ? props.theme.colors[props.bgColor] : 'transparent')};
+    display: inline;
+`
+
+const Small = styled.small`
+    // color: #434343;
+    font-size: 18px;
+    padding-top: 2rem;
 `
 
 const Header2 = () => {
@@ -89,17 +94,19 @@ const Header2 = () => {
                         <br />
                         JavaScript Mental Model
                     </H1>
-                    <Subheading> Learn Visually. Build Projects. Grow Confidence.</Subheading>
-                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px' }}>
-                        <StyledButton
-                            onClick={showSignUp}
-                            size="small"
-                            center
-                            clicked={showSignUp}
-                            style={{ background: 'yellow', color: 'black', margin: 'auto' }}
-                        >
-                            Start Here
-                        </StyledButton>
+                    {/* <Subheading> Learn Visually. Build Projects. Grow Confidence.</Subheading> */}
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px', maxWidth: '' }}>
+                        <LabelButton cta="Get the FREE GUIDE" clicked={showSignUp}>
+                            <div style={{ padding: '0.5rem 1rem' }}>
+                                <div style={{ marginBottom: '0.3rem' }}>
+                                    The <Highlight bgColor="yellow">3 Steps to JavaScript Confidence</Highlight>
+                                </div>
+
+                                <Small>
+                                    <Highlight color="red">PLUS*</Highlight> a 2024 Roadmap to JS Professional PDF
+                                </Small>
+                            </div>
+                        </LabelButton>
                     </div>
                 </Container>
             </Strapline>

@@ -90,6 +90,14 @@ export const Button = ({
             </a>
         )
 
+    if (type === 'submit') {
+        return (
+            <StyledButton color={color} size={size} fullWidth={fullWidth} style={style} type="submit">
+                {children}
+            </StyledButton>
+        )
+    }
+
     return (
         <StyledButton color={color} size={size} fullWidth={fullWidth} style={style} onClick={e => clickHandler(e)}>
             {children}

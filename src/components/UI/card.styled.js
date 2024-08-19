@@ -38,7 +38,7 @@ const StyledCard = styled(Card)`
     }
 `
 
-const PostCard = props => (
+const PostCardLegacy = props => (
     <StyledCard width={[256, 320]} mx="auto" red={props.red}>
         <Image src="https://source.unsplash.com/random/512x384?space" />
         <Paper className="paper" red={props.red}>
@@ -47,4 +47,4 @@ const PostCard = props => (
     </StyledCard>
 )
 
-export default PostCard
+export default PostCardLegacy
