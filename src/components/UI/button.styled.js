@@ -15,7 +15,7 @@ export const StyledButton = styled.button`
     font-size: 1.4rem;
     cursor: pointer;
     text-align: center;
-    transition: background 250ms ease-in-out, box-shadow 150ms ease-out, transform 150ms ease;
+    transition: all 250ms ease-in-out, box-shadow 150ms ease-out, transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
     box-shadow: 5px -5px ${({ theme, color }) => (color === 'red' ? theme.colors.green : theme.colors.purple)};
@@ -23,10 +23,10 @@ export const StyledButton = styled.button`
     z-index: 50;
 
     &:hover,
-    button:focus {
+    :focus {
+        color: ${({ color }) => (color === 'yellow' ? 'white !important' : 'black')};
         background: ${({ theme, color }) =>
             color === 'red' ? theme.colors.blue : color === 'yellow' ? theme.colors.green : theme.colors.red};
-        color: ${({ color }) => (color === 'yellow' ? 'white' : 'black')}
         box-shadow: 7px -7px ${props => props.theme.colors.pink};
     }
 

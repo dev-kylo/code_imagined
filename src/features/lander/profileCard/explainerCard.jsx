@@ -4,6 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { Zoom } from 'react-awesome-reveal'
 import { H2 } from '../../../components/UI/headings.styled'
 import { P } from '../../../components/UI/text.styled'
+import { Highlight } from '../../../components/UI/highlight'
 
 const Card = styled.div`
     display: grid;
@@ -66,9 +67,19 @@ const ExplainerCard = () => (
                     do the same.
                 </P>
                 <P style={{ color: 'black' }}>
-                    If you're trying to break through and gain confidence with JavaScript, I can help you!
+                    If you're trying to{' '}
+                    <Highlight color="white" bgColor="navy" style={{ color: 'white', padding: '0.2rem 0.5rem' }}>
+                        {' '}
+                        break through and gain confidence{' '}
+                    </Highlight>
+                    with JavaScript ,
+                    <br /> I can help you!
                 </P>
-                <P style={{ color: 'black' }}>Here are 2 OPTIONS to work together...</P>
+                {/* <P style={{ color: 'black' }}>
+                    <Highlight color="white" bgColor="navy" style={{ color: 'white', padding: '0.2rem 1rem' }}>
+                        Here' are 2 OPTIONS to' work together:
+                    </Highlight>
+                </P> */}
             </Zoom>
         </Canvas>
         <StaticImage src="../../../images/Kylo2.png" alt="Dev Kylo by his screen" placeholder="blurred" />

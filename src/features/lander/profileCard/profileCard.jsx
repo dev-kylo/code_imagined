@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
 import { H2 } from '../../../components/UI/headings.styled'
 import { P } from '../../../components/UI/text.styled'
+import { Highlight } from '../../../components/UI/highlight'
 
 const Card = styled.div`
     display: grid;
@@ -102,6 +103,24 @@ const LogoContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0 1rem;
+    transition: transform 0.5s ease-in-out;
+
+    a:hover {
+        transform: scale(1.05);
+    }
+`
+
+const FeaturedTitle = styled.span`
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 0.5rem 2rem;
+    background: ${({ theme }) => theme.colors.navy};
+    font-family: ${props => props.theme.fonts.heading1};
+    font-size: 1.8rem;
+    z-index: 1000;
 `
 
 const ProfileCard = () => (
@@ -111,27 +130,40 @@ const ProfileCard = () => (
                 <StaticImage src="../../../images/Kylo.jpg" alt="Profile picture of Kylo" placeholder="blurred" />
             </ProfileImageContainer>
             <Featured>
+                <FeaturedTitle>Featured in</FeaturedTitle>
                 <LogoContainer color="#9012fd">
-                    <StaticImage
-                        src="../../../images/codenewbie.png"
-                        alt="CodeNewbie logo"
-                        placeholder="blurred"
-                        objectFit="fill"
-                        style={{ background: '#9012fd' }}
-                    />
+                    <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href="https://www.codenewbie.org/podcast/how-to-use-different-memory-techniques-to-learn-coding"
+                    >
+                        <StaticImage
+                            src="../../../images/codenewbie.png"
+                            alt="CodeNewbie logo"
+                            placeholder="blurred"
+                            objectFit="fill"
+                            style={{ background: '#9012fd' }}
+                        />
+                    </a>
                 </LogoContainer>
                 <LogoContainer>
-                    <StaticImage
-                        src="../../../images/SmashingMag.jpg"
-                        alt="Smashing Magazine logo"
-                        placeholder="blurred"
-                        objectFit="fill"
-                    />
+                    <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href="https://www.smashingmagazine.com/2023/05/learning-javascript-with-imagination/"
+                    >
+                        <StaticImage
+                            src="../../../images/SmashingMag.jpg"
+                            alt="Smashing Magazine logo"
+                            placeholder="blurred"
+                            objectFit="fill"
+                        />
+                    </a>
                 </LogoContainer>
             </Featured>
         </ProfileLogos>
         <Canvas>
-            <H2 style={{ color: 'black', textAlign: 'left' }}>Can't get a grip on JavaScript?</H2>
+            <H2 style={{ color: 'black', textAlign: 'center' }}>Can't get a grip on JavaScript?</H2>
             <P style={{ color: 'black' }}> Hi, I'm Kylo 👋.</P>
             <P style={{ color: 'black' }}>
                 I'm a <span style={{ color: 'red' }}>Break-Through JavaScript Coach</span>, and a full-time Senior
@@ -141,7 +173,11 @@ const ProfileCard = () => (
                 I use proven effective learning methods to help you build a mental model of JavaScript fundamentals,
                 giving you confidence to build your own projects
             </P>
-            <P style={{ color: 'black' }}>I call it The Great Sync.</P>
+            <P style={{ color: 'black' }}>
+                <Highlight color="white" bgColor="green" style={{ color: 'white', padding: '0.2rem 1rem' }}>
+                    I call it The Great Sync.
+                </Highlight>
+            </P>
         </Canvas>
     </Card>
 )

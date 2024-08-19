@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Operator from './operator'
+import { ImageLabel } from '../../../../components/UI/ImageLabel'
 
 const Container = styled.div`
     width: 100%;

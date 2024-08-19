@@ -39,7 +39,6 @@ const Title = styled.span`
     line-height: 1.2;
     font-size: 30px;
     margin-top: 15px;
-    margin-bottom: 30px;
 `
 
 const Description = styled.span`
@@ -50,6 +49,7 @@ const Description = styled.span`
     opacity: 1;
     font-weight: 700;
     font-size: 16px;
+    margin-top: 20px;
 `
 
 const Overlay = styled.div`
@@ -72,7 +72,13 @@ const Background = styled.div`
     background-size: cover;
 `
 
-const ShadowCard = ({ image, title, description, type, link, btnText }) => {
+const Subtitle = styled.span`
+    display: block;
+    color: ${({ theme }) => theme.colors.pink};
+    margin-top: 5px;
+`
+
+const ShadowCard = ({ image, title, description, type, link, btnText, subtitle }) => {
     return (
         <Card>
             <Paper>
@@ -80,6 +86,7 @@ const ShadowCard = ({ image, title, description, type, link, btnText }) => {
                 <Background src={image} />
                 <Content>
                     <Title>{title}</Title>
+                    <Subtitle>{subtitle}</Subtitle>
                     <Description>{description}</Description>
                     <Flex justify="center" style={{ zIndex: 1000, marginTop: '3rem' }}>
                         <Button color="yellow" clicked={() => navigate(link)} size="small">

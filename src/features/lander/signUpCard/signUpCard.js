@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import SignUp from '../../signup/signup'
 import { H2 } from '../../../components/UI/headings.styled'
 import { P } from '../../../components/UI/text.styled'
+import { Highlight } from '../../../components/UI/highlight'
 
 const Card = styled.div`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -61,16 +62,19 @@ const SignupWrapper = styled.div`
 const SignUpCard = () => (
     <Card>
         <Canvas>
-            <H2 as="span" style={{ color: 'white', margin: 0, padding: 0, fontSize: '2.2rem' }}>
+            <H2 as="span" style={{ margin: 0, padding: 0, fontSize: '2rem' }} color="pink">
                 FREE ACCESS:
             </H2>
             <H2 style={{ color: 'white' }}> Learn the system that powers The Great Sync </H2>
             <P style={{ color: 'white' }}>
-                The learning system that will help you become a confident JavaScript developer in 3 steps: See, Build, &
-                Peg.
+                The learning system that will help you become a confident JavaScript developer in 3 steps:{' '}
+                <Highlight color="pink">See, Build, & Peg.</Highlight>
             </P>
             <P style={{ color: 'white', marginBottom: '1.5rem' }}>
-                Also included: A 2024 Roadmap to JavaScript Developer PDF
+                <Highlight bgColor="blue" style={{ color: 'white' }}>
+                    Also included:{' '}
+                </Highlight>
+                A 2024 Roadmap to JavaScript Developer PDF
             </P>
             <SignupWrapper>
                 <SignUp layout="plain" submitBtnText="Get The 3 Steps To Confidence" noLastName />

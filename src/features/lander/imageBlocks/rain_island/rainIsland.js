@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import islandSvg from '../../../../images/rain_island_10.svg'
+import { ImageLabel } from '../../../../components/UI/ImageLabel'
 
 const StyledSVG = styled(islandSvg)`
     width: 80%;
@@ -60,10 +61,16 @@ const StyledSVG = styled(islandSvg)`
     .frontleft {
     }
 `
+const PrimitiveLabel = styled(ImageLabel)`
+    bottom: 20%;
+    right: 10%;
+    transform: rotate(-40deg);
+`
 
 const RainIsland = props => {
     return (
         <div>
+            <PrimitiveLabel>~ Primitive String</PrimitiveLabel>
             <StyledSVG />
         </div>
     )

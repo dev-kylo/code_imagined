@@ -16,6 +16,8 @@ import Header2 from './header2'
 import ProfileCard from './profileCard/profileCard'
 import SignUpCard from './signUpCard/signUpCard'
 import BurningProblemCard from './profileCard/burningProblem'
+import ContextIsland from './imageBlocks/contextIsland/contextIsland'
+import ControllerShips from './imageBlocks/controllerShips/controllerShips'
 
 const StyledBlock = styled.div`
     width: 100%;
@@ -41,14 +43,7 @@ const Lander = () => {
             <ProfileCard />
             <LandingGrid>
                 <GridArea name="svg1" color="#01140F">
-                    <StyledBlock />
-
-                    <StaticImage
-                        src="https://res.cloudinary.com/the-great-sync/image/upload/v1686771432/3000x2000/EC_sdbbpu.png"
-                        alt="Mage Funk sorceress character with an invocation orb"
-                        placeholder="blurred"
-                    />
-
+                    <ContextIsland />
                     <Label>
                         <Intro mobile />
                     </Label>
@@ -85,7 +80,7 @@ const Lander = () => {
                     </Zoom>
                 </GridArea>
                 <GridArea name="svg5" color="#5F5980">
-                    <Sphere />
+                    <ControllerShips />
                 </GridArea>
                 <GridArea name="svg5_text" color="#008578">
                     <Zoom>

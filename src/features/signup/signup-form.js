@@ -33,7 +33,7 @@ const SignUpForm = ({ loading, submit, centerBtn }) => (
         </P>
         <List dark>
             <li>🏝️ The 3 Steps to Confidence</li>
-            <li>🏝️ A 2024 Roadmap to JavaScript Professional</li>
+            <li>🏝️ A Roadmap to Professional PDF</li>
             <li>🏝️ Intro to The Great Sync</li>
         </List>
         <Box as="form" onSubmit={e => submit(e)}>

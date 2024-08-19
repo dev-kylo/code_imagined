@@ -1,20 +1,21 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
+import { ImageLabel } from '../../../../components/UI/ImageLabel'
 
 const SphereContainer = styled.div`
     position: absolute;
     bottom: 5%;
     left: 21%;
     z-index: 2000;
-    width: 60%;
+    width: 70%;
 
     @media (min-width: 1200px) {
-        width: 45%;
+        width: 55%;
     }
 
     @media (min-width: 1500px) {
-        width: 50%;
+        width: 60%;
     }
 
     @media (orientation: landscape) and (max-width: 600px) {
@@ -23,14 +24,20 @@ const SphereContainer = styled.div`
     }
 `
 
-export const Sphere = () => (
+const ControllerLabel = styled(ImageLabel)`
+    bottom: 0%;
+    right: 0%;
+`
+
+const ControllerShips = () => (
     <SphereContainer>
+        <ControllerLabel>~ Controller Functions</ControllerLabel>
         <StaticImage
-            src="https://res.cloudinary.com/the-great-sync/image/upload/v1690136294/2000x2000/controllers_mtocnc.png"
-            alt="A sphere containing an in ocean with some islands, and a submarine hovering over."
+            src="../../../../images/controllers.png"
+            alt="A formation of flying carrier ships with a lake of water on each."
             placeholder="blurred"
         />
     </SphereContainer>
 )
 
-export default Sphere
+export default ControllerShips
