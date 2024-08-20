@@ -163,7 +163,10 @@ const ProfileCard = () => (
             </Featured>
         </ProfileLogos>
         <Canvas>
-            <H2 style={{ color: 'black', textAlign: 'center' }}>Can't get a grip on JavaScript?</H2>
+            <H2 style={{ color: 'black', textAlign: 'center' }}>
+                Are you <Highlight color="red">stuck & overwhelmed</Highlight>,
+                <br /> with shaky fundamentals?
+            </H2>
             <P style={{ color: 'black' }}> Hi, I'm Kylo 👋.</P>
             <P style={{ color: 'black' }}>
                 I'm a <span style={{ color: 'red' }}>Break-Through JavaScript Coach</span>, and a full-time Senior
