@@ -174,7 +174,7 @@ const ProfileCard = () => (
             </P>
             <P style={{ color: 'black' }}>
                 I use proven effective learning methods to help you build a mental model of JavaScript fundamentals,
-                giving you confidence to build your own projects
+                giving you confidence to build your own projects.
             </P>
             <P style={{ color: 'black' }}>
                 <Highlight color="white" bgColor="green" style={{ color: 'white', padding: '0.2rem 1rem' }}>

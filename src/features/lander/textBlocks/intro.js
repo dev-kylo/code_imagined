@@ -83,7 +83,7 @@ const LanderSignUp = () => (
             It's not an analogy. It's a model.
         </P>
         <P style={{ maxWidth: '600px', textAlign: 'center', margin: '1rem auto', color: 'white' }}>
-            Here are the
+            Here is why this learning method is a
             <span
                 style={{
                     background: 'pink',
@@ -93,9 +93,8 @@ const LanderSignUp = () => (
                     fontWeight: 'bold',
                 }}
             >
-                4 main benefits{' '}
+                game changer.
             </span>{' '}
-            it provides:
         </P>
     </>
 )
