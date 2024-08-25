@@ -17,8 +17,26 @@ const Container = styled.div`
     transition: opacity 1s ease-in-out;
 
     #lander-heading {
-        font-size: 6rem;
-        margin: 0rem;
+        font-size: 3.5rem;
+        lineheight: 1.2;
+        textalign: left;
+        color: white;
+        textshadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        display: block;
+        @media (max-width: 600px) {
+            font-size: 2rem;
+            padding-top: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .large {
+            font-size: 5rem;
+            @media (max-width: 600px) {
+                font-size: 3.5rem;
+                display: block;
+                margin-top: 1rem;
+            }
+        }
     }
 
     @media (max-width: 600px) {
@@ -28,11 +46,6 @@ const Container = styled.div`
         top: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
-        #lander-heading {
-            max-width: auto;
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
     }
 `
 
@@ -80,19 +93,22 @@ const Header2 = () => {
                     style={{ overflow: 'hidden' }}
                 />
                 <Container>
-                    <H1
-                        id="lander-heading"
-                        as="span"
-                        style={{
-                            textAlign: 'center',
-                            color: 'white',
-                            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-                            display: 'block',
-                        }}
-                    >
-                        The Great Sync
+                    <H1 id="lander-heading" as="span">
+                        <Highlight className="large" color="pink">
+                            Learn JavaScript
+                        </Highlight>{' '}
+                        visually.
                         <br />
-                        JavaScript Mental Model
+                        <Highlight className="large" color="pink">
+                            {' '}
+                            Remember
+                        </Highlight>{' '}
+                        what you learn.
+                        <br />
+                        <Highlight className="large" color="pink">
+                            Build
+                        </Highlight>{' '}
+                        anything.
                     </H1>
                     {/* <Subheading> Learn Visually. Build Projects. Grow Confidence.</Subheading> */}
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px', maxWidth: '' }}>

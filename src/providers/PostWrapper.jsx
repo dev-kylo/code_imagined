@@ -28,12 +28,11 @@ const PostWrapper = ({ postTitle, description, postTheme, children, postSchema }
                                 <SignUp />
 
                                 {children}
+                                <Footer dark />
                             </ModalContext>
                         </UserProvider>
                     </Layout>
                 </LayersManager>
-
-                <Footer dark />
             </MantineProvider>
         </ThemeProvider>
     )

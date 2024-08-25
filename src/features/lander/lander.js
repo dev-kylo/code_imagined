@@ -18,6 +18,8 @@ import SignUpCard from './signUpCard/signUpCard'
 import BurningProblemCard from './profileCard/burningProblem'
 import ContextIsland from './imageBlocks/contextIsland/contextIsland'
 import ControllerShips from './imageBlocks/controllerShips/controllerShips'
+import BurningProblem from './burningProblem/BurningProblem'
+import Strip from './strip/Strip'
 
 const StyledBlock = styled.div`
     width: 100%;
@@ -39,8 +41,9 @@ const Lander = () => {
     return (
         <>
             <Header2 />
-
+            <BurningProblem />
             <ProfileCard />
+            <Strip />
             <LandingGrid>
                 <GridArea name="svg1" color="#01140F">
                     <ContextIsland />

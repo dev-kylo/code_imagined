@@ -52,47 +52,48 @@ function PlainForm({ loading, submitBtnText, withShadow, submit, borderless, noL
         >
             {children || (
                 <>
-                    <TextInput
-                        withAsterisk
-                        label="First Name"
-                        required
-                        size="md"
-                        key={form.key('fname')}
-                        {...form.getInputProps('fname')}
-                    />
-                    {!noLastName && (
+                    <div>
                         <TextInput
                             withAsterisk
-                            label="Last Name"
-                            size="md"
-                            mt="sm"
+                            label="First Name"
                             required
-                            key={form.key('sname')}
-                            {...form.getInputProps('sname')}
-                        />
-                    )}
-                    <TextInput
-                        withAsterisk
-                        label="Email"
-                        type="email"
-                        placeholder="your@email.com"
-                        size="md"
-                        required
-                        mt="sm"
-                        key={form.key('email')}
-                        {...form.getInputProps('email')}
-                    />
-                    <HoneyInput>
-                        <TextInput
-                            hidden
-                            label="H"
                             size="md"
-                            mt="sm"
-                            key={form.key('H')}
-                            {...form.getInputProps('H')}
+                            key={form.key('fname')}
+                            {...form.getInputProps('fname')}
                         />
-                    </HoneyInput>
-
+                        {!noLastName && (
+                            <TextInput
+                                withAsterisk
+                                label="Last Name"
+                                size="md"
+                                mt="sm"
+                                required
+                                key={form.key('sname')}
+                                {...form.getInputProps('sname')}
+                            />
+                        )}
+                        <TextInput
+                            withAsterisk
+                            label="Email"
+                            type="email"
+                            placeholder="your@email.com"
+                            size="md"
+                            required
+                            mt="sm"
+                            key={form.key('email')}
+                            {...form.getInputProps('email')}
+                        />
+                        <HoneyInput>
+                            <TextInput
+                                hidden
+                                label="H"
+                                size="md"
+                                mt="sm"
+                                key={form.key('H')}
+                                {...form.getInputProps('H')}
+                            />
+                        </HoneyInput>
+                    </div>
                     <Flex>
                         <StyledButton disabled={loading} type="submit" size="large" color={loading ? 'blue' : 'yellow'}>
                             {loading ? 'Loading...' : submitBtnText || 'Submit'}

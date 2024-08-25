@@ -1,12 +1,15 @@
 import { Link } from 'gatsby'
-import React from 'react'
+import React, { useContext } from 'react'
 import { Flex } from 'rebass'
 import styled from 'styled-components'
+import LabelButton from '../../UI/LabelButton'
+import { Highlight } from '../../UI/highlight'
+import { SignupContext } from '../../../context/toggle'
 
 const StyledFooter = styled.footer`
     margin-top: 5em;
     position: relative;
-    // background: #00000099;
+    font-family: ${props => props.theme.fonts.par};
     @media only screen and (max-width: 780px) {
         justify-content: center;
         padding: 0;
@@ -22,11 +25,11 @@ const StyledFooter = styled.footer`
 
 const FooterContainer = styled.div`
     padding: 0 2rem 2rem 2rem;
-    font-family: ${props => props.theme.fonts.par}
     font-size: 18px; 
     color: white;
     z-index: 1000000;
- 
+    background: ${props => (props.dark ? 'transparent' : '#01150f')};
+    font-family: ${props => props.theme.fonts.heading};    
     left: 50%
     transform: translateX(-50%)
 
@@ -40,7 +43,7 @@ const FooterContainer = styled.div`
         font-size: 18px; 
         color: ${props => (props.dark ? props.theme.colors.navy : 'white')};
         display: block;
-
+        font-family: ${props => props.theme.fonts.par};
         @media only screen and (max-width: 480px){
             min-width: 100%;
             display: block;
@@ -52,6 +55,7 @@ const FooterContainer = styled.div`
             padding: 0;
             font-size: 18px; 
             text-decoration: none;
+            font-family: ${props => props.theme.fonts.par};
             color: ${props => (props.dark ? props.theme.colors.navy : props.theme.colors.pink)};
         }
 
@@ -60,12 +64,20 @@ const FooterContainer = styled.div`
     }
 `
 
+const Small = styled.small`
+    font-size: 16px !important;
+    font-family: ${props => props.theme.fonts.par};
+    font-weight: bold;
+    color: black !important;
+`
+
 const Footer = props => {
+    const showSignUp = useContext(SignupContext).show
     return (
         <StyledFooter>
             <FooterContainer dark={props.dark} style={{ ...(props?.style || {}) }}>
                 <hr />
-                <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap">
+                <Flex justifyContent="space-around" alignItems="center" flexWrap="wrap">
                     <div>
                         <small> © 2024 Code Imagined - The Great Sync. All Rights Reserved</small>
                         <small>
@@ -75,7 +87,19 @@ const Footer = props => {
                             View the <Link to="/posts/privacy-policy"> Privacy Policy</Link>
                         </small>
                     </div>
-                    <small>Dev Kylo</small>
+                    <div>
+                        <LabelButton cta="Get the FREE GUIDE" clicked={showSignUp}>
+                            <div style={{ padding: '0.5rem 1rem' }}>
+                                <div style={{ marginBottom: '0rem' }}>
+                                    The <Highlight bgColor="yellow">3 Steps to JavaScript Confidence</Highlight>
+                                </div>
+
+                                <Small>
+                                    <Highlight color="red">PLUS*</Highlight> a 2024 Roadmap to JS Professional PDF
+                                </Small>
+                            </div>
+                        </LabelButton>
+                    </div>
                 </Flex>
             </FooterContainer>
         </StyledFooter>

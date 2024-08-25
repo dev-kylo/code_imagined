@@ -27,7 +27,7 @@ const Home = () => {
             <Providers transparentNavBar>
                 <Lander />
                 <Testimonials />
-                <ExplainerCard />
+                {/* <ExplainerCard /> */}
                 <Offers />
                 <SignUp />
             </Providers>

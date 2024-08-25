@@ -19,11 +19,11 @@ const Providers = ({ postTheme, children, transparentNavBar }) => {
                         <ModalContext>
                             <TopNav transparent={transparentNavBar} />
                             {children}
+                            <Footer />
                         </ModalContext>
                     </UserProvider>
                 </Layout>
             </LayersManager>
-            <Footer />
         </ThemeProvider>
     )
 }
