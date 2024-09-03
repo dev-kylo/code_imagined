@@ -32,7 +32,7 @@ const SignUpForm = ({ loading, submit, centerBtn }) => (
             I want to show you how to begin building a mental model of JavaScript. I will send you:
         </P>
         <List dark>
-            <li>🏝️ The See, Build & Peg Learning System</li>
+            <li>🏝️ The Great Sync Learning System </li>
             <li>🏝️ A Roadmap to Engineer PDF</li>
             <li>🏝️ Intro to The Great Sync</li>
         </List>
