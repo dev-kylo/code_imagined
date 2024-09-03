@@ -32,7 +32,7 @@ const Strip = () => (
         <div>
             <H3>Sometimes all that is needed is a change in perspective, and everything starts to make sense...</H3>
             <H3>
-                <Highlight color="pink">This is The Great Sync Mental Model</Highlight>{' '}
+                <Highlight color="pink">Welcome to The Great Sync</Highlight>{' '}
             </H3>
         </div>
     </Container>

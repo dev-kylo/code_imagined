@@ -76,7 +76,7 @@ const Highlight = styled.span`
 
 const Small = styled.small`
     // color: #434343;
-    font-size: 18px;
+    font-size: 20px;
     padding-top: 2rem;
 `
 
@@ -115,11 +115,13 @@ const Header2 = () => {
                         <LabelButton cta="Get the FREE GUIDE" clicked={showSignUp}>
                             <div style={{ padding: '0.5rem 1rem' }}>
                                 <div style={{ marginBottom: '0.3rem' }}>
-                                    The <Highlight bgColor="yellow">3 Steps to JavaScript Confidence</Highlight>
+                                    The Great Sync <Highlight bgColor="yellow">Learning System & Roadmap </Highlight>
                                 </div>
 
                                 <Small>
-                                    <Highlight color="red">PLUS*</Highlight> a 2024 Roadmap to JS Professional PDF
+                                    <Small>
+                                        How to <Highlight color="red">gain confidence </Highlight>writing JavaScript{' '}
+                                    </Small>
                                 </Small>
                             </div>
                         </LabelButton>

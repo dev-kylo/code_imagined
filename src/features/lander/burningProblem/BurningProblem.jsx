@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
@@ -6,6 +6,8 @@ import { H1 } from '../../../components/UI/headings.styled'
 import { P } from '../../../components/UI/text.styled'
 import { Highlight } from '../../../components/UI/highlight'
 import { StyledElementsContainer } from '../../../components/layout/containers/styledElementsContainer'
+import { Button } from '../../../components/UI/button.styled'
+import { SignupContext } from '../../../context/toggle'
 
 const Container = styled.div`
     background: white;
@@ -19,9 +21,16 @@ const Container = styled.div`
         margin-top: 4rem;
         margin-bottom: 4rem;
     }
+
+    .btn-cta {
+        display: flex;
+        justify-content: center;
+        padding: 2rem;
+    }
 `
 
 export const BurningProblem = () => {
+    const showSignUp = useContext(SignupContext).show
     return (
         <Container>
             <StyledElementsContainer styled={{ margin: 'auto' }}>
@@ -30,11 +39,25 @@ export const BurningProblem = () => {
                         Introducing...
                     </Highlight>
                 </P>
-                <H1>The Great Sync JavaScript Mental Model</H1>
+                <H1 style={{ paddingBottom: 0 }}>The Great Sync JavaScript Mental Model</H1>
+
+                <div className="diagram">
+                    <StaticImage
+                        src="../../../images/model-diagram.png"
+                        alt="A model of The Great Sync - imagine & apply"
+                        placeholder="blurred"
+                        objectFit="fill"
+                    />
+                </div>
+                <P style={{ fontFamily: '"Passion One", serif', fontSize: '2rem' }}>
+                    <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)' }}>
+                        Does this sound familiar?
+                    </Highlight>
+                </P>
 
                 <P>
-                    Your journey into web development was going well... until you started learning JavaScript. Does this
-                    sound familiar?
+                    Your journey into web development was going well... until you realized you STILL can't write
+                    JavaScript. 😒
                 </P>
                 <ul className="">
                     <P as="li" className="">
@@ -50,7 +73,7 @@ export const BurningProblem = () => {
                         Maybe this isn&lsquo;t for someone like me...
                     </P>
                 </ul>
-                <P>If it does, you're not alone...</P>
+                <P>If you have thoughts like these, you're not alone. </P>
                 <P style={{ fontFamily: '"Passion One", serif', fontSize: '2rem' }}>
                     <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)' }}>
                         Now, imagine this...
@@ -66,21 +89,18 @@ export const BurningProblem = () => {
 
                 <P>
                     {' '}
-                    In your mind, you can picture a 3D model of JavaScript - your very own knowledge tree of everything
-                    you've learned, stored in a fictional realm called The Great Sync.{' '}
+                    In your mind, you can picture a 3D model of JavaScript - your very own knowledge tree 🌳 of
+                    everything you've learned.
                 </P>
 
                 <P>
                     It's part of the <Link to="/courses/">"See, Build & Peg"</Link> learning system, which helps you
                     continually grow your expertise, and BUILD ANYTHING YOU WANT.
                 </P>
-                <div className="diagram">
-                    <StaticImage
-                        src="../../../images/model-diagram.png"
-                        alt="A model of The Great Sync - imagine & apply"
-                        placeholder="blurred"
-                        objectFit="fill"
-                    />
+                <div className="btn-cta">
+                    <Button color="yellow" clicked={showSignUp}>
+                        Get The Free Guide & Roadmap
+                    </Button>
                 </div>
             </StyledElementsContainer>
         </Container>
