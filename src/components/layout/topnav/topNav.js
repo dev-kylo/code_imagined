@@ -12,7 +12,6 @@ const StyledHeader = styled(Flex)`
     padding: 0.5rem;
     with: 100%;
     @media (max-width: 780px) {
-        background: #01150f !important;
         with: 100%;
         z-index: 10000 !important;
     }

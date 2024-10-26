@@ -34,7 +34,7 @@ const Form = styled.form`
     }
 `
 
-function PlainForm({ loading, submitBtnText, withShadow, submit, borderless, noLastName, children }) {
+function PlainForm({ loading, submitBtnText, submit, borderless, noLastName, children }) {
     const form = useForm()
     const [submitted, setSubmitted] = React.useState(false)
 
@@ -52,12 +52,13 @@ function PlainForm({ loading, submitBtnText, withShadow, submit, borderless, noL
         >
             {children || (
                 <>
-                    <div>
+                    <div className="inputs">
                         <TextInput
                             withAsterisk
                             label="First Name"
                             required
                             size="md"
+                            mt="sm"
                             key={form.key('fname')}
                             {...form.getInputProps('fname')}
                         />
@@ -76,7 +77,6 @@ function PlainForm({ loading, submitBtnText, withShadow, submit, borderless, noL
                             withAsterisk
                             label="Email"
                             type="email"
-                            placeholder="your@email.com"
                             size="md"
                             required
                             mt="sm"

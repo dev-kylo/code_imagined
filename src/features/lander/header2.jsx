@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
-import { H1, H2 } from '../../components/UI/headings.styled'
-import { SignupContext } from '../../context/toggle'
-import LabelButton from '../../components/UI/LabelButton'
+import { H1 } from '../../components/UI/headings.styled'
+
+import SignUp from '../signup/signup'
 
 const Container = styled.div`
     top: 0;
@@ -24,7 +24,7 @@ const Container = styled.div`
         textshadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         display: block;
         @media (max-width: 600px) {
-            font-size: 2rem;
+            font-size: 1.8rem;
             padding-top: 1rem;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
@@ -32,7 +32,7 @@ const Container = styled.div`
         .large {
             font-size: 5rem;
             @media (max-width: 600px) {
-                font-size: 3.5rem;
+                font-size: 3rem;
                 display: block;
                 margin-top: 1rem;
             }
@@ -80,8 +80,42 @@ const Small = styled.small`
     padding-top: 2rem;
 `
 
+const LandingSignup = styled.div`
+    form {
+        background: none;
+        box-shadow: none;
+
+        .inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 0.5rem;
+
+            @media (max-width: 350px) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        label {
+            background: rgb(1 20 45);
+            color: white;
+            padding: 0 1rem;
+        }
+
+        input {
+            margin: auto;
+        }
+
+        button {
+            margin-top: 1rem;
+        }
+    }
+
+    .form-completion-container {
+        background: #ffffff91;
+    }
+`
+
 const Header2 = () => {
-    const showSignUp = useContext(SignupContext).show
     return (
         <div style={{ position: 'relative', overflow: 'hidden' }}>
             <Strapline>
@@ -111,21 +145,36 @@ const Header2 = () => {
                         anything.
                     </H1>
                     {/* <Subheading> Learn Visually. Build Projects. Grow Confidence.</Subheading> */}
-                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px', maxWidth: '' }}>
-                        <LabelButton cta="Get the FREE GUIDE" clicked={showSignUp}>
-                            <div style={{ padding: '0.5rem 1rem' }}>
-                                <div style={{ marginBottom: '0.3rem' }}>
-                                    The Great Sync <Highlight bgColor="yellow">Learning System & Roadmap </Highlight>
-                                </div>
+                    {/* 
+                        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px', maxWidth: '' }}>
+                            <LabelButton cta="Get the FREE GUIDE" clicked={showSignUp}>
+                                <div style={{ padding: '0.5rem 1rem' }}>
+                                    <div style={{ marginBottom: '0.3rem' }}>
+                                        The Great Sync{' '}
+                                        <Highlight bgColor="yellow">Learning System & Roadmap </Highlight>
+                                    </div>
 
-                                <Small>
                                     <Small>
-                                        How to <Highlight color="red">gain confidence </Highlight>writing JavaScript{' '}
+                                        <Small>
+                                            How to <Highlight color="red">gain confidence </Highlight>writing JavaScript{' '}
+                                        </Small>
                                     </Small>
-                                </Small>
-                            </div>
-                        </LabelButton>
-                    </div>
+                                </div>
+                            </LabelButton>
+                        </div>
+                    */}
+
+                    <LandingSignup>
+                        <SignUp
+                            layout="plain"
+                            noLastName
+                            transparent
+                            borderless
+                            // convertKitTag={convertkit_tag_id}
+                            submitBtnText="Get the PDF: Learn JS Memorably"
+                            // borderless={borderless}
+                        />
+                    </LandingSignup>
                 </Container>
             </Strapline>
         </div>

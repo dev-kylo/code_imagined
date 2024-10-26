@@ -5,7 +5,7 @@ import { H2 } from '../../components/UI/headings.styled'
 import { P } from '../../components/UI/text.styled'
 
 const FormResult = ({ heading, text, completed, result = 'success' }) => (
-    <Flex flexDirection="column" justifyContent="center" alignItems="center">
+    <Flex flexDirection="column" justifyContent="center" alignItems="center" className="form-completion-container">
         {completed && result && (
             <RingProgress
                 sections={[{ value: 100, color: result === 'error' ? 'red' : 'teal' }]}

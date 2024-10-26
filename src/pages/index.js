@@ -7,7 +7,6 @@ import Providers from '../providers/Providers'
 import Testimonials from '../features/testimonials/testimonials'
 import { SignupContext } from '../context/toggle'
 import SEO from '../layout/seo'
-import ExplainerCard from '../features/lander/profileCard/explainerCard'
 import Offers from '../features/lander/offers/offers'
 
 const Home = () => {
@@ -15,9 +14,15 @@ const Home = () => {
 
     useEffect(() => {
         const checkIfAlreadyShown = localStorage.getItem('tgs-modal-shown') === 'true'
+        let timer
         if (!checkIfAlreadyShown) {
-            showSignUp()
-            // localStorage.setItem("tgs-modal-shown", true);
+            timer = setTimeout(() => {
+                showSignUp()
+                localStorage.setItem('tgs-modal-shown', true)
+            }, [15000])
+        }
+        return () => {
+            clearTimeout(timer)
         }
     }, [showSignUp])
 
