@@ -115,7 +115,7 @@ const ProfileCard = () => (
         <ProfileLogos>
             <ProfileImageContainer>
                 <StaticImage
-                    src="../../../images/kylo.jpg"
+                    src="../../../images/Kylo.jpg"
                     alt="Kylo Robinson"
                     placeholder="blurred"
                     objectFit="fill"
