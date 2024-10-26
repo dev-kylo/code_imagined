@@ -114,10 +114,11 @@ const ProfileCard = () => (
     <Card>
         <ProfileLogos>
             <ProfileImageContainer>
-                <img
-                    loading="lazy"
-                    src="https://thegreatsync.com/static/60fc702521f3e0c3c2ea0b0df8a1ac39/31641/Kylo.webp"
-                    alt=""
+                <StaticImage
+                    src="../../../images/kylo.jpg"
+                    alt="Kylo Robinson"
+                    placeholder="blurred"
+                    objectFit="fill"
                 />
             </ProfileImageContainer>
             <Featured>

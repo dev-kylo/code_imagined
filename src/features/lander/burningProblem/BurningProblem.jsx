@@ -85,17 +85,16 @@ export const BurningProblem = () => {
                 </P>
                 <P>You're confident you can figure it out. Your fundamentals are rock solid.</P>
 
-                <P> It doesn't matter if it's React, a new web API, or old-school jquery.</P>
+                <P> It doesn't matter if it's React, a new web API, or Open AI.</P>
 
                 <P>
-                    {' '}
                     In your mind, you can picture a 3D model of JavaScript - your very own knowledge tree 🌳 of
                     everything you've learned.
                 </P>
 
                 <P>
-                    It's part of the <Link to="/courses/">"See, Build & Peg"</Link> learning system, which helps you
-                    continually grow your expertise, and BUILD ANYTHING YOU WANT.
+                    It's part of the <Link to="/courses/3-steps-to-confidence">"See, Build & Peg"</Link> learning
+                    system, which helps you continually grow your expertise, and BUILD ANYTHING YOU WANT.
                 </P>
                 <div className="btn-cta">
                     <Button color="yellow" clicked={showSignUp}>
