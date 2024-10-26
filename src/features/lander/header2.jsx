@@ -142,7 +142,7 @@ const Header2 = () => {
                         <Highlight className="large" color="pink">
                             Build
                         </Highlight>{' '}
-                        anything.
+                        with confidence.
                     </H1>
                     {/* <Subheading> Learn Visually. Build Projects. Grow Confidence.</Subheading> */}
                     {/* 
