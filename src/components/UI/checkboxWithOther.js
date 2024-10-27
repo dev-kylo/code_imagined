@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Checkbox, Group } from '@mantine/core'
-import { Label, Input } from '@rebass/forms/styled-components'
 import { Box } from 'rebass/styled-components'
+import { Label, Textarea } from '@rebass/forms/styled-components'
 
 const CheckboxWithOther = ({ label, name, value, onChange, otherValue, onOtherChange }) => {
     const [otherSelected, setOtherSelected] = useState(false)
@@ -27,7 +27,12 @@ const CheckboxWithOther = ({ label, name, value, onChange, otherValue, onOtherCh
                 />
             </Group>
             {otherSelected && (
-                <Input required mt={2} id="other" name="other" type="text" placeholder="Please elaborate..." />
+                <Box width={1} px={2}>
+                    <Label mb="0.4rem" htmlFor="other-id" style={{ marginTop: '15px' }}>
+                        Please elaborate
+                    </Label>
+                    <Textarea id="other-id" name="other-name-attr" rows="4" required />
+                </Box>
             )}
         </Box>
     )
