@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import { Flex, Box, Button } from 'rebass/styled-components'
 import { Label, Input, Textarea } from '@rebass/forms/styled-components'
 import styled from 'styled-components'
+import CheckboxWithOther from '../components/UI/checkboxWithOther'
 
 const HoneyInput = styled.div`
     opacity: 0;
@@ -76,6 +77,8 @@ const Slice_Form = ({ slice }) => {
                         >
                             <input type="hidden" name="form-name" value={title} />
                             <Flex flexDirection="column" mx={-2} mb={0}>
+                                {Number(formId) === 99339665 && <CheckboxWithOther />}
+
                                 <Box width={1} px={2}>
                                     {body.map(edge => {
                                         const { label_text, required } = edge.primary
