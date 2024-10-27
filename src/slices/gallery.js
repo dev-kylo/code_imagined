@@ -11,7 +11,7 @@ const Grid = styled.div`
     column-gap: 30px;
     row-gap: 30px;
     grid-template-columns: ${({ cols }) => (cols ? `repeat(${cols}, 1fr)` : ' auto')};
-    margin: 3rem 0;
+    margin: 0;
 
     @media (max-width: 600px) {
         grid-template-columns: 1fr;
@@ -21,7 +21,8 @@ const Grid = styled.div`
 
 const GridItem = styled.div`
     align-self: end;
-    padding: 0 30px;
+    // padding: 0 30px;
+    padding: 0;
     text-align: center;
     small {
         font-family: 'Raleway', sans-serif;
