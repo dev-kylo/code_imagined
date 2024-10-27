@@ -20,20 +20,19 @@ const CheckboxWithOther = ({ label, name, value, onChange, otherValue, onOtherCh
                 <Checkbox value="true" id="struggle_syntax" name="struggle_syntax" label="I struggle with syntax" />
                 <Checkbox
                     value="true"
-                    id="struggle_syntax"
-                    name="struggle_syntax"
+                    id="other-checkbox"
+                    name="other-checkbox"
                     label="Other"
                     onChange={handleOtherSelected}
                 />
             </Group>
-            {otherSelected && (
-                <Box width={1} px={2}>
-                    <Label mb="0.4rem" htmlFor="other-id" style={{ marginTop: '15px' }}>
-                        Please elaborate
-                    </Label>
-                    <Textarea id="other-id" name="other-name-attr" rows="4" required />
-                </Box>
-            )}
+
+            <Box width={1} px={2} style={{ display: otherSelected ? 'none' : 'block' }}>
+                <Label mb="0.4rem" htmlFor="other-id" style={{ marginTop: '15px' }}>
+                    Please elaborate
+                </Label>
+                <Textarea id="other-id" name="other-name-attr" rows="4" required />
+            </Box>
         </Box>
     )
 }
