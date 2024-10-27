@@ -65,7 +65,7 @@ function Offers() {
                         <ShadowCard
                             image="https://images.prismic.io/thegreatsync/ce1e7bf0-dd57-4bb1-b870-73dec577b37b_the_syncer_program_2_petanl.png"
                             title="Imagine JavaScript"
-                            subtitle="Create a strong mental model of the fundamentals"
+                            subtitle="🤯Fundamentals Forever🤯. Create a long-lasting mental model"
                             description="The mnemonic self-paced course on learning JavaScript visually and memorably. Journey through an imagined JavaScript universe, learning concepts in a way that sticks."
                             link="/courses/the-syncer-program"
                             btnText="Join the waiting list"
