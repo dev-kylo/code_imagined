@@ -3,7 +3,7 @@ import { Checkbox, Group } from '@mantine/core'
 import { Box } from 'rebass/styled-components'
 import { Label, Textarea } from '@rebass/forms/styled-components'
 
-const CheckboxWithOther = ({ label, checkboxes, name, value, onChange, otherValue, disableOther }) => {
+const CheckboxWithOther = ({ label, checkboxes, name, disableOther, hide = false }) => {
     const [otherSelected, setOtherSelected] = useState(false)
 
     const handleOtherSelected = e => {
@@ -11,23 +11,30 @@ const CheckboxWithOther = ({ label, checkboxes, name, value, onChange, otherValu
     }
 
     return (
-        <Box width={1} px={2} pb={4}>
+        <Box width={1} px={2} pb={4} style={{ display: hide ? 'none' : 'block' }}>
             <Label mb="0.4rem">{label}</Label>
             <Group my="lg">
-                {checkboxes?.map(({ optionName, optionLabel }) => (
-                    <Checkbox value="true" id={`${optionName}-checkbox`} name={optionLabel} label={optionLabel} />
+                {checkboxes?.map(({ optionName, optionLabel, optionCb }) => (
+                    <Checkbox
+                        value="true"
+                        id={`${optionName}-checkbox`}
+                        name={optionLabel}
+                        label={optionLabel}
+                        onChange={optionCb || null}
+                    />
                 ))}
                 <Checkbox
                     value="true"
-                    id="other-checkbox"
-                    name="other-checkbox"
+                    id={`other-checkbox${name}`}
+                    name={`other-checkbox${name}`}
                     label="Other"
+                    required={!hide && otherSelected}
                     style={{ display: disableOther ? 'none' : 'block' }}
                     onChange={handleOtherSelected}
                 />
             </Group>
 
-            <Box width={1} px={2} style={{ display: !otherSelected ? 'none' : 'block' }}>
+            <Box width={1} px={2} style={{ display: !hide && !otherSelected ? 'none' : 'block' }}>
                 <Label mb="0.4rem" htmlFor="other-id" style={{ marginTop: '15px' }}>
                     Please elaborate
                 </Label>

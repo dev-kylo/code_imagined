@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React, { useContext } from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 import { Flex, Box, Button } from 'rebass/styled-components'
 import { Label, Input, Textarea } from '@rebass/forms/styled-components'
 import styled from 'styled-components'
@@ -38,6 +38,7 @@ const StyledForm = styled.div`
 
 const Slice_Form = ({ slice }) => {
     const { userId } = useContext(UserContext)
+    const [interested, setInterested] = React.useState(null)
 
     console.log({ userId })
 
@@ -125,36 +126,72 @@ const Slice_Form = ({ slice }) => {
                                             />
 
                                             <CheckboxWithOther
-                                                label="Which mediums are your preferred way of learning?"
+                                                label={
+                                                    <span>
+                                                        Did you enjoy the PDF on the{' '}
+                                                        <a
+                                                            style={{
+                                                                fontFamily: '"Passion One", serif',
+                                                                fontSize: '1.3rem',
+                                                            }}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            href="https://thegreatsync.com/courses/3-steps-to-confidence/the-great-sync-learning-system-roadmap"
+                                                        >
+                                                            See, Build & Peg Learning System?"
+                                                        </a>
+                                                    </span>
+                                                }
                                                 checkboxes={[
                                                     {
-                                                        optionName: 'course_outline_medium_preference_video',
-                                                        optionLabel: 'Watching videos',
+                                                        optionName: 'roadmap_enjoyed_yes',
+                                                        optionLabel: 'Yes',
                                                     },
                                                     {
-                                                        optionName: 'course_outline_medium_preference_video_text',
-                                                        optionLabel: 'Reading text',
+                                                        optionName: 'roadmap_enjoyed_no',
+                                                        optionLabel: 'No',
                                                     },
                                                     {
-                                                        optionName: 'course_outline_medium_preference_audio',
-                                                        optionLabel: 'Listening to audio transcription',
+                                                        optionName: 'roadmap_enjoyed_not_yet',
+                                                        optionLabel: 'Have not read it yet',
                                                     },
                                                     {
-                                                        optionName:
-                                                            'course_outline_medium_preference_interactive_editor',
-                                                        optionLabel: 'Playing in an interactive code editor',
+                                                        optionName: 'roadmap_enjoyed_didnt_know',
+                                                        optionLabel: 'First time I am hearing about it',
                                                     },
                                                 ]}
                                             />
                                             <CheckboxWithOther
                                                 label={
                                                     <span>
-                                                        Next year I will be launching a brand new program called{' '}
-                                                        <span style={{ color: 'red' }}>Break Through JavaScript</span>,
-                                                        which extends Imagine JavaScript. The focus is on building
-                                                        applications without a tutorial. It will involve live coaching
-                                                        sessions and code reviews, while building increasingly
-                                                        challenging projects.
+                                                        <span
+                                                            style={{
+                                                                fontFamily: 'Montserrat, sans-serif',
+                                                                fontSize: '16px',
+                                                            }}
+                                                        >
+                                                            Imagine JavaScript now has an additional part-time coaching
+                                                            program, called{' '}
+                                                            <span
+                                                                style={{
+                                                                    color: '#ab3428',
+                                                                    fontFamily: '"Passion One", serif',
+                                                                    fontSize: '1.3rem',
+                                                                }}
+                                                            >
+                                                                Break Through JavaScript -{' '}
+                                                                <em>build without a tutorial in 40 days</em>
+                                                            </span>
+                                                            . Using The Great Sync, you will gain the confidence to
+                                                            build any type of web application. <br />
+                                                            It will involve weekly live coaching sessions and code
+                                                            reviews. By the end you will have portfolio-ready vanilla JS
+                                                            applications🏆. The price will be around $1.5k, starting in
+                                                            Feb/March 2025.
+                                                        </span>
+                                                        <br />
+                                                        <br />
+                                                        Would you be interested in joining?
                                                     </span>
                                                 }
                                                 checkboxes={[
@@ -162,16 +199,58 @@ const Slice_Form = ({ slice }) => {
                                                         optionValue: 'true',
                                                         optionName: 'breakthrough-js-interested-true',
                                                         optionLabel: 'Yes',
+                                                        optionCb: e => {
+                                                            if (e.target.checked) setInterested(true)
+                                                            else if (!e.target.checked) setInterested(null)
+                                                        },
                                                     },
                                                     {
                                                         optionValue: 'false',
                                                         optionName: 'breakthrough-js-interested-false',
                                                         optionLabel: 'No',
+                                                        optionCb: e => {
+                                                            if (e.target.checked) setInterested(false)
+                                                            else if (!e.target.checked) setInterested(null)
+                                                        },
                                                     },
                                                 ]}
                                             />
                                         </>
                                     )}
+
+                                    <Box
+                                        width={1}
+                                        px={2}
+                                        mb={4}
+                                        style={{ display: interested !== null && !interested ? 'block' : 'none' }}
+                                    >
+                                        <Label mb="0rem" htmlFor="full-name">
+                                            Mind explaining why not?
+                                        </Label>
+                                        <Textarea
+                                            id="full-name"
+                                            name="full-name"
+                                            rows="2"
+                                            required={!(interested !== null && !interested)}
+                                        />
+                                    </Box>
+
+                                    <CheckboxWithOther
+                                        hide={!interested}
+                                        label="I will be running a discounted beta program in February, limited to 5 students. Can I contact you to discuss reserving your spot?"
+                                        checkboxes={[
+                                            {
+                                                optionValue: 'true',
+                                                optionName: 'breakthrough-js-waiting-for-followup',
+                                                optionLabel: 'Yes, I look forward to your email',
+                                            },
+                                            {
+                                                optionValue: 'false',
+                                                optionName: 'breakthrough-js-wait-for-main-release',
+                                                optionLabel: 'No, I am happy to wait for the main release',
+                                            },
+                                        ]}
+                                    />
 
                                     <Box width={1} px={2}>
                                         {body.map(edge => {
@@ -185,7 +264,7 @@ const Slice_Form = ({ slice }) => {
                                                     <Textarea
                                                         id={edge.id}
                                                         name={formatName(label_text.text)}
-                                                        rows="4"
+                                                        rows="2"
                                                         required={required}
                                                     />
                                                 </Box>
