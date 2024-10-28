@@ -224,12 +224,12 @@ const Slice_Form = ({ slice }) => {
                                         mb={4}
                                         style={{ display: interested !== null && !interested ? 'block' : 'none' }}
                                     >
-                                        <Label mb="0rem" htmlFor="full-name">
+                                        <Label mb="0rem" htmlFor="breakthrough-js-interested-false-explanation">
                                             Mind explaining why not?
                                         </Label>
                                         <Textarea
-                                            id="full-name"
-                                            name="full-name"
+                                            id="breakthrough-js-interested-false-explanation"
+                                            name="breakthrough-js-interested-false-explanation"
                                             rows="2"
                                             required={!(interested !== null && !interested)}
                                         />
