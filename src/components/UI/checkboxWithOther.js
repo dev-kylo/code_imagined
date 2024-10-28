@@ -38,7 +38,7 @@ const CheckboxWithOther = ({ label, checkboxes, name, disableOther, hide = false
                 <Label mb="0.4rem" htmlFor="other-id" style={{ marginTop: '15px' }}>
                     Please elaborate
                 </Label>
-                <Textarea id="other-id" name="other-name-attr" rows="2" required />
+                <Textarea id="other-id" name="other-name-attr" rows="2" required={!hide && otherSelected} />
             </Box>
         </Box>
     )
