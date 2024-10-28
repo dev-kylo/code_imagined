@@ -11,7 +11,7 @@ const CheckboxWithOther = ({ label, checkboxes, name, disableOther, hide = false
     }
 
     return (
-        <Box width={1} px={2} pb={4} style={{ display: hide ? 'none' : 'block' }}>
+        <Box width={1} px={2} pb={3} style={{ display: hide ? 'none' : 'block' }}>
             <Label mb="0.4rem">{label}</Label>
             <Group my="lg">
                 {checkboxes?.map(({ optionName, optionLabel, optionCb }) => (

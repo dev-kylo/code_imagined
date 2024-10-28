@@ -125,25 +125,34 @@ const Slice_Form = ({ slice }) => {
                                                     },
                                                 ]}
                                             />
-
+                                            <P
+                                                style={{
+                                                    fontFamily: 'Montserrat, sans-serif',
+                                                    fontSize: '16px',
+                                                    lineHeight: '28px',
+                                                    marginTop: 0,
+                                                    paddingTop: 0,
+                                                    marginBottom: '1rem',
+                                                    marginLeft: '0.5rem',
+                                                }}
+                                            >
+                                                A few weeks ago I told you about the learning system I use, and which
+                                                Imagine JavaScript is based on:{' '}
+                                                <a
+                                                    style={{
+                                                        fontFamily: '"Passion One", serif',
+                                                        fontSize: '1.3rem',
+                                                        // textDecoration: 'none',
+                                                    }}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    href="https://thegreatsync.com/courses/3-steps-to-confidence/the-great-sync-learning-system-roadmap"
+                                                >
+                                                    See, Build & Peg Learning System"
+                                                </a>
+                                            </P>
                                             <CheckboxWithOther
-                                                label={
-                                                    <span>
-                                                        Did you enjoy the PDF on the{' '}
-                                                        <a
-                                                            style={{
-                                                                fontFamily: '"Passion One", serif',
-                                                                fontSize: '1.3rem',
-                                                                textDecoration: 'none',
-                                                            }}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            href="https://thegreatsync.com/courses/3-steps-to-confidence/the-great-sync-learning-system-roadmap"
-                                                        >
-                                                            See, Build & Peg Learning System?"
-                                                        </a>
-                                                    </span>
-                                                }
+                                                label="Did you enjoy the PDF: The Great Sync Learning System & Roadmap?"
                                                 checkboxes={[
                                                     {
                                                         optionName: 'roadmap_enjoyed_yes',
@@ -168,6 +177,9 @@ const Slice_Form = ({ slice }) => {
                                                     fontFamily: 'Montserrat, sans-serif',
                                                     fontSize: '16px',
                                                     lineHeight: '28px',
+                                                    marginTop: 0,
+                                                    paddingTop: 0,
+                                                    marginLeft: '0.5rem',
                                                 }}
                                             >
                                                 Imagine JavaScript now has an additional part-time coaching program,
@@ -183,9 +195,10 @@ const Slice_Form = ({ slice }) => {
                                                 </span>
                                                 . Using The Great Sync, you will gain the confidence to build any type
                                                 of web application. <br />
-                                                It will involve weekly live coaching sessions and code reviews. By the
-                                                end you will have portfolio-ready vanilla JS applications🏆. The price
-                                                will be around $1.5k, starting in Feb/March 2025.
+                                                It involves weekly live coaching sessions, code reviews and reviewing
+                                                fundamentals. By the end you will have portfolio-ready vanilla JS
+                                                applications 🏆. The price will be around $1.5k, starting in Feb/March
+                                                2025.
                                             </P>
                                             <br />
                                             <br />
@@ -270,14 +283,14 @@ const Slice_Form = ({ slice }) => {
 
                                         <Box width={1} px={2} style={{ display: !userId ? 'block' : 'none' }}>
                                             <Label mb="0.4rem" htmlFor="full-name" style={{ marginTop: '15px' }}>
-                                                Name
+                                                Name*
                                             </Label>
                                             <Textarea id="full-name" name="full-name" rows="1" required={!userId} />
                                         </Box>
 
                                         <Box width={1} px={2} style={{ display: !userId ? 'block' : 'none' }}>
                                             <Label mb="0.4rem" htmlFor="email" style={{ marginTop: '15px' }}>
-                                                Email
+                                                Email*
                                             </Label>
                                             <Textarea id="email" name="email" rows="1" required={!userId} />
                                         </Box>
