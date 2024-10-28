@@ -35,10 +35,15 @@ const CheckboxWithOther = ({ label, checkboxes, name, disableOther, hide = false
             </Group>
 
             <Box width={1} px={2} style={{ display: !hide && !otherSelected ? 'none' : 'block' }}>
-                <Label mb="0.4rem" htmlFor="other-id" style={{ marginTop: '15px' }}>
+                <Label mb="0.4rem" htmlFor={`elaborate-other-checkbox${name}`} style={{ marginTop: '15px' }}>
                     Please elaborate
                 </Label>
-                <Textarea id="other-id" name="other-name-attr" rows="2" required={!hide && otherSelected} />
+                <Textarea
+                    id={`elaborate-other-checkbox${name}`}
+                    name={`elaborate-other-checkbox${name}`}
+                    rows="2"
+                    required={!hide && otherSelected}
+                />
             </Box>
         </Box>
     )

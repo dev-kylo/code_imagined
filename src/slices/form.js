@@ -116,12 +116,12 @@ const Slice_Form = ({ slice }) => {
                                                     {
                                                         optionValue: 'true',
                                                         optionName: 'course_outline_meets_expectations_true',
-                                                        optionLabel: 'Yes',
+                                                        optionLabel: 'Yes, the outline sounds great',
                                                     },
                                                     {
                                                         optionValue: 'false',
                                                         optionName: 'course_outline_meets_expectations_false',
-                                                        optionLabel: 'No',
+                                                        optionLabel: 'No, the outline is disappointing',
                                                     },
                                                 ]}
                                             />
@@ -152,7 +152,7 @@ const Slice_Form = ({ slice }) => {
                                                 </a>
                                             </P>
                                             <CheckboxWithOther
-                                                label="Did you enjoy the PDF: The Great Sync Learning System & Roadmap?"
+                                                label="Did you enjoy the Learning System & Roadmap?"
                                                 checkboxes={[
                                                     {
                                                         optionName: 'roadmap_enjoyed_yes',
@@ -182,8 +182,8 @@ const Slice_Form = ({ slice }) => {
                                                     marginLeft: '0.5rem',
                                                 }}
                                             >
-                                                Imagine JavaScript now has an additional part-time coaching program,
-                                                called{' '}
+                                                Did you know, Imagine JavaScript has a follow-up part-time coaching
+                                                program, called{' '}
                                                 <span
                                                     style={{
                                                         color: '#ab3428',
@@ -193,12 +193,12 @@ const Slice_Form = ({ slice }) => {
                                                 >
                                                     Break Through JavaScript - build without a tutorial in 40 days
                                                 </span>
-                                                . Using The Great Sync, you will gain the confidence to build any type
-                                                of web application. <br />
-                                                It involves weekly live coaching sessions, code reviews and reviewing
-                                                fundamentals. By the end you will have portfolio-ready vanilla JS
-                                                applications 🏆. The price will be around $1.5k, starting in Feb/March
-                                                2025.
+                                                .
+                                                <br /> It focusses on applying your mental model and gaining the
+                                                confidence to build applications from scratch. It involves weekly live
+                                                coaching sessions, code reviews and fundamentals revision. By the end
+                                                you will have portfolio-ready vanilla JS applications 🏆. The price will
+                                                be $1499, starting in Feb/March 2025.
                                             </P>
                                             <br />
                                             <br />
@@ -208,7 +208,7 @@ const Slice_Form = ({ slice }) => {
                                                     {
                                                         optionValue: 'true',
                                                         optionName: 'breakthrough-js-interested-true',
-                                                        optionLabel: 'Yes',
+                                                        optionLabel: 'Yes I am interested in Break Through JavaScript',
                                                         optionCb: e => {
                                                             if (e.target.checked) setInterested(true)
                                                             else if (!e.target.checked) setInterested(null)
@@ -217,7 +217,7 @@ const Slice_Form = ({ slice }) => {
                                                     {
                                                         optionValue: 'false',
                                                         optionName: 'breakthrough-js-interested-false',
-                                                        optionLabel: 'No',
+                                                        optionLabel: 'No I am not interested',
                                                         optionCb: e => {
                                                             if (e.target.checked) setInterested(false)
                                                             else if (!e.target.checked) setInterested(null)
@@ -247,7 +247,7 @@ const Slice_Form = ({ slice }) => {
 
                                     <CheckboxWithOther
                                         hide={!interested}
-                                        label="I will be running a discounted beta program in February, limited to 5 students. Can I contact you to discuss reserving your spot?"
+                                        label="I will be running a discounted beta release in February, limited to 5 students. Can I contact you to discuss reserving your spot?"
                                         checkboxes={[
                                             {
                                                 optionValue: 'true',
