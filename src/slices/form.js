@@ -6,6 +6,7 @@ import { Label, Input, Textarea } from '@rebass/forms/styled-components'
 import styled from 'styled-components'
 import CheckboxWithOther from '../components/UI/checkboxWithOther'
 import { UserContext } from '../context/user'
+import { P } from '../components/UI/text.styled'
 
 const InvisibleInput = styled.div`
     opacity: 0;
@@ -133,6 +134,7 @@ const Slice_Form = ({ slice }) => {
                                                             style={{
                                                                 fontFamily: '"Passion One", serif',
                                                                 fontSize: '1.3rem',
+                                                                textDecoration: 'none',
                                                             }}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
@@ -145,11 +147,11 @@ const Slice_Form = ({ slice }) => {
                                                 checkboxes={[
                                                     {
                                                         optionName: 'roadmap_enjoyed_yes',
-                                                        optionLabel: 'Yes',
+                                                        optionLabel: 'Yes I enjoyed it',
                                                     },
                                                     {
                                                         optionName: 'roadmap_enjoyed_no',
-                                                        optionLabel: 'No',
+                                                        optionLabel: 'No I did not',
                                                     },
                                                     {
                                                         optionName: 'roadmap_enjoyed_not_yet',
@@ -161,39 +163,34 @@ const Slice_Form = ({ slice }) => {
                                                     },
                                                 ]}
                                             />
+                                            <P
+                                                style={{
+                                                    fontFamily: 'Montserrat, sans-serif',
+                                                    fontSize: '16px',
+                                                    lineHeight: '28px',
+                                                }}
+                                            >
+                                                Imagine JavaScript now has an additional part-time coaching program,
+                                                called{' '}
+                                                <span
+                                                    style={{
+                                                        color: '#ab3428',
+                                                        fontFamily: '"Passion One", serif',
+                                                        fontSize: '1.3rem',
+                                                    }}
+                                                >
+                                                    Break Through JavaScript - build without a tutorial in 40 days
+                                                </span>
+                                                . Using The Great Sync, you will gain the confidence to build any type
+                                                of web application. <br />
+                                                It will involve weekly live coaching sessions and code reviews. By the
+                                                end you will have portfolio-ready vanilla JS applications🏆. The price
+                                                will be around $1.5k, starting in Feb/March 2025.
+                                            </P>
+                                            <br />
+                                            <br />
                                             <CheckboxWithOther
-                                                label={
-                                                    <span>
-                                                        <span
-                                                            style={{
-                                                                fontFamily: 'Montserrat, sans-serif',
-                                                                fontSize: '16px',
-                                                            }}
-                                                        >
-                                                            Imagine JavaScript now has an additional part-time coaching
-                                                            program, called{' '}
-                                                            <span
-                                                                style={{
-                                                                    color: '#ab3428',
-                                                                    fontFamily: '"Passion One", serif',
-                                                                    fontSize: '1.3rem',
-                                                                }}
-                                                            >
-                                                                Break Through JavaScript -{' '}
-                                                                <em>build without a tutorial in 40 days</em>
-                                                            </span>
-                                                            . Using The Great Sync, you will gain the confidence to
-                                                            build any type of web application. <br />
-                                                            It will involve weekly live coaching sessions and code
-                                                            reviews. By the end you will have portfolio-ready vanilla JS
-                                                            applications🏆. The price will be around $1.5k, starting in
-                                                            Feb/March 2025.
-                                                        </span>
-                                                        <br />
-                                                        <br />
-                                                        Would you be interested in joining?
-                                                    </span>
-                                                }
+                                                label=" Would you be interested in joining?"
                                                 checkboxes={[
                                                     {
                                                         optionValue: 'true',
@@ -231,7 +228,7 @@ const Slice_Form = ({ slice }) => {
                                             id="breakthrough-js-interested-false-explanation"
                                             name="breakthrough-js-interested-false-explanation"
                                             rows="2"
-                                            required={!(interested !== null && !interested)}
+                                            required={interested !== null && !interested}
                                         />
                                     </Box>
 
