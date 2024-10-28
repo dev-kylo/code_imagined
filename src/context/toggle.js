@@ -1,5 +1,7 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 import React, { useState, useEffect } from 'react'
+import isBrowser from '../utils/isBrowser'
+import { getTokenFromURL } from '../utils/getTokenFromUrl'
 
 export const SignupContext = React.createContext({
     visible: false,
@@ -18,9 +20,12 @@ const ModalContext = ({ children }) => {
     }
 
     useEffect(() => {
+        if (!isBrowser()) return
+        // Check search params
+        const userId = getTokenFromURL('ck_subscriber_id', window.location.search)
         const checkIfAlreadyShown = localStorage.getItem('tgs-modal-shown') === 'true'
         let timer
-        if (!checkIfAlreadyShown) {
+        if (!checkIfAlreadyShown && !userId) {
             timer = setTimeout(() => {
                 showModal()
                 clearTimeout(timer)
