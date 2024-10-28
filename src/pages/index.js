@@ -19,7 +19,7 @@ const Home = () => {
             timer = setTimeout(() => {
                 showSignUp()
                 localStorage.setItem('tgs-modal-shown', true)
-            }, [59000]) // 1 minute
+            }, [30000]) // 30 s
         }
         return () => {
             clearTimeout(timer)

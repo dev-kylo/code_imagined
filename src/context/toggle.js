@@ -17,18 +17,20 @@ const ModalContext = ({ children }) => {
         setVisibility(true)
     }
 
-    const signUpPopup = () => {
+    useEffect(() => {
         const checkIfAlreadyShown = localStorage.getItem('tgs-modal-shown') === 'true'
+        let timer
         if (!checkIfAlreadyShown) {
-            const timer = setTimeout(() => {
+            timer = setTimeout(() => {
                 showModal()
                 clearTimeout(timer)
-            }, 15000)
+            }, 55000)
             localStorage.setItem('tgs-modal-shown', true)
         }
-    }
-
-    useEffect(() => signUpPopup(), [])
+        return () => {
+            clearTimeout(timer)
+        }
+    }, [])
 
     const toggleAnimate = () => {
         toggleAnimations(!play)
