@@ -108,6 +108,23 @@ const Slice_Form = ({ slice }) => {
                             >
                                 <input type="hidden" name="form-name" value={title} />
                                 <Flex flexDirection="column" mx={-2} mb={0}>
+                                    {Number(formId) === 113222443267484 && (
+                                        <CheckboxWithOther
+                                            label="Does this chapter outline meet expectations?"
+                                            checkboxes={[
+                                                {
+                                                    optionValue: 'true',
+                                                    optionName: 'chapter_outline_meets_expectations_true',
+                                                    optionLabel: 'Yes, the outline sounds great',
+                                                },
+                                                {
+                                                    optionValue: 'false',
+                                                    optionName: 'chapter_outline_meets_expectations_false',
+                                                    optionLabel: 'No, the outline is disappointing',
+                                                },
+                                            ]}
+                                        />
+                                    )}
                                     {Number(formId) === 832386432234 && (
                                         <>
                                             <CheckboxWithOther
