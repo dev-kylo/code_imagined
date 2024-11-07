@@ -32,7 +32,7 @@ export const TextContainer = styled.section`
     .layout-wrapper span.token {
         font-family: ${props => props.theme.fonts.par};
         color: ${props => props.theme.colors.navy};
-        font-size: ${props => (props.small ? '18px' : '22px')};
+        font-size: ${props => (props.small ? '18px' : '20px')};
         padding: 0.5em 0;
         line-height: ${props => (props.small ? '26px' : '33px')};
         z-index: 150;
