@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Flex, Box } from 'rebass/styled-components'
 import Modal from '../../components/UI/modal.styled'
 import FormResult from './signup-result'
@@ -7,16 +7,26 @@ import MageFunk from '../lander/imageBlocks/mage/mage'
 import { getTokenFromURL } from '../../utils/getTokenFromUrl'
 import { UserContext } from '../../context/user'
 import PlainForm from './plain-form'
+import PostSignupBuyNow from './post-signup-buynow'
 
 const SignUp = ({ layout, convertKitTag, borderless, noLastName, submitBtnText }) => {
     const [formStatus, setFormStatus] = useState({
         formSubmitted: false,
         loading: false,
+        result: 'success',
         submitHeading: '',
         submitMessage: '',
     })
+    const [showBuyNow, setShowBuyNow] = useState(true)
 
     const { adSource, adStart } = useContext(UserContext)
+
+    const closeBuyNow = () => {
+        console.log('closeBuyNow')
+        setShowBuyNow(false)
+    }
+
+    useEffect(() => {})
 
     const handleSubmit = async info => {
         const isEvent = 'preventDefault' in info
@@ -70,6 +80,8 @@ const SignUp = ({ layout, convertKitTag, borderless, noLastName, submitBtnText }
                 result: 'success',
                 submitMessage: 'One last step to go! Please check your emails and confirm 🔥',
             })
+
+            setTimeout(() => setShowBuyNow(true), 2000) // show link to imagine javascript
         } catch (e) {
             console.log(e)
             setFormStatus({
@@ -103,12 +115,16 @@ const SignUp = ({ layout, convertKitTag, borderless, noLastName, submitBtnText }
                     submitBtnText={submitBtnText}
                 >
                     {formStatus.formSubmitted && !formStatus.loading && (
-                        <FormResult
-                            completed
-                            result={formStatus?.result}
-                            heading={formStatus.submitHeading}
-                            text={formStatus.submitMessage}
-                        />
+                        <>
+                            <FormResult
+                                completed
+                                result={formStatus?.result}
+                                heading={formStatus.submitHeading}
+                                text={formStatus.submitMessage}
+                            />
+
+                            {showBuyNow && <PostSignupBuyNow exitBuyNow={closeBuyNow} showModal={showBuyNow} />}
+                        </>
                     )}
                 </PlainForm>
             </div>

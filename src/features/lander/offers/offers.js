@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import Reveal, { Zoom } from 'react-awesome-reveal'
+import Reveal from 'react-awesome-reveal'
 import ShadowCard from '../../../components/UI/shadowCard'
 import { H2 } from '../../../components/UI/headings.styled'
 
@@ -65,10 +65,10 @@ function Offers() {
                         <ShadowCard
                             image="https://images.prismic.io/thegreatsync/ce1e7bf0-dd57-4bb1-b870-73dec577b37b_the_syncer_program_2_petanl.png"
                             title="Imagine JavaScript"
-                            subtitle="🤯Fundamentals Forever🤯. Create a long-lasting mental model"
+                            subtitle="Master the fundamentals and create a long-lasting mental model"
                             description="The mnemonic self-paced course on learning JavaScript visually and memorably. Journey through an imagined JavaScript universe, learning concepts in a way that sticks."
-                            link="/courses/the-syncer-program"
-                            btnText="Join the waiting list"
+                            link="https://thesyncerprogram.thegreatsync.com"
+                            btnText="Learn More"
                         />
                     </Link>
                     <a

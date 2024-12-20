@@ -38,19 +38,21 @@ const Subscribed = () => {
             />
             <Providers>
                 <PageTitle>You're subscribed!</PageTitle>
-                <TextContainer style={{ maxWidth: '900px', margin: 'auto' }}>
+                <TextContainer small style={{ maxWidth: '900px', margin: 'auto' }}>
                     <p>
-                        Over the next few days I will show you how to build a mental model with story and visual
-                        analogy, and introduce you to The Great Sync.
-                    </p>
-                    <p>
-                        Before you go check your emails, I WOULD love to hear from you and understand a bit more about
-                        your background and goals.
+                        Over the next few days I will show you how to build a JavaScript mental model 🧠 . The{' '}
+                        <em>'How to Learn JS Memorably'</em> PDF has been emailed to you.
                     </p>
 
                     <H2>Your JavaScript journey so far</H2>
 
-                    <Box as="form" data-netlify="true" name="newsubscriber" method="POST" action="/thankyou">
+                    <Box
+                        as="form"
+                        data-netlify="true"
+                        name="newsubscriber"
+                        method="POST"
+                        action={`/thankyou?ck_subscriber_id=${userId || 'unknown'}`}
+                    >
                         <input type="hidden" name="form-name" value="newsubscriber" />
                         <Flex flexDirection="column" mx={-2} mb={0}>
                             <Box width={1} px={2} pb={4}>
@@ -109,15 +111,16 @@ const Subscribed = () => {
                                     />
                                 </Group>
                             </Box>
+
                             <Box m="1rem 0" width={1} px={2}>
                                 <Label mb="0.4rem " htmlFor="goals">
-                                    What is your goal in the next 3-4 weeks? Try be specific.
+                                    What are your goals, and what's stopping you?
                                 </Label>
                                 <Textarea id="goals" name="goals" rows="4" required />
                             </Box>
                             <Box m="1rem 0" width={1} px={2}>
                                 <Label mb="0.4rem " htmlFor="reason">
-                                    Why are you here? What drove you to look for visuals ways of learning?
+                                    Why are you here? What drove you to look for visual ways of learning?
                                 </Label>
                                 <Textarea id="reason" name="reason" rows="4" required />
                             </Box>
@@ -138,6 +141,18 @@ const Subscribed = () => {
                                 hidden
                                 style={{ display: 'none' }}
                             />
+                            <Box m="1rem 0" width={1} px={2}>
+                                <Label mb="0.4rem " htmlFor="instagram">
+                                    Instagram handle
+                                </Label>
+                                <Textarea
+                                    style={{ maxWidth: '150px' }}
+                                    id="instagram"
+                                    name="instagram"
+                                    rows="1"
+                                    placeholder="@"
+                                />
+                            </Box>
 
                             <HoneyInput>
                                 <Input id="honey" name="honey" type="honey" />

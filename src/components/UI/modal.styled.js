@@ -9,7 +9,6 @@ const Backdrop = styled.div`
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 1000000000000;
     left: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
@@ -25,20 +24,21 @@ const ModalContent = styled.div`
     z-index: 500;
     background-color: white;
     width: auto;
-    min-width: 50%;
+    min-width: 70vw;
+    min-height: 80vh;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px black;
     padding: 30px;
     box-sizing: border-box;
     transition: all 0.3s ease-out;
     max-height: 85%;
-    min-height: 400px;
     overflow-y: scroll;
-    z-index: 100000;
+    z-index: 10000;
     transition: all 0.2s ease-in;
     @media (max-width: 800px) {
         padding: 15px;
         min-width: 80%;
+        min-height: 50vh;
     }
 `
 
@@ -51,13 +51,14 @@ const ExitButton = styled.button`
     width: 50px;
     height: 50px;
     font-size: 0.6rem;
+    z-index: 100000;
 
     &:hover {
         cursor: pointer;
     }
 `
 
-const Modal = ({ hideExitBtn, smallwindow, children, exitCb }) => {
+const Modal = ({ hideExitBtn, smallwindow, children, exitCb, showModal, standalone }) => {
     const { visible } = useContext(SignupContext)
     const { exit } = useContext(SignupContext)
 
@@ -75,7 +76,7 @@ const Modal = ({ hideExitBtn, smallwindow, children, exitCb }) => {
         </ExitButton>
     )
 
-    if (!visible) return null
+    if ((!visible && !standalone) || (!showModal && standalone)) return null
     return (
         <Layer>
             <Backdrop role="dialog" aria-modal="true">
