@@ -1,0 +1,12 @@
+[build]
+  command = "gatsby build"
+  publish = "public"
+  functions = "netlify/functions"
+
+[dev]
+  command = "gatsby develop"
+  port = 8000
+  targetPort = 8000
+
+[functions]
+  node_bundler = "esbuild" 
