@@ -41,8 +41,6 @@ const Slice_Form = ({ slice }) => {
     const { userId } = useContext(UserContext)
     const [interested, setInterested] = React.useState(null)
 
-    console.log({ userId })
-
     if (slice) {
         const formId = slice.primary.form_id
 

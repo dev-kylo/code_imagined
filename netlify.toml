@@ -1,0 +1,14 @@
+[build]
+  publish = "public/"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--production=false"
+
+[[plugins]]
+  package = "@netlify/plugin-gatsby"
+
+[template.environment]
+  PRISMIC_ACCESS_TOKEN = "Replace with your Prismic access token"
+  PRISMIC_CUSTOM_TYPES_API_TOKEN = "Replace with your Prismic custom types API token" 

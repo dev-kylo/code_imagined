@@ -64,7 +64,6 @@ const Modal = ({ hideExitBtn, smallwindow, children, exitCb, showModal, standalo
 
     const clickHandler = e => {
         e.preventDefault()
-        console.log(e.target)
 
         if (exitCb) exitCb()
         exit()

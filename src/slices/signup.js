@@ -10,7 +10,6 @@ const Slice_Signup = ({ slice }) => {
     const showSignUp = useContext(SignupContext).show
 
     if (slice) {
-        console.log(slice)
         const { type, submit_button_text, convertkit_tag_id, borderless } = slice.primary
         let signup = null
         if (type === 'button')
