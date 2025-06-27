@@ -12,7 +12,7 @@ import { Sphere } from './imageBlocks/sphere/sphere'
 import Invocation from './imageBlocks/invocation/Invocation'
 import RainIsland from './imageBlocks/rain_island/rainIsland'
 import DarkLord from './imageBlocks/operator/the_dark_lord'
-import Header2 from './header2'
+import Header3 from './header3'
 import ProfileCard from './profileCard/profileCard'
 import SignUpCard from './signUpCard/signUpCard'
 import BurningProblemCard from './profileCard/burningProblem'
@@ -40,7 +40,7 @@ const Label = styled.div`
 const Lander = () => {
     return (
         <>
-            <Header2 />
+            <Header3 />
             <BurningProblem />
             <ProfileCard />
             <Strip />
