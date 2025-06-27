@@ -92,6 +92,7 @@ module.exports = {
                 },
             },
         },
-        `gatsby-plugin-netlify`,
+        // Temporarily disabling to troubleshoot hanging issue
+        // `gatsby-plugin-netlify`,
     ],
 }

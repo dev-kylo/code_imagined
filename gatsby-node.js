@@ -5,31 +5,32 @@ const path = require(`path`)
 exports.createPages = async ({ actions, graphql }) => {
     const { createPage } = actions
 
+    // Temporarily disabling OG image generation to troubleshoot hanging issue
     // standard OG image for thegreatsync.com
-    createOpenGraphImage(createPage, {
-        path: '/og-image/index.png',
-        component: path.resolve(`src/layout/og/ogImage.js`),
-        size: {
-            width: 1200,
-            height: 630,
-        },
-        context: {
-            description: 'A character from The Great Sync Javascript Mental Model',
-        },
-    })
+    // createOpenGraphImage(createPage, {
+    //     path: '/og-image/index.png',
+    //     component: path.resolve(`src/layout/og/ogImage.js`),
+    //     size: {
+    //         width: 1200,
+    //         height: 630,
+    //     },
+    //     context: {
+    //         description: 'A character from The Great Sync Javascript Mental Model',
+    //     },
+    // })
 
     // logo OG image for thegreatsync.com
-    createOpenGraphImage(createPage, {
-        path: '/og-image/logo.png',
-        component: path.resolve(`src/layout/og/logo.js`),
-        size: {
-            width: 1200,
-            height: 630,
-        },
-        context: {
-            description: 'Logo for The Great Sync JavaScript Mental Model - Code Imagined',
-        },
-    })
+    // createOpenGraphImage(createPage, {
+    //     path: '/og-image/logo.png',
+    //     component: path.resolve(`src/layout/og/logo.js`),
+    //     size: {
+    //         width: 1200,
+    //         height: 630,
+    //     },
+    //     context: {
+    //         description: 'Logo for The Great Sync JavaScript Mental Model - Code Imagined',
+    //     },
+    // })
 
     const pages = await graphql(`
         {
