@@ -1,6 +1,6 @@
 [build]
   publish = "public/"
-  command = "npm run build"
+  command = "timeout 1800 npm run build"
 
 [build.processing]
   skip_processing = true
@@ -10,6 +10,8 @@
   NPM_FLAGS = "--production=false --legacy-peer-deps"
   GATSBY_CPU_COUNT = "2"
   NODE_OPTIONS = "--max-old-space-size=4096"
+  # Increase build timeout to 30 minutes (1800 seconds)
+  NETLIFY_BUILD_TIMEOUT = "1800"
 
 [[plugins]]
   package = "@netlify/plugin-gatsby"

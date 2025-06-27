@@ -17,7 +17,7 @@ module.exports = {
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         `gatsby-plugin-styled-components`,
-        `gatsby-plugin-open-graph-images`,
+        // `gatsby-plugin-open-graph-images`, // Temporarily removed for debugging
         `gatsby-transformer-remark`,
         {
             resolve: 'gatsby-plugin-robots-txt',
