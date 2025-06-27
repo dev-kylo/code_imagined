@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Flex, Box } from 'rebass/styled-components'
 import Modal from '../../components/UI/modal.styled'
 import FormResult from './signup-result'
@@ -22,14 +22,11 @@ const SignUp = ({ layout, convertKitTag, borderless, noLastName, submitBtnText }
     const { adSource, adStart } = useContext(UserContext)
 
     const closeBuyNow = () => {
-        console.log('closeBuyNow')
         setShowBuyNow(false)
     }
 
-    useEffect(() => {})
-
     const handleSubmit = async info => {
-        const isEvent = 'preventDefault' in info
+        const isEvent = 'preventDefault' in info;
         if (isEvent) info.preventDefault()
         const vals = isEvent ? info.target.elements : info
 
@@ -83,7 +80,7 @@ const SignUp = ({ layout, convertKitTag, borderless, noLastName, submitBtnText }
 
             setTimeout(() => setShowBuyNow(true), 2000) // show link to imagine javascript
         } catch (e) {
-            console.log(e)
+            console.error(e)
             setFormStatus({
                 submitHeading: 'Oh no!',
                 loading: false,

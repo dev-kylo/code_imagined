@@ -1,11 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react'
+import React, { useContext, useRef } from 'react'
 import { TextInput } from '@mantine/core'
 import styled from 'styled-components'
 import { useForm } from '@mantine/form'
 import { StyledButton } from '../../components/UI/button.styled'
 import Imp from '../lander/imageBlocks/imp/Imp'
 import { HoneyInput } from './signup-form'
+import { SignupContext } from '../../context/toggle'
 
 const Flex = styled.div`
     display: flex;
@@ -37,10 +38,19 @@ const Form = styled.form`
 function PlainForm({ loading, submitBtnText, submit, borderless, noLastName, children }) {
     const form = useForm()
     const [submitted, setSubmitted] = React.useState(false)
+    const inputActive = useRef(false)
+    const { setActiveUser } = useContext(SignupContext)
 
     const handleSubmit = vals => {
         setSubmitted(true)
         submit(vals)
+    }
+
+    const handleInputInit = () => {
+        if (!inputActive.current) {
+            inputActive.current = true
+            setActiveUser()
+        }
     }
 
     return (
@@ -61,6 +71,7 @@ function PlainForm({ loading, submitBtnText, submit, borderless, noLastName, chi
                             mt="sm"
                             key={form.key('fname')}
                             {...form.getInputProps('fname')}
+                            onFocus={handleInputInit}
                         />
                         {!noLastName && (
                             <TextInput
@@ -71,6 +82,7 @@ function PlainForm({ loading, submitBtnText, submit, borderless, noLastName, chi
                                 required
                                 key={form.key('sname')}
                                 {...form.getInputProps('sname')}
+                                onFocus={handleInputInit}
                             />
                         )}
                         <TextInput
@@ -82,6 +94,7 @@ function PlainForm({ loading, submitBtnText, submit, borderless, noLastName, chi
                             mt="sm"
                             key={form.key('email')}
                             {...form.getInputProps('email')}
+                            onFocus={handleInputInit}
                         />
                         <HoneyInput>
                             <TextInput
@@ -91,6 +104,7 @@ function PlainForm({ loading, submitBtnText, submit, borderless, noLastName, chi
                                 mt="sm"
                                 key={form.key('H')}
                                 {...form.getInputProps('H')}
+                                onFocus={handleInputInit}
                             />
                         </HoneyInput>
                     </div>

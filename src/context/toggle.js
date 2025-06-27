@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import isBrowser from '../utils/isBrowser'
 import { getTokenFromURL } from '../utils/getTokenFromUrl'
 
@@ -12,38 +12,44 @@ export const SignupContext = React.createContext({
 })
 
 const ModalContext = ({ children }) => {
-    const [visibility, setVisibility] = useState(false)
-    const [play, toggleAnimations] = useState(true)
+    const [visibility, setVisibility] = useState(false);
+    const [play, toggleAnimations] = useState(true);
+    const [activeInput, setActiveInput] = useState(false);
+    const timer = useRef(null);
 
-    const showModal = () => {
+    const showModal = useCallback(() => {
         setVisibility(true)
-    }
+    }, [])
+
+    const setActiveUser = useCallback(() => {
+        clearTimeout(timer.current)
+        setActiveInput(true)
+    }, [])
 
     useEffect(() => {
         if (!isBrowser()) return
         // Check search params
         const userId = getTokenFromURL('ck_subscriber_id', window.location.search)
         const checkIfAlreadyShown = localStorage.getItem('tgs-modal-shown') === 'true'
-        let timer
-        if (!checkIfAlreadyShown && !userId) {
-            timer = setTimeout(() => {
+        if (!checkIfAlreadyShown && !userId && !activeInput) {
+            timer.current = setTimeout(() => {
                 showModal()
                 clearTimeout(timer)
             }, 55000)
             localStorage.setItem('tgs-modal-shown', true)
         }
         return () => {
-            clearTimeout(timer)
+            clearTimeout(timer.current)
         }
     }, [])
 
-    const toggleAnimate = () => {
+    const toggleAnimate = useCallback(() => {
         toggleAnimations(!play)
-    }
+    }, [play])
 
-    const exitModal = () => {
+    const exitModal = useCallback(() => {
         setVisibility(false)
-    }
+    }, [])
 
     return (
         <SignupContext.Provider
@@ -53,6 +59,7 @@ const ModalContext = ({ children }) => {
                 exit: exitModal,
                 animate: play,
                 toggleAnimate,
+                setActiveUser,
             }}
         >
             {children}
