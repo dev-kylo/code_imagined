@@ -79,17 +79,41 @@ export const BurningProblem = () => {
                         Now, imagine this...
                     </Highlight>
                 </P>
+                <P>You sit down to coding your own web application.</P>
                 <P>
-                    You're about to start coding an exciting new project. You don't need a tutorial or step by step
-                    industructions.
+                    {' '}
+                    <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)', fontWeight: 'bold' }}>
+                        You don't open chatGPT.
+                    </Highlight>{' '}
+                    You might later, of course. But only to make you faster.
                 </P>
-                <P>You're confident you can figure it out. Your fundamentals are rock solid.</P>
+                <P>
+                    <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)', fontWeight: 'bold' }}>
+                        You don't look for step-by-step instructions{' '}
+                    </Highlight>{' '}
+                    from youtube. You might later, of course, but it's an aid, not a lifeline.
+                </P>
+                <P>
+                    You're 100% certain you can figure it out. Your fundamentals are rock solid. You're confident you
+                    can build anything you want.
+                </P>
 
                 <P> It doesn't matter if it's React, a new web API, or Open AI.</P>
 
                 <P>
-                    In your mind, you can picture a 3D model of JavaScript - your very own knowledge tree 🌳 of
-                    everything you've learned.
+                    In your mind, you can picture a{' '}
+                    <Highlight
+                        color="blue"
+                        style={{
+                            fontFamily: '"Passion One", serif',
+                            fontSize: '1.5rem',
+                            color: 'rgb(14, 52, 160)',
+                            fontWeight: 'bold',
+                        }}
+                    >
+                        3D model of JavaScript{' '}
+                    </Highlight>{' '}
+                    - your very own knowledge tree 🌳 of everything you've learned.
                 </P>
 
                 <P>

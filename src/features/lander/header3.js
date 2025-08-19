@@ -32,7 +32,7 @@ const Container = styled.div`
             }
             .tagline {
                 font-size: 1.3rem;
-                text-shadow: none!important;
+                text-shadow: none !important;
             }
         }
 
@@ -43,6 +43,24 @@ const Container = styled.div`
                 display: block;
                 margin-top: 1rem;
             }
+        }
+    }
+
+    .desktop-hide {
+        display: block;
+        height: 1rem;
+        @media (min-width: 600px) {
+            height: 0;
+            display: none;
+        }
+    }
+
+    .mb-hide {
+        display: block;
+        height: 1rem;
+        @media (max-width: 600px) {
+            height: 0;
+            display: none;
         }
     }
 
@@ -84,10 +102,10 @@ const Highlight = styled.span`
 const Small = styled.span`
     color: ${props => props.theme.colors[props.color || 'black']};
     background: ${props => (props.bgColor ? props.theme.colors[props.bgColor] : 'transparent')};
-    display: inline-block;    
+    display: inline-block;
     font-size: 2rem;
     padding: 0rem 1rem;
-    font-family: "Passion One", serif;
+    font-family: 'Passion One', serif;
 `
 
 const LandingSignup = styled.div`
@@ -142,22 +160,26 @@ const Header2 = () => {
                 />
                 <Container>
                     <H1 id="lander-heading" as="span">
-                        A {` `}
-                        <Highlight className="large" color="pink" >
-                            NEW WAY
+                        For the {` `}
+                        <Highlight className="large" color="pink">
+                            visual thinkers
                         </Highlight>{' '}
-                        of learning  {` `}
-                        
-                        <JsHeader className="jsheader">
-                            JavaScript
-                        </JsHeader>
+                        <div className="mb-hide">
+                            <br />
+                        </div>
+                        and career changers...
                         <br />
-                        using visualization 
-                 
-                        and imagination 🧠
-                       <Small className='tagline' color="navy" bgColor="pink"> Master the fundamentals in 30 days.</Small>
+                        <div className="desktop-hide">
+                            <br />
+                        </div>
+                        <JsHeader className="jsheader"> Master JavaScript</JsHeader>
+                        <br />
+                        {/* using visualization and imagination 🧠 */}
+                        <Small className="tagline" color="navy" bgColor="pink">
+                            {' '}
+                            using visualization and imagination 🧠
+                        </Small>
                     </H1>
-                    
 
                     <LandingSignup>
                         <SignUp
