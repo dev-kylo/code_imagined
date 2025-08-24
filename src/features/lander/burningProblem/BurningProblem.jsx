@@ -56,7 +56,7 @@ export const BurningProblem = () => {
                 </P>
 
                 <P>
-                    Your journey into web development was going well... until you realized you STILL can't write
+                    Your journey into web development was exciting... until you realized you STILL can't write
                     JavaScript. 😒
                 </P>
                 <ul className="">
@@ -70,16 +70,22 @@ export const BurningProblem = () => {
                         I can&lsquo;t build anything without a tutorial...
                     </P>
                     <P as="li" className="">
-                        Maybe this isn&lsquo;t for someone like me...
+                        I lie to myself when I say I'm coding. AI does it all...
                     </P>
                 </ul>
-                <P>If you have thoughts like these, you're not alone. </P>
+                <P>
+                    If you have thoughts like these, you're not alone - especially if your background is NOT in computer
+                    science and you're learning on your own.
+                </P>
                 <P style={{ fontFamily: '"Passion One", serif', fontSize: '2rem' }}>
+                    Now, just for a minute, step into the mind of a senior web developer...
+                </P>
+                <P>
                     <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)' }}>
-                        Now, imagine this...
+                        Imagine what it would feel like to be a master of your craft.{' '}
                     </Highlight>
                 </P>
-                <P>You sit down to coding your own web application.</P>
+                <P>You sit down to work on a web application.</P>
                 <P>
                     {' '}
                     <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)', fontWeight: 'bold' }}>
@@ -95,34 +101,40 @@ export const BurningProblem = () => {
                 </P>
                 <P>
                     You're 100% certain you can figure it out. Your fundamentals are rock solid. You're confident you
-                    can build anything you want.
+                    can build anything.
                 </P>
 
                 <P> It doesn't matter if it's React, a new web API, or Open AI.</P>
 
                 <P>
                     In your mind, you can picture a{' '}
-                    <Highlight
-                        color="blue"
-                        style={{
-                            fontFamily: '"Passion One", serif',
-                            fontSize: '1.5rem',
-                            color: 'rgb(14, 52, 160)',
-                            fontWeight: 'bold',
-                        }}
-                    >
-                        3D model of JavaScript{' '}
+                    <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)', fontWeight: 'bold' }}>
+                        model of JavaScript{' '}
                     </Highlight>{' '}
-                    - your very own knowledge tree 🌳 of everything you've learned.
+                    - your very own knowledge tree 🌳 of everything you've learned. It helps you connect the dots,
+                    recognize patterns and see the big picture.
                 </P>
 
                 <P>
-                    It's part of the <Link to="/courses/3-steps-to-confidence">"See, Build & Peg"</Link> learning
-                    system, which helps you continually grow your expertise, and BUILD ANYTHING YOU WANT.
+                    Of course, a senior developer doesn't consciously imagine anything. They don't need a way of
+                    visualizing or recalling their knowledge, because its firmly part of their mental model.
+                </P>
+                <P>But guaranteed, it wasn't always that way. It certainly wasn't for me...</P>
+                <P>
+                    It can take a realllly long time to build that mental model. There is always SO much to learn, SO
+                    much to remember and apply - leaving you feeling overwhelmed and stuck.
+                </P>
+                <P>
+                    That's what The Great Sync is all about. An imagined construct of your JavaScript knowledge, which
+                    can branch out and continue to grow in any direction, gives you that foundation which{' '}
+                    <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)', fontWeight: 'bold' }}>
+                        {' '}
+                        one day turns you into a senior developer.{' '}
+                    </Highlight>
                 </P>
                 <div className="btn-cta">
                     <Button color="yellow" clicked={showSignUp}>
-                        Get The Free Guide & Roadmap
+                        Find out more about this way of learning
                     </Button>
                 </div>
             </StyledElementsContainer>

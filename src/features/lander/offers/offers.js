@@ -71,7 +71,7 @@ function Offers() {
                             btnText="Learn More"
                         />
                     </Link>
-                    <a
+                    {/* <a
                         rel="noopener noreferrer"
                         target="_blank"
                         href="https://calendly.com/thegreatsync/premium-coaching-program"
@@ -86,7 +86,7 @@ function Offers() {
                             link="https://calendly.com/thegreatsync/premium-coaching-program"
                             btnText="Chat with Kylo About Joining"
                         />
-                    </a>
+                    </a> */}
                 </Reveal>
             </Grid>
         </>

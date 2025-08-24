@@ -70,12 +70,12 @@ const SignUpCard = () => (
                 The learning system that will help you become a confident JavaScript developer in 3 steps:{' '}
                 <Highlight color="pink">See, Build, & Peg.</Highlight>
             </P>
-            <P style={{ color: 'white', marginBottom: '1.5rem' }}>
+            {/* <P style={{ color: 'white', marginBottom: '1.5rem' }}>
                 <Highlight bgColor="blue" style={{ color: 'white' }}>
                     Also included:{' '}
                 </Highlight>
                 A 2024 Roadmap to JavaScript Developer PDF
-            </P>
+            </P> */}
             <SignupWrapper>
                 <SignUp layout="plain" submitBtnText="Get The 3 Steps To Confidence" noLastName />
             </SignupWrapper>
