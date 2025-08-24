@@ -117,16 +117,16 @@ export const BurningProblem = () => {
 
                 <P>
                     Of course, a senior developer doesn't consciously imagine anything. They don't need a way of
-                    visualizing or recalling their knowledge, because its firmly part of their mental model.
+                    visualizing or recalling their knowledge, because it's firmly part of their mental model.
                 </P>
                 <P>But guaranteed, it wasn't always that way. It certainly wasn't for me...</P>
                 <P>
-                    It can take a realllly long time to build that mental model. There is always SO much to learn, SO
+                    It can take a reeeealllly long time to build that mental model. There is always SO much to learn, SO
                     much to remember and apply - leaving you feeling overwhelmed and stuck.
                 </P>
                 <P>
                     That's what The Great Sync is all about. An imagined construct of your JavaScript knowledge, which
-                    can branch out and continue to grow in any direction, gives you that foundation which{' '}
+                    can branch out and continue to grow in any direction, giving you that foundation which{' '}
                     <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)', fontWeight: 'bold' }}>
                         {' '}
                         one day turns you into a senior developer.{' '}

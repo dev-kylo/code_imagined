@@ -67,7 +67,7 @@ function Offers() {
                             title="Imagine JavaScript"
                             subtitle="Master the fundamentals and create a long-lasting mental model"
                             description="The mnemonic self-paced course on learning JavaScript visually and memorably. Journey through an imagined JavaScript universe, learning concepts in a way that sticks."
-                            link="https://thesyncerprogram.thegreatsync.com"
+                            link="https://thegreatsync.com/courses/the-syncer-program/"
                             btnText="Learn More"
                         />
                     </Link>
