@@ -67,26 +67,10 @@ function Offers() {
                             title="Imagine JavaScript"
                             subtitle="Master the fundamentals and create a long-lasting mental model"
                             description="The mnemonic self-paced course on learning JavaScript visually and memorably. Journey through an imagined JavaScript universe, learning concepts in a way that sticks."
-                            link="https://thegreatsync.com/courses/the-syncer-program/"
+                            link="https://thegreatsync.com/courses/imagine-javascript/"
                             btnText="Learn More"
                         />
                     </Link>
-                    {/* <a
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        href="https://calendly.com/thegreatsync/premium-coaching-program"
-                        style={{ textDecoration: 'none' }}
-                    >
-                        <ShadowCard
-                            image="https://res.cloudinary.com/the-great-sync/image/upload/v1690715966/Screen_Shot_2023-07-30_at_3.19.05_PM_erh2cq.png"
-                            title="Break Through JavaScript"
-                            subtitle="6 week guided program to confidently building your own projects"
-                            description="Escape tutorial hell and beat imposter syndrome. This is a guided part-time small group learning program, designed to help you apply the fundamental patterns to your own projects."
-                            type=""
-                            link="https://calendly.com/thegreatsync/premium-coaching-program"
-                            btnText="Chat with Kylo About Joining"
-                        />
-                    </a> */}
                 </Reveal>
             </Grid>
         </>

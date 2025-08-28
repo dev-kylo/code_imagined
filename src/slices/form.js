@@ -106,23 +106,6 @@ const Slice_Form = ({ slice }) => {
                             >
                                 <input type="hidden" name="form-name" value={title} />
                                 <Flex flexDirection="column" mx={-2} mb={0}>
-                                    {Number(formId) === 113222443267484 && (
-                                        <CheckboxWithOther
-                                            label="Does this chapter outline meet expectations?"
-                                            checkboxes={[
-                                                {
-                                                    optionValue: 'true',
-                                                    optionName: 'chapter_outline_meets_expectations_true',
-                                                    optionLabel: 'Yes, the outline sounds great',
-                                                },
-                                                {
-                                                    optionValue: 'false',
-                                                    optionName: 'chapter_outline_meets_expectations_false',
-                                                    optionLabel: 'No, the outline is disappointing',
-                                                },
-                                            ]}
-                                        />
-                                    )}
                                     {Number(formId) === 832386432234 && (
                                         <>
                                             <CheckboxWithOther
@@ -243,40 +226,6 @@ const Slice_Form = ({ slice }) => {
                                         </>
                                     )}
 
-                                    <Box
-                                        width={1}
-                                        px={2}
-                                        mb={4}
-                                        style={{ display: interested !== null && !interested ? 'block' : 'none' }}
-                                    >
-                                        <Label mb="0rem" htmlFor="breakthrough-js-interested-false-explanation">
-                                            Mind explaining why not?
-                                        </Label>
-                                        <Textarea
-                                            id="breakthrough-js-interested-false-explanation"
-                                            name="breakthrough-js-interested-false-explanation"
-                                            rows="2"
-                                            required={interested !== null && !interested}
-                                        />
-                                    </Box>
-
-                                    <CheckboxWithOther
-                                        hide={!interested}
-                                        label="I will be running a discounted beta release in February, limited to 5 students. Can I contact you to discuss reserving your spot?"
-                                        checkboxes={[
-                                            {
-                                                optionValue: 'true',
-                                                optionName: 'breakthrough-js-waiting-for-followup',
-                                                optionLabel: 'Yes, I look forward to your email',
-                                            },
-                                            {
-                                                optionValue: 'false',
-                                                optionName: 'breakthrough-js-wait-for-main-release',
-                                                optionLabel: 'No, I am happy to wait for the main release',
-                                            },
-                                        ]}
-                                    />
-
                                     <Box width={1} px={2}>
                                         {body.map(edge => {
                                             const { label_text, required } = edge.primary
@@ -307,7 +256,13 @@ const Slice_Form = ({ slice }) => {
                                             <Label mb="0.4rem" htmlFor="email" style={{ marginTop: '15px' }}>
                                                 Email*
                                             </Label>
-                                            <Textarea id="email" name="email" rows="1" required={!userId} />
+                                            <Textarea
+                                                type="email"
+                                                id="email"
+                                                name="email"
+                                                rows="1"
+                                                required={!userId}
+                                            />
                                         </Box>
 
                                         <Textarea
@@ -322,7 +277,7 @@ const Slice_Form = ({ slice }) => {
                                             id="account"
                                             name="account"
                                             rows="1"
-                                            value={userId ? `https://app.convertkit.com/subscribers/${userId}` : 'none'}
+                                            value={userId ? `https://kit.com/subscribers/${userId}` : 'none'}
                                             hidden
                                             style={{ display: 'none' }}
                                         />

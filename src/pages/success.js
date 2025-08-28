@@ -16,7 +16,8 @@ const Success = () => {
     if (isBrowser) {
         const queryString = window.location.search
         const urlParams = new URLSearchParams(queryString)
-        msg = urlParams.get('msg')
+        const successMessage = urlParams.get('msg')
+        msg = successMessage ? decodeURIComponent(successMessage) : 'Thank you for your submitting, I appreciate you!'
     }
 
     return (
@@ -31,14 +32,14 @@ const Success = () => {
                                 <Loader color="red" size="xl" />
                             </Flex>
                         )}
-                        <p>{msg && decodeURIComponent(msg)}</p>
+                        <p>{msg}</p>
                         <Flex width="100%" justifyContent="center">
-                            <Button variant="signup" clicked={() => navigate(-1)} style={{ marginRight: '1rem' }}>
-                                Back
+                            <Button variant="signup" clicked={() => navigate('/')}>
+                                Back to the home page
                             </Button>
-                            <Button color="yellow" type="external" link="https://www.youtube.com/watch?v=SmomuyZuDwc">
+                            {/* <Button color="yellow" type="external" link="https://www.youtube.com/watch?v=SmomuyZuDwc">
                                 Watch me improve this function
-                            </Button>
+                            </Button> */}
                         </Flex>
                     </TextContainer>
                 </Copy>

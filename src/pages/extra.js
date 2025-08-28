@@ -12,7 +12,7 @@ const Extra = () => {
     return (
         <>
             <SEO
-                title="Extra Reading"
+                title="Extra Resources"
                 description="Extra resources and reading material relating to The Great Sync mental model, visual learning and mnemonics."
             />
             <Providers>
@@ -26,9 +26,7 @@ const Extra = () => {
                         <p>
                             For the ultimate visual learning experience that uses memory techniques to build a visual
                             model of JavaScript, make sure to check out{' '}
-                            <Link to="/courses/the-syncer-program">
-                                The Syncer Program: Level Up With Visual & Mnemonic JavaScript
-                            </Link>
+                            <Link to="/courses/imagine-javascript">Imagine JavaScript: Master the fundamentals</Link>
                         </p>
 
                         <h2>Posts I have written</h2>
