@@ -61,14 +61,14 @@ function Offers() {
             </Bg>
             <Grid>
                 <Reveal cascade>
-                    <Link key="course-1" to="/courses/the-syncer-program" style={{ textDecoration: 'none' }}>
+                    <Link key="course-1" to="/courses/imagine-javascript" style={{ textDecoration: 'none' }}>
                         <ShadowCard
                             image="https://images.prismic.io/thegreatsync/ce1e7bf0-dd57-4bb1-b870-73dec577b37b_the_syncer_program_2_petanl.png"
                             title="Imagine JavaScript"
                             subtitle="Master the fundamentals and create a long-lasting mental model"
                             description="The mnemonic self-paced course on learning JavaScript visually and memorably. Journey through an imagined JavaScript universe, learning concepts in a way that sticks."
                             link="https://thegreatsync.com/courses/imagine-javascript/"
-                            btnText="Learn More"
+                            btnText="Join the waitlist"
                         />
                     </Link>
                 </Reveal>
