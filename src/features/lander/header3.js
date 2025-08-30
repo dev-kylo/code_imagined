@@ -160,14 +160,10 @@ const Header2 = () => {
                 />
                 <Container>
                     <H1 id="lander-heading" as="span">
-                        For the {` `}
+                        For {` `}
                         <Highlight className="large" color="pink">
                             visual thinkers
                         </Highlight>{' '}
-                        <div className="mb-hide">
-                            <br />
-                        </div>
-                        and career changers...
                         <br />
                         <div className="desktop-hide">
                             <br />

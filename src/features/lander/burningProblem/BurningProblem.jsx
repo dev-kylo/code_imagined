@@ -14,7 +14,7 @@ const Container = styled.div`
     margin: 0px auto 2rem auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative;
-    max-width: 900px;
+    max-width: 750px;
     border-radius: 10px;
 
     @media (min-width: 768px) {
@@ -27,6 +27,14 @@ const Container = styled.div`
         justify-content: center;
         padding: 2rem;
     }
+
+    ul li {
+        font-size: 1.1rem;
+    }
+`
+
+const HP = styled(P)`
+    font-size: 1.1rem;
 `
 
 export const BurningProblem = () => {
@@ -55,10 +63,10 @@ export const BurningProblem = () => {
                     </Highlight>
                 </P>
 
-                <P>
+                <HP>
                     Your journey into web development was exciting... until you realized you STILL can't write
                     JavaScript. 😒
-                </P>
+                </HP>
                 <ul className="">
                     <P as="li" className="">
                         I have no idea what I'm doing...
@@ -73,68 +81,72 @@ export const BurningProblem = () => {
                         I lie to myself when I say I'm coding. AI does it all...
                     </P>
                 </ul>
-                <P>
+                <HP>
                     If you have thoughts like these, you're not alone - especially if your background is NOT in computer
                     science and you're learning on your own.
-                </P>
-                <P style={{ fontFamily: '"Passion One", serif', fontSize: '2rem' }}>
+                </HP>
+                <HP style={{ fontFamily: '"Passion One", serif', fontSize: '2rem' }}>
                     Now, just for a minute, step into the mind of a senior web developer...
-                </P>
-                <P>
-                    <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)' }}>
-                        Imagine what it would feel like to be a master of your craft.{' '}
-                    </Highlight>
-                </P>
-                <P>You sit down to work on a web application.</P>
-                <P>
-                    {' '}
+                </HP>
+                <HP>
+                    <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)', fontWeight: 'bold' }}>
+                        Imagine{' '}
+                    </Highlight>{' '}
+                    what it would feel like to be a master of your craft.{' '}
+                </HP>
+                <HP>You sit down to work on a web application.</HP>
+                <HP>
+                    👉{' '}
                     <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)', fontWeight: 'bold' }}>
                         You don't open chatGPT.
                     </Highlight>{' '}
                     You might later, of course. But only to make you faster.
-                </P>
-                <P>
+                </HP>
+                <HP>
+                    👉{' '}
                     <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)', fontWeight: 'bold' }}>
                         You don't look for step-by-step instructions{' '}
                     </Highlight>{' '}
                     from youtube. You might later, of course, but it's an aid, not a lifeline.
-                </P>
-                <P>
-                    You're 100% certain you can figure it out. Your fundamentals are rock solid. You're confident you
-                    can build anything.
-                </P>
+                </HP>
+                <HP>
+                    👉 You're 100% certain you can figure it out.{' '}
+                    <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)', fontWeight: 'bold' }}>
+                        Your fundamentals are rock solid
+                    </Highlight>
+                    . You're confident you can build anything.
+                </HP>
 
-                <P> It doesn't matter if it's React, a new web API, or Open AI.</P>
-
-                <P>
+                <HP>
                     In your mind, you can picture a{' '}
                     <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)', fontWeight: 'bold' }}>
                         model of JavaScript{' '}
                     </Highlight>{' '}
                     - your very own knowledge tree 🌳 of everything you've learned. It helps you connect the dots,
                     recognize patterns and see the big picture.
-                </P>
+                </HP>
 
-                <P>
+                <HP>
                     Of course, a senior developer doesn't consciously imagine anything. They don't need a way of
                     visualizing or recalling their knowledge, because it's firmly part of their mental model.
-                </P>
-                <P>But guaranteed, it wasn't always that way. It certainly wasn't for me...</P>
-                <P>
+                </HP>
+                <HP>But guaranteed, it wasn't always that way. It certainly wasn't for me...</HP>
+                <HP>
                     It can take a reeeealllly long time to build that mental model. There is always SO much to learn, SO
                     much to remember and apply - leaving you feeling overwhelmed and stuck.
-                </P>
-                <P>
-                    That's what The Great Sync is all about. An imagined construct of your JavaScript knowledge, which
-                    can branch out and continue to grow in any direction, giving you that foundation which{' '}
+                </HP>
+                <HP>The Great Sync helps you consolidate and build ontop of what you already know.</HP>
+                <HP>
+                    It's an imagined construct of your JavaScript knowledge, which can branch out and continue to grow
+                    in any direction, giving you that foundation which{' '}
                     <Highlight color="blue" style={{ color: 'rgb(14, 52, 160)', fontWeight: 'bold' }}>
                         {' '}
                         one day turns you into a senior developer.{' '}
                     </Highlight>
-                </P>
+                </HP>
                 <div className="btn-cta">
                     <Button color="yellow" clicked={showSignUp}>
-                        Find out more about this way of learning
+                        Learn how it works
                     </Button>
                 </div>
             </StyledElementsContainer>
