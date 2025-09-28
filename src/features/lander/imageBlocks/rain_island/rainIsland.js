@@ -2,8 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 import islandSvg from '../../../../images/rain_island_10.svg'
 import { ImageLabel } from '../../../../components/UI/ImageLabel'
+import { StaticImage } from 'gatsby-plugin-image'
 
-const StyledSVG = styled(islandSvg)`
+const imgPng = () => {
+    return (
+        <StaticImage
+            src='../../../../images/rain_island.png'
+            alt='rain island'
+            placeholder='blurred'
+            objectFit='fill'
+        />
+    )
+}
+
+const StyledSVG = styled(imgPng)`
     width: 80%;
     position: absolute;
     z-index: 100;
@@ -64,7 +76,12 @@ const StyledSVG = styled(islandSvg)`
 const PrimitiveLabel = styled(ImageLabel)`
     bottom: 20%;
     right: 10%;
-    transform: rotate(-40deg);
+    transform: rotate(-31deg);
+    z-index: 110;
+
+    @media (max-width: 600px) {
+    right: 2%
+    }
 `
 
 const RainIsland = props => {

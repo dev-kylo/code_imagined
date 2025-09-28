@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import { StaticImage } from 'gatsby-plugin-image'
 import { ImageLabel } from '../../../../components/UI/ImageLabel'
 
@@ -32,13 +31,21 @@ const Container = styled.div`
     }
 `
 
-const ArgumentsLabel = styled(ImageLabel)`
+const FunctionShipLabel = styled(ImageLabel)`
     bottom: 20%;
-    left: -10%;
     color: black;
 
     @media (max-width: 600px) {
-        bottom: -15%;
+        bottom: -10%;
+        left: 5%;
+    }
+
+    @media (min-width: 601px) {
+        left: -10%
+    }
+
+    @media (min-width: 1101px) {
+        left: 8%
     }
 `
 
@@ -53,18 +60,19 @@ const InvocationLabel = styled(ImageLabel)`
     }
 `
 
-const Argonauts = () => {
+const FunctionShip = () => {
     return (
         <Container>
-            <ArgumentsLabel>~ Arguments</ArgumentsLabel>
+            <FunctionShipLabel>~ Function</FunctionShipLabel>
             <InvocationLabel>~ Function Invocation</InvocationLabel>
             <StaticImage
-                src="../../../../images/Argonauts.png"
-                alt="A flying ship with windows"
+                src="../../../../images/function_ship.png"
+                alt="A flying ship with pool"
                 placeholder="blurred"
+                style={{transform: 'translate(-40px, 0)'}}
             />
         </Container>
     )
 }
 
-export default Argonauts
+export default FunctionShip

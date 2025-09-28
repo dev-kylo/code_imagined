@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
 import Orb from '../../../../images/ArgsExiting_Orb.svg'
-import Argonauts from './argonauts'
+import FunctionShip from './functionShip'
 
 const StyledSVG = styled(Orb)`
     width: 100%;
@@ -44,7 +44,7 @@ const LayeredOrb = () => {
     return (
         <SVGContainer>
             <StyledSVG />
-            <Argonauts />
+            <FunctionShip />
         </SVGContainer>
     )
 }
